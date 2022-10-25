@@ -1,0 +1,1 @@
+$conn = Get-CrmConnection -InteractiveMode | Update-XrmAssembly -AssemblyFile ($PSScriptRoot + "/src/PentaWork.Xrm.Scheduler/bin/Release/PentaWork.Xrm.Scheduler.dll")

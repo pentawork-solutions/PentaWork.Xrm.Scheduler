@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{93AACACA-A7DF-4347-BE5F-AB41CA608DA7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PentaWork.Xrm.Scheduler</RootNamespace>
+    <AssemblyName>PentaWork.Xrm.Scheduler</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.46\lib\net462\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.46\lib\net462\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Workflow, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CrmSdk.Workflow.9.0.2.46\lib\net462\Microsoft.Xrm.Sdk.Workflow.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.6, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Text.Json.6.0.6\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeActivities\RunSchedule.cs" />
+    <Compile Include="Extensions\OrganizationServiceContextExtension.cs" />
+    <Compile Include="Extensions\ProcessExtensions.cs" />
+    <Compile Include="PluginController.cs" />
+    <Compile Include="Plugins\CrmEventAttribute.cs" />
+    <Compile Include="Plugins\CrmPlugin.cs" />
+    <Compile Include="Plugins\PentaScheduleRuns\SetPageInfoOnCreation.cs" />
+    <Compile Include="Plugins\PentaSchedules\UpdateRunOnSave.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScheduleExecutor.cs" />
+    <Compile Include="ScheduleRunCreator.cs" />
+    <Compile Include="ScheduleRunLogger.cs" />
+    <Compile Include="Proxies\AssemblyInfoAddition.cs" xmlns="" />
+    <Compile Include="Proxies\Attributes.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Account.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ACIViewMapper.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ActionCard.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ActionCardRegarding.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ActionCardRoleSetting.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ActionCardUserState.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Activity.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ActivityMonitor.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ActivityParty.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Address.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AdminSettingsEntity.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AIBuilderDataset.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AIBuilderDatasetFile.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AIBuilderDatasetRecord.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AIBuilderDatasetsContainer.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AIBuilderFile.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AIBuilderFileAttachedData.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AIConfiguration.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AIFormProcessingDocument.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AIModel.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AIObjectDetectionBoundingBox.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AIObjectDetectionImage.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AIObjectDetectionImageMapping.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AIObjectDetectionLabel.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AITemplate.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Announcement.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AnnualFiscalCalendar.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AppConfigMaster.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AppConfiguration.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AppConfigurationInstance.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AppModuleComponent.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Appointment.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Article.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ArticleComment.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ArticleTemplate.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Attachment.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Attachment2.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Auditing.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AutoCaptureRule.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AutoCaptureSettings.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AvailableTimes.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\AvailableTimesDataSource.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\BookableResource.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\BookableResourceBooking.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\BookableResourceBookingHeader.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\BookableResourceCategory.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\BookableResourceCategoryAssn.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\BookableResourceCharacteristic.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\BookableResourceGroup.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\BookingStatus.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\BotContent.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\BulkDeleteFailure.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\BulkDeleteOperation.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\BusinessUnit.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Calendar.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\CallbackRegistration.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Campaign.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\CampaignActivity.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\CampaignResponse.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\CanvasApp.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Case.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\CaseResolution.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Catalog.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\CatalogAssignment.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Category.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Characteristic.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Chatbot.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ChatbotSubcomponent.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ColumnMapping.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Comment.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Competitor.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\CompetitorAddress.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ComponentLayer.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ComponentLayerDataSource.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Connection.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ConnectionReference.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ConnectionRole.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Connector.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Contact.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Contract.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ContractLine.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ContractTemplate.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ConversationTranscript.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Currency.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\CustomAPI.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\CustomAPIRequestParameter.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\CustomAPIResponseProperty.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\CustomControl.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\CustomControlDefaultConfig.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\CustomControlResource.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\DatabaseVersion.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\DataImport.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\DataLakeFolder.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\DataLakeFolderPermission.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\DataLakeWorkspace.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\DataLakeWorkspacePermission.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\DataMap.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\DataPerformanceDashboard.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Dependency.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Discount.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\DiscountList.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\DisplayString.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\DocumentLocation.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\DocumentSuggestions.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\DocumentTemplate.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\DuplicateDetectionRule.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\DuplicateRecord.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\DuplicateRuleCondition.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Email.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\EmailServerProfile.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\EmailTemplate.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Entitlement.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\EntitlementChannel.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\EntitlementEntityAllocationTypeMapping.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\EntitlementTemplate.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\EntitlementTemplateChannel.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\EntityAnalyticsConfig.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\EntityImageConfiguration.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\EntityRankingRule.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\EnvironmentVariableDefinition.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\EnvironmentVariableValue.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ExchangeSyncIdMapping.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ExpiredProcess.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ExportSolutionUpload.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\FacilityEquipment.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Fax.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Feedback.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\FieldPermission.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\FieldSecurityProfile.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\FieldSharing.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\FileAttachment.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Filter.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\FixedMonthlyFiscalCalendar.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Flowcardtype.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\FlowSession.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Follow.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Goal.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\GoalMetric.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\HelpPage.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Icebreakersconfig.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ImageAttributeConfiguration.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ImportData.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ImportEntityMapping.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ImportJob.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ImportLog.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ImportSourceFile.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\InteractionForEmail.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\InvalidDependency.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Invoice.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\InvoiceProduct.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\KnowledgeArticle.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\KnowledgeArticleImage.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\KnowledgeArticleIncident.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\KnowledgeArticleTemplate.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\KnowledgeArticleViews.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\KnowledgeBaseRecord.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\KnowledgeFederatedArticle.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\KnowledgeFederatedArticleIncident.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\KnowledgeInteractionInsight.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\KnowledgeSearchInsight.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Language.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Lead.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\LeadAddress.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\LeadToOpportunitySalesProcess.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Letter.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Like.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ListOperation.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ListValueMapping.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\LookupMapping.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Mailbox.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\MailboxAutoTrackingFolder.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\MailMergeTemplate.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\MarketingFormDisplayAttributes.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\MarketingList.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\MicrosoftTeamsCollaborationEntity.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\MicrosoftTeamsGraphResourceEntity.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\MobileOfflineProfile.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\MobileOfflineProfileItem.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\MobileOfflineProfileItemAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ModeldrivenApp.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\MonthlyFiscalCalendar.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\MsdynMsteamssetting.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\MsdynMsteamssettingsv2.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\MsdynRelationshipinsightsunifiedconfig.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\NavigationSetting.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\NewProcess.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Note.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\NotesAnalysisConfig.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ODataV4DataSource.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\OfficeGraphDocument.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Opportunity.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\OpportunityClose.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\OpportunityProduct.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\OpportunitySalesProcess.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Order.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\OrderClose.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\OrderProduct.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Organization.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Owner.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\OwnerMapping.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Package.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PentaSchedule.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PentaSchedulerPlugin.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PentaScheduleRun.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PersonalDocumentTemplate.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PhoneCall.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PhoneToCaseProcess.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Playbook.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PlaybookActivity.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PlaybookActivityAttribute.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PlaybookCallableContext.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PlaybookCategory.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PlaybookTemplate.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PluginAssembly.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PluginTraceLog.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PluginType.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PluginTypeStatistic.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Position.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Post.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PostConfiguration.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PostRuleConfiguration.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PriceList.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PriceListItem.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Principalobjectaccess.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Privilege.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Process.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ProcessConfiguration.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ProcessLog.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ProcessSession.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ProcessStage.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ProcessStageParameter.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ProcessTrigger.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Product.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ProductAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ProductRelationship.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ProfileAlbum.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Property.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PropertyAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PropertyInstance.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PropertyOptionSetItem.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ProvisionLanguageForUser.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Publisher.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\PublisherAddress.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\QuarterlyFiscalCalendar.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Queue.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\QueueItem.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\QuickCampaign.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Quote.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\QuoteClose.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\QuoteProduct.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\RatingModel.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\RatingValue.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\RecurrenceRule.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\RecurringAppointment.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Report.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ReportRelatedCategory.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Resource.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ResourceGroup.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ResourceGroupDataSource.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ResourceSpecification.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\RibbonMetadataToProcess.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\RichTextAttachment.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\RoleTemplate.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\RollupField.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\RollupQuery.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SalesAttachment.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Salesinsightssettings.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SalesLiterature.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SavedView.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SchedulingGroup.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SdkMessage.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SdkMessageFilter.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SdkMessageProcessingStep.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SdkMessageProcessingStepImage.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SdkMessageProcessingStepSecureConfiguration.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SearchProvider.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SecurityRole.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SemiannualFiscalCalendar.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Service.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ServiceActivity.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ServiceEndpoint.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\ServicePlan.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SharePointSite.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Siconfig.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SIKeyValueConfig.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Site.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SiteMap.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SLA.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SLAItem.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SLAKPIInstance.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SocialActivity.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SocialProfile.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Solution.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SolutionComponent.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SolutionComponentAttributeConfiguration.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SolutionComponentConfiguration.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SolutionComponentDataSource.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SolutionComponentRelationshipConfiguration.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SolutionComponentSummary.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SolutionHistory.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SolutionHistoryData.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SolutionHistoryDataSource.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\StageSolutionUpload.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Subject.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SuggestedActivity.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SuggestedActivityDataSource.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SuggestedContact.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SuggestedContactsDataSource.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SyncError.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SystemChart.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SystemForm.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\SystemJob.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Task.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Team.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\TeamTemplate.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Territory.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Theme.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\TimeZoneDefinition.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\TimeZoneLocalizedName.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\TimeZoneRule.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Tour.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Trace.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\TransformationMapping.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\TransformationParameterMapping.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\TranslationProcess.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\Unit.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\UnitGroup.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\UntrackedAppointment.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\UpgradeRun.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\UpgradeStep.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\UpgradeVersion.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\User.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\UserChart.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\UserDashboard.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\UserMapping.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\UserSettings.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\View.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\VirtualEntityDataProvider.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\VirtualResourceGroupResource.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\WallView.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\WebResource.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\WebWizard.cs" xmlns="" />
+    <Compile Include="Proxies\Entities\WorkflowBinary.cs" xmlns="" />
+    <Compile Include="Proxies\Extensions\EnumExtensions.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\AccountleadsAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\AppmodulerolesAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\BotBotcomponent.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\BotcomponentBotcomponent.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\BotcomponentWorkflow.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\BulkOperationAccounts.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\BulkOperationContacts.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\BulkOperationLeads.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\CampaignActivityAccounts.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\CampaignActivityContacts.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\CampaignActivityLeads.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\CampaignactivitylistAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\CampaignactivitysalesliteratureAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\CampaigncampaignAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\CampaignlistAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\CampaignproductAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\CampaignsalesliteratureAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\CompetitorproductAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\CompetitorsalesliteratureAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\ConnectionroleassociationAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\ContactinvoicesAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\ContactleadsAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\ContactordersAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\ContactquotesAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\EntitlementcontactsAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\KnowledgearticleCategory.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\KnowledgeBaseRecordIncident.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\LeadcompetitorsAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\LeadproductAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\ListaccountAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\ListcontactAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\ListleadAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\MsdynAiodlabelMsdynAiconfiguration.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\MsdynCallablecontextMsdynPlaybooktemplate.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\OpportunitycompetitorsAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\PackageSolution.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\ProductEntitlementAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\ProductEntitlementtemplateAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\ProductsalesliteratureAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\QueuemembershipAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\RoleprivilegesAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\RoletemplateprivilegesAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\ServicecontractcontactsAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\ServiceplanAppmodule.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\SystemuserprofilesAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\SystemuserrolesAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\TeammembershipAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\TeamprofilesAssociation.cs" xmlns="" />
+    <Compile Include="Proxies\Relations\TeamrolesAssociation.cs" xmlns="" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ILRepack.targets" />
+    <None Include="key.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\ILRepack.Lib.MSBuild.Task.2.0.18.2\build\ILRepack.Lib.MSBuild.Task.targets" Condition="Exists('..\..\packages\ILRepack.Lib.MSBuild.Task.2.0.18.2\build\ILRepack.Lib.MSBuild.Task.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Dieses Projekt verweist auf mindestens ein NuGet-Paket, das auf diesem Computer fehlt. Verwenden Sie die Wiederherstellung von NuGet-Paketen, um die fehlenden Dateien herunterzuladen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=322105". Die fehlende Datei ist "{0}".</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\ILRepack.Lib.MSBuild.Task.2.0.18.2\build\ILRepack.Lib.MSBuild.Task.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\ILRepack.Lib.MSBuild.Task.2.0.18.2\build\ILRepack.Lib.MSBuild.Task.targets'))" />
+    <Error Condition="!Exists('..\..\packages\System.Text.Json.6.0.6\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\System.Text.Json.6.0.6\build\System.Text.Json.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\System.Text.Json.6.0.6\build\System.Text.Json.targets" Condition="Exists('..\..\packages\System.Text.Json.6.0.6\build\System.Text.Json.targets')" />
+</Project>

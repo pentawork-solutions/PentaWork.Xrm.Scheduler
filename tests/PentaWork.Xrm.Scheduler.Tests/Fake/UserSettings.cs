@@ -1,0 +1,131 @@
+using Bogus;
+using System;
+using FakeXrmEasy;
+using System.Collections.Generic;
+using PentaWork.Xrm.Scheduler.Proxies.Entities;
+
+namespace PentaWork.Xrm.Scheduler.Tests.Fake
+{
+	public static class FakeUserSettings
+	{	
+		#region FakeRelationships
+		public static class Relationships 
+		{
+		}
+		#endregion
+
+		#region Fake
+		public static UserSettings Create()
+		{
+			var faker = new Faker<UserSettings>()
+			.RuleFor(e => e.Addressbooksyncinterval, fake => fake.Random.Int())
+			.RuleFor(e => e.Advancedfindstartupmode, fake => fake.Random.Int())
+			.RuleFor(e => e.Allowemailcredentials, fake => fake.Random.Bool())
+			.RuleFor(e => e.Amdesignator, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Autocaptureuserstatus, fake => fake.Random.Int())
+			.RuleFor(e => e.Autocreatecontactonpromote, fake => fake.Random.Int())
+			.RuleFor(e => e.BusinessunitId, fake => Guid.NewGuid())
+			.RuleFor(e => e.Businessunitidname, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Calendartype, fake => fake.Random.Int())
+			.RuleFor(e => e.Createdbyname, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Createdbyyominame, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Createdon, fake => fake.Date.Soon())
+			.RuleFor(e => e.Createdonbehalfbyname, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Createdonbehalfbyyominame, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Currencydecimalprecision, fake => fake.Random.Int())
+			.RuleFor(e => e.Currencyformatcode, fake => fake.Random.Int())
+			.RuleFor(e => e.Currencysymbol, fake => fake.Lorem.Word())
+			.RuleFor(e => e.DataValidationModeForExportToExcel, fake => fake.PickRandom<UserSettings.eDataValidationModeForExportToExcel>())
+			.RuleFor(e => e.Dateformatcode, fake => fake.Random.Int())
+			.RuleFor(e => e.Dateformatstring, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Dateseparator, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Decimalsymbol, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Defaultcalendarview, fake => fake.Random.Int())
+			.RuleFor(e => e.DefaultCountryCode, fake => fake.Lorem.Word())
+			.RuleFor(e => e.DefaultdashboardId, fake => Guid.NewGuid())
+			.RuleFor(e => e.DefaultSearchExperience, fake => fake.PickRandom<UserSettings.eDefaultSearchExperience>())
+			.RuleFor(e => e.Emailpassword, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Emailusername, fake => fake.Lorem.Word())
+			.RuleFor(e => e.FormMode, fake => fake.PickRandom<UserSettings.eEntityFormMode>())
+			.RuleFor(e => e.Fullnameconventioncode, fake => fake.Random.Int())
+			.RuleFor(e => e.Getstartedpanecontentenabled, fake => fake.Random.Bool())
+			.RuleFor(e => e.Helplanguageid, fake => fake.Random.Int())
+			.RuleFor(e => e.Homepagearea, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Homepagelayout, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Homepagesubarea, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Ignoreunsolicitedemail, fake => fake.Random.Bool())
+			.RuleFor(e => e.IncomingEmailFilteringMethod, fake => fake.PickRandom<UserSettings.eIncomingEmailFilteringMethod>())
+			.RuleFor(e => e.ShowAlertForAppsFor365, fake => fake.Random.Bool())
+			.RuleFor(e => e.Isautodatacaptureenabled, fake => fake.Random.Bool())
+			.RuleFor(e => e.EnableDefaultCountryCode, fake => fake.Random.Bool())
+			.RuleFor(e => e.Isduplicatedetectionenabledwhengoingonline, fake => fake.Random.Bool())
+			.RuleFor(e => e.Isemailconversationviewenabled, fake => fake.Random.Bool())
+			.RuleFor(e => e.EnableDefaultGuidedHelp, fake => fake.Random.Bool())
+			.RuleFor(e => e.ResourceBookingSynchronizationEnabled, fake => fake.Random.Bool())
+			.RuleFor(e => e.Issendasallowed, fake => fake.Random.Bool())
+			.RuleFor(e => e.Lastalertsviewedtime, fake => fake.Date.Soon())
+			.RuleFor(e => e.Localeid, fake => fake.Random.Int())
+			.RuleFor(e => e.Longdateformatcode, fake => fake.Random.Int())
+			.RuleFor(e => e.Modifiedbyname, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Modifiedbyyominame, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Modifiedon, fake => fake.Date.Soon())
+			.RuleFor(e => e.Modifiedonbehalfbyname, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Modifiedonbehalfbyyominame, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Negativecurrencyformatcode, fake => fake.Random.Int())
+			.RuleFor(e => e.Negativeformatcode, fake => fake.Random.Int())
+			.RuleFor(e => e.Nexttrackingnumber, fake => fake.Random.Int())
+			.RuleFor(e => e.Numbergroupformat, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Numberseparator, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Offlinesyncinterval, fake => fake.Random.Int())
+			.RuleFor(e => e.Outlooksyncinterval, fake => fake.Random.Int())
+			.RuleFor(e => e.Paginglimit, fake => fake.Random.Int())
+			.RuleFor(e => e.Personalizationsettings, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Pmdesignator, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Pricingdecimalprecision, fake => fake.Random.Int())
+			.RuleFor(e => e.ReportScriptErrors, fake => fake.PickRandom<UserSettings.eReportScriptErrors>())
+			.RuleFor(e => e.UserResourceBookingSynchronizationVersion, fake => fake.Random.Int())
+			.RuleFor(e => e.SelectedglobalfilterId, fake => Guid.NewGuid())
+			.RuleFor(e => e.Showweeknumber, fake => fake.Random.Bool())
+			.RuleFor(e => e.Splitviewstate, fake => fake.Random.Bool())
+			.RuleFor(e => e.Synccontactcompany, fake => fake.Random.Bool())
+			.RuleFor(e => e.Id, fake => Guid.NewGuid())
+			.RuleFor(e => e.Timeformatcode, fake => fake.Random.Int())
+			.RuleFor(e => e.Timeformatstring, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Timeseparator, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Timezonebias, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonecode, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonedaylightbias, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonedaylightday, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonedaylightdayofweek, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonedaylighthour, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonedaylightminute, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonedaylightmonth, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonedaylightsecond, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonedaylightyear, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonestandardbias, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonestandardday, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonestandarddayofweek, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonestandardhour, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonestandardminute, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonestandardmonth, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonestandardsecond, fake => fake.Random.Int())
+			.RuleFor(e => e.Timezonestandardyear, fake => fake.Random.Int())
+			.RuleFor(e => e.Trackingtokenid, fake => fake.Random.Int())
+			.RuleFor(e => e.Transactioncurrencyidname, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Uilanguageid, fake => fake.Random.Int())
+			.RuleFor(e => e.Usecrmformforappointment, fake => fake.Random.Bool())
+			.RuleFor(e => e.Usecrmformforcontact, fake => fake.Random.Bool())
+			.RuleFor(e => e.Usecrmformforemail, fake => fake.Random.Bool())
+			.RuleFor(e => e.Usecrmformfortask, fake => fake.Random.Bool())
+			.RuleFor(e => e.Useimagestrips, fake => fake.Random.Bool())
+			.RuleFor(e => e.Userprofile, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Versionnumber, fake => fake.Random.Int())
+			.RuleFor(e => e.VisualizationPaneLayout, fake => fake.PickRandom<UserSettings.eVisualizationPaneLayout>())
+			.RuleFor(e => e.Workdaystarttime, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Workdaystoptime, fake => fake.Lorem.Word());
+			return faker.Generate();
+		}
+		#endregion
+	}
+}
+

@@ -1,0 +1,124 @@
+<ImportExportXml version="9.1.13.12" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="OnPremise" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SolutionManifest>
+    <UniqueName>PentaWorkScheduler</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="PentaWork Scheduler" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="0.10.0 GG: Add depth reset in runs&#xA;0.9.0 GG: Remove Entity Update&#xA;0.8.0 GG: Add Service Plugins&#xA;0.7.0 GG: Add Penta Schedule Runs and Paging&#xA;0.6.1 GG: Remove Service Plugin Log field from auditing&#xA;0.6.0 GG: Add Scheduler Plugin Service Support&#xA;0.5.3 GG: Change NextDate Calculation&#xA;0.5.2 GG: Fix views &amp; add Plugin Steps" languagecode="1033" />
+    </Descriptions>
+    <Version>0.10.2</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>pentaworksolutions</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="PentaWork Solutions GmbH &amp; Co. KG" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions />
+      <EMailAddress>support@pentawork.de</EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>pw</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>26689</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="pw_penta_schedule_run" behavior="0" />
+      <RootComponent type="1" schemaName="pw_schedule" behavior="0" />
+      <RootComponent type="1" schemaName="pw_scheduler_plugin_virt" behavior="0" />
+      <RootComponent type="1" schemaName="workflow" behavior="2" />
+      <RootComponent type="9" schemaName="pw_frequency" behavior="0" />
+      <RootComponent type="9" schemaName="pw_schedule_type" behavior="0" />
+      <RootComponent type="29" id="{27f250d4-04b9-4554-83e4-cf94b7866b38}" behavior="0" />
+      <RootComponent type="29" id="{3c08a262-9138-ec11-a82a-0022485b751f}" behavior="0" />
+      <RootComponent type="29" id="{41fb3e44-8938-ec11-a82a-0022485b751f}" behavior="0" />
+      <RootComponent type="29" id="{54ed1035-de37-ec11-a829-0022485b751f}" behavior="0" />
+      <RootComponent type="29" id="{732bcd8c-0a5f-ec11-a836-0022485b751f}" behavior="0" />
+      <RootComponent type="29" id="{a564ff0d-d7c3-4d7c-86b9-cad2e907cdde}" behavior="0" />
+      <RootComponent type="29" id="{f466a297-1c63-ec11-a838-0022485b751f}" behavior="0" />
+      <RootComponent type="29" id="{f5c3a82c-9138-ec11-a82a-0022485b751f}" behavior="0" />
+      <RootComponent type="60" id="{648544ab-87cd-4624-8ec8-577aa52120bd}" behavior="0" />
+      <RootComponent type="60" id="{fc63d5d1-679d-4ba6-9eaa-f46f9d422b09}" behavior="0" />
+      <RootComponent type="61" schemaName="pw_icon_stopwatch_16x16" behavior="0" />
+      <RootComponent type="61" schemaName="pw_icon_stopwatch_32x32" behavior="0" />
+      <RootComponent type="61" schemaName="pw_icon_stopwatch_64x64" behavior="0" />
+      <RootComponent type="61" schemaName="pw_icon_stopwatch_area" behavior="0" />
+      <RootComponent type="61" schemaName="pw_icon_stopwatch_svg" behavior="0" />
+      <RootComponent type="91" id="{81cd8471-6943-4e97-8b8f-b0f209808906}" schemaName="PentaWork.Xrm.Scheduler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6f5c45728591187e" behavior="0" />
+      <RootComponent type="92" id="{1ea103a6-a63c-ec11-a82f-0022485b751f}" behavior="0" />
+      <RootComponent type="92" id="{66e79ebb-a63c-ec11-a82f-0022485b751f}" behavior="0" />
+      <RootComponent type="92" id="{b8ac6298-a57d-ec11-a843-0022485b751f}" behavior="0" />
+      <RootComponent type="92" id="{d27c4acf-a23b-ec11-a82c-0022485b751f}" behavior="0" />
+      <RootComponent type="92" id="{f328932e-a33b-ec11-a82c-0022485b751f}" behavior="0" />
+      <RootComponent type="95" id="{331e9dc6-245f-ec11-a836-0022485b751f}" behavior="0" />
+      <RootComponent type="95" id="{7bccad37-e7d1-ec11-a84d-0022485b751f}" behavior="0" />
+      <RootComponent type="183" id="{654915e6-f262-ec11-a838-0022485b751f}" schemaName="PentaSchedulerService Plugin Source" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required key="0" type="181" schemaName="OData v4 Data Provider" displayName="OData v4 Data Provider" solution="ODatav4DataProvider (9.0.0.171)" id="{a17be158-e9dd-e611-80d3-00155da29216}" />
+        <Dependent key="1" type="183" schemaName="PentaSchedulerService Plugin Source" displayName="PentaSchedulerService Plugin Source" id="{654915e6-f262-ec11-a838-0022485b751f}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="0" type="181" schemaName="OData v4 Data Provider" displayName="OData v4 Data Provider" solution="ODatav4DataProvider (9.0.0.171)" id="{a17be158-e9dd-e611-80d3-00155da29216}" />
+        <Dependent key="2" type="1" schemaName="pw_scheduler_plugin_virt" displayName="Penta Scheduler Plugin" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>
