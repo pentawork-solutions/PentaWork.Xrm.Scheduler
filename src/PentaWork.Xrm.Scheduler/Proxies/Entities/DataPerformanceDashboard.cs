@@ -108,19 +108,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// estimatedoptimizationimpact
+		///
+		/// Precision: 2
+		/// MaxValue: 1000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Estimated Optimization Impact")]
 		[AttributeLogicalName("estimatedoptimizationimpact")]
 		public decimal? EstimatedOptimizationImpact
 		{	
 			get { return GetAttributeValue<decimal?>("estimatedoptimizationimpact"); }
-			set
-			{ 
-				if(value == EstimatedOptimizationImpact) return;
-				SetAttributeValue("estimatedoptimizationimpact", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == EstimatedOptimizationImpact) return;
+				SetAttributeValue("estimatedoptimizationimpact", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// executionperiod
         /// </summary>
@@ -168,49 +174,67 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// maxtime
+		///
+		/// Precision: 2
+		/// MaxValue: 1000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Max Time")]
 		[AttributeLogicalName("maxtime")]
 		public decimal? MaxTime
 		{	
 			get { return GetAttributeValue<decimal?>("maxtime"); }
-			set
-			{ 
-				if(value == MaxTime) return;
-				SetAttributeValue("maxtime", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == MaxTime) return;
+				SetAttributeValue("maxtime", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// mediantime
+		///
+		/// Precision: 2
+		/// MaxValue: 1000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Median Time")]
 		[AttributeLogicalName("mediantime")]
 		public decimal? MedianTime
 		{	
 			get { return GetAttributeValue<decimal?>("mediantime"); }
-			set
-			{ 
-				if(value == MedianTime) return;
-				SetAttributeValue("mediantime", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == MedianTime) return;
+				SetAttributeValue("mediantime", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// mintime
+		///
+		/// Precision: 2
+		/// MaxValue: 1000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Min Time")]
 		[AttributeLogicalName("mintime")]
 		public decimal? MinTime
 		{	
 			get { return GetAttributeValue<decimal?>("mintime"); }
-			set
-			{ 
-				if(value == MinTime) return;
-				SetAttributeValue("mintime", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == MinTime) return;
+				SetAttributeValue("mintime", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// operation
         /// </summary>
@@ -243,19 +267,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// optimizationstorage
+		///
+		/// Precision: 2
+		/// MaxValue: 1000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Optimization Storage")]
 		[AttributeLogicalName("optimizationstorage")]
 		public decimal? OptimizationStorage
 		{	
 			get { return GetAttributeValue<decimal?>("optimizationstorage"); }
-			set
-			{ 
-				if(value == OptimizationStorage) return;
-				SetAttributeValue("optimizationstorage", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == OptimizationStorage) return;
+				SetAttributeValue("optimizationstorage", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// organizationid
         /// </summary>
@@ -303,19 +333,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// weight
+		///
+		/// Precision: 2
+		/// MaxValue: 1000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Weight")]
 		[AttributeLogicalName("weight")]
 		public decimal? Weight
 		{	
 			get { return GetAttributeValue<decimal?>("weight"); }
-			set
-			{ 
-				if(value == Weight) return;
-				SetAttributeValue("weight", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == Weight) return;
+				SetAttributeValue("weight", decimalValue);  
 			}
-		}	
-			
+		}
+
 		#endregion	
 
 		#region Relations

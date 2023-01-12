@@ -172,21 +172,31 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// exchangerate
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: 0.0000000001
         /// </summary>
 		[DisplayName("Exchange Rate")]
 		[AttributeLogicalName("exchangerate")]
 		public decimal? ExchangeRate
 		{	
 			get { return GetAttributeValue<decimal?>("exchangerate"); }
-			set
-			{ 
-				if(value == ExchangeRate) return;
-				SetAttributeValue("exchangerate", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == ExchangeRate) return;
+				SetAttributeValue("exchangerate", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// firsthalf
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("firsthalf")]
 		[AttributeLogicalName("firsthalf")]
@@ -194,11 +204,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("firsthalf")?.Value; }
 			set 
-			{ 
-				if(value == Firsthalf) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Firsthalf) return;
 				SetAttributeValue("firsthalf", moneyValue);  
 			}
 		}
@@ -385,6 +399,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// secondhalf
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("secondhalf")]
 		[AttributeLogicalName("secondhalf")]
@@ -392,11 +410,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("secondhalf")?.Value; }
 			set 
-			{ 
-				if(value == Secondhalf) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Secondhalf) return;
 				SetAttributeValue("secondhalf", moneyValue);  
 			}
 		}

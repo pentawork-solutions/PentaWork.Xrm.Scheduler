@@ -172,19 +172,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// exchangerate
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: 0.0000000001
         /// </summary>
 		[DisplayName("ExchangeRate")]
 		[AttributeLogicalName("exchangerate")]
 		public decimal? ExchangeRate
 		{	
 			get { return GetAttributeValue<decimal?>("exchangerate"); }
-			set
-			{ 
-				if(value == ExchangeRate) return;
-				SetAttributeValue("exchangerate", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == ExchangeRate) return;
+				SetAttributeValue("exchangerate", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// expirationdate
         /// </summary>
@@ -836,19 +842,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// rating
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("Rating")]
 		[AttributeLogicalName("rating")]
 		public decimal? Rating
 		{	
 			get { return GetAttributeValue<decimal?>("rating"); }
-			set
-			{ 
-				if(value == Rating) return;
-				SetAttributeValue("rating", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == Rating) return;
+				SetAttributeValue("rating", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// rating_count
         /// </summary>
@@ -896,19 +908,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// rating_sum
+		///
+		/// Precision: 2
+		/// MaxValue: 1000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Rating(sum)")]
 		[AttributeLogicalName("rating_sum")]
 		public decimal? Ratingsum
 		{	
 			get { return GetAttributeValue<decimal?>("rating_sum"); }
-			set
-			{ 
-				if(value == Ratingsum) return;
-				SetAttributeValue("rating_sum", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == Ratingsum) return;
+				SetAttributeValue("rating_sum", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// readyforreview
         /// </summary>

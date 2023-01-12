@@ -142,19 +142,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// exchangerate
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: 0.0000000001
         /// </summary>
 		[DisplayName("Exchange Rate")]
 		[AttributeLogicalName("exchangerate")]
 		public decimal? ExchangeRate
 		{	
 			get { return GetAttributeValue<decimal?>("exchangerate"); }
-			set
-			{ 
-				if(value == ExchangeRate) return;
-				SetAttributeValue("exchangerate", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == ExchangeRate) return;
+				SetAttributeValue("exchangerate", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// importsequencenumber
         /// </summary>
@@ -832,69 +838,69 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		public enum eType
 		{	
 		
-			[Label("Knowledge Article Template")]
-			[Description(@"Organizational Knowledge Article Template for Internal and external creation of Knowledge Articles.")]
-			KnowledgeArticleTemplate = 10047, 
-		
 			[Label("Campaign Activity")]
 			[Description(@"Task performed, or to be performed, by a user for planning or running a campaign.")]
 			CampaignActivity = 4402, 
-		
-			[Label("Task")]
-			[Description(@"Generic activity representing work needed to be done.")]
-			Task = 4212, 
-		
-			[Label("Email")]
-			[Description(@"Activity that is delivered using email protocols.")]
-			Email = 4202, 
-		
-			[Label("Case")]
-			[Description(@"Service request case associated with a contract.")]
-			Case = 112, 
-		
-			[Label("Service Activity")]
-			[Description(@"Activity offered by the organization to satisfy its customer's needs. Each service activity includes date, time, duration, and required resources.")]
-			ServiceActivity = 4214, 
-		
-			[Label("Campaign Response")]
-			[Description(@"Response from an existing or a potential new customer for a campaign.")]
-			CampaignResponse = 4401, 
-		
-			[Label("Quick Campaign")]
-			[Description(@"System operation used to perform lengthy and asynchronous operations on large data sets, such as distributing a campaign activity or quick campaign.")]
-			QuickCampaign = 4406, 
-		
-			[Label("Social Activity")]
-			[Description(@"For internal use only.")]
-			SocialActivity = 4216, 
-		
-			[Label("Knowledge Article")]
-			[Description(@"Organizational knowledge for internal and external use.")]
-			KnowledgeArticle = 9953, 
-		
-			[Label("Fax")]
-			[Description(@"Activity that tracks call outcome and number of pages for a fax and optionally stores an electronic copy of the document.")]
-			Fax = 4204, 
-		
-			[Label("Appointment")]
-			[Description(@"Commitment representing a time interval with start/end times and duration.")]
-			Appointment = 4201, 
-		
-			[Label("Recurring Appointment")]
-			[Description(@"The Master appointment of a recurring appointment series.")]
-			RecurringAppointment = 4251, 
 		
 			[Label("Phone Call")]
 			[Description(@"Activity to track a telephone call.")]
 			PhoneCall = 4210, 
 		
+			[Label("Recurring Appointment")]
+			[Description(@"The Master appointment of a recurring appointment series.")]
+			RecurringAppointment = 4251, 
+		
+			[Label("Quick Campaign")]
+			[Description(@"System operation used to perform lengthy and asynchronous operations on large data sets, such as distributing a campaign activity or quick campaign.")]
+			QuickCampaign = 4406, 
+		
+			[Label("Appointment")]
+			[Description(@"Commitment representing a time interval with start/end times and duration.")]
+			Appointment = 4201, 
+		
+			[Label("Social Activity")]
+			[Description(@"For internal use only.")]
+			SocialActivity = 4216, 
+		
 			[Label("Letter")]
 			[Description(@"Activity that tracks the delivery of a letter. The activity can contain the electronic copy of the letter.")]
 			Letter = 4207, 
 		
+			[Label("Task")]
+			[Description(@"Generic activity representing work needed to be done.")]
+			Task = 4212, 
+		
 			[Label("Activity")]
 			[Description(@"Task performed, or to be performed, by a user. An activity is any action for which an entry can be made on a calendar.")]
 			Activity = 4200, 
+		
+			[Label("Email")]
+			[Description(@"Activity that is delivered using email protocols.")]
+			Email = 4202, 
+		
+			[Label("Knowledge Article Template")]
+			[Description(@"Organizational Knowledge Article Template for Internal and external creation of Knowledge Articles.")]
+			KnowledgeArticleTemplate = 10047, 
+		
+			[Label("Fax")]
+			[Description(@"Activity that tracks call outcome and number of pages for a fax and optionally stores an electronic copy of the document.")]
+			Fax = 4204, 
+		
+			[Label("Service Activity")]
+			[Description(@"Activity offered by the organization to satisfy its customer's needs. Each service activity includes date, time, duration, and required resources.")]
+			ServiceActivity = 4214, 
+		
+			[Label("Knowledge Article")]
+			[Description(@"Organizational knowledge for internal and external use.")]
+			KnowledgeArticle = 9953, 
+		
+			[Label("Campaign Response")]
+			[Description(@"Response from an existing or a potential new customer for a campaign.")]
+			CampaignResponse = 4401, 
+		
+			[Label("Case")]
+			[Description(@"Service request case associated with a contract.")]
+			Case = 112, 
 		}
 		
 		public enum eStatus

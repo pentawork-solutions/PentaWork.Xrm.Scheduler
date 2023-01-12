@@ -154,19 +154,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// requiredcomponentintroducedversion
+		///
+		/// Precision: 2
+		/// MaxValue: 1000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("requiredcomponentintroducedversion")]
 		[AttributeLogicalName("requiredcomponentintroducedversion")]
 		public double? Requiredcomponentintroducedversion
 		{	
 			get { return GetAttributeValue<double?>("requiredcomponentintroducedversion"); }
-			set
-			{ 
-				if(value == Requiredcomponentintroducedversion) return;
-				SetAttributeValue("requiredcomponentintroducedversion", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 2);
+				if(doubleValue == Requiredcomponentintroducedversion) return;
+				SetAttributeValue("requiredcomponentintroducedversion", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// requiredcomponentnodeid
         /// </summary>

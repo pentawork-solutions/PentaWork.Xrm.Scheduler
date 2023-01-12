@@ -22,19 +22,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		#region Attributes
 		/// <summary>
         /// actualdecimal
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("Actual (Decimal)")]
 		[AttributeLogicalName("actualdecimal")]
 		public decimal? ActualDecimal
 		{	
 			get { return GetAttributeValue<decimal?>("actualdecimal"); }
-			set
-			{ 
-				if(value == ActualDecimal) return;
-				SetAttributeValue("actualdecimal", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == ActualDecimal) return;
+				SetAttributeValue("actualdecimal", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// actualinteger
         /// </summary>
@@ -52,6 +58,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// actualmoney
+		///
+		/// Precision: 4
+		/// MaxValue: 922337203685477
+		/// MinValue: -922337203685477
         /// </summary>
 		[DisplayName("Actual (Money)")]
 		[AttributeLogicalName("actualmoney")]
@@ -59,11 +69,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("actualmoney")?.Value; }
 			set 
-			{ 
-				if(value == ActualMoney) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 4);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == ActualMoney) return;
 				SetAttributeValue("actualmoney", moneyValue);  
 			}
 		}
@@ -108,19 +122,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 		/// <summary>
         /// computedtargetasoftodaydecimal
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Today's Target (Decimal)")]
 		[AttributeLogicalName("computedtargetasoftodaydecimal")]
 		public decimal? TodaysTargetDecimal
 		{	
 			get { return GetAttributeValue<decimal?>("computedtargetasoftodaydecimal"); }
-			set
-			{ 
-				if(value == TodaysTargetDecimal) return;
-				SetAttributeValue("computedtargetasoftodaydecimal", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == TodaysTargetDecimal) return;
+				SetAttributeValue("computedtargetasoftodaydecimal", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// computedtargetasoftodayinteger
         /// </summary>
@@ -138,6 +158,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// computedtargetasoftodaymoney
+		///
+		/// Precision: 4
+		/// MaxValue: 922337203685477
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Today's Target (Money)")]
 		[AttributeLogicalName("computedtargetasoftodaymoney")]
@@ -145,30 +169,40 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("computedtargetasoftodaymoney")?.Value; }
 			set 
-			{ 
-				if(value == TodaysTargetMoney) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 4);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == TodaysTargetMoney) return;
 				SetAttributeValue("computedtargetasoftodaymoney", moneyValue);  
 			}
 		}
 
 		/// <summary>
         /// computedtargetasoftodaypercentageachieved
+		///
+		/// Precision: 0
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Today's Target (Percentage Achieved)")]
 		[AttributeLogicalName("computedtargetasoftodaypercentageachieved")]
 		public decimal? TodaysTargetPercentageAchieved
 		{	
 			get { return GetAttributeValue<decimal?>("computedtargetasoftodaypercentageachieved"); }
-			set
-			{ 
-				if(value == TodaysTargetPercentageAchieved) return;
-				SetAttributeValue("computedtargetasoftodaypercentageachieved", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 0);
+				if(decimalValue == TodaysTargetPercentageAchieved) return;
+				SetAttributeValue("computedtargetasoftodaypercentageachieved", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// consideronlygoalownersrecords
         /// </summary>
@@ -276,19 +310,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// customrollupfielddecimal
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("Custom Rollup Field (Decimal)")]
 		[AttributeLogicalName("customrollupfielddecimal")]
 		public decimal? CustomRollupFieldDecimal
 		{	
 			get { return GetAttributeValue<decimal?>("customrollupfielddecimal"); }
-			set
-			{ 
-				if(value == CustomRollupFieldDecimal) return;
-				SetAttributeValue("customrollupfielddecimal", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == CustomRollupFieldDecimal) return;
+				SetAttributeValue("customrollupfielddecimal", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// customrollupfieldinteger
         /// </summary>
@@ -306,6 +346,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// customrollupfieldmoney
+		///
+		/// Precision: 4
+		/// MaxValue: 922337203685477
+		/// MinValue: -922337203685477
         /// </summary>
 		[DisplayName("Custom Rollup Field (Money)")]
 		[AttributeLogicalName("customrollupfieldmoney")]
@@ -313,11 +357,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("customrollupfieldmoney")?.Value; }
 			set 
-			{ 
-				if(value == CustomRollupFieldMoney) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 4);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == CustomRollupFieldMoney) return;
 				SetAttributeValue("customrollupfieldmoney", moneyValue);  
 			}
 		}
@@ -399,19 +447,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// exchangerate
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: 0.0000000001
         /// </summary>
 		[DisplayName("Exchange Rate")]
 		[AttributeLogicalName("exchangerate")]
 		public decimal? ExchangeRate
 		{	
 			get { return GetAttributeValue<decimal?>("exchangerate"); }
-			set
-			{ 
-				if(value == ExchangeRate) return;
-				SetAttributeValue("exchangerate", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == ExchangeRate) return;
+				SetAttributeValue("exchangerate", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// fiscalperiod
         /// </summary>
@@ -606,19 +660,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// inprogressdecimal
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("In-progress (Decimal)")]
 		[AttributeLogicalName("inprogressdecimal")]
 		public decimal? InprogressDecimal
 		{	
 			get { return GetAttributeValue<decimal?>("inprogressdecimal"); }
-			set
-			{ 
-				if(value == InprogressDecimal) return;
-				SetAttributeValue("inprogressdecimal", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == InprogressDecimal) return;
+				SetAttributeValue("inprogressdecimal", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// inprogressinteger
         /// </summary>
@@ -636,6 +696,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// inprogressmoney
+		///
+		/// Precision: 4
+		/// MaxValue: 922337203685477
+		/// MinValue: -922337203685477
         /// </summary>
 		[DisplayName("In-progress (Money)")]
 		[AttributeLogicalName("inprogressmoney")]
@@ -643,11 +707,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("inprogressmoney")?.Value; }
 			set 
-			{ 
-				if(value == InprogressMoney) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 4);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == InprogressMoney) return;
 				SetAttributeValue("inprogressmoney", moneyValue);  
 			}
 		}
@@ -1014,19 +1082,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// percentage
+		///
+		/// Precision: 0
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("Percentage Achieved")]
 		[AttributeLogicalName("percentage")]
 		public decimal? PercentageAchieved
 		{	
 			get { return GetAttributeValue<decimal?>("percentage"); }
-			set
-			{ 
-				if(value == PercentageAchieved) return;
-				SetAttributeValue("percentage", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 0);
+				if(decimalValue == PercentageAchieved) return;
+				SetAttributeValue("percentage", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// rolluperrorcode
         /// </summary>
@@ -1375,19 +1449,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 		/// <summary>
         /// stretchtargetdecimal
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Stretch Target (Decimal)")]
 		[AttributeLogicalName("stretchtargetdecimal")]
 		public decimal? StretchTargetDecimal
 		{	
 			get { return GetAttributeValue<decimal?>("stretchtargetdecimal"); }
-			set
-			{ 
-				if(value == StretchTargetDecimal) return;
-				SetAttributeValue("stretchtargetdecimal", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == StretchTargetDecimal) return;
+				SetAttributeValue("stretchtargetdecimal", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// stretchtargetinteger
         /// </summary>
@@ -1405,6 +1485,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// stretchtargetmoney
+		///
+		/// Precision: 4
+		/// MaxValue: 922337203685477
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Stretch Target (Money)")]
 		[AttributeLogicalName("stretchtargetmoney")]
@@ -1412,11 +1496,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("stretchtargetmoney")?.Value; }
 			set 
-			{ 
-				if(value == StretchTargetMoney) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 4);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == StretchTargetMoney) return;
 				SetAttributeValue("stretchtargetmoney", moneyValue);  
 			}
 		}
@@ -1438,19 +1526,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// targetdecimal
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Target (Decimal)")]
 		[AttributeLogicalName("targetdecimal")]
 		public decimal? TargetDecimal
 		{	
 			get { return GetAttributeValue<decimal?>("targetdecimal"); }
-			set
-			{ 
-				if(value == TargetDecimal) return;
-				SetAttributeValue("targetdecimal", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == TargetDecimal) return;
+				SetAttributeValue("targetdecimal", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// targetinteger
         /// </summary>
@@ -1468,6 +1562,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// targetmoney
+		///
+		/// Precision: 4
+		/// MaxValue: 922337203685477
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Target (Money)")]
 		[AttributeLogicalName("targetmoney")]
@@ -1475,11 +1573,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("targetmoney")?.Value; }
 			set 
-			{ 
-				if(value == TargetMoney) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 4);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == TargetMoney) return;
 				SetAttributeValue("targetmoney", moneyValue);  
 			}
 		}

@@ -172,19 +172,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// exchangerate
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: 0.0000000001
         /// </summary>
 		[DisplayName("Exchange Rate")]
 		[AttributeLogicalName("exchangerate")]
 		public decimal? ExchangeRate
 		{	
 			get { return GetAttributeValue<decimal?>("exchangerate"); }
-			set
-			{ 
-				if(value == ExchangeRate) return;
-				SetAttributeValue("exchangerate", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == ExchangeRate) return;
+				SetAttributeValue("exchangerate", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// fiscalperiodtype
         /// </summary>
@@ -307,6 +313,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// period1
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("period1")]
 		[AttributeLogicalName("period1")]
@@ -314,17 +324,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("period1")?.Value; }
 			set 
-			{ 
-				if(value == Period1) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Period1) return;
 				SetAttributeValue("period1", moneyValue);  
 			}
 		}
 
 		/// <summary>
         /// period10
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("period10")]
 		[AttributeLogicalName("period10")]
@@ -332,17 +350,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("period10")?.Value; }
 			set 
-			{ 
-				if(value == Period10) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Period10) return;
 				SetAttributeValue("period10", moneyValue);  
 			}
 		}
 
 		/// <summary>
         /// period11
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("period11")]
 		[AttributeLogicalName("period11")]
@@ -350,17 +376,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("period11")?.Value; }
 			set 
-			{ 
-				if(value == Period11) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Period11) return;
 				SetAttributeValue("period11", moneyValue);  
 			}
 		}
 
 		/// <summary>
         /// period12
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("period12")]
 		[AttributeLogicalName("period12")]
@@ -368,17 +402,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("period12")?.Value; }
 			set 
-			{ 
-				if(value == Period12) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Period12) return;
 				SetAttributeValue("period12", moneyValue);  
 			}
 		}
 
 		/// <summary>
         /// period13
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("period13")]
 		[AttributeLogicalName("period13")]
@@ -386,17 +428,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("period13")?.Value; }
 			set 
-			{ 
-				if(value == Period13) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Period13) return;
 				SetAttributeValue("period13", moneyValue);  
 			}
 		}
 
 		/// <summary>
         /// period2
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("period2")]
 		[AttributeLogicalName("period2")]
@@ -404,17 +454,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("period2")?.Value; }
 			set 
-			{ 
-				if(value == Period2) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Period2) return;
 				SetAttributeValue("period2", moneyValue);  
 			}
 		}
 
 		/// <summary>
         /// period3
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("period3")]
 		[AttributeLogicalName("period3")]
@@ -422,17 +480,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("period3")?.Value; }
 			set 
-			{ 
-				if(value == Period3) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Period3) return;
 				SetAttributeValue("period3", moneyValue);  
 			}
 		}
 
 		/// <summary>
         /// period4
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("period4")]
 		[AttributeLogicalName("period4")]
@@ -440,17 +506,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("period4")?.Value; }
 			set 
-			{ 
-				if(value == Period4) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Period4) return;
 				SetAttributeValue("period4", moneyValue);  
 			}
 		}
 
 		/// <summary>
         /// period5
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("period5")]
 		[AttributeLogicalName("period5")]
@@ -458,17 +532,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("period5")?.Value; }
 			set 
-			{ 
-				if(value == Period5) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Period5) return;
 				SetAttributeValue("period5", moneyValue);  
 			}
 		}
 
 		/// <summary>
         /// period6
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("period6")]
 		[AttributeLogicalName("period6")]
@@ -476,17 +558,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("period6")?.Value; }
 			set 
-			{ 
-				if(value == Period6) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Period6) return;
 				SetAttributeValue("period6", moneyValue);  
 			}
 		}
 
 		/// <summary>
         /// period7
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("period7")]
 		[AttributeLogicalName("period7")]
@@ -494,17 +584,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("period7")?.Value; }
 			set 
-			{ 
-				if(value == Period7) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Period7) return;
 				SetAttributeValue("period7", moneyValue);  
 			}
 		}
 
 		/// <summary>
         /// period8
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("period8")]
 		[AttributeLogicalName("period8")]
@@ -512,17 +610,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("period8")?.Value; }
 			set 
-			{ 
-				if(value == Period8) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Period8) return;
 				SetAttributeValue("period8", moneyValue);  
 			}
 		}
 
 		/// <summary>
         /// period9
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("period9")]
 		[AttributeLogicalName("period9")]
@@ -530,11 +636,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("period9")?.Value; }
 			set 
-			{ 
-				if(value == Period9) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Period9) return;
 				SetAttributeValue("period9", moneyValue);  
 			}
 		}

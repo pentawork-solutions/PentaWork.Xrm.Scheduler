@@ -277,19 +277,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// msdyn_articlerelevance
+		///
+		/// Precision: 2
+		/// MaxValue: 1000000000
+		/// MinValue: -1000000000
         /// </summary>
 		[DisplayName("Article relevance")]
 		[AttributeLogicalName("msdyn_articlerelevance")]
 		public double? ArticleRelevance
 		{	
 			get { return GetAttributeValue<double?>("msdyn_articlerelevance"); }
-			set
-			{ 
-				if(value == ArticleRelevance) return;
-				SetAttributeValue("msdyn_articlerelevance", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 2);
+				if(doubleValue == ArticleRelevance) return;
+				SetAttributeValue("msdyn_articlerelevance", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// msdyn_interactioncontext
         /// </summary>

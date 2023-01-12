@@ -225,19 +225,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// exchangerate
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: 0.0000000001
         /// </summary>
 		[DisplayName("Exchange Rate")]
 		[AttributeLogicalName("exchangerate")]
 		public decimal? ExchangeRate
 		{	
 			get { return GetAttributeValue<decimal?>("exchangerate"); }
-			set
-			{ 
-				if(value == ExchangeRate) return;
-				SetAttributeValue("exchangerate", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == ExchangeRate) return;
+				SetAttributeValue("exchangerate", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// fax
         /// </summary>
@@ -270,19 +276,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// latitude
+		///
+		/// Precision: 5
+		/// MaxValue: 90
+		/// MinValue: -90
         /// </summary>
 		[DisplayName("Latitude")]
 		[AttributeLogicalName("latitude")]
 		public double? Latitude
 		{	
 			get { return GetAttributeValue<double?>("latitude"); }
-			set
-			{ 
-				if(value == Latitude) return;
-				SetAttributeValue("latitude", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 5);
+				if(doubleValue == Latitude) return;
+				SetAttributeValue("latitude", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// leadaddressid
         /// </summary>
@@ -341,19 +353,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// longitude
+		///
+		/// Precision: 5
+		/// MaxValue: 180
+		/// MinValue: -180
         /// </summary>
 		[DisplayName("Longitude")]
 		[AttributeLogicalName("longitude")]
 		public double? Longitude
 		{	
 			get { return GetAttributeValue<double?>("longitude"); }
-			set
-			{ 
-				if(value == Longitude) return;
-				SetAttributeValue("longitude", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 5);
+				if(doubleValue == Longitude) return;
+				SetAttributeValue("longitude", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// modifiedby
         /// </summary>

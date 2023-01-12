@@ -288,19 +288,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// executiontimespan
+		///
+		/// Precision: 2
+		/// MaxValue: 1000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("ExecutionTimeSpan")]
 		[AttributeLogicalName("executiontimespan")]
 		public double? ExecutionTimeSpan
 		{	
 			get { return GetAttributeValue<double?>("executiontimespan"); }
-			set
-			{ 
-				if(value == ExecutionTimeSpan) return;
-				SetAttributeValue("executiontimespan", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 2);
+				if(doubleValue == ExecutionTimeSpan) return;
+				SetAttributeValue("executiontimespan", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// expanderstarttime
         /// </summary>

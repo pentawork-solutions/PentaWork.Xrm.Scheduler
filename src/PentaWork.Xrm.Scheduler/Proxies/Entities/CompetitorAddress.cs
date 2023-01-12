@@ -266,19 +266,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// latitude
+		///
+		/// Precision: 5
+		/// MaxValue: 90
+		/// MinValue: -90
         /// </summary>
 		[DisplayName("Latitude")]
 		[AttributeLogicalName("latitude")]
 		public double? Latitude
 		{	
 			get { return GetAttributeValue<double?>("latitude"); }
-			set
-			{ 
-				if(value == Latitude) return;
-				SetAttributeValue("latitude", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 5);
+				if(doubleValue == Latitude) return;
+				SetAttributeValue("latitude", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// line1
         /// </summary>
@@ -326,19 +332,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// longitude
+		///
+		/// Precision: 5
+		/// MaxValue: 180
+		/// MinValue: -180
         /// </summary>
 		[DisplayName("Longitude")]
 		[AttributeLogicalName("longitude")]
 		public double? Longitude
 		{	
 			get { return GetAttributeValue<double?>("longitude"); }
-			set
-			{ 
-				if(value == Longitude) return;
-				SetAttributeValue("longitude", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 5);
+				if(doubleValue == Longitude) return;
+				SetAttributeValue("longitude", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// modifiedby
         /// </summary>

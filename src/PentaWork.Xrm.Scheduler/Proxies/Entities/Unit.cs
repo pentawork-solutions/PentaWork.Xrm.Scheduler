@@ -427,19 +427,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// quantity
+		///
+		/// Precision: 5
+		/// MaxValue: 10000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Quantity")]
 		[AttributeLogicalName("quantity")]
 		public decimal? Quantity
 		{	
 			get { return GetAttributeValue<decimal?>("quantity"); }
-			set
-			{ 
-				if(value == Quantity) return;
-				SetAttributeValue("quantity", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 5);
+				if(decimalValue == Quantity) return;
+				SetAttributeValue("quantity", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// timezoneruleversionnumber
         /// </summary>

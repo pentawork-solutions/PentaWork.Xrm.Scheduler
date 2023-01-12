@@ -396,6 +396,21 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		}	
 			
 		/// <summary>
+        /// pw_email_on_error
+        /// </summary>
+		[DisplayName("Email on error")]
+		[AttributeLogicalName("pw_email_on_error")]
+		public bool? EmailOnError
+		{	
+			get { return GetAttributeValue<bool?>("pw_email_on_error"); }
+			set
+			{ 
+				if(value == EmailOnError) return;
+				SetAttributeValue("pw_email_on_error", value);
+			}
+		}	
+			
+		/// <summary>
         /// pw_end_datetime
         /// </summary>
 		[DisplayName("End DateTime")]
@@ -407,6 +422,36 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			{ 
 				if(value == EndDateTime) return;
 				SetAttributeValue("pw_end_datetime", value);
+			}
+		}	
+			
+		/// <summary>
+        /// pw_error_email_address
+        /// </summary>
+		[DisplayName("Error Email Address")]
+		[AttributeLogicalName("pw_error_email_address")]
+		public string ErrorEmailAddress
+		{	
+			get { return GetAttributeValue<string>("pw_error_email_address"); }
+			set
+			{ 
+				if(value == ErrorEmailAddress) return;
+				SetAttributeValue("pw_error_email_address", value);
+			}
+		}	
+			
+		/// <summary>
+        /// pw_error_threshold
+        /// </summary>
+		[DisplayName("Error Threshold")]
+		[AttributeLogicalName("pw_error_threshold")]
+		public int? ErrorThreshold
+		{	
+			get { return GetAttributeValue<int?>("pw_error_threshold"); }
+			set
+			{ 
+				if(value == ErrorThreshold) return;
+				SetAttributeValue("pw_error_threshold", value);
 			}
 		}	
 			
@@ -565,6 +610,21 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			{ 
 				if(value == PageSize) return;
 				SetAttributeValue("pw_page_size", value);
+			}
+		}	
+			
+		/// <summary>
+        /// pw_retry_on_error
+        /// </summary>
+		[DisplayName("Retry on error")]
+		[AttributeLogicalName("pw_retry_on_error")]
+		public bool? RetryOnError
+		{	
+			get { return GetAttributeValue<bool?>("pw_retry_on_error"); }
+			set
+			{ 
+				if(value == RetryOnError) return;
+				SetAttributeValue("pw_retry_on_error", value);
 			}
 		}	
 			
@@ -948,6 +1008,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			[Description(@"")]
 			Active_Active = 1, 
 		
+			[Label("Retry")]
+			[Description(@"")]
+			Retry_Active = 266890003, 
+		
 			[Label("Ended")]
 			[Description(@"")]
 			Ended_Active = 266890001, 
@@ -1061,8 +1125,17 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			/// <summary>pw_actionname</summary>
 			public const string PwActionname = "pw_actionname";
 
+			/// <summary>pw_email_on_error</summary>
+			public const string EmailOnError = "pw_email_on_error";
+
 			/// <summary>pw_end_datetime</summary>
 			public const string EndDateTime = "pw_end_datetime";
+
+			/// <summary>pw_error_email_address</summary>
+			public const string ErrorEmailAddress = "pw_error_email_address";
+
+			/// <summary>pw_error_threshold</summary>
+			public const string ErrorThreshold = "pw_error_threshold";
 
 			/// <summary>pw_fetch_xml</summary>
 			public const string FetchXML = "pw_fetch_xml";
@@ -1093,6 +1166,9 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 			/// <summary>pw_page_size</summary>
 			public const string PageSize = "pw_page_size";
+
+			/// <summary>pw_retry_on_error</summary>
+			public const string RetryOnError = "pw_retry_on_error";
 
 			/// <summary>pw_schedule_type</summary>
 			public const string ScheduleType = "pw_schedule_type";

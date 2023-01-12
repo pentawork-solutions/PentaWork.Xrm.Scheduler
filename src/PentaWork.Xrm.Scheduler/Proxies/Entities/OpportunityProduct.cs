@@ -22,6 +22,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		#region Attributes
 		/// <summary>
         /// baseamount
+		///
+		/// Precision: 2
+		/// MaxValue: 922337203685477
+		/// MinValue: -922337203685477
         /// </summary>
 		[DisplayName("Amount")]
 		[AttributeLogicalName("baseamount")]
@@ -29,11 +33,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("baseamount")?.Value; }
 			set 
-			{ 
-				if(value == Amount) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Amount) return;
 				SetAttributeValue("baseamount", moneyValue);  
 			}
 		}
@@ -205,21 +213,31 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// exchangerate
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: 0.0000000001
         /// </summary>
 		[DisplayName("Exchange Rate")]
 		[AttributeLogicalName("exchangerate")]
 		public decimal? ExchangeRate
 		{	
 			get { return GetAttributeValue<decimal?>("exchangerate"); }
-			set
-			{ 
-				if(value == ExchangeRate) return;
-				SetAttributeValue("exchangerate", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == ExchangeRate) return;
+				SetAttributeValue("exchangerate", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// extendedamount
+		///
+		/// Precision: 2
+		/// MaxValue: 922337203685477
+		/// MinValue: -922337203685477
         /// </summary>
 		[DisplayName("Extended Amount")]
 		[AttributeLogicalName("extendedamount")]
@@ -227,11 +245,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("extendedamount")?.Value; }
 			set 
-			{ 
-				if(value == ExtendedAmount) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == ExtendedAmount) return;
 				SetAttributeValue("extendedamount", moneyValue);  
 			}
 		}
@@ -298,6 +320,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// manualdiscountamount
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Manual Discount Amount")]
 		[AttributeLogicalName("manualdiscountamount")]
@@ -305,11 +331,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("manualdiscountamount")?.Value; }
 			set 
-			{ 
-				if(value == ManualDiscountAmount) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == ManualDiscountAmount) return;
 				SetAttributeValue("manualdiscountamount", moneyValue);  
 			}
 		}
@@ -650,6 +680,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// priceperunit
+		///
+		/// Precision: 2
+		/// MaxValue: 922337203685477
+		/// MinValue: -922337203685477
         /// </summary>
 		[DisplayName("Price Per Unit")]
 		[AttributeLogicalName("priceperunit")]
@@ -657,11 +691,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("priceperunit")?.Value; }
 			set 
-			{ 
-				if(value == PricePerUnit) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == PricePerUnit) return;
 				SetAttributeValue("priceperunit", moneyValue);  
 			}
 		}
@@ -812,19 +850,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 		/// <summary>
         /// quantity
+		///
+		/// Precision: 5
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("Quantity")]
 		[AttributeLogicalName("quantity")]
 		public decimal? Quantity
 		{	
 			get { return GetAttributeValue<decimal?>("quantity"); }
-			set
-			{ 
-				if(value == Quantity) return;
-				SetAttributeValue("quantity", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 5);
+				if(decimalValue == Quantity) return;
+				SetAttributeValue("quantity", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// sequencenumber
         /// </summary>
@@ -865,6 +909,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 		/// <summary>
         /// tax
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000000
+		/// MinValue: -100000000000000
         /// </summary>
 		[DisplayName("Tax")]
 		[AttributeLogicalName("tax")]
@@ -872,11 +920,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("tax")?.Value; }
 			set 
-			{ 
-				if(value == Tax) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Tax) return;
 				SetAttributeValue("tax", moneyValue);  
 			}
 		}
@@ -988,6 +1040,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// volumediscountamount
+		///
+		/// Precision: 2
+		/// MaxValue: 922337203685477
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Volume Discount")]
 		[AttributeLogicalName("volumediscountamount")]
@@ -995,11 +1051,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("volumediscountamount")?.Value; }
 			set 
-			{ 
-				if(value == VolumeDiscount) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == VolumeDiscount) return;
 				SetAttributeValue("volumediscountamount", moneyValue);  
 			}
 		}

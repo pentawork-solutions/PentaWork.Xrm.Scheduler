@@ -52,19 +52,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// msdyn_componenttype
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("msdyn_componenttype")]
 		[AttributeLogicalName("msdyn_componenttype")]
 		public decimal? MsdynComponenttype
 		{	
 			get { return GetAttributeValue<decimal?>("msdyn_componenttype"); }
-			set
-			{ 
-				if(value == MsdynComponenttype) return;
-				SetAttributeValue("msdyn_componenttype", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == MsdynComponenttype) return;
+				SetAttributeValue("msdyn_componenttype", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// msdyn_componenttypename
         /// </summary>
@@ -738,19 +744,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// msdyn_total
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("msdyn_total")]
 		[AttributeLogicalName("msdyn_total")]
 		public decimal? MsdynTotal
 		{	
 			get { return GetAttributeValue<decimal?>("msdyn_total"); }
-			set
-			{ 
-				if(value == MsdynTotal) return;
-				SetAttributeValue("msdyn_total", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == MsdynTotal) return;
+				SetAttributeValue("msdyn_total", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// msdyn_typename
         /// </summary>

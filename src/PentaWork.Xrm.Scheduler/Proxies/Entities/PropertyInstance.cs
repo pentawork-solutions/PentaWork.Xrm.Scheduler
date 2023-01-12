@@ -183,19 +183,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 							/// <summary>
         /// exchangerate
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: 0.0000000001
         /// </summary>
 		[DisplayName("Exchange Rate")]
 		[AttributeLogicalName("exchangerate")]
 		public decimal? ExchangeRate
 		{	
 			get { return GetAttributeValue<decimal?>("exchangerate"); }
-			set
-			{ 
-				if(value == ExchangeRate) return;
-				SetAttributeValue("exchangerate", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == ExchangeRate) return;
+				SetAttributeValue("exchangerate", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// importsequencenumber
         /// </summary>
@@ -588,34 +594,46 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// valuedecimal
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("Decimal Value")]
 		[AttributeLogicalName("valuedecimal")]
 		public decimal? DecimalValue
 		{	
 			get { return GetAttributeValue<decimal?>("valuedecimal"); }
-			set
-			{ 
-				if(value == DecimalValue) return;
-				SetAttributeValue("valuedecimal", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == DecimalValue) return;
+				SetAttributeValue("valuedecimal", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// valuedouble
+		///
+		/// Precision: 5
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("Double Value")]
 		[AttributeLogicalName("valuedouble")]
 		public double? DoubleValue
 		{	
 			get { return GetAttributeValue<double?>("valuedouble"); }
-			set
-			{ 
-				if(value == DoubleValue) return;
-				SetAttributeValue("valuedouble", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 5);
+				if(doubleValue == DoubleValue) return;
+				SetAttributeValue("valuedouble", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// valueinteger
         /// </summary>

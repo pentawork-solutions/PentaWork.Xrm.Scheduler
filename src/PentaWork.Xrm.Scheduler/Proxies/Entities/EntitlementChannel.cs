@@ -191,19 +191,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// exchangerate
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: 0.0000000001
         /// </summary>
 		[DisplayName("Exchange Rate")]
 		[AttributeLogicalName("exchangerate")]
 		public decimal? ExchangeRate
 		{	
 			get { return GetAttributeValue<decimal?>("exchangerate"); }
-			set
-			{ 
-				if(value == ExchangeRate) return;
-				SetAttributeValue("exchangerate", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == ExchangeRate) return;
+				SetAttributeValue("exchangerate", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// importsequencenumber
         /// </summary>
@@ -491,19 +497,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// remainingterms
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("Remaining Terms")]
 		[AttributeLogicalName("remainingterms")]
 		public decimal? RemainingTerms
 		{	
 			get { return GetAttributeValue<decimal?>("remainingterms"); }
-			set
-			{ 
-				if(value == RemainingTerms) return;
-				SetAttributeValue("remainingterms", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == RemainingTerms) return;
+				SetAttributeValue("remainingterms", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// timezoneruleversionnumber
         /// </summary>
@@ -521,19 +533,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// totalterms
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Total Terms")]
 		[AttributeLogicalName("totalterms")]
 		public decimal? TotalTerms
 		{	
 			get { return GetAttributeValue<decimal?>("totalterms"); }
-			set
-			{ 
-				if(value == TotalTerms) return;
-				SetAttributeValue("totalterms", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == TotalTerms) return;
+				SetAttributeValue("totalterms", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// transactioncurrencyid
         /// </summary>

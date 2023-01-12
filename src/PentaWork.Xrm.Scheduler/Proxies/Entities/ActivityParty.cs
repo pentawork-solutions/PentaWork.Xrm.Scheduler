@@ -138,19 +138,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// effort
+		///
+		/// Precision: 2
+		/// MaxValue: 1000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Effort")]
 		[AttributeLogicalName("effort")]
 		public double? Effort
 		{	
 			get { return GetAttributeValue<double?>("effort"); }
-			set
-			{ 
-				if(value == Effort) return;
-				SetAttributeValue("effort", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 2);
+				if(doubleValue == Effort) return;
+				SetAttributeValue("effort", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// exchangeentryid
         /// </summary>

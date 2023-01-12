@@ -277,19 +277,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// exchangerate
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: 0.0000000001
         /// </summary>
 		[DisplayName("Exchange Rate")]
 		[AttributeLogicalName("exchangerate")]
 		public decimal? ExchangeRate
 		{	
 			get { return GetAttributeValue<decimal?>("exchangerate"); }
-			set
-			{ 
-				if(value == ExchangeRate) return;
-				SetAttributeValue("exchangerate", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == ExchangeRate) return;
+				SetAttributeValue("exchangerate", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// feedbackid
         /// </summary>
@@ -513,19 +519,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// normalizedrating
+		///
+		/// Precision: 2
+		/// MaxValue: 1000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("Normalized Rating")]
 		[AttributeLogicalName("normalizedrating")]
 		public decimal? NormalizedRating
 		{	
 			get { return GetAttributeValue<decimal?>("normalizedrating"); }
-			set
-			{ 
-				if(value == NormalizedRating) return;
-				SetAttributeValue("normalizedrating", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == NormalizedRating) return;
+				SetAttributeValue("normalizedrating", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// overriddencreatedon
         /// </summary>
