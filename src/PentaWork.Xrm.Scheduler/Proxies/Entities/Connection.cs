@@ -876,38 +876,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		public enum eTypeFrom
 		{	
 		
-			[Label("Contact")]
-			[Description(@"Person with whom a business unit has a relationship, such as customer, supplier, and colleague.")]
-			Contact = 2, 
-		
-			[Label("Activity")]
-			[Description(@"Task performed, or to be performed, by a user. An activity is any action for which an entry can be made on a calendar.")]
-			Activity = 4200, 
-		
-			[Label("Campaign")]
-			[Description(@"Container for campaign activities and responses, sales literature, products, and lists to create, plan, execute, and track the results of a specific marketing campaign through its life.")]
-			Campaign = 4400, 
-		
-			[Label("Social Profile")]
-			[Description(@"This entity is used to store social profile information of its associated account and contacts on different social channels.")]
-			SocialProfile = 99, 
-		
-			[Label("Account")]
-			[Description(@"Business that represents a customer or potential customer. The company that is billed in business transactions.")]
-			Account = 1, 
-		
-			[Label("Knowledge Article")]
-			[Description(@"Organizational knowledge for internal and external use.")]
-			KnowledgeArticle = 9953, 
-		
-			[Label("Quote")]
-			[Description(@"Formal offer for products and/or services, proposed at specific prices and related payment terms, which is sent to a prospective customer.")]
-			Quote = 1084, 
-		
-			[Label("Fax")]
-			[Description(@"Activity that tracks call outcome and number of pages for a fax and optionally stores an electronic copy of the document.")]
-			Fax = 4204, 
-		
 			[Label("Knowledge Base Record")]
 			[Description(@"Metadata of knowledge base (KB) articles associated with Microsoft Dynamics 365 entities.")]
 			KnowledgeBaseRecord = 9930, 
@@ -916,105 +884,137 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			[Description(@"Resource group or team whose members can be scheduled for a service.")]
 			SchedulingGroup = 4005, 
 		
-			[Label("Social Activity")]
-			[Description(@"For internal use only.")]
-			SocialActivity = 4216, 
+			[Label("Contact")]
+			[Description(@"Person with whom a business unit has a relationship, such as customer, supplier, and colleague.")]
+			Contact = 2, 
 		
-			[Label("Service Activity")]
-			[Description(@"Activity offered by the organization to satisfy its customer's needs. Each service activity includes date, time, duration, and required resources.")]
-			ServiceActivity = 4214, 
+			[Label("Account")]
+			[Description(@"Business that represents a customer or potential customer. The company that is billed in business transactions.")]
+			Account = 1, 
 		
-			[Label("Letter")]
-			[Description(@"Activity that tracks the delivery of a letter. The activity can contain the electronic copy of the letter.")]
-			Letter = 4207, 
+			[Label("Campaign")]
+			[Description(@"Container for campaign activities and responses, sales literature, products, and lists to create, plan, execute, and track the results of a specific marketing campaign through its life.")]
+			Campaign = 4400, 
 		
-			[Label("Case")]
-			[Description(@"Service request case associated with a contract.")]
-			Case = 112, 
-		
-			[Label("Price List")]
-			[Description(@"Entity that defines pricing levels.")]
-			PriceList = 1022, 
-		
-			[Label("Email")]
-			[Description(@"Activity that is delivered using email protocols.")]
-			Email = 4202, 
-		
-			[Label("Entitlement Template Channel")]
-			[Description(@"Contains predefined support terms for a channel to create entitlements for customers.")]
-			EntitlementTemplateChannel = 9703, 
+			[Label("Quote")]
+			[Description(@"Formal offer for products and/or services, proposed at specific prices and related payment terms, which is sent to a prospective customer.")]
+			Quote = 1084, 
 		
 			[Label("Process Session")]
 			[Description(@"Information that is generated when a dialog is run. Every time that you run a dialog, a dialog session is created.")]
 			ProcessSession = 4710, 
 		
-			[Label("User")]
-			[Description(@"Person with access to the Microsoft CRM system and who owns objects in the Microsoft CRM database.")]
-			User = 8, 
-		
-			[Label("Lead")]
-			[Description(@"Prospect or potential sales opportunity. Leads are converted into accounts, contacts, or opportunities when they are qualified. Otherwise, they are deleted or archived.")]
-			Lead = 4, 
-		
-			[Label("Contract")]
-			[Description(@"Agreement to provide customer service during a specified amount of time or number of cases.")]
-			Contract = 1010, 
-		
-			[Label("Resource Group")]
-			[Description(@"Group or collection of people, equipment, and/or facilities that can be scheduled.")]
-			ResourceGroup = 4007, 
-		
-			[Label("Goal")]
-			[Description(@"Target objective for a user or a team for a specified time period.")]
-			Goal = 9600, 
-		
-			[Label("Product")]
-			[Description(@"Information about products and their pricing information.")]
-			Product = 1024, 
-		
-			[Label("Appointment")]
-			[Description(@"Commitment representing a time interval with start/end times and duration.")]
-			Appointment = 4201, 
-		
-			[Label("Profile Album")]
-			[Description(@"Contains user profile images that are stored as attachments and displayed in posts.")]
-			ProfileAlbum = 10101, 
-		
 			[Label("Order")]
 			[Description(@"Quote that has been accepted.")]
 			Order = 1088, 
 		
-			[Label("Invoice")]
-			[Description(@"Order that has been billed.")]
-			Invoice = 1090, 
+			[Label("Fax")]
+			[Description(@"Activity that tracks call outcome and number of pages for a fax and optionally stores an electronic copy of the document.")]
+			Fax = 4204, 
+		
+			[Label("Knowledge Article")]
+			[Description(@"Organizational knowledge for internal and external use.")]
+			KnowledgeArticle = 9953, 
 		
 			[Label("Entitlement")]
 			[Description(@"Defines the amount and type of support a customer should receive.")]
 			Entitlement = 9700, 
 		
-			[Label("Position")]
-			[Description(@"Position of a user in the hierarchy")]
-			Position = 50, 
+			[Label("Task")]
+			[Description(@"Generic activity representing work needed to be done.")]
+			Task = 4212, 
 		
-			[Label("Opportunity")]
-			[Description(@"Potential revenue-generating event, or sale to an account, which needs to be tracked through a sales process to completion.")]
-			Opportunity = 3, 
+			[Label("Contract")]
+			[Description(@"Agreement to provide customer service during a specified amount of time or number of cases.")]
+			Contract = 1010, 
+		
+			[Label("Case")]
+			[Description(@"Service request case associated with a contract.")]
+			Case = 112, 
+		
+			[Label("Letter")]
+			[Description(@"Activity that tracks the delivery of a letter. The activity can contain the electronic copy of the letter.")]
+			Letter = 4207, 
+		
+			[Label("Email")]
+			[Description(@"Activity that is delivered using email protocols.")]
+			Email = 4202, 
+		
+			[Label("Social Activity")]
+			[Description(@"For internal use only.")]
+			SocialActivity = 4216, 
+		
+			[Label("Social Profile")]
+			[Description(@"This entity is used to store social profile information of its associated account and contacts on different social channels.")]
+			SocialProfile = 99, 
+		
+			[Label("Entitlement Template Channel")]
+			[Description(@"Contains predefined support terms for a channel to create entitlements for customers.")]
+			EntitlementTemplateChannel = 9703, 
+		
+			[Label("User")]
+			[Description(@"Person with access to the Microsoft CRM system and who owns objects in the Microsoft CRM database.")]
+			User = 8, 
+		
+			[Label("Campaign Activity")]
+			[Description(@"Task performed, or to be performed, by a user for planning or running a campaign.")]
+			CampaignActivity = 4402, 
+		
+			[Label("Product")]
+			[Description(@"Information about products and their pricing information.")]
+			Product = 1024, 
+		
+			[Label("Resource Group")]
+			[Description(@"Group or collection of people, equipment, and/or facilities that can be scheduled.")]
+			ResourceGroup = 4007, 
+		
+			[Label("Profile Album")]
+			[Description(@"Contains user profile images that are stored as attachments and displayed in posts.")]
+			ProfileAlbum = 10101, 
 		
 			[Label("Recurring Appointment")]
 			[Description(@"The Master appointment of a recurring appointment series.")]
 			RecurringAppointment = 4251, 
 		
-			[Label("Team")]
-			[Description(@"Collection of system users that routinely collaborate. Teams can be used to simplify record sharing and provide team members with common access to organization data when team members belong to different Business Units.")]
-			Team = 9, 
+			[Label("Appointment")]
+			[Description(@"Commitment representing a time interval with start/end times and duration.")]
+			Appointment = 4201, 
+		
+			[Label("Activity")]
+			[Description(@"Task performed, or to be performed, by a user. An activity is any action for which an entry can be made on a calendar.")]
+			Activity = 4200, 
+		
+			[Label("Invoice")]
+			[Description(@"Order that has been billed.")]
+			Invoice = 1090, 
+		
+			[Label("Opportunity")]
+			[Description(@"Potential revenue-generating event, or sale to an account, which needs to be tracked through a sales process to completion.")]
+			Opportunity = 3, 
+		
+			[Label("Goal")]
+			[Description(@"Target objective for a user or a team for a specified time period.")]
+			Goal = 9600, 
+		
+			[Label("Position")]
+			[Description(@"Position of a user in the hierarchy")]
+			Position = 50, 
+		
+			[Label("Entitlement Channel")]
+			[Description(@"Defines the amount and type of support for a channel.")]
+			EntitlementChannel = 9701, 
 		
 			[Label("Competitor")]
 			[Description(@"Business competing for the sale represented by a lead or opportunity.")]
 			Competitor = 123, 
 		
-			[Label("Task")]
-			[Description(@"Generic activity representing work needed to be done.")]
-			Task = 4212, 
+			[Label("Service Activity")]
+			[Description(@"Activity offered by the organization to satisfy its customer's needs. Each service activity includes date, time, duration, and required resources.")]
+			ServiceActivity = 4214, 
+		
+			[Label("Team")]
+			[Description(@"Collection of system users that routinely collaborate. Teams can be used to simplify record sharing and provide team members with common access to organization data when team members belong to different Business Units.")]
+			Team = 9, 
 		
 			[Label("Facility/Equipment")]
 			[Description(@"Resource that can be scheduled.")]
@@ -1024,61 +1024,49 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			[Description(@"Territory represents sales regions.")]
 			Territory = 2013, 
 		
-			[Label("Entitlement Channel")]
-			[Description(@"Defines the amount and type of support for a channel.")]
-			EntitlementChannel = 9701, 
-		
-			[Label("Campaign Activity")]
-			[Description(@"Task performed, or to be performed, by a user for planning or running a campaign.")]
-			CampaignActivity = 4402, 
+			[Label("Channel Access Profile Rule")]
+			[Description(@"Defines the rules for automatically associating channel access profiles to external party records.For internal use only")]
+			ChannelAccessProfileRule = 9400, 
 		
 			[Label("Phone Call")]
 			[Description(@"Activity to track a telephone call.")]
 			PhoneCall = 4210, 
 		
+			[Label("Lead")]
+			[Description(@"Prospect or potential sales opportunity. Leads are converted into accounts, contacts, or opportunities when they are qualified. Otherwise, they are deleted or archived.")]
+			Lead = 4, 
+		
 			[Label("Marketing List")]
 			[Description(@"Group of existing or potential customers created for a marketing campaign or other sales purposes.")]
 			MarketingList = 4300, 
 		
-			[Label("Channel Access Profile Rule")]
-			[Description(@"Defines the rules for automatically associating channel access profiles to external party records.For internal use only")]
-			ChannelAccessProfileRule = 9400, 
+			[Label("Price List")]
+			[Description(@"Entity that defines pricing levels.")]
+			PriceList = 1022, 
 		}
 		
 		public enum eTypeTo
 		{	
 		
-			[Label("Email")]
-			[Description(@"Activity that is delivered using email protocols.")]
-			Email = 4202, 
-		
-			[Label("Contract")]
-			[Description(@"Agreement to provide customer service during a specified amount of time or number of cases.")]
-			Contract = 1010, 
-		
-			[Label("Invoice")]
-			[Description(@"Order that has been billed.")]
-			Invoice = 1090, 
-		
 			[Label("Knowledge Base Record")]
 			[Description(@"Metadata of knowledge base (KB) articles associated with Microsoft Dynamics 365 entities.")]
 			KnowledgeBaseRecord = 9930, 
 		
-			[Label("Order")]
-			[Description(@"Quote that has been accepted.")]
-			Order = 1088, 
+			[Label("Team")]
+			[Description(@"Collection of system users that routinely collaborate. Teams can be used to simplify record sharing and provide team members with common access to organization data when team members belong to different Business Units.")]
+			Team = 9, 
 		
-			[Label("Service Activity")]
-			[Description(@"Activity offered by the organization to satisfy its customer's needs. Each service activity includes date, time, duration, and required resources.")]
-			ServiceActivity = 4214, 
+			[Label("Knowledge Article")]
+			[Description(@"Organizational knowledge for internal and external use.")]
+			KnowledgeArticle = 9953, 
 		
-			[Label("Lead")]
-			[Description(@"Prospect or potential sales opportunity. Leads are converted into accounts, contacts, or opportunities when they are qualified. Otherwise, they are deleted or archived.")]
-			Lead = 4, 
+			[Label("Process Session")]
+			[Description(@"Information that is generated when a dialog is run. Every time that you run a dialog, a dialog session is created.")]
+			ProcessSession = 4710, 
 		
-			[Label("Opportunity")]
-			[Description(@"Potential revenue-generating event, or sale to an account, which needs to be tracked through a sales process to completion.")]
-			Opportunity = 3, 
+			[Label("Letter")]
+			[Description(@"Activity that tracks the delivery of a letter. The activity can contain the electronic copy of the letter.")]
+			Letter = 4207, 
 		
 			[Label("Social Activity")]
 			[Description(@"For internal use only.")]
@@ -1088,9 +1076,21 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			[Description(@"Defines the amount and type of support a customer should receive.")]
 			Entitlement = 9700, 
 		
-			[Label("Knowledge Article")]
-			[Description(@"Organizational knowledge for internal and external use.")]
-			KnowledgeArticle = 9953, 
+			[Label("Email")]
+			[Description(@"Activity that is delivered using email protocols.")]
+			Email = 4202, 
+		
+			[Label("Order")]
+			[Description(@"Quote that has been accepted.")]
+			Order = 1088, 
+		
+			[Label("Invoice")]
+			[Description(@"Order that has been billed.")]
+			Invoice = 1090, 
+		
+			[Label("Task")]
+			[Description(@"Generic activity representing work needed to be done.")]
+			Task = 4212, 
 		
 			[Label("Marketing List")]
 			[Description(@"Group of existing or potential customers created for a marketing campaign or other sales purposes.")]
@@ -1104,25 +1104,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			[Description(@"Defines the amount and type of support for a channel.")]
 			EntitlementChannel = 9701, 
 		
-			[Label("Process Session")]
-			[Description(@"Information that is generated when a dialog is run. Every time that you run a dialog, a dialog session is created.")]
-			ProcessSession = 4710, 
-		
 			[Label("Scheduling Group")]
 			[Description(@"Resource group or team whose members can be scheduled for a service.")]
 			SchedulingGroup = 4005, 
+		
+			[Label("Position")]
+			[Description(@"Position of a user in the hierarchy")]
+			Position = 50, 
+		
+			[Label("Case")]
+			[Description(@"Service request case associated with a contract.")]
+			Case = 112, 
 		
 			[Label("Social Profile")]
 			[Description(@"This entity is used to store social profile information of its associated account and contacts on different social channels.")]
 			SocialProfile = 99, 
 		
-			[Label("Letter")]
-			[Description(@"Activity that tracks the delivery of a letter. The activity can contain the electronic copy of the letter.")]
-			Letter = 4207, 
-		
-			[Label("Case")]
-			[Description(@"Service request case associated with a contract.")]
-			Case = 112, 
+			[Label("Campaign Activity")]
+			[Description(@"Task performed, or to be performed, by a user for planning or running a campaign.")]
+			CampaignActivity = 4402, 
 		
 			[Label("Quote")]
 			[Description(@"Formal offer for products and/or services, proposed at specific prices and related payment terms, which is sent to a prospective customer.")]
@@ -1132,25 +1132,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			[Description(@"Group or collection of people, equipment, and/or facilities that can be scheduled.")]
 			ResourceGroup = 4007, 
 		
-			[Label("Campaign Activity")]
-			[Description(@"Task performed, or to be performed, by a user for planning or running a campaign.")]
-			CampaignActivity = 4402, 
+			[Label("Phone Call")]
+			[Description(@"Activity to track a telephone call.")]
+			PhoneCall = 4210, 
 		
 			[Label("Product")]
 			[Description(@"Information about products and their pricing information.")]
 			Product = 1024, 
 		
-			[Label("Phone Call")]
-			[Description(@"Activity to track a telephone call.")]
-			PhoneCall = 4210, 
+			[Label("Competitor")]
+			[Description(@"Business competing for the sale represented by a lead or opportunity.")]
+			Competitor = 123, 
+		
+			[Label("Facility/Equipment")]
+			[Description(@"Resource that can be scheduled.")]
+			FacilityEquipment = 4000, 
 		
 			[Label("Appointment")]
 			[Description(@"Commitment representing a time interval with start/end times and duration.")]
 			Appointment = 4201, 
-		
-			[Label("Competitor")]
-			[Description(@"Business competing for the sale represented by a lead or opportunity.")]
-			Competitor = 123, 
 		
 			[Label("Price List")]
 			[Description(@"Entity that defines pricing levels.")]
@@ -1160,9 +1160,9 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			[Description(@"Territory represents sales regions.")]
 			Territory = 2013, 
 		
-			[Label("Team")]
-			[Description(@"Collection of system users that routinely collaborate. Teams can be used to simplify record sharing and provide team members with common access to organization data when team members belong to different Business Units.")]
-			Team = 9, 
+			[Label("Contract")]
+			[Description(@"Agreement to provide customer service during a specified amount of time or number of cases.")]
+			Contract = 1010, 
 		
 			[Label("Recurring Appointment")]
 			[Description(@"The Master appointment of a recurring appointment series.")]
@@ -1172,37 +1172,33 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			[Description(@"Person with whom a business unit has a relationship, such as customer, supplier, and colleague.")]
 			Contact = 2, 
 		
-			[Label("Facility/Equipment")]
-			[Description(@"Resource that can be scheduled.")]
-			FacilityEquipment = 4000, 
-		
-			[Label("Position")]
-			[Description(@"Position of a user in the hierarchy")]
-			Position = 50, 
-		
-			[Label("Fax")]
-			[Description(@"Activity that tracks call outcome and number of pages for a fax and optionally stores an electronic copy of the document.")]
-			Fax = 4204, 
-		
-			[Label("Activity")]
-			[Description(@"Task performed, or to be performed, by a user. An activity is any action for which an entry can be made on a calendar.")]
-			Activity = 4200, 
-		
-			[Label("Account")]
-			[Description(@"Business that represents a customer or potential customer. The company that is billed in business transactions.")]
-			Account = 1, 
+			[Label("User")]
+			[Description(@"Person with access to the Microsoft CRM system and who owns objects in the Microsoft CRM database.")]
+			User = 8, 
 		
 			[Label("Goal")]
 			[Description(@"Target objective for a user or a team for a specified time period.")]
 			Goal = 9600, 
 		
-			[Label("Task")]
-			[Description(@"Generic activity representing work needed to be done.")]
-			Task = 4212, 
+			[Label("Opportunity")]
+			[Description(@"Potential revenue-generating event, or sale to an account, which needs to be tracked through a sales process to completion.")]
+			Opportunity = 3, 
 		
-			[Label("User")]
-			[Description(@"Person with access to the Microsoft CRM system and who owns objects in the Microsoft CRM database.")]
-			User = 8, 
+			[Label("Account")]
+			[Description(@"Business that represents a customer or potential customer. The company that is billed in business transactions.")]
+			Account = 1, 
+		
+			[Label("Fax")]
+			[Description(@"Activity that tracks call outcome and number of pages for a fax and optionally stores an electronic copy of the document.")]
+			Fax = 4204, 
+		
+			[Label("Lead")]
+			[Description(@"Prospect or potential sales opportunity. Leads are converted into accounts, contacts, or opportunities when they are qualified. Otherwise, they are deleted or archived.")]
+			Lead = 4, 
+		
+			[Label("Entitlement Template Channel")]
+			[Description(@"Contains predefined support terms for a channel to create entitlements for customers.")]
+			EntitlementTemplateChannel = 9703, 
 		
 			[Label("Channel Access Profile Rule")]
 			[Description(@"Defines the rules for automatically associating channel access profiles to external party records.For internal use only")]
@@ -1212,9 +1208,13 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			[Description(@"Container for campaign activities and responses, sales literature, products, and lists to create, plan, execute, and track the results of a specific marketing campaign through its life.")]
 			Campaign = 4400, 
 		
-			[Label("Entitlement Template Channel")]
-			[Description(@"Contains predefined support terms for a channel to create entitlements for customers.")]
-			EntitlementTemplateChannel = 9703, 
+			[Label("Activity")]
+			[Description(@"Task performed, or to be performed, by a user. An activity is any action for which an entry can be made on a calendar.")]
+			Activity = 4200, 
+		
+			[Label("Service Activity")]
+			[Description(@"Activity offered by the organization to satisfy its customer's needs. Each service activity includes date, time, duration, and required resources.")]
+			ServiceActivity = 4214, 
 		}
 		
 		public enum eStatus

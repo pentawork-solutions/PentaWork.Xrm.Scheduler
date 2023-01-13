@@ -614,6 +614,21 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		}	
 			
 		/// <summary>
+        /// pw_retry_immediately
+        /// </summary>
+		[DisplayName("Retry Immediately")]
+		[AttributeLogicalName("pw_retry_immediately")]
+		public bool? RetryImmediately
+		{	
+			get { return GetAttributeValue<bool?>("pw_retry_immediately"); }
+			set
+			{ 
+				if(value == RetryImmediately) return;
+				SetAttributeValue("pw_retry_immediately", value);
+			}
+		}	
+			
+		/// <summary>
         /// pw_retry_on_error
         /// </summary>
 		[DisplayName("Retry on error")]
@@ -719,6 +734,21 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			{ 
 				if(value == StartDateTime) return;
 				SetAttributeValue("pw_start_datetime", value);
+			}
+		}	
+			
+		/// <summary>
+        /// pw_successive_errors
+        /// </summary>
+		[DisplayName("Successive Errors")]
+		[AttributeLogicalName("pw_successive_errors")]
+		public int? SuccessiveErrors
+		{	
+			get { return GetAttributeValue<int?>("pw_successive_errors"); }
+			set
+			{ 
+				if(value == SuccessiveErrors) return;
+				SetAttributeValue("pw_successive_errors", value);
 			}
 		}	
 			
@@ -1167,6 +1197,9 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			/// <summary>pw_page_size</summary>
 			public const string PageSize = "pw_page_size";
 
+			/// <summary>pw_retry_immediately</summary>
+			public const string RetryImmediately = "pw_retry_immediately";
+
 			/// <summary>pw_retry_on_error</summary>
 			public const string RetryOnError = "pw_retry_on_error";
 
@@ -1187,6 +1220,9 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 			/// <summary>pw_start_datetime</summary>
 			public const string StartDateTime = "pw_start_datetime";
+
+			/// <summary>pw_successive_errors</summary>
+			public const string SuccessiveErrors = "pw_successive_errors";
 
 			/// <summary>pw_workflow</summary>
 			public const string Workflow = "pw_workflow";

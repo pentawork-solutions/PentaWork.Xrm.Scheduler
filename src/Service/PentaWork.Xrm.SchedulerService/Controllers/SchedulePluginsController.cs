@@ -70,7 +70,6 @@ namespace PentaWork.Xrm.SchedulerService.Controllers
             var servicePluginType = _plugins.Single(p => p.Name == servicePluginRef.Name);
             var servicePlugin = (SchedulerPlugin)Activator.CreateInstance(servicePluginType.GetType());
             var pluginLogger = new SchedulePluginLogger(schedule.Name, scheduleRun, serviceContext);
-            var creator = new ScheduleRunCreator(serviceContext);
 
             if (!_runningTasks.ContainsKey(servicePluginRef.Name))
             {
@@ -88,7 +87,10 @@ namespace PentaWork.Xrm.SchedulerService.Controllers
                         var pluginServiceContext = new OrganizationServiceContext(pluginCrmSystem.GetService());
 
                         servicePlugin.Execute(pluginServiceContext, pluginLogger, schedule.SchedulePluginConfig);
-                        creator.CreateNextRun(schedule, scheduleRun);
+
+                        scheduleRun.Status = PentaScheduleRun.eStatus.Inactive;
+                        scheduleRun.StatusReason = PentaScheduleRun.eStatusReason.Ended_Inactive;
+                        UpdateAndSave(serviceContext, scheduleRun);
                     }
                     catch (Exception ex)
                     {
@@ -97,9 +99,6 @@ namespace PentaWork.Xrm.SchedulerService.Controllers
                             scheduleRun.Status = PentaScheduleRun.eStatus.Inactive;
                             scheduleRun.StatusReason = PentaScheduleRun.eStatusReason.Error_Inactive;
                             UpdateAndSave(serviceContext, scheduleRun);
-
-                            schedule.StatusReason = PentaSchedule.eStatusReason.Error_Active;
-                            UpdateAndSave(serviceContext, schedule);
 
                             pluginLogger.Error(ex.ToString());
                         }

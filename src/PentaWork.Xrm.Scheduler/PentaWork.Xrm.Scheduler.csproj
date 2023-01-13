@@ -106,11 +106,10 @@
     <Compile Include="PluginController.cs" />
     <Compile Include="Plugins\CrmEventAttribute.cs" />
     <Compile Include="Plugins\CrmPlugin.cs" />
+    <Compile Include="Plugins\PentaScheduleRuns\HandleRunEnd.cs" />
     <Compile Include="Plugins\PentaScheduleRuns\SetPageInfoOnCreation.cs" />
     <Compile Include="Plugins\PentaSchedules\UpdateRunOnSave.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScheduleExecutor.cs" />
-    <Compile Include="ScheduleRunCreator.cs" />
     <Compile Include="ScheduleRunLogger.cs" />
     <Compile Include="Proxies\AssemblyInfoAddition.cs" xmlns="" />
     <Compile Include="Proxies\Attributes.cs" xmlns="" />

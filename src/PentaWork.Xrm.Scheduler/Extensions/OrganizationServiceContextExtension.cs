@@ -35,5 +35,14 @@ namespace PentaWork.Xrm.Scheduler.Extensions
             }
             return entities;
         }
+
+        public static void AttachUpdate(this OrganizationServiceContext context, Entity entity)
+        {
+            if (!context.IsAttached(entity))
+            {
+                context.Attach(entity);
+            }
+            context.UpdateObject(entity);
+        }
     }
 }

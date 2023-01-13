@@ -1,32 +1,77 @@
-﻿using Microsoft.Xrm.Sdk;
-using Microsoft.Xrm.Sdk.Client;
+﻿using PentaWork.Xrm.Scheduler.Extensions;
 using PentaWork.Xrm.Scheduler.Proxies.Entities;
 using System;
+using System.Linq;
 
-namespace PentaWork.Xrm.Scheduler
+namespace PentaWork.Xrm.Scheduler.Plugins.PentaScheduleRuns
 {
-    public class ScheduleRunCreator
+    [Event(Stage.PostOperation, MessageName.Update, PluginMode.Synchronous, -1, nameof(OnUpdate), PentaScheduleRun.Properties.StatusReason)]
+    public class HandleRunEnd : CrmPlugin<PentaScheduleRun>
     {
-        private readonly OrganizationServiceContext _serviceContext;
-
-        public ScheduleRunCreator(OrganizationServiceContext serviceContext)
+        public void OnUpdate(PentaScheduleRun target, PentaScheduleRun preTarget)
         {
-            _serviceContext = serviceContext;
+            var scheduleRun = Context.CreateQuery<PentaScheduleRun>().Single(p => p.Id == target.Id);
+            var schedule = Context.CreateQuery<PentaSchedule>().Single(p => p.Id == scheduleRun.PentaSchedule.Id);
+
+            switch(target.StatusReason)
+            {
+                case PentaScheduleRun.eStatusReason.Error_Inactive:
+                    HandleErrorState(schedule);
+                    HandleErrorEmail(schedule, scheduleRun);
+                    break;
+                case PentaScheduleRun.eStatusReason.Ended_Inactive:
+                    CreateNextRun(schedule);
+                    break;
+            }
+            Context.SaveChanges();
         }
 
-        public void CreateNextRun(PentaSchedule schedule, PentaScheduleRun scheduleRun)
+        private void HandleErrorState(PentaSchedule schedule)
+        {
+            schedule.SuccessiveErrors = schedule.SuccessiveErrors == null ? 1 : schedule.SuccessiveErrors + 1;
+            var retry = schedule.SuccessiveErrors < schedule.ErrorThreshold && schedule.RetryOnError == true;
+
+            if (retry && schedule.RetryImmediately == true) // nullables
+            {
+                var nextRun = DateTime.Now.AddMinutes(5);
+                var newScheduleRun = new PentaScheduleRun();
+                newScheduleRun.Name = $"{schedule.Name} - {nextRun.ToShortDateString()}";
+                newScheduleRun.RunDateTime = nextRun;
+                newScheduleRun.PentaSchedule = schedule.ToEntityReference();
+                newScheduleRun.StatusReason = PentaScheduleRun.eStatusReason.Waiting_Active;
+                Context.AddObject(newScheduleRun);
+                Context.SaveChanges();
+
+                schedule.LastRunDateTime = nextRun.AddMinutes(-5);
+                schedule.NextRun = newScheduleRun.ToEntityReference();
+                Context.AttachUpdate(schedule);
+            }
+            else if (retry)
+            {
+                CreateNextRun(schedule);
+            }
+            else
+            {
+                schedule.StatusReason = PentaSchedule.eStatusReason.Error_Active;
+                Context.AttachUpdate(schedule);
+            }
+        }
+
+        private void HandleErrorEmail(PentaSchedule schedule, PentaScheduleRun scheduleRun)
+        {
+            if (schedule.EmailOnError != true) return;  // nullables
+
+        }
+
+        private void CreateNextRun(PentaSchedule schedule)
         {
             var now = DateTime.UtcNow;
-            scheduleRun.Status = PentaScheduleRun.eStatus.Inactive;
-            scheduleRun.StatusReason = PentaScheduleRun.eStatusReason.Ended_Inactive;
-            UpdateAndSave(scheduleRun);
-
             if (schedule.EndDateTime <= now || schedule.Frequency == PentaSchedule.egFrequency.Once)
             {
                 schedule.LastRunDateTime = now;
                 schedule.NextRun = null;
                 schedule.StatusReason = PentaSchedule.eStatusReason.Ended_Active;
-                UpdateAndSave(schedule);
+                Context.AttachUpdate(schedule);
             }
             else
             {
@@ -85,23 +130,13 @@ namespace PentaWork.Xrm.Scheduler
                 newScheduleRun.RunDateTime = nextRun;
                 newScheduleRun.PentaSchedule = schedule.ToEntityReference();
                 newScheduleRun.StatusReason = PentaScheduleRun.eStatusReason.Waiting_Active;
-                _serviceContext.AddObject(newScheduleRun);
-                _serviceContext.SaveChanges();
+                Context.AddObject(newScheduleRun);
+                Context.SaveChanges();
 
                 schedule.LastRunDateTime = now;
                 schedule.NextRun = newScheduleRun.ToEntityReference();
-                UpdateAndSave(schedule);
+                Context.AttachUpdate(schedule);
             }
-        }
-
-        private void UpdateAndSave(Entity entity)
-        {
-            if (!_serviceContext.IsAttached(entity))
-            {
-                _serviceContext.Attach(entity);
-            }
-            _serviceContext.UpdateObject(entity);
-            _serviceContext.SaveChanges();
         }
     }
 }
