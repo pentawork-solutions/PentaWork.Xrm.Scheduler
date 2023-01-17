@@ -5,9 +5,9 @@
       <LocalizedName description="PentaWork Scheduler" languagecode="1033" />
     </LocalizedNames>
     <Descriptions>
-      <Description description="0.10.0 GG: Add depth reset in runs&#xA;0.9.0 GG: Remove Entity Update&#xA;0.8.0 GG: Add Service Plugins&#xA;0.7.0 GG: Add Penta Schedule Runs and Paging&#xA;0.6.1 GG: Remove Service Plugin Log field from auditing&#xA;0.6.0 GG: Add Scheduler Plugin Service Support&#xA;0.5.3 GG: Change NextDate Calculation&#xA;0.5.2 GG: Fix views &amp; add Plugin Steps" languagecode="1033" />
+      <Description description="0.11.0 GG: Add Error Handling to Schedules&#xA;0.10.0 GG: Add depth reset in runs&#xA;0.9.0 GG: Remove Entity Update&#xA;0.8.0 GG: Add Service Plugins&#xA;0.7.0 GG: Add Penta Schedule Runs and Paging&#xA;0.6.1 GG: Remove Service Plugin Log field from auditing&#xA;0.6.0 GG: Add Scheduler Plugin Service Support&#xA;0.5.3 GG: Change NextDate Calculation&#xA;0.5.2 GG: Fix views &amp; add Plugin Steps" languagecode="1033" />
     </Descriptions>
-    <Version>0.10.2</Version>
+    <Version>0.11.0</Version>
     <Managed>0</Managed>
     <Publisher>
       <UniqueName>pentaworksolutions</UniqueName>
@@ -85,12 +85,14 @@
       <RootComponent type="1" schemaName="workflow" behavior="2" />
       <RootComponent type="9" schemaName="pw_frequency" behavior="0" />
       <RootComponent type="9" schemaName="pw_schedule_type" behavior="0" />
+      <RootComponent type="29" id="{0082cbb6-5f92-ed11-a870-0022485b751f}" behavior="0" />
       <RootComponent type="29" id="{27f250d4-04b9-4554-83e4-cf94b7866b38}" behavior="0" />
       <RootComponent type="29" id="{3c08a262-9138-ec11-a82a-0022485b751f}" behavior="0" />
       <RootComponent type="29" id="{41fb3e44-8938-ec11-a82a-0022485b751f}" behavior="0" />
       <RootComponent type="29" id="{54ed1035-de37-ec11-a829-0022485b751f}" behavior="0" />
       <RootComponent type="29" id="{732bcd8c-0a5f-ec11-a836-0022485b751f}" behavior="0" />
       <RootComponent type="29" id="{a564ff0d-d7c3-4d7c-86b9-cad2e907cdde}" behavior="0" />
+      <RootComponent type="29" id="{b5226daf-5f92-ed11-a870-0022485b751f}" behavior="0" />
       <RootComponent type="29" id="{f466a297-1c63-ec11-a838-0022485b751f}" behavior="0" />
       <RootComponent type="29" id="{f5c3a82c-9138-ec11-a82a-0022485b751f}" behavior="0" />
       <RootComponent type="60" id="{648544ab-87cd-4624-8ec8-577aa52120bd}" behavior="0" />
