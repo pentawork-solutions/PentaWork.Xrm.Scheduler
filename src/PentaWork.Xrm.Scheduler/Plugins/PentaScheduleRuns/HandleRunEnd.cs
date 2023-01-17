@@ -1,5 +1,8 @@
-﻿using PentaWork.Xrm.Scheduler.Extensions;
+﻿using Microsoft.Crm.Sdk.Messages;
+using Microsoft.Xrm.Sdk;
+using PentaWork.Xrm.Scheduler.Extensions;
 using PentaWork.Xrm.Scheduler.Proxies.Entities;
+using PentaWork.Xrm.Scheduler.Templates;
 using System;
 using System.Linq;
 
@@ -23,7 +26,6 @@ namespace PentaWork.Xrm.Scheduler.Plugins.PentaScheduleRuns
                     CreateNextRun(schedule);
                     break;
             }
-            Context.SaveChanges();
         }
 
         private void HandleErrorState(PentaSchedule schedule)
@@ -55,12 +57,34 @@ namespace PentaWork.Xrm.Scheduler.Plugins.PentaScheduleRuns
                 schedule.StatusReason = PentaSchedule.eStatusReason.Error_Active;
                 Context.AttachUpdate(schedule);
             }
+            Context.SaveChanges();
         }
 
         private void HandleErrorEmail(PentaSchedule schedule, PentaScheduleRun scheduleRun)
         {
-            if (schedule.EmailOnError != true) return;  // nullables
+            var retry = schedule.SuccessiveErrors < schedule.ErrorThreshold && schedule.RetryOnError == true;
+            if (schedule.EmailOnError != true || retry) return;  // nullables
 
+            var recipients = new EntityCollection();
+            recipients.Entities.Add(new ActivityParty() { Address = schedule.ErrorEmailAddress });
+
+            var emailTemplate = new EmailScheduleError { Schedule = schedule, OrgName = PluginContext.OrganizationName, Log = scheduleRun.Log.Replace(Environment.NewLine, "<br/>") };
+            var email = new Email
+            {
+                Regarding = schedule.ToEntityReference(),
+                Subject = $"Scheduler Error on '{PluginContext.OrganizationName}' for '{schedule.Name}'",
+                Description = emailTemplate.TransformText(),
+                To = recipients
+            };
+            Context.AddObject(email);
+            Context.SaveChanges();
+
+            var requestEmail = new SendEmailRequest
+            {
+                EmailId = email.Id,
+                IssueSend = true
+            };
+            Context.Execute(requestEmail);
         }
 
         private void CreateNextRun(PentaSchedule schedule)
@@ -137,6 +161,7 @@ namespace PentaWork.Xrm.Scheduler.Plugins.PentaScheduleRuns
                 schedule.NextRun = newScheduleRun.ToEntityReference();
                 Context.AttachUpdate(schedule);
             }
+            Context.SaveChanges();
         }
     }
 }
