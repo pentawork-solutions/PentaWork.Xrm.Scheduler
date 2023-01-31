@@ -159,6 +159,7 @@ namespace PentaWork.Xrm.Scheduler.Plugins.PentaScheduleRuns
 
                 schedule.LastRunDateTime = now;
                 schedule.NextRun = newScheduleRun.ToEntityReference();
+                schedule.SuccessiveErrors = 0;
                 Context.AttachUpdate(schedule);
             }
             Context.SaveChanges();
