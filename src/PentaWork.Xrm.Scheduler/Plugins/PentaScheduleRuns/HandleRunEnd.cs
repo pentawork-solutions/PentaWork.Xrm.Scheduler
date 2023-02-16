@@ -13,6 +13,8 @@ namespace PentaWork.Xrm.Scheduler.Plugins.PentaScheduleRuns
     {
         public void OnUpdate(PentaScheduleRun target, PentaScheduleRun preTarget)
         {
+            if (preTarget.StatusReason != PentaScheduleRun.eStatusReason.InProgress_Active) return;
+
             var scheduleRun = Context.CreateQuery<PentaScheduleRun>().Single(p => p.Id == target.Id);
             var schedule = Context.CreateQuery<PentaSchedule>().Single(p => p.Id == scheduleRun.PentaSchedule.Id);
 
