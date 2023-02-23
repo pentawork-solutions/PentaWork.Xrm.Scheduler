@@ -2,15 +2,16 @@
 using Microsoft.Xrm.Sdk;
 using PentaWork.Xrm.Scheduler.CodeActivities;
 using PentaWork.Xrm.Scheduler.Proxies.Entities;
+using PentaWork.Xrm.Scheduler.Tests;
 using PentaWork.Xrm.Scheduler.Tests.Fake;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PentaWork.Xrm.Scheduler.Tests.CodeActivities
+namespace PentaWork.Xrm.Scheduler.Plugins.PentaScheduleRuns
 {
     [TestClass]
-    public class RunScheduleFrequencyTests
+    public class HandleRunEndTests
     {
         private PentaSchedule _schedule = FakePentaSchedule.Create();
         private PentaScheduleRun _scheduleRun = FakePentaScheduleRun.Create();
@@ -31,6 +32,7 @@ namespace PentaWork.Xrm.Scheduler.Tests.CodeActivities
 
             _scheduleRun.CurrentPage = 1;
             _scheduleRun.PentaSchedule = _schedule.ToEntityReference();
+            _scheduleRun.StatusReason = PentaScheduleRun.eStatusReason.Ended_Inactive;
 
             _process.ProcessName = "Execute Schedule";
 
@@ -50,6 +52,9 @@ namespace PentaWork.Xrm.Scheduler.Tests.CodeActivities
             action.PrimaryEntity = Account.LogicalName;
             action.SDKMessage = _sdkMessage.ToEntityReference();
 
+            var preScheduleRun = FakePentaScheduleRun.Create();
+            preScheduleRun.StatusReason = PentaScheduleRun.eStatusReason.InProgress_Active;
+
             _schedule.Frequency = PentaSchedule.egFrequency.Once;
             _schedule.ScheduleType = PentaSchedule.egScheduleType.Action;
             _schedule.Action = action.ToEntityReference();
@@ -57,7 +62,11 @@ namespace PentaWork.Xrm.Scheduler.Tests.CodeActivities
             _knownEntities.Add(action);
 
             // Act
-            var fakeContext = FakeContext.ExecuteCodeActivity<RunSchedule>(_scheduleRun, _knownEntities, null, new Dictionary<string, object> { { "WebhookId", new EntityReference() } });
+            var fakeContext = FakeContext.ExecutePlugin<PluginController, HandleRunEnd>(
+                MessageName.Update,
+                Stage.PostOperation,
+                PluginMode.Synchronous,
+                _scheduleRun, preScheduleRun, _knownEntities);
             _schedule = fakeContext.CreateQuery<PentaSchedule>().Single(p => p.Id == _schedule.Id);
 
             // Assert
@@ -74,6 +83,9 @@ namespace PentaWork.Xrm.Scheduler.Tests.CodeActivities
             action.PrimaryEntity = Account.LogicalName;
             action.SDKMessage = _sdkMessage.ToEntityReference();
 
+            var preScheduleRun = FakePentaScheduleRun.Create();
+            preScheduleRun.StatusReason = PentaScheduleRun.eStatusReason.InProgress_Active;
+
             _schedule.Frequency = PentaSchedule.egFrequency.Daily;
             _schedule.ScheduleType = PentaSchedule.egScheduleType.Action;
             _schedule.Action = action.ToEntityReference();
@@ -81,7 +93,11 @@ namespace PentaWork.Xrm.Scheduler.Tests.CodeActivities
             _knownEntities.Add(action);
 
             // Act
-            var fakeContext = FakeContext.ExecuteCodeActivity<RunSchedule>(_scheduleRun, _knownEntities, null, new Dictionary<string, object> { { "WebhookId", new EntityReference() } });
+            var fakeContext = FakeContext.ExecutePlugin<PluginController, HandleRunEnd>(
+                MessageName.Update,
+                Stage.PostOperation,
+                PluginMode.Synchronous,
+                _scheduleRun, preScheduleRun, _knownEntities);
             var scheduleRun = fakeContext.CreateQuery<PentaScheduleRun>().OrderBy(r => r.CreatedOn).First();
             _schedule = fakeContext.CreateQuery<PentaSchedule>().Single(p => p.Id == _schedule.Id);
 

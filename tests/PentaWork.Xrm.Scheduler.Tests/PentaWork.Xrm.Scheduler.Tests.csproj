@@ -156,7 +156,7 @@
   <ItemGroup>
     <Compile Include="CodeActivities\RunScheduleWorkflowTests.cs" />
     <Compile Include="CodeActivities\RunScheduleActionTests.cs" />
-    <Compile Include="CodeActivities\RunScheduleFrequencyTests.cs" />
+    <Compile Include="Plugins\PentaScheduleRuns\HandleRunEndTests.cs" />
     <Compile Include="FakeContext.cs" />
     <Compile Include="Plugins\PentaScheduleRuns\SetPageInfoOnCreationTests.cs" />
     <Compile Include="Plugins\PentaSchedules\UpdateRunOnSaveTests.cs" />

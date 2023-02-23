@@ -6,7 +6,7 @@ using PentaWork.Xrm.Scheduler.Proxies.Entities;
 using PentaWork.Xrm.Scheduler.Tests.Fake;
 using System.Collections.Generic;
 
-namespace PentaWork.Xrm.Scheduler.Tests.Plugins.PentaSchedules
+namespace PentaWork.Xrm.Scheduler.Tests.Plugins.PentaScheduleRuns
 {
     [TestClass]
     public class SetPageInfoOnCreationTests
