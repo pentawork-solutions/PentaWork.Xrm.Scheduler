@@ -43,7 +43,7 @@ A **Logs** folder should have been created in the website folder. If this is not
 
 ![logs.png](img//logs.png)
 
-In addition, the webhooks must be configured correctly. To do this, open the environment in the plugin registration tool and select the webhook. Here you have to enter the correct URL to the web server as well as the API key (default is **123**), which can be configured in the web.config.
+In addition, the webhooks must be configured correctly. To do this, open the environment in the plugin registration tool and select the webhooks. Here you have to enter the correct URL to the web server as well as the API key (default is **123**), which can be configured in the web.config.
 
 ![webhooks.png](img//webhooks.png)
 
@@ -68,9 +68,9 @@ The following options are available for this purpose:
 - **Global Action** - *Execute a Global Action - No FetchXML required*
 - **Schedule Plugin** - *Execute a background service plugin. This is executed in the background service of the scheduler*
 
-The Frequency can be used to specify how often a task should be executed. After that only a start date is missing, which can be used to define when the task should be executed for the first time.
+The frequency can be used to specify how often a task should be executed. After that only a start date is missing, which can be used to define when the task should be executed for the first time.
 
-With the help of the End Date a date can be specified at which the task should be executed the last time.
+With the help of the *End Date* a date can be specified at which the task should be executed the last time.
 
 **If a type has been selected that requires a FetchXML, this must be specified in the next tab!**
 
@@ -91,6 +91,18 @@ The FetchXML needs the **count** attribute to work correctly. The following is a
 ```
 
 Unfortunately, the classic view is still recommended for viewing the tasks at present, since the background processes triggered by the tasks cannot be displayed in the Unified Interface.
+
+### Error Handling
+
+The scheduler comes with an optional error handling. Here it is possible to define, if a retry should be executed in case of any errors and, if a email should be send in case all retries are failing (schedule enters error state).
+
+![error-handling.png](img//error-handling.png)
+
+- **Retry on error** - *If yes, the schedule will be restarted in case of any errors*
+- **Retry immediately** - *If yes, the next try will start ~5 minutes after the error. Otherwise the next try will be scheduled as if the schedule ended without an error (defined by the frequency of the schedule)*
+- **Error Threshold** - *Defines the number of retries, before the schedule enters the error state*
+- **Email in error** - *If yes, an error email gets send as soon as the schedule enters the error state*
+- **Error Email Address** - *The recipient email address for the generated error email. The sender will be the owner of the schedule workflow (the user which installed the solution - you are able to reassign the workflow to another user). Make sure that this owner has a working mailbox in the crm system.*
 
 ## Development
 

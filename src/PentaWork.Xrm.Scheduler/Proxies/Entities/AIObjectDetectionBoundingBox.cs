@@ -318,34 +318,46 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// msdyn_height
+		///
+		/// Precision: 4
+		/// MaxValue: 1
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Height")]
 		[AttributeLogicalName("msdyn_height")]
 		public double? Height
 		{	
 			get { return GetAttributeValue<double?>("msdyn_height"); }
-			set
-			{ 
-				if(value == Height) return;
-				SetAttributeValue("msdyn_height", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 4);
+				if(doubleValue == Height) return;
+				SetAttributeValue("msdyn_height", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// msdyn_left
+		///
+		/// Precision: 4
+		/// MaxValue: 1
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Left")]
 		[AttributeLogicalName("msdyn_left")]
 		public double? Left
 		{	
 			get { return GetAttributeValue<double?>("msdyn_left"); }
-			set
-			{ 
-				if(value == Left) return;
-				SetAttributeValue("msdyn_left", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 4);
+				if(doubleValue == Left) return;
+				SetAttributeValue("msdyn_left", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// msdyn_name
         /// </summary>
@@ -363,34 +375,46 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// msdyn_top
+		///
+		/// Precision: 4
+		/// MaxValue: 1
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Top")]
 		[AttributeLogicalName("msdyn_top")]
 		public double? Top
 		{	
 			get { return GetAttributeValue<double?>("msdyn_top"); }
-			set
-			{ 
-				if(value == Top) return;
-				SetAttributeValue("msdyn_top", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 4);
+				if(doubleValue == Top) return;
+				SetAttributeValue("msdyn_top", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// msdyn_width
+		///
+		/// Precision: 4
+		/// MaxValue: 1
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Width")]
 		[AttributeLogicalName("msdyn_width")]
 		public double? Width
 		{	
 			get { return GetAttributeValue<double?>("msdyn_width"); }
-			set
-			{ 
-				if(value == Width) return;
-				SetAttributeValue("msdyn_width", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 4);
+				if(doubleValue == Width) return;
+				SetAttributeValue("msdyn_width", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// overriddencreatedon
         /// </summary>

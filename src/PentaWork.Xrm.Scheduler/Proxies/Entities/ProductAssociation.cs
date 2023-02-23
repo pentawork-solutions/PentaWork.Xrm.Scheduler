@@ -172,19 +172,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// exchangerate
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: 0.0000000001
         /// </summary>
 		[DisplayName("Exchange Rate")]
 		[AttributeLogicalName("exchangerate")]
 		public decimal? ExchangeRate
 		{	
 			get { return GetAttributeValue<decimal?>("exchangerate"); }
-			set
-			{ 
-				if(value == ExchangeRate) return;
-				SetAttributeValue("exchangerate", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == ExchangeRate) return;
+				SetAttributeValue("exchangerate", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// importsequencenumber
         /// </summary>
@@ -439,19 +445,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 		/// <summary>
         /// quantity
+		///
+		/// Precision: 5
+		/// MaxValue: 100000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Quantity")]
 		[AttributeLogicalName("quantity")]
 		public decimal? Quantity
 		{	
 			get { return GetAttributeValue<decimal?>("quantity"); }
-			set
-			{ 
-				if(value == Quantity) return;
-				SetAttributeValue("quantity", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 5);
+				if(decimalValue == Quantity) return;
+				SetAttributeValue("quantity", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// statecode
         /// </summary>

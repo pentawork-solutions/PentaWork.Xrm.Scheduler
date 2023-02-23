@@ -22,6 +22,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		#region Attributes
 		/// <summary>
         /// amount
+		///
+		/// Precision: 4
+		/// MaxValue: 1000000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Amount")]
 		[AttributeLogicalName("amount")]
@@ -29,11 +33,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("amount")?.Value; }
 			set 
-			{ 
-				if(value == Amount) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 4);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Amount) return;
 				SetAttributeValue("amount", moneyValue);  
 			}
 		}
@@ -186,34 +194,46 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// exchangerate
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: 0.0000000001
         /// </summary>
 		[DisplayName("Exchange Rate")]
 		[AttributeLogicalName("exchangerate")]
 		public decimal? ExchangeRate
 		{	
 			get { return GetAttributeValue<decimal?>("exchangerate"); }
-			set
-			{ 
-				if(value == ExchangeRate) return;
-				SetAttributeValue("exchangerate", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == ExchangeRate) return;
+				SetAttributeValue("exchangerate", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// highquantity
+		///
+		/// Precision: 5
+		/// MaxValue: 100000000000
+		/// MinValue: 0.00001
         /// </summary>
 		[DisplayName("End Quantity")]
 		[AttributeLogicalName("highquantity")]
 		public decimal? EndQuantity
 		{	
 			get { return GetAttributeValue<decimal?>("highquantity"); }
-			set
-			{ 
-				if(value == EndQuantity) return;
-				SetAttributeValue("highquantity", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 5);
+				if(decimalValue == EndQuantity) return;
+				SetAttributeValue("highquantity", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// importsequencenumber
         /// </summary>
@@ -246,19 +266,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// lowquantity
+		///
+		/// Precision: 5
+		/// MaxValue: 100000000000
+		/// MinValue: 0.00001
         /// </summary>
 		[DisplayName("Begin Quantity")]
 		[AttributeLogicalName("lowquantity")]
 		public decimal? BeginQuantity
 		{	
 			get { return GetAttributeValue<decimal?>("lowquantity"); }
-			set
-			{ 
-				if(value == BeginQuantity) return;
-				SetAttributeValue("lowquantity", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 5);
+				if(decimalValue == BeginQuantity) return;
+				SetAttributeValue("lowquantity", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// modifiedby
         /// </summary>
@@ -411,19 +437,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// percentage
+		///
+		/// Precision: 5
+		/// MaxValue: 1000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Percentage")]
 		[AttributeLogicalName("percentage")]
 		public decimal? Percentage
 		{	
 			get { return GetAttributeValue<decimal?>("percentage"); }
-			set
-			{ 
-				if(value == Percentage) return;
-				SetAttributeValue("percentage", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 5);
+				if(decimalValue == Percentage) return;
+				SetAttributeValue("percentage", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// statuscode
         /// </summary>

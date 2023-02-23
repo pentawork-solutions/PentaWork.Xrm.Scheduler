@@ -318,19 +318,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// progress
+		///
+		/// Precision: 2
+		/// MaxValue: 100
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Progress")]
 		[AttributeLogicalName("progress")]
 		public double? Progress
 		{	
 			get { return GetAttributeValue<double?>("progress"); }
-			set
-			{ 
-				if(value == Progress) return;
-				SetAttributeValue("progress", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 2);
+				if(doubleValue == Progress) return;
+				SetAttributeValue("progress", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// solutionid
         /// </summary>

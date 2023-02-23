@@ -22,6 +22,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		#region Attributes
 		/// <summary>
         /// amount
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Amount")]
 		[AttributeLogicalName("amount")]
@@ -29,11 +33,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("amount")?.Value; }
 			set 
-			{ 
-				if(value == Amount) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == Amount) return;
 				SetAttributeValue("amount", moneyValue);  
 			}
 		}
@@ -175,19 +183,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// exchangerate
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: 0.0000000001
         /// </summary>
 		[DisplayName("Exchange Rate")]
 		[AttributeLogicalName("exchangerate")]
 		public decimal? ExchangeRate
 		{	
 			get { return GetAttributeValue<decimal?>("exchangerate"); }
-			set
-			{ 
-				if(value == ExchangeRate) return;
-				SetAttributeValue("exchangerate", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == ExchangeRate) return;
+				SetAttributeValue("exchangerate", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// importsequencenumber
         /// </summary>
@@ -340,19 +354,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// percentage
+		///
+		/// Precision: 2
+		/// MaxValue: 1000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Percentage")]
 		[AttributeLogicalName("percentage")]
 		public decimal? Percentage
 		{	
 			get { return GetAttributeValue<decimal?>("percentage"); }
-			set
-			{ 
-				if(value == Percentage) return;
-				SetAttributeValue("percentage", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == Percentage) return;
+				SetAttributeValue("percentage", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// pricelevelid
         /// </summary>
@@ -502,6 +522,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 		/// <summary>
         /// roundingoptionamount
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000000
+		/// MinValue: -100000000000000
         /// </summary>
 		[DisplayName("Rounding Amount")]
 		[AttributeLogicalName("roundingoptionamount")]
@@ -509,11 +533,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("roundingoptionamount")?.Value; }
 			set 
-			{ 
-				if(value == RoundingAmount) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == RoundingAmount) return;
 				SetAttributeValue("roundingoptionamount", moneyValue);  
 			}
 		}

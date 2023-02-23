@@ -2200,6 +2200,67 @@
                 <Description description="" languagecode="1033" />
               </Descriptions>
             </attribute>
+            <attribute PhysicalName="pw_email_on_error">
+              <Type>bit</Type>
+              <Name>pw_email_on_error</Name>
+              <LogicalName>pw_email_on_error</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>0.10.2</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>0</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <AppDefaultValue>0</AppDefaultValue>
+              <optionset Name="pw_schedule_pw_email_on_error">
+                <OptionSetType>bit</OptionSetType>
+                <IntroducedVersion>0.10.2</IntroducedVersion>
+                <IsCustomizable>1</IsCustomizable>
+                <displaynames>
+                  <displayname description="Email on error" languagecode="1033" />
+                </displaynames>
+                <Descriptions>
+                  <Description description="" languagecode="1033" />
+                </Descriptions>
+                <options>
+                  <option value="0" Color="#0000ff">
+                    <labels>
+                      <label description="No" languagecode="1033" />
+                    </labels>
+                  </option>
+                  <option value="1" Color="#0000ff">
+                    <labels>
+                      <label description="Yes" languagecode="1033" />
+                    </labels>
+                  </option>
+                </options>
+              </optionset>
+              <displaynames>
+                <displayname description="Email on error" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1033" />
+              </Descriptions>
+            </attribute>
             <attribute PhysicalName="pw_end_datetime">
               <Type>datetime</Type>
               <Name>pw_end_datetime</Name>
@@ -2235,6 +2296,85 @@
               <Behavior>1</Behavior>
               <displaynames>
                 <displayname description="End DateTime" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="pw_error_email_address">
+              <Type>nvarchar</Type>
+              <Name>pw_error_email_address</Name>
+              <LogicalName>pw_error_email_address</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>0.10.2</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>0</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <Format>email</Format>
+              <MaxLength>200</MaxLength>
+              <Length>400</Length>
+              <displaynames>
+                <displayname description="Error Email Address" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="pw_error_threshold">
+              <Type>int</Type>
+              <Name>pw_error_threshold</Name>
+              <LogicalName>pw_error_threshold</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>0.10.2</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>0</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <MinValue>2</MinValue>
+              <MaxValue>2147483647</MaxValue>
+              <displaynames>
+                <displayname description="Error Threshold" languagecode="1033" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2441,7 +2581,7 @@
               <Name>pw_name</Name>
               <LogicalName>pw_name</LogicalName>
               <RequiredLevel>required</RequiredLevel>
-              <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
+              <DisplayMask>ActivityPointerRegardingName|PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -2549,6 +2689,128 @@
               <MaxValue>2147483647</MaxValue>
               <displaynames>
                 <displayname description="Page Size" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="pw_retry_immediately">
+              <Type>bit</Type>
+              <Name>pw_retry_immediately</Name>
+              <LogicalName>pw_retry_immediately</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>0.10.2</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>0</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <AppDefaultValue>0</AppDefaultValue>
+              <optionset Name="pw_schedule_pw_retry_immediately">
+                <OptionSetType>bit</OptionSetType>
+                <IntroducedVersion>0.10.2</IntroducedVersion>
+                <IsCustomizable>1</IsCustomizable>
+                <displaynames>
+                  <displayname description="Retry Immediately" languagecode="1033" />
+                </displaynames>
+                <Descriptions>
+                  <Description description="" languagecode="1033" />
+                </Descriptions>
+                <options>
+                  <option value="0" Color="#0000ff">
+                    <labels>
+                      <label description="No" languagecode="1033" />
+                    </labels>
+                  </option>
+                  <option value="1" Color="#0000ff">
+                    <labels>
+                      <label description="Yes" languagecode="1033" />
+                    </labels>
+                  </option>
+                </options>
+              </optionset>
+              <displaynames>
+                <displayname description="Retry Immediately" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="pw_retry_on_error">
+              <Type>bit</Type>
+              <Name>pw_retry_on_error</Name>
+              <LogicalName>pw_retry_on_error</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>0.10.2</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>0</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <AppDefaultValue>0</AppDefaultValue>
+              <optionset Name="pw_schedule_pw_retry_on_error">
+                <OptionSetType>bit</OptionSetType>
+                <IntroducedVersion>0.10.2</IntroducedVersion>
+                <IsCustomizable>1</IsCustomizable>
+                <displaynames>
+                  <displayname description="Retry on error" languagecode="1033" />
+                </displaynames>
+                <Descriptions>
+                  <Description description="" languagecode="1033" />
+                </Descriptions>
+                <options>
+                  <option value="0" Color="#0000ff">
+                    <labels>
+                      <label description="No" languagecode="1033" />
+                    </labels>
+                  </option>
+                  <option value="1" Color="#0000ff">
+                    <labels>
+                      <label description="Yes" languagecode="1033" />
+                    </labels>
+                  </option>
+                </options>
+              </optionset>
+              <displaynames>
+                <displayname description="Retry on error" languagecode="1033" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2743,6 +3005,45 @@
               <Behavior>1</Behavior>
               <displaynames>
                 <displayname description="Start DateTime" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="pw_successive_errors">
+              <Type>int</Type>
+              <Name>pw_successive_errors</Name>
+              <LogicalName>pw_successive_errors</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>0.10.2</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>0</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <MinValue>0</MinValue>
+              <MaxValue>2147483647</MaxValue>
+              <displaynames>
+                <displayname description="Successive Errors" languagecode="1033" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -3018,6 +3319,7 @@
           <IsDocumentRecommendationsEnabled>0</IsDocumentRecommendationsEnabled>
           <IsBPFEntity>0</IsBPFEntity>
           <OwnershipTypeMask>UserOwned</OwnershipTypeMask>
+          <EntityMask>ActivityPointer</EntityMask>
           <IsAuditEnabled>1</IsAuditEnabled>
           <IsRetrieveAuditEnabled>0</IsRetrieveAuditEnabled>
           <IsRetrieveMultipleAuditEnabled>0</IsRetrieveMultipleAuditEnabled>
@@ -3067,6 +3369,7 @@
           <CanChangeTrackingBeEnabled>1</CanChangeTrackingBeEnabled>
           <IsEnabledForExternalChannels>0</IsEnabledForExternalChannels>
           <IsSolutionAware>0</IsSolutionAware>
+          <HasRelatedActivities>True</HasRelatedActivities>
         </entity>
       </EntityInfo>
       <FormXml>
@@ -3415,11 +3718,80 @@
                             <row />
                             <row />
                             <row />
-                            <row></row>
                             <row />
                             <row />
                             <row />
                             <row />
+                            <row />
+                          </rows>
+                        </section>
+                      </sections>
+                    </column>
+                  </columns>
+                </tab>
+                <tab name="tab_4" id="{cddaa1b2-90a2-42aa-c03c-45122435899b}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true">
+                  <labels>
+                    <label description="Error Handling" languagecode="1033" />
+                  </labels>
+                  <columns>
+                    <column width="50%">
+                      <sections>
+                        <section name="tab_4_section_1" showlabel="false" showbar="false" locklevel="0" id="{0331d793-20e2-9c0c-d614-2b2417c70990}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
+                          <labels>
+                            <label description="Section" languagecode="1033" />
+                          </labels>
+                          <rows>
+                            <row>
+                              <cell id="{26d55304-cdc0-6ea9-3563-7c7e0edde494}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="Retry on error" languagecode="1033" />
+                                </labels>
+                                <control id="pw_retry_on_error" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="pw_retry_on_error" disabled="false" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{9a998eac-9ee2-8ed6-1be7-7c0671406490}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="Retry Immediately" languagecode="1033" />
+                                </labels>
+                                <control id="pw_retry_immediately" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="pw_retry_immediately" disabled="false" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{5bdd9b7a-6162-0278-73c2-c299ec633490}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="Error Threshold" languagecode="1033" />
+                                </labels>
+                                <control id="pw_error_threshold" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="pw_error_threshold" disabled="false" />
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
+                      </sections>
+                    </column>
+                    <column width="50%">
+                      <sections>
+                        <section name="tab_4_section_2" showlabel="false" showbar="false" locklevel="0" id="{989ae669-54ec-191a-48c1-95637233aec3}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
+                          <labels>
+                            <label description="Section" languagecode="1033" />
+                          </labels>
+                          <rows>
+                            <row>
+                              <cell id="{619e1e6b-47be-1c86-6150-dca44b00da62}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="Email on error" languagecode="1033" />
+                                </labels>
+                                <control id="pw_email_on_error" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="pw_email_on_error" disabled="false" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{4a711042-9ba4-b54c-c67d-c4353a671c72}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="Error Email Address" languagecode="1033" />
+                                </labels>
+                                <control id="pw_error_email_address" classid="{ADA2203E-B4CD-49be-9DDF-234642B43B52}" datafieldname="pw_error_email_address" disabled="false" />
+                              </cell>
+                            </row>
                           </rows>
                         </section>
                       </sections>
@@ -3456,21 +3828,23 @@
               <footer id="{95c77aff-761e-492a-bec4-7e7bc1fb4e4d}" columns="111">
                 <rows>
                   <row>
-                    <cell id="{06e4423d-504a-46a8-8885-288d2e7465b5}" showlabel="false">
-                      <labels>
-                        <label description="" languagecode="1033" />
-                      </labels>
-                    </cell>
-                    <cell id="{c4da3e0d-ea91-205a-60ea-6673008e16c9}" showlabel="false">
-                      <labels>
-                        <label description="" languagecode="1033" />
-                      </labels>
-                    </cell>
                     <cell id="{12964cd0-9638-e0ac-001e-298510c24d9b}" showlabel="true" locklevel="0">
                       <labels>
                         <label description="Last Run DateTime" languagecode="1033" />
                       </labels>
                       <control id="footer_pw_last_run_datetime" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="pw_last_run_datetime" disabled="true" />
+                    </cell>
+                    <cell id="{da32cc44-d258-d8cc-aa41-1296625b8c29}" showlabel="true" locklevel="0">
+                      <labels>
+                        <label description="Successive Errors" languagecode="1033" />
+                      </labels>
+                      <control id="footer_pw_successive_errors" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="pw_successive_errors" disabled="true" />
+                    </cell>
+                    <cell id="{78ddb756-2b29-d85c-eb3e-17029ec0165b}" showlabel="true" locklevel="0">
+                      <labels>
+                        <label description="Owner" languagecode="1033" />
+                      </labels>
+                      <control id="footer_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="true" />
                     </cell>
                   </row>
                 </rows>
@@ -4692,6 +5066,64 @@
         <Description languagecode="1033" description="Shows/Hides the Service Fields base on the schedule type" />
       </Descriptions>
     </Workflow>
+    <Workflow WorkflowId="{b5226daf-5f92-ed11-a870-0022485b751f}" Name="Show/Hide Error Retry Fields" Description="Click to add description">
+      <XamlFileName>/Workflows/ShowHideErrorRetryFields-B5226DAF-5F92-ED11-A870-0022485B751F.xaml</XamlFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>2</Category>
+      <Mode>1</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>0.10.2</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ProcessTriggerScope>1</ProcessTriggerScope>
+      <PrimaryEntity>pw_schedule</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1033" description="Show/Hide Error Retry Fields" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description languagecode="1033" description="Click to add description" />
+      </Descriptions>
+    </Workflow>
+    <Workflow WorkflowId="{0082cbb6-5f92-ed11-a870-0022485b751f}" Name="Show/Hide Error Email Address Field" Description="Click to add description">
+      <XamlFileName>/Workflows/ShowHideErrorEmailAddressField-0082CBB6-5F92-ED11-A870-0022485B751F.xaml</XamlFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>2</Category>
+      <Mode>1</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>0.10.2</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ProcessTriggerScope>1</ProcessTriggerScope>
+      <PrimaryEntity>pw_schedule</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1033" description="Show/Hide Error Email Address Field" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description languagecode="1033" description="Click to add description" />
+      </Descriptions>
+    </Workflow>
     <Workflow WorkflowId="{a564ff0d-d7c3-4d7c-86b9-cad2e907cdde}" Name="Execute Schedule Run (Wait an hour)">
       <XamlFileName>/Workflows/ExecuteScheduleRunWaitanhour-A564FF0D-D7C3-4D7C-86B9-CAD2E907CDDE.xaml</XamlFileName>
       <Type>1</Type>
@@ -5538,6 +5970,33 @@
       <SupportedDeployment>0</SupportedDeployment>
       <IntroducedVersion>1.0</IntroducedVersion>
       <SdkMessageProcessingStepImages />
+    </SdkMessageProcessingStep>
+    <SdkMessageProcessingStep Name="PentaScheduleRun - Update - PostOp - Sync" SdkMessageProcessingStepId="{4c88e1b5-4593-ed11-a871-0022485b751f}">
+      <SdkMessageId>20bebb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+      <PluginTypeName>PentaWork.Xrm.Scheduler.PluginController, PentaWork.Xrm.Scheduler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6f5c45728591187e</PluginTypeName>
+      <PluginTypeId>89e5ad06-4e7a-4595-8007-88e36730a92b</PluginTypeId>
+      <PrimaryEntity>pw_penta_schedule_run</PrimaryEntity>
+      <AsyncAutoDelete>0</AsyncAutoDelete>
+      <FilteringAttributes></FilteringAttributes>
+      <InvocationSource>1</InvocationSource>
+      <Mode>0</Mode>
+      <Rank>1</Rank>
+      <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+      <Stage>40</Stage>
+      <IsCustomizable>1</IsCustomizable>
+      <IsHidden>0</IsHidden>
+      <SupportedDeployment>0</SupportedDeployment>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <SdkMessageProcessingStepImages>
+        <SdkMessageProcessingStepImage Name="PreImage">
+          <SdkMessageProcessingStepImageId>{d71b20bf-4593-ed11-a871-0022485b751f}</SdkMessageProcessingStepImageId>
+          <Attributes></Attributes>
+          <EntityAlias>PreImage</EntityAlias>
+          <ImageType>0</ImageType>
+          <MessagePropertyName>Target</MessagePropertyName>
+          <IsCustomizable>1</IsCustomizable>
+        </SdkMessageProcessingStepImage>
+      </SdkMessageProcessingStepImages>
     </SdkMessageProcessingStep>
   </SdkMessageProcessingSteps>
   <ServiceEndpoints>

@@ -195,34 +195,46 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// defaultvaluedecimal
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("Default Decimal Value")]
 		[AttributeLogicalName("defaultvaluedecimal")]
 		public decimal? DefaultDecimalValue
 		{	
 			get { return GetAttributeValue<decimal?>("defaultvaluedecimal"); }
-			set
-			{ 
-				if(value == DefaultDecimalValue) return;
-				SetAttributeValue("defaultvaluedecimal", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == DefaultDecimalValue) return;
+				SetAttributeValue("defaultvaluedecimal", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// defaultvaluedouble
+		///
+		/// Precision: 5
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("Default Double Value")]
 		[AttributeLogicalName("defaultvaluedouble")]
 		public double? DefaultDoubleValue
 		{	
 			get { return GetAttributeValue<double?>("defaultvaluedouble"); }
-			set
-			{ 
-				if(value == DefaultDoubleValue) return;
-				SetAttributeValue("defaultvaluedouble", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 5);
+				if(doubleValue == DefaultDoubleValue) return;
+				SetAttributeValue("defaultvaluedouble", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// defaultvalueinteger
         /// </summary>
@@ -401,34 +413,46 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// maxvaluedecimal
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("Maximum Decimal Value")]
 		[AttributeLogicalName("maxvaluedecimal")]
 		public decimal? MaximumDecimalValue
 		{	
 			get { return GetAttributeValue<decimal?>("maxvaluedecimal"); }
-			set
-			{ 
-				if(value == MaximumDecimalValue) return;
-				SetAttributeValue("maxvaluedecimal", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == MaximumDecimalValue) return;
+				SetAttributeValue("maxvaluedecimal", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// maxvaluedouble
+		///
+		/// Precision: 5
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("Maximum Double Value")]
 		[AttributeLogicalName("maxvaluedouble")]
 		public double? MaximumDoubleValue
 		{	
 			get { return GetAttributeValue<double?>("maxvaluedouble"); }
-			set
-			{ 
-				if(value == MaximumDoubleValue) return;
-				SetAttributeValue("maxvaluedouble", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 5);
+				if(doubleValue == MaximumDoubleValue) return;
+				SetAttributeValue("maxvaluedouble", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// maxvalueinteger
         /// </summary>
@@ -446,34 +470,46 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// minvaluedecimal
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("Minimum Decimal Value")]
 		[AttributeLogicalName("minvaluedecimal")]
 		public decimal? MinimumDecimalValue
 		{	
 			get { return GetAttributeValue<decimal?>("minvaluedecimal"); }
-			set
-			{ 
-				if(value == MinimumDecimalValue) return;
-				SetAttributeValue("minvaluedecimal", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 2);
+				if(decimalValue == MinimumDecimalValue) return;
+				SetAttributeValue("minvaluedecimal", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// minvaluedouble
+		///
+		/// Precision: 5
+		/// MaxValue: 100000000000
+		/// MinValue: -100000000000
         /// </summary>
 		[DisplayName("Minimum Double Value")]
 		[AttributeLogicalName("minvaluedouble")]
 		public double? MinimumDoubleValue
 		{	
 			get { return GetAttributeValue<double?>("minvaluedouble"); }
-			set
-			{ 
-				if(value == MinimumDoubleValue) return;
-				SetAttributeValue("minvaluedouble", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 5);
+				if(doubleValue == MinimumDoubleValue) return;
+				SetAttributeValue("minvaluedouble", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// minvalueinteger
         /// </summary>

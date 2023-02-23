@@ -120,19 +120,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// address1_latitude
+		///
+		/// Precision: 5
+		/// MaxValue: 90
+		/// MinValue: -90
         /// </summary>
 		[DisplayName("Address 1: Latitude")]
 		[AttributeLogicalName("address1_latitude")]
 		public double? Address1Latitude
 		{	
 			get { return GetAttributeValue<double?>("address1_latitude"); }
-			set
-			{ 
-				if(value == Address1Latitude) return;
-				SetAttributeValue("address1_latitude", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 5);
+				if(doubleValue == Address1Latitude) return;
+				SetAttributeValue("address1_latitude", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// address1_line1
         /// </summary>
@@ -180,19 +186,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// address1_longitude
+		///
+		/// Precision: 5
+		/// MaxValue: 180
+		/// MinValue: -180
         /// </summary>
 		[DisplayName("Address 1: Longitude")]
 		[AttributeLogicalName("address1_longitude")]
 		public double? Address1Longitude
 		{	
 			get { return GetAttributeValue<double?>("address1_longitude"); }
-			set
-			{ 
-				if(value == Address1Longitude) return;
-				SetAttributeValue("address1_longitude", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 5);
+				if(doubleValue == Address1Longitude) return;
+				SetAttributeValue("address1_longitude", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// address1_name
         /// </summary>
@@ -451,19 +463,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// address2_latitude
+		///
+		/// Precision: 5
+		/// MaxValue: 90
+		/// MinValue: -90
         /// </summary>
 		[DisplayName("Address 2: Latitude")]
 		[AttributeLogicalName("address2_latitude")]
 		public double? Address2Latitude
 		{	
 			get { return GetAttributeValue<double?>("address2_latitude"); }
-			set
-			{ 
-				if(value == Address2Latitude) return;
-				SetAttributeValue("address2_latitude", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 5);
+				if(doubleValue == Address2Latitude) return;
+				SetAttributeValue("address2_latitude", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// address2_line1
         /// </summary>
@@ -511,19 +529,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// address2_longitude
+		///
+		/// Precision: 5
+		/// MaxValue: 180
+		/// MinValue: -180
         /// </summary>
 		[DisplayName("Address 2: Longitude")]
 		[AttributeLogicalName("address2_longitude")]
 		public double? Address2Longitude
 		{	
 			get { return GetAttributeValue<double?>("address2_longitude"); }
-			set
-			{ 
-				if(value == Address2Longitude) return;
-				SetAttributeValue("address2_longitude", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 5);
+				if(doubleValue == Address2Longitude) return;
+				SetAttributeValue("address2_longitude", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// address2_name
         /// </summary>

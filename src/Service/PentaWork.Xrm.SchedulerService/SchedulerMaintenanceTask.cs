@@ -6,7 +6,6 @@ using System;
 using System.Configuration;
 using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 using System.Timers;
 using System.Web.Hosting;
 using Task = System.Threading.Tasks.Task;

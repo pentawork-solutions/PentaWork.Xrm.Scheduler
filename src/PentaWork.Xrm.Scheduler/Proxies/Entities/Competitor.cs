@@ -135,19 +135,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// address1_latitude
+		///
+		/// Precision: 5
+		/// MaxValue: 90
+		/// MinValue: -90
         /// </summary>
 		[DisplayName("Address 1: Latitude")]
 		[AttributeLogicalName("address1_latitude")]
 		public double? Address1Latitude
 		{	
 			get { return GetAttributeValue<double?>("address1_latitude"); }
-			set
-			{ 
-				if(value == Address1Latitude) return;
-				SetAttributeValue("address1_latitude", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 5);
+				if(doubleValue == Address1Latitude) return;
+				SetAttributeValue("address1_latitude", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// address1_line1
         /// </summary>
@@ -195,19 +201,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// address1_longitude
+		///
+		/// Precision: 5
+		/// MaxValue: 180
+		/// MinValue: -180
         /// </summary>
 		[DisplayName("Address 1: Longitude")]
 		[AttributeLogicalName("address1_longitude")]
 		public double? Address1Longitude
 		{	
 			get { return GetAttributeValue<double?>("address1_longitude"); }
-			set
-			{ 
-				if(value == Address1Longitude) return;
-				SetAttributeValue("address1_longitude", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 5);
+				if(doubleValue == Address1Longitude) return;
+				SetAttributeValue("address1_longitude", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// address1_name
         /// </summary>
@@ -481,19 +493,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// address2_latitude
+		///
+		/// Precision: 5
+		/// MaxValue: 90
+		/// MinValue: -90
         /// </summary>
 		[DisplayName("Address 2: Latitude")]
 		[AttributeLogicalName("address2_latitude")]
 		public double? Address2Latitude
 		{	
 			get { return GetAttributeValue<double?>("address2_latitude"); }
-			set
-			{ 
-				if(value == Address2Latitude) return;
-				SetAttributeValue("address2_latitude", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 5);
+				if(doubleValue == Address2Latitude) return;
+				SetAttributeValue("address2_latitude", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// address2_line1
         /// </summary>
@@ -541,19 +559,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// address2_longitude
+		///
+		/// Precision: 5
+		/// MaxValue: 180
+		/// MinValue: -180
         /// </summary>
 		[DisplayName("Address 2: Longitude")]
 		[AttributeLogicalName("address2_longitude")]
 		public double? Address2Longitude
 		{	
 			get { return GetAttributeValue<double?>("address2_longitude"); }
-			set
-			{ 
-				if(value == Address2Longitude) return;
-				SetAttributeValue("address2_longitude", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 5);
+				if(doubleValue == Address2Longitude) return;
+				SetAttributeValue("address2_longitude", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// address2_name
         /// </summary>
@@ -875,19 +899,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// exchangerate
+		///
+		/// Precision: 10
+		/// MaxValue: 100000000000
+		/// MinValue: 0.0000000001
         /// </summary>
 		[DisplayName("Exchange Rate")]
 		[AttributeLogicalName("exchangerate")]
 		public decimal? ExchangeRate
 		{	
 			get { return GetAttributeValue<decimal?>("exchangerate"); }
-			set
-			{ 
-				if(value == ExchangeRate) return;
-				SetAttributeValue("exchangerate", value);
+			set 
+			{
+				decimal? decimalValue = null;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
+				if(decimalValue == ExchangeRate) return;
+				SetAttributeValue("exchangerate", decimalValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// importsequencenumber
         /// </summary>
@@ -1145,6 +1175,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// reportedrevenue
+		///
+		/// Precision: 2
+		/// MaxValue: 100000000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Reported Revenue")]
 		[AttributeLogicalName("reportedrevenue")]
@@ -1152,11 +1186,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{	
 			get { return GetAttributeValue<Money>("reportedrevenue")?.Value; }
 			set 
-			{ 
-				if(value == ReportedRevenue) return;
-
+			{
 				Money moneyValue = null;
-				if(value != null) moneyValue = new Money(value.Value);
+				if(value != null) 
+				{
+					var roundedValue = Decimal.Round(value.Value, 2);
+					moneyValue = new Money(roundedValue);
+				}
+
+				if(moneyValue.Value == ReportedRevenue) return;
 				SetAttributeValue("reportedrevenue", moneyValue);  
 			}
 		}
@@ -1388,19 +1426,25 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			
 		/// <summary>
         /// winpercentage
+		///
+		/// Precision: 2
+		/// MaxValue: 1000000000
+		/// MinValue: 0
         /// </summary>
 		[DisplayName("Win Percentage")]
 		[AttributeLogicalName("winpercentage")]
 		public double? WinPercentage
 		{	
 			get { return GetAttributeValue<double?>("winpercentage"); }
-			set
-			{ 
-				if(value == WinPercentage) return;
-				SetAttributeValue("winpercentage", value);
+			set 
+			{
+				double? doubleValue = null;
+				if(value != null) doubleValue = Math.Round(value.Value, 2);
+				if(doubleValue == WinPercentage) return;
+				SetAttributeValue("winpercentage", doubleValue);  
 			}
-		}	
-			
+		}
+
 		/// <summary>
         /// yominame
         /// </summary>

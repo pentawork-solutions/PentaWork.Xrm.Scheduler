@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xrm.Sdk;
+using PentaWork.Xrm.Scheduler.Extensions;
 using PentaWork.Xrm.Scheduler.Proxies.Entities;
 using System;
 using System.Linq;
@@ -13,8 +14,7 @@ namespace PentaWork.Xrm.Scheduler.Plugins.PentaSchedules
         {
             if (target.StatusReason == PentaSchedule.eStatusReason.Active_Active)
             {
-                SetDatetimes(target, target.StartDateTime?.ToUniversalTime());
-                Context.SaveChanges();
+                CreateRun(target, target.StartDateTime?.ToUniversalTime());
             }
         }
 
@@ -23,22 +23,22 @@ namespace PentaWork.Xrm.Scheduler.Plugins.PentaSchedules
             var schedule = Context.CreateQuery<PentaSchedule>().Single(s => s.Id == target.Id);
             if (schedule.StatusReason == PentaSchedule.eStatusReason.Active_Active && preTarget.StatusReason != PentaSchedule.eStatusReason.Active_Active)
             {
-                SetDatetimes(schedule, schedule.StartDateTime?.ToUniversalTime());
+                CreateRun(schedule, schedule.StartDateTime?.ToUniversalTime());
             }
             else if (schedule.StatusReason != PentaSchedule.eStatusReason.Active_Active)
             {
                 DeleteOpenRuns(schedule);
             }
-            Context.SaveChanges();
         }
 
-        private void SetDatetimes(PentaSchedule target, DateTime? startDateTimeUTC)
+        private void CreateRun(PentaSchedule target, DateTime? startDateTimeUTC)
         {
-            if (startDateTimeUTC < DateTime.UtcNow) target.StartDateTime = DateTime.UtcNow;
+            target.StartDateTime = startDateTimeUTC < DateTime.UtcNow ? DateTime.UtcNow : target.StartDateTime;
             target.NextRun = CreateNewRun(target, target.StartDateTime);
+            target.SuccessiveErrors = 0;
 
-            if(!Context.IsAttached(target)) Context.Attach(target);
-            Context.UpdateObject(target);
+            Context.AttachUpdate(target);
+            Context.SaveChanges();
         }
 
         private void DeleteOpenRuns(PentaSchedule target)
@@ -50,8 +50,8 @@ namespace PentaWork.Xrm.Scheduler.Plugins.PentaSchedules
             }
             target.NextRun = null;
 
-            if (!Context.IsAttached(target)) Context.Attach(target);
-            Context.UpdateObject(target);
+            Context.AttachUpdate(target);
+            Context.SaveChanges();
         }
 
         private EntityReference CreateNewRun(PentaSchedule schedule, DateTime? runDateTime)
