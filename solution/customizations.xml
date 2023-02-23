@@ -5971,6 +5971,33 @@
       <IntroducedVersion>1.0</IntroducedVersion>
       <SdkMessageProcessingStepImages />
     </SdkMessageProcessingStep>
+    <SdkMessageProcessingStep Name="PentaScheduleRun - Update - PostOp - Sync" SdkMessageProcessingStepId="{4c88e1b5-4593-ed11-a871-0022485b751f}">
+      <SdkMessageId>20bebb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+      <PluginTypeName>PentaWork.Xrm.Scheduler.PluginController, PentaWork.Xrm.Scheduler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6f5c45728591187e</PluginTypeName>
+      <PluginTypeId>89e5ad06-4e7a-4595-8007-88e36730a92b</PluginTypeId>
+      <PrimaryEntity>pw_penta_schedule_run</PrimaryEntity>
+      <AsyncAutoDelete>0</AsyncAutoDelete>
+      <FilteringAttributes></FilteringAttributes>
+      <InvocationSource>1</InvocationSource>
+      <Mode>0</Mode>
+      <Rank>1</Rank>
+      <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+      <Stage>40</Stage>
+      <IsCustomizable>1</IsCustomizable>
+      <IsHidden>0</IsHidden>
+      <SupportedDeployment>0</SupportedDeployment>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <SdkMessageProcessingStepImages>
+        <SdkMessageProcessingStepImage Name="PreImage">
+          <SdkMessageProcessingStepImageId>{d71b20bf-4593-ed11-a871-0022485b751f}</SdkMessageProcessingStepImageId>
+          <Attributes></Attributes>
+          <EntityAlias>PreImage</EntityAlias>
+          <ImageType>0</ImageType>
+          <MessagePropertyName>Target</MessagePropertyName>
+          <IsCustomizable>1</IsCustomizable>
+        </SdkMessageProcessingStepImage>
+      </SdkMessageProcessingStepImages>
+    </SdkMessageProcessingStep>
   </SdkMessageProcessingSteps>
   <ServiceEndpoints>
     <ServiceEndpoint ServiceEndpointId="{331e9dc6-245f-ec11-a836-0022485b751f}" Name="PentaWork.Xrm.SchedulerService.Schedules">
