@@ -6,9 +6,11 @@
         <entity Name="pw_penta_schedule_run">
           <LocalizedNames>
             <LocalizedName description="Penta Schedule Run" languagecode="1033" />
+            <LocalizedName description="Penta Zeitplanlauf" languagecode="1031" />
           </LocalizedNames>
           <LocalizedCollectionNames>
             <LocalizedCollectionName description="Penta Schedule Runs" languagecode="1033" />
+            <LocalizedCollectionName description="Penta Zeitplanläufe" languagecode="1031" />
           </LocalizedCollectionNames>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -48,9 +50,11 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Created By" languagecode="1033" />
+                <displayname description="Erstellt von" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+                <Description description="Eindeutige Kennung des Benutzers, der den Datensatz erstellt hat." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="CreatedOn">
@@ -88,9 +92,11 @@
               <Behavior>1</Behavior>
               <displaynames>
                 <displayname description="Created On" languagecode="1033" />
+                <displayname description="Erstellt am" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Date and time when the record was created." languagecode="1033" />
+                <Description description="Datum und Uhrzeit, zu der der Datensatz erstellt wurde." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="CreatedOnBehalfBy">
@@ -127,9 +133,11 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Created By (Delegate)" languagecode="1033" />
+                <displayname description="Erstellt von (Delegierter)" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier of the delegate user who created the record." languagecode="1033" />
+                <Description description="Eindeutige Kennung des delegierten Benutzers, der den Datensatz erstellt hat." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="ImportSequenceNumber">
@@ -167,9 +175,11 @@
               <MaxValue>2147483647</MaxValue>
               <displaynames>
                 <displayname description="Import Sequence Number" languagecode="1033" />
+                <displayname description="Laufende Nummer importieren" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Sequence number of the import that created this record." languagecode="1033" />
+                <Description description="Laufende Nummer des Imports, der diesen Datensatz erstellt hat." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="ModifiedBy">
@@ -206,9 +216,11 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Modified By" languagecode="1033" />
+                <displayname description="Geändert von" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+                <Description description="Eindeutige Kennung des Benutzers, der den Datensatz geändert hat." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="ModifiedOn">
@@ -246,9 +258,11 @@
               <Behavior>1</Behavior>
               <displaynames>
                 <displayname description="Modified On" languagecode="1033" />
+                <displayname description="Geändert am" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Date and time when the record was modified." languagecode="1033" />
+                <Description description="Datum und Uhrzeit, zu der der Datensatz geändert wurde." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="ModifiedOnBehalfBy">
@@ -285,9 +299,11 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Modified By (Delegate)" languagecode="1033" />
+                <displayname description="Geändert von (Delegierter)" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier of the delegate user who modified the record." languagecode="1033" />
+                <Description description="Eindeutige Kennung des delegierten Benutzers, der den Datensatz geändert hat." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="OverriddenCreatedOn">
@@ -325,9 +341,11 @@
               <Behavior>1</Behavior>
               <displaynames>
                 <displayname description="Record Created On" languagecode="1033" />
+                <displayname description="Datensatz erstellt am" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Date and time that the record was migrated." languagecode="1033" />
+                <Description description="Datum und Uhrzeit, zu der der Datensatz migriert wurde." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="OwnerId">
@@ -367,9 +385,11 @@
               </LookupTypes>
               <displaynames>
                 <displayname description="Owner" languagecode="1033" />
+                <displayname description="Besitzer" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Owner Id" languagecode="1033" />
+                <Description description="Besitzer ID" languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="OwningBusinessUnit">
@@ -377,12 +397,13 @@
               <Name>owningbusinessunit</Name>
               <LogicalName>owningbusinessunit</LogicalName>
               <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>0</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
               <ValidForCreateApi>0</ValidForCreateApi>
               <IsCustomField>0</IsCustomField>
-              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsAuditEnabled>1</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>0.6.1</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
@@ -405,9 +426,11 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Owning Business Unit" languagecode="1033" />
+                <displayname description="Besitzende Geschäftseinheit" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
+                <Description description="Eindeutiger Bezeichner für die Geschäftseinheit, der der Datensatz gehört" languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="OwningTeam">
@@ -444,9 +467,11 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Owning Team" languagecode="1033" />
+                <displayname description="Besitzendes Team" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier for the team that owns the record." languagecode="1033" />
+                <Description description="Eindeutige Kennung für das Team, dem der Datensatz gehört." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="OwningUser">
@@ -483,9 +508,11 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Owning User" languagecode="1033" />
+                <displayname description="Besitzender Benutzer" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+                <Description description="Eindeutiger Bezeichner für den Benutzer, dem der Datensatz gehört." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="pw_current_page">
@@ -518,10 +545,12 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>0</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
+              <Format></Format>
               <MinValue>0</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
                 <displayname description="Current Page" languagecode="1033" />
+                <displayname description="Aktuelle Seite" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -561,6 +590,7 @@
               <MaxLength>100000</MaxLength>
               <displaynames>
                 <displayname description="Log" languagecode="1033" />
+                <displayname description="Log" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -601,9 +631,11 @@
               <Length>200</Length>
               <displaynames>
                 <displayname description="Name" languagecode="1033" />
+                <displayname description="Name" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="The name of the custom entity." languagecode="1033" />
+                <Description description="Der Name der benutzerdefinierten Entität." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="pw_page_size">
@@ -636,10 +668,12 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>0</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
+              <Format></Format>
               <MinValue>0</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
                 <displayname description="Page Size" languagecode="1033" />
+                <displayname description="Seitengröße" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -679,6 +713,7 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Penta Schedule" languagecode="1033" />
+                <displayname description="Penta Zeitplan" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -716,9 +751,11 @@
               <IsLocalizable>0</IsLocalizable>
               <displaynames>
                 <displayname description="Penta Schedule Run" languagecode="1033" />
+                <displayname description="Penta Zeitplan Lauf" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier for entity instances" languagecode="1033" />
+                <Description description="Eindeutiger Bezeichner für Entitätsinstanzen" languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="pw_run_datetime">
@@ -756,6 +793,7 @@
               <Behavior>1</Behavior>
               <displaynames>
                 <displayname description="Run DateTime" languagecode="1033" />
+                <displayname description="Zeit des Durchlaufs" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -791,10 +829,12 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>0</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
+              <Format></Format>
               <MinValue>0</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
                 <displayname description="Total Pages" languagecode="1033" />
+                <displayname description="Seiten gesamt" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -836,28 +876,34 @@
                 <IsCustomizable>1</IsCustomizable>
                 <displaynames>
                   <displayname description="Status" languagecode="1033" />
+                  <displayname description="Status" languagecode="1031" />
                 </displaynames>
                 <Descriptions>
                   <Description description="Status of the Penta Schedule Run" languagecode="1033" />
+                  <Description description="Status des Penta Zeitplanlaufs" languagecode="1031" />
                 </Descriptions>
                 <states>
                   <state value="0" defaultstatus="266890000" invariantname="Active">
                     <labels>
                       <label description="Active" languagecode="1033" />
+                      <label description="Aktiv" languagecode="1031" />
                     </labels>
                   </state>
                   <state value="1" defaultstatus="266890001" invariantname="Inactive">
                     <labels>
                       <label description="Inactive" languagecode="1033" />
+                      <label description="Inaktiv" languagecode="1031" />
                     </labels>
                   </state>
                 </states>
               </optionset>
               <displaynames>
                 <displayname description="Status" languagecode="1033" />
+                <displayname description="Status" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Status of the Penta Schedule Run" languagecode="1033" />
+                <Description description="Status des Penta Zeitplanlaufs" languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="statuscode">
@@ -896,43 +942,52 @@
                 <IsCustomizable>1</IsCustomizable>
                 <displaynames>
                   <displayname description="Status Reason" languagecode="1033" />
+                  <displayname description="Statusgrund" languagecode="1031" />
                 </displaynames>
                 <Descriptions>
                   <Description description="Reason for the status of the Penta Schedule Run" languagecode="1033" />
+                  <Description description="Reason for the status of Penta Schedule Run" languagecode="1031" />
                 </Descriptions>
                 <statuses>
                   <status value="1" state="0" TransitionData="" Color="#0000ff">
                     <labels>
                       <label description="Waiting" languagecode="1033" />
+                      <label description="Warten" languagecode="1031" />
                     </labels>
                   </status>
                   <status value="266890002" state="0" TransitionData="" Color="#0000ff">
                     <labels>
                       <label description="Waiting (Depth Reset)" languagecode="1033" />
+                      <label description="Warten (Tiefenreset)" languagecode="1031" />
                     </labels>
                   </status>
                   <status value="266890000" state="0" TransitionData="" Color="#0000ff">
                     <labels>
                       <label description="In Progress" languagecode="1033" />
+                      <label description="In Durchführung" languagecode="1031" />
                     </labels>
                   </status>
                   <status value="2" state="1" TransitionData="" Color="#0000ff">
                     <labels>
                       <label description="Ended" languagecode="1033" />
+                      <label description="Beendet" languagecode="1031" />
                     </labels>
                   </status>
                   <status value="266890001" state="1" TransitionData="" Color="#0000ff">
                     <labels>
                       <label description="Error" languagecode="1033" />
+                      <label description="Fehler" languagecode="1031" />
                     </labels>
                   </status>
                 </statuses>
               </optionset>
               <displaynames>
                 <displayname description="Status Reason" languagecode="1033" />
+                <displayname description="Statusgrund" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Reason for the status of the Penta Schedule Run" languagecode="1033" />
+                <Description description="Grund für den Status des Penta Zeitplanlaufs" languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="TimeZoneRuleVersionNumber">
@@ -969,9 +1024,11 @@
               <MaxValue>2147483647</MaxValue>
               <displaynames>
                 <displayname description="Time Zone Rule Version Number" languagecode="1033" />
+                <displayname description="Versionsnummer der Zeitzonenregel" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="For internal use only." languagecode="1033" />
+                <Description description="Nur für den internen Gebrauch." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="UTCConversionTimeZoneCode">
@@ -1008,9 +1065,11 @@
               <MaxValue>2147483647</MaxValue>
               <displaynames>
                 <displayname description="UTC Conversion Time Zone Code" languagecode="1033" />
+                <displayname description="UTC-Umrechnung Zeitzonencode" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Time zone code that was in use when the record was created." languagecode="1033" />
+                <Description description="Zeitzonencode, der bei der Erstellung des Datensatzes verwendet wurde." languagecode="1031" />
               </Descriptions>
             </attribute>
           </attributes>
@@ -1078,6 +1137,7 @@
           <ChangeTrackingEnabled>0</ChangeTrackingEnabled>
           <CanChangeTrackingBeEnabled>1</CanChangeTrackingBeEnabled>
           <IsEnabledForExternalChannels>0</IsEnabledForExternalChannels>
+          <IsMSTeamsIntegrationEnabled>0</IsMSTeamsIntegrationEnabled>
           <IsSolutionAware>0</IsSolutionAware>
         </entity>
       </EntityInfo>
@@ -1099,6 +1159,7 @@
                       <sections>
                         <section name="ColorStrip" showlabel="false" showbar="false" columns="1" IsUserDefined="0" id="{edb0d261-ae21-40d6-ad0c-58cc2b58615c}">
                           <labels>
+                            <label description="Farbstreifen" languagecode="1031" />
                             <label description="ColorStrip" languagecode="1033" />
                           </labels>
                         </section>
@@ -1108,6 +1169,7 @@
                       <sections>
                         <section name="CardHeader" showlabel="false" showbar="false" columns="111" id="{66ac7220-b959-46b5-926a-d570d94510b3}" IsUserDefined="0">
                           <labels>
+                            <label description="Kopfzeile" languagecode="1031" />
                             <label description="Header" languagecode="1033" />
                           </labels>
                           <rows>
@@ -1115,6 +1177,7 @@
                               <cell id="{116b30c4-5650-4232-83b5-3c7c87064a4e}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Status Reason" languagecode="1033" />
+                                  <label description="Statusgrund" languagecode="1031" />
                                 </labels>
                                 <control id="statuscode" classid="{5D68B988-0661-4db2-BC3E-17598AD3BE6C}" datafieldname="statuscode" disabled="false" />
                               </cell>
@@ -1133,6 +1196,7 @@
                         </section>
                         <section name="CardDetails" showlabel="false" showbar="false" columns="1" id="{b0e5cc3e-0eff-4913-97c7-629a4943e6d2}" IsUserDefined="0">
                           <labels>
+                            <label description="Details" languagecode="1031" />
                             <label description="Details" languagecode="1033" />
                           </labels>
                           <rows>
@@ -1140,6 +1204,7 @@
                               <cell id="{b3b16b18-f2ee-43b3-96e2-e4a1821f35ec}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Name" languagecode="1033" />
+                                  <label description="Name" languagecode="1031" />
                                 </labels>
                                 <control id="pw_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pw_name" disabled="false" />
                               </cell>
@@ -1148,6 +1213,7 @@
                         </section>
                         <section name="CardFooter" showlabel="false" columns="1111" showbar="false" id="{4569c112-fd3b-41d2-817d-71db4005f112}" IsUserDefined="0">
                           <labels>
+                            <label description="Fußzeile" languagecode="1031" />
                             <label description="Footer" languagecode="1033" />
                           </labels>
                           <rows>
@@ -1155,12 +1221,14 @@
                               <cell id="{fab08bef-569d-4765-94fa-53519f977d4c}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Owner" languagecode="1033" />
+                                  <label description="Besitzer" languagecode="1031" />
                                 </labels>
                                 <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
                               </cell>
                               <cell id="{946266df-bc64-4e6b-bade-af3a6a0dda50}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Created On" languagecode="1033" />
+                                  <label description="Erstellt am" languagecode="1031" />
                                 </labels>
                                 <control id="createdon" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdon" disabled="false" />
                               </cell>
@@ -1186,9 +1254,11 @@
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
             <LocalizedNames>
+              <LocalizedName description="Information" languagecode="1031" />
               <LocalizedName description="Information" languagecode="1033" />
             </LocalizedNames>
             <Descriptions>
+              <Description description="Ein Kartenformular für diese Entität." languagecode="1031" />
               <Description description="A card form for this entity." languagecode="1033" />
             </Descriptions>
           </systemform>
@@ -1203,6 +1273,7 @@
               <tabs>
                 <tab verticallayout="true" id="{dcb3df7d-1559-47b4-8e6e-ec058cebda5c}" IsUserDefined="1">
                   <labels>
+                    <label description="Allgemein" languagecode="1031" />
                     <label description="General" languagecode="1033" />
                   </labels>
                   <columns>
@@ -1210,6 +1281,7 @@
                       <sections>
                         <section name="{dcb3df7d-1559-47b4-8e6e-ec058cebda5c}_section_2" showlabel="false" showbar="false" locklevel="0" id="{a86d7a6d-a834-9cdd-3e58-0db9cd79b2e7}" IsUserDefined="0" layout="varwidth" columns="11" labelwidth="115">
                           <labels>
+                            <label description="Sektion" languagecode="1031" />
                             <label description="Section" languagecode="1033" />
                           </labels>
                           <rows>
@@ -1217,12 +1289,14 @@
                               <cell id="{b5aececb-83eb-daea-ae90-2c9e4a1e3d03}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Run DateTime" languagecode="1033" />
+                                  <label description="Lauf Zeitpunkt" languagecode="1031" />
                                 </labels>
                                 <control id="pw_run_datetime" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="pw_run_datetime" disabled="true" uniqueid="{a2602e6c-05d6-2a26-ab4b-c6a933a18ba4}" />
                               </cell>
                               <cell id="{cb4ad777-0042-62e2-9c61-c1d8ea7e2c3a}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Penta Schedule" languagecode="1033" />
+                                  <label description="Penta Zeitplan" languagecode="1031" />
                                 </labels>
                                 <control id="pw_penta_schedule" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pw_penta_schedule" disabled="true" uniqueid="{9524e20a-167b-1312-53b5-1609a7b15451}">
                                   <parameters>
@@ -1240,12 +1314,14 @@
                               <cell id="{20e26b86-44e1-3ba1-adcc-2d3d4e766201}" showlabel="true" locklevel="1">
                                 <labels>
                                   <label description="Status" languagecode="1033" />
+                                  <label description="Status" languagecode="1031" />
                                 </labels>
                                 <control id="statecode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="statecode" disabled="true" uniqueid="{cb701d3c-36da-8324-9139-1a8979a7d21d}" />
                               </cell>
                               <cell id="{4974d850-6dd0-219a-8bb7-43a99d8d7340}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Page Size" languagecode="1033" />
+                                  <label description="Seitengröße" languagecode="1031" />
                                 </labels>
                                 <control id="pw_page_size" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="pw_page_size" disabled="true" uniqueid="{ceb029c1-d139-b7c6-7bd9-90ca9ad12889}" />
                               </cell>
@@ -1254,12 +1330,14 @@
                               <cell id="{14cdada9-3b71-9263-4b92-104a31b82e00}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Status Reason" languagecode="1033" />
+                                  <label description="Statusgrund" languagecode="1031" />
                                 </labels>
                                 <control id="statuscode" classid="{5D68B988-0661-4db2-BC3E-17598AD3BE6C}" datafieldname="statuscode" disabled="true" uniqueid="{2a5868e4-baca-4a0c-3286-9297bbe6ac3a}" />
                               </cell>
                               <cell id="{d5325da7-e6d3-0b4b-5b94-55b224a08910}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Total Pages" languagecode="1033" />
+                                  <label description="Seiten gesamt" languagecode="1031" />
                                 </labels>
                                 <control id="pw_total_pages" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="pw_total_pages" disabled="true" uniqueid="{83396968-016d-aedb-d5e5-965a388dc692}" />
                               </cell>
@@ -1268,6 +1346,7 @@
                         </section>
                         <section showlabel="false" showbar="false" IsUserDefined="0" id="{8baa7993-987f-485d-bb82-7d6645026288}">
                           <labels>
+                            <label description="Allgemein" languagecode="1031" />
                             <label description="General" languagecode="1033" />
                           </labels>
                           <rows>
@@ -1275,6 +1354,7 @@
                               <cell id="{08fa8746-fae6-47d6-a37d-760b92c151a7}" showlabel="true" locklevel="0" visible="false">
                                 <labels>
                                   <label description="Name" languagecode="1033" />
+                                  <label description="Name" languagecode="1031" />
                                 </labels>
                                 <control id="pw_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pw_name" uniqueid="{c4459a34-6ad8-04c3-8d7e-a2c8343543ee}" disabled="true" />
                               </cell>
@@ -1283,6 +1363,7 @@
                               <cell id="{fcefd212-d704-423a-9519-8c65700b06c8}" showlabel="true" locklevel="1" visible="false">
                                 <labels>
                                   <label description="Owner" languagecode="1033" />
+                                  <label description="Besitzer" languagecode="1031" />
                                 </labels>
                                 <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" uniqueid="{bd675706-767c-5e93-56a7-84c9428842e7}" disabled="true">
                                   <parameters>
@@ -1296,6 +1377,7 @@
                               <cell id="{5d21c594-c778-a927-ece3-77c5849a8a85}" showlabel="true" locklevel="0" rowspan="15">
                                 <labels>
                                   <label description="Log" languagecode="1033" />
+                                  <label description="Log" languagecode="1031" />
                                 </labels>
                                 <control id="pw_log" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="pw_log" disabled="true" uniqueid="{4d218ea4-0d35-e752-e250-57922b157bc0}" />
                               </cell>
@@ -1356,9 +1438,11 @@
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
             <LocalizedNames>
+              <LocalizedName description="Information" languagecode="1031" />
               <LocalizedName description="Information" languagecode="1033" />
             </LocalizedNames>
             <Descriptions>
+              <Description description="Ein Formular für diese Entität." languagecode="1031" />
               <Description description="A form for this entity." languagecode="1033" />
             </Descriptions>
           </systemform>
@@ -1380,6 +1464,7 @@
                       <sections>
                         <section showlabel="false" showbar="false" IsUserDefined="0" id="{15364c2e-11c7-40ec-9e23-a6612320f21b}">
                           <labels>
+                            <label description="ALLGEMEIN" languagecode="1031" />
                             <label description="GENERAL" languagecode="1033" />
                           </labels>
                           <rows>
@@ -1387,6 +1472,7 @@
                               <cell id="{e41c703f-0ac4-4219-9bb9-05f5eb2446b0}">
                                 <labels>
                                   <label description="Name" languagecode="1033" />
+                                  <label description="Name" languagecode="1031" />
                                 </labels>
                                 <control id="pw_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pw_name" />
                               </cell>
@@ -1395,6 +1481,7 @@
                               <cell id="{5b14391d-cc63-4521-8d5a-ff31d34bc0ff}">
                                 <labels>
                                   <label description="Owner" languagecode="1033" />
+                                  <label description="Besitzer" languagecode="1031" />
                                 </labels>
                                 <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                               </cell>
@@ -1410,6 +1497,7 @@
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
             <LocalizedNames>
+              <LocalizedName description="Information" languagecode="1031" />
               <LocalizedName description="Information" languagecode="1033" />
             </LocalizedNames>
           </systemform>
@@ -1448,6 +1536,7 @@
             </fetchxml>
             <IntroducedVersion>0.6.1</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Inaktive Penta Zeitplanläufe" languagecode="1031" />
               <LocalizedName description="Inactive Penta Schedule Runs" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -1472,9 +1561,11 @@
             </fetchxml>
             <IntroducedVersion>0.6.1</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Meine Penta Zeitplanläufe" languagecode="1031" />
               <LocalizedName description="My Penta Schedule Runs" languagecode="1033" />
             </LocalizedNames>
             <Descriptions>
+              <Description description="Aktive Penta Zeitplanläufe in meinem Besitz" languagecode="1031" />
               <Description description="Active Penta Schedule Runs owned by me" languagecode="1033" />
             </Descriptions>
           </savedquery>
@@ -1506,6 +1597,7 @@
             </fetchxml>
             <IntroducedVersion>0.6.1</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Penta Zeitplanlauf Erweiterte Suchansicht" languagecode="1031" />
               <LocalizedName description="Penta Schedule Run Advanced Find View" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -1545,6 +1637,7 @@
             </fetchxml>
             <IntroducedVersion>0.6.1</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Penta Zeitplanlauf Zugehörige Ansicht" languagecode="1031" />
               <LocalizedName description="Penta Schedule Run Associated View" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -1578,6 +1671,7 @@
             </fetchxml>
             <IntroducedVersion>0.6.1</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Penta Zeitplanlauf Lookup-Ansicht" languagecode="1031" />
               <LocalizedName description="Penta Schedule Run Lookup View" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -1617,6 +1711,7 @@
             </fetchxml>
             <IntroducedVersion>0.6.1</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Penta Zeitplanläufe" languagecode="1031" />
               <LocalizedName description="Penta Schedule Runs" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -1654,6 +1749,7 @@
             </fetchxml>
             <IntroducedVersion>0.6.1</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Schnellsuche Aktive Penta Zeitplanläufe" languagecode="1031" />
               <LocalizedName description="Quick Find Active Penta Schedule Runs" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -1679,9 +1775,11 @@
         <entity Name="pw_schedule">
           <LocalizedNames>
             <LocalizedName description="Penta Schedule" languagecode="1033" />
+            <LocalizedName description="Penta Zeitplan" languagecode="1031" />
           </LocalizedNames>
           <LocalizedCollectionNames>
             <LocalizedCollectionName description="Penta Schedules" languagecode="1033" />
+            <LocalizedCollectionName description="Penta Zeitpläne" languagecode="1031" />
           </LocalizedCollectionNames>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -1721,9 +1819,11 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Created By" languagecode="1033" />
+                <displayname description="Erstellt von" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+                <Description description="Eindeutige Kennung des Benutzers, der den Datensatz erstellt hat." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="CreatedOn">
@@ -1761,9 +1861,11 @@
               <Behavior>1</Behavior>
               <displaynames>
                 <displayname description="Created On" languagecode="1033" />
+                <displayname description="Erstellt am" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Date and time when the record was created." languagecode="1033" />
+                <Description description="Datum und Uhrzeit, zu der der Datensatz erstellt wurde." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="CreatedOnBehalfBy">
@@ -1800,9 +1902,11 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Created By (Delegate)" languagecode="1033" />
+                <displayname description="Erstellt von (Delegierter)" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier of the delegate user who created the record." languagecode="1033" />
+                <Description description="Eindeutige Kennung des delegierten Benutzers, der den Datensatz erstellt hat." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="ImportSequenceNumber">
@@ -1840,9 +1944,11 @@
               <MaxValue>2147483647</MaxValue>
               <displaynames>
                 <displayname description="Import Sequence Number" languagecode="1033" />
+                <displayname description="Laufende Nummer importieren" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Sequence number of the import that created this record." languagecode="1033" />
+                <Description description="Laufende Nummer des Imports, der diesen Datensatz erstellt hat." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="ModifiedBy">
@@ -1879,9 +1985,11 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Modified By" languagecode="1033" />
+                <displayname description="Geändert von" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+                <Description description="Eindeutige Kennung des Benutzers, der den Datensatz geändert hat." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="ModifiedOn">
@@ -1919,9 +2027,11 @@
               <Behavior>1</Behavior>
               <displaynames>
                 <displayname description="Modified On" languagecode="1033" />
+                <displayname description="Geändert am" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Date and time when the record was modified." languagecode="1033" />
+                <Description description="Datum und Uhrzeit, zu der der Datensatz geändert wurde." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="ModifiedOnBehalfBy">
@@ -1958,9 +2068,11 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Modified By (Delegate)" languagecode="1033" />
+                <displayname description="Geändert von (Delegierter)" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier of the delegate user who modified the record." languagecode="1033" />
+                <Description description="Eindeutige Kennung des delegierten Benutzers, der den Datensatz geändert hat." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="OverriddenCreatedOn">
@@ -1998,9 +2110,11 @@
               <Behavior>1</Behavior>
               <displaynames>
                 <displayname description="Record Created On" languagecode="1033" />
+                <displayname description="Datensatz erstellt am" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Date and time that the record was migrated." languagecode="1033" />
+                <Description description="Datum und Uhrzeit, zu der der Datensatz migriert wurde." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="OwnerId">
@@ -2040,9 +2154,11 @@
               </LookupTypes>
               <displaynames>
                 <displayname description="Owner" languagecode="1033" />
+                <displayname description="Besitzer" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Owner Id" languagecode="1033" />
+                <Description description="Besitzer ID" languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="OwningBusinessUnit">
@@ -2050,12 +2166,13 @@
               <Name>owningbusinessunit</Name>
               <LogicalName>owningbusinessunit</LogicalName>
               <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>0</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
               <ValidForCreateApi>0</ValidForCreateApi>
               <IsCustomField>0</IsCustomField>
-              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsAuditEnabled>1</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>0.5</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
@@ -2078,9 +2195,11 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Owning Business Unit" languagecode="1033" />
+                <displayname description="Besitzende Geschäftseinheit" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
+                <Description description="Eindeutiger Bezeichner für die Geschäftseinheit, der der Datensatz gehört" languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="OwningTeam">
@@ -2117,9 +2236,11 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Owning Team" languagecode="1033" />
+                <displayname description="Besitzendes Team" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier for the team that owns the record." languagecode="1033" />
+                <Description description="Eindeutige Kennung für das Team, dem der Datensatz gehört." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="OwningUser">
@@ -2156,9 +2277,11 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Owning User" languagecode="1033" />
+                <displayname description="Besitzender Benutzer" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+                <Description description="Eindeutiger Bezeichner für den Benutzer, dem der Datensatz gehört." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="pw_action">
@@ -2195,6 +2318,7 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Action" languagecode="1033" />
+                <displayname description="Action" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2237,6 +2361,7 @@
                 <IsCustomizable>1</IsCustomizable>
                 <displaynames>
                   <displayname description="Email on error" languagecode="1033" />
+                  <displayname description="Email bei Fehler" languagecode="1031" />
                 </displaynames>
                 <Descriptions>
                   <Description description="" languagecode="1033" />
@@ -2245,17 +2370,20 @@
                   <option value="0" Color="#0000ff">
                     <labels>
                       <label description="No" languagecode="1033" />
+                      <label description="Nein" languagecode="1031" />
                     </labels>
                   </option>
                   <option value="1" Color="#0000ff">
                     <labels>
                       <label description="Yes" languagecode="1033" />
+                      <label description="Ja" languagecode="1031" />
                     </labels>
                   </option>
                 </options>
               </optionset>
               <displaynames>
                 <displayname description="Email on error" languagecode="1033" />
+                <displayname description="Email bei Fehler" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2296,6 +2424,7 @@
               <Behavior>1</Behavior>
               <displaynames>
                 <displayname description="End DateTime" languagecode="1033" />
+                <displayname description="Endzeit" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2336,6 +2465,7 @@
               <Length>400</Length>
               <displaynames>
                 <displayname description="Error Email Address" languagecode="1033" />
+                <displayname description="Fehler Email Adresse" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2371,10 +2501,12 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>0</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
+              <Format></Format>
               <MinValue>2</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
                 <displayname description="Error Threshold" languagecode="1033" />
+                <displayname description="Fehlerschwelle" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2414,6 +2546,7 @@
               <MaxLength>10000</MaxLength>
               <displaynames>
                 <displayname description="Fetch XML" languagecode="1033" />
+                <displayname description="Fetch XML" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2453,6 +2586,7 @@
               <OptionSetName>pw_frequency</OptionSetName>
               <displaynames>
                 <displayname description="Frequency" languagecode="1033" />
+                <displayname description="Frequenz" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2488,10 +2622,12 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>0</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
+              <Format></Format>
               <MinValue>1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
                 <displayname description="Frequency Value" languagecode="1033" />
+                <displayname description="Häufigkeitswert" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2531,6 +2667,7 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Global Action" languagecode="1033" />
+                <displayname description="Global Action" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2571,6 +2708,7 @@
               <Behavior>1</Behavior>
               <displaynames>
                 <displayname description="Last Run DateTime" languagecode="1033" />
+                <displayname description="Zeitpunkt letzter Lauf" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2611,9 +2749,11 @@
               <Length>500</Length>
               <displaynames>
                 <displayname description="Name" languagecode="1033" />
+                <displayname description="Name" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="The name of the entity." languagecode="1033" />
+                <Description description="Der Name der Entität." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="pw_next_run">
@@ -2650,6 +2790,7 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Next Run" languagecode="1033" />
+                <displayname description="Nächster Lauf" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2685,10 +2826,12 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>0</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
+              <Format></Format>
               <MinValue>-2147483648</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
                 <displayname description="Page Size" languagecode="1033" />
+                <displayname description="Seitengröße" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2731,6 +2874,7 @@
                 <IsCustomizable>1</IsCustomizable>
                 <displaynames>
                   <displayname description="Retry Immediately" languagecode="1033" />
+                  <displayname description="Sofortige Wiederholung" languagecode="1031" />
                 </displaynames>
                 <Descriptions>
                   <Description description="" languagecode="1033" />
@@ -2739,17 +2883,20 @@
                   <option value="0" Color="#0000ff">
                     <labels>
                       <label description="No" languagecode="1033" />
+                      <label description="Nein" languagecode="1031" />
                     </labels>
                   </option>
                   <option value="1" Color="#0000ff">
                     <labels>
                       <label description="Yes" languagecode="1033" />
+                      <label description="Ja" languagecode="1031" />
                     </labels>
                   </option>
                 </options>
               </optionset>
               <displaynames>
                 <displayname description="Retry Immediately" languagecode="1033" />
+                <displayname description="Sofortige Wiederholung" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2792,6 +2939,7 @@
                 <IsCustomizable>1</IsCustomizable>
                 <displaynames>
                   <displayname description="Retry on error" languagecode="1033" />
+                  <displayname description="Wiederholung bei Fehler" languagecode="1031" />
                 </displaynames>
                 <Descriptions>
                   <Description description="" languagecode="1033" />
@@ -2800,17 +2948,20 @@
                   <option value="0" Color="#0000ff">
                     <labels>
                       <label description="No" languagecode="1033" />
+                      <label description="Nein" languagecode="1031" />
                     </labels>
                   </option>
                   <option value="1" Color="#0000ff">
                     <labels>
                       <label description="Yes" languagecode="1033" />
+                      <label description="Ja" languagecode="1031" />
                     </labels>
                   </option>
                 </options>
               </optionset>
               <displaynames>
                 <displayname description="Retry on error" languagecode="1033" />
+                <displayname description="Wiederholung bei Fehler" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2850,6 +3001,7 @@
               <OptionSetName>pw_schedule_type</OptionSetName>
               <displaynames>
                 <displayname description="Schedule Type" languagecode="1033" />
+                <displayname description="Zeitplan Typ" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2887,9 +3039,11 @@
               <IsLocalizable>0</IsLocalizable>
               <displaynames>
                 <displayname description="Penta Schedule" languagecode="1033" />
+                <displayname description="Penta Zeitplan" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier for entity instances" languagecode="1033" />
+                <Description description="Eindeutiger Bezeichner für Entitätsinstanzen" languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="pw_service_plugin">
@@ -2926,6 +3080,7 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Schedule Plugin" languagecode="1033" />
+                <displayname description="Zeitplan Plugin" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -2965,6 +3120,7 @@
               <MaxLength>20000</MaxLength>
               <displaynames>
                 <displayname description="Schedule Plugin Config" languagecode="1033" />
+                <displayname description="Zeitplan Plugin Konfig" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -3005,6 +3161,7 @@
               <Behavior>1</Behavior>
               <displaynames>
                 <displayname description="Start DateTime" languagecode="1033" />
+                <displayname description="Startzeit" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -3040,10 +3197,12 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>0</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
+              <Format></Format>
               <MinValue>0</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
                 <displayname description="Successive Errors" languagecode="1033" />
+                <displayname description="Aufeinanderfolgende Fehler" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -3083,6 +3242,7 @@
               <LookupTypes />
               <displaynames>
                 <displayname description="Workflow" languagecode="1033" />
+                <displayname description="Workflow" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -3124,28 +3284,34 @@
                 <IsCustomizable>1</IsCustomizable>
                 <displaynames>
                   <displayname description="Status" languagecode="1033" />
+                  <displayname description="Status" languagecode="1031" />
                 </displaynames>
                 <Descriptions>
                   <Description description="Status of the Penta Schedule" languagecode="1033" />
+                  <Description description="Status des Penta Zeitplans" languagecode="1031" />
                 </Descriptions>
                 <states>
                   <state value="0" defaultstatus="266890000" invariantname="Active">
                     <labels>
                       <label description="Active" languagecode="1033" />
+                      <label description="Aktiv" languagecode="1031" />
                     </labels>
                   </state>
                   <state value="1" defaultstatus="2" invariantname="Inactive">
                     <labels>
                       <label description="Inactive" languagecode="1033" />
+                      <label description="Inaktiv" languagecode="1031" />
                     </labels>
                   </state>
                 </states>
               </optionset>
               <displaynames>
                 <displayname description="Status" languagecode="1033" />
+                <displayname description="Status" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Status of the Penta Schedule" languagecode="1033" />
+                <Description description="Status des Penta Zeitplans" languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="statuscode">
@@ -3184,43 +3350,52 @@
                 <IsCustomizable>1</IsCustomizable>
                 <displaynames>
                   <displayname description="Status Reason" languagecode="1033" />
+                  <displayname description="Statusgrund" languagecode="1031" />
                 </displaynames>
                 <Descriptions>
                   <Description description="Reason for the status of the Penta Schedule" languagecode="1033" />
+                  <Description description="Reason for the status of Penta Schedule Run" languagecode="1031" />
                 </Descriptions>
                 <statuses>
                   <status value="266890000" state="0" TransitionData="" Color="#0000ff">
                     <labels>
                       <label description="Draft" languagecode="1033" />
+                      <label description="Entwurf" languagecode="1031" />
                     </labels>
                   </status>
                   <status value="1" state="0" TransitionData="" Color="#0000ff">
                     <labels>
                       <label description="Active" languagecode="1033" />
+                      <label description="Aktiv" languagecode="1031" />
                     </labels>
                   </status>
                   <status value="266890001" state="0" TransitionData="" Color="#0000ff">
                     <labels>
                       <label description="Ended" languagecode="1033" />
+                      <label description="Beendet" languagecode="1031" />
                     </labels>
                   </status>
                   <status value="266890002" state="0" TransitionData="" Color="#0000ff">
                     <labels>
                       <label description="Error" languagecode="1033" />
+                      <label description="Fehler" languagecode="1031" />
                     </labels>
                   </status>
                   <status value="2" state="1" TransitionData="" Color="#0000ff">
                     <labels>
                       <label description="Inactive" languagecode="1033" />
+                      <label description="Inaktiv" languagecode="1031" />
                     </labels>
                   </status>
                 </statuses>
               </optionset>
               <displaynames>
                 <displayname description="Status Reason" languagecode="1033" />
+                <displayname description="Statusgrund" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Reason for the status of the Penta Schedule" languagecode="1033" />
+                <Description description="Grund für den Status des Penta Zeitplans" languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="TimeZoneRuleVersionNumber">
@@ -3257,9 +3432,11 @@
               <MaxValue>2147483647</MaxValue>
               <displaynames>
                 <displayname description="Time Zone Rule Version Number" languagecode="1033" />
+                <displayname description="Versionsnummer der Zeitzonenregel" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="For internal use only." languagecode="1033" />
+                <Description description="Nur für den internen Gebrauch." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="UTCConversionTimeZoneCode">
@@ -3296,9 +3473,11 @@
               <MaxValue>2147483647</MaxValue>
               <displaynames>
                 <displayname description="UTC Conversion Time Zone Code" languagecode="1033" />
+                <displayname description="UTC-Umrechnung Zeitzonencode" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Time zone code that was in use when the record was created." languagecode="1033" />
+                <Description description="Zeitzonencode, der bei der Erstellung des Datensatzes verwendet wurde." languagecode="1031" />
               </Descriptions>
             </attribute>
           </attributes>
@@ -3368,6 +3547,7 @@
           <ChangeTrackingEnabled>0</ChangeTrackingEnabled>
           <CanChangeTrackingBeEnabled>1</CanChangeTrackingBeEnabled>
           <IsEnabledForExternalChannels>0</IsEnabledForExternalChannels>
+          <IsMSTeamsIntegrationEnabled>0</IsMSTeamsIntegrationEnabled>
           <IsSolutionAware>0</IsSolutionAware>
           <HasRelatedActivities>True</HasRelatedActivities>
         </entity>
@@ -3390,6 +3570,7 @@
                       <sections>
                         <section name="ColorStrip" showlabel="false" showbar="false" columns="1" IsUserDefined="0" id="{8cde1c82-342b-48a1-b4b2-38700ddf0d8a}">
                           <labels>
+                            <label description="Farbstreifen" languagecode="1031" />
                             <label description="ColorStrip" languagecode="1033" />
                           </labels>
                         </section>
@@ -3399,6 +3580,7 @@
                       <sections>
                         <section name="CardHeader" showlabel="false" showbar="false" columns="111" id="{d1b1c8e5-d361-41c8-91a1-fa6813cc7c10}" IsUserDefined="0">
                           <labels>
+                            <label description="Kopfzeile" languagecode="1031" />
                             <label description="Header" languagecode="1033" />
                           </labels>
                           <rows>
@@ -3406,6 +3588,7 @@
                               <cell id="{02255ba3-e58b-400b-938a-ed72aa649718}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Status Reason" languagecode="1033" />
+                                  <label description="Statusgrund" languagecode="1031" />
                                 </labels>
                                 <control id="statuscode" classid="{5D68B988-0661-4db2-BC3E-17598AD3BE6C}" datafieldname="statuscode" disabled="false" />
                               </cell>
@@ -3424,6 +3607,7 @@
                         </section>
                         <section name="CardDetails" showlabel="false" showbar="false" columns="1" id="{6edbae1b-161b-4c63-9a1c-1a6104d6cc6b}" IsUserDefined="0">
                           <labels>
+                            <label description="Details" languagecode="1031" />
                             <label description="Details" languagecode="1033" />
                           </labels>
                           <rows>
@@ -3431,6 +3615,7 @@
                               <cell id="{58547a28-8fa0-44d7-baf0-cf6306941472}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Name" languagecode="1033" />
+                                  <label description="Name" languagecode="1031" />
                                 </labels>
                                 <control id="pw_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pw_name" disabled="false" />
                               </cell>
@@ -3439,6 +3624,7 @@
                         </section>
                         <section name="CardFooter" showlabel="false" columns="1111" showbar="false" id="{6f6de12d-32b2-4352-bbc5-ea6c5a60ae3b}" IsUserDefined="0">
                           <labels>
+                            <label description="Fußzeile" languagecode="1031" />
                             <label description="Footer" languagecode="1033" />
                           </labels>
                           <rows>
@@ -3446,12 +3632,14 @@
                               <cell id="{0b463020-74b2-4527-ac58-2f499c2e7733}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Owner" languagecode="1033" />
+                                  <label description="Besitzer" languagecode="1031" />
                                 </labels>
                                 <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
                               </cell>
                               <cell id="{e3c13ddf-41a5-45fd-8b99-e6e282840062}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Created On" languagecode="1033" />
+                                  <label description="Erstellt am" languagecode="1031" />
                                 </labels>
                                 <control id="createdon" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdon" disabled="false" />
                               </cell>
@@ -3477,9 +3665,11 @@
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
             <LocalizedNames>
+              <LocalizedName description="Information" languagecode="1031" />
               <LocalizedName description="Information" languagecode="1033" />
             </LocalizedNames>
             <Descriptions>
+              <Description description="Ein Kartenformular für diese Entität." languagecode="1031" />
               <Description description="A card form for this entity." languagecode="1033" />
             </Descriptions>
           </systemform>
@@ -3490,10 +3680,11 @@
             <IntroducedVersion>0.5</IntroducedVersion>
             <FormPresentation>1</FormPresentation>
             <FormActivationState>1</FormActivationState>
-            <form>
+            <form headerdensity="HighWithControls">
               <tabs>
                 <tab verticallayout="true" id="{9667afcc-b340-4aa8-b509-c1c6e50e84cd}" IsUserDefined="1" name="{9667afcc-b340-4aa8-b509-c1c6e50e84cd}" locklevel="0" expanded="true" showlabel="true">
                   <labels>
+                    <label description="Allgemein" languagecode="1031" />
                     <label description="General" languagecode="1033" />
                   </labels>
                   <columns>
@@ -3501,6 +3692,7 @@
                       <sections>
                         <section showlabel="false" showbar="false" IsUserDefined="0" id="{eed165a2-30bf-4f93-8c47-f0b39a5a9318}" name="{eed165a2-30bf-4f93-8c47-f0b39a5a9318}" columns="11" locklevel="0" labelwidth="130" celllabelalignment="Left" celllabelposition="Left">
                           <labels>
+                            <label description="Allgemein" languagecode="1031" />
                             <label description="General" languagecode="1033" />
                           </labels>
                           <rows>
@@ -3508,48 +3700,55 @@
                               <cell id="{3e3ad530-04da-c32d-a42c-130342811e2a}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Status Reason" languagecode="1033" />
+                                  <label description="Statusgrund" languagecode="1031" />
                                 </labels>
                                 <control id="statuscode" classid="{5D68B988-0661-4db2-BC3E-17598AD3BE6C}" datafieldname="statuscode" disabled="false" />
                               </cell>
-                              <cell id="{122228a1-d8a7-d63b-794c-c818d3b49c37}" showlabel="true" locklevel="0">
+                              <cell id="{e23550c6-0858-9ea0-9e99-5ab455488b7d}" showlabel="true" locklevel="0" colspan="1" rowspan="1">
                                 <labels>
-                                  <label description="Frequency" languagecode="1033" />
+                                  <label description="Start DateTime" languagecode="1033" />
+                                  <label description="Startzeit" languagecode="1031" />
                                 </labels>
-                                <control id="pw_frequency" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="pw_frequency" disabled="false" />
+                                <control id="pw_start_datetime" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="pw_start_datetime" disabled="false" />
                               </cell>
                             </row>
                             <row>
                               <cell id="{ac63be28-8279-41f7-95c0-8f9a5c79db40}">
                                 <labels>
                                   <label description="Name" languagecode="1033" />
+                                  <label description="Name" languagecode="1031" />
                                 </labels>
                                 <control id="pw_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pw_name" />
                               </cell>
-                              <cell id="{03220674-46ce-50a8-396b-6043dc555a32}" showlabel="true" locklevel="0" visible="false">
+                              <cell id="{e78a6c96-3ba6-c405-4ed4-57967e562d3c}" showlabel="true" locklevel="0" colspan="1" rowspan="1">
                                 <labels>
-                                  <label description="Frequency Value" languagecode="1033" />
+                                  <label description="End DateTime" languagecode="1033" />
+                                  <label description="Endzeit" languagecode="1031" />
                                 </labels>
-                                <control id="pw_frequency_value" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="pw_frequency_value" disabled="false" uniqueid="{e82519a4-699a-d372-c417-d295305608a9}" />
+                                <control id="pw_end_datetime" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="pw_end_datetime" disabled="false" />
                               </cell>
                             </row>
                             <row>
                               <cell id="{1ab2452c-e730-72e5-0321-a790cd26bae3}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Schedule Type" languagecode="1033" />
+                                  <label description="Zeitplantyp" languagecode="1031" />
                                 </labels>
                                 <control id="pw_schedule_type" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="pw_schedule_type" disabled="false" />
                               </cell>
-                              <cell id="{e23550c6-0858-9ea0-9e99-5ab455488b7d}" showlabel="true" locklevel="0">
+                              <cell id="{122228a1-d8a7-d63b-794c-c818d3b49c37}" showlabel="true" locklevel="0">
                                 <labels>
-                                  <label description="Start DateTime" languagecode="1033" />
+                                  <label description="Frequency" languagecode="1033" />
+                                  <label description="Frequenz" languagecode="1031" />
                                 </labels>
-                                <control id="pw_start_datetime" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="pw_start_datetime" disabled="false" />
+                                <control id="pw_frequency" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="pw_frequency" disabled="false" />
                               </cell>
                             </row>
                             <row>
                               <cell id="{641d8179-8ccb-7c40-e798-09228b9bb749}" showlabel="true" locklevel="0" visible="false">
                                 <labels>
                                   <label description="Action" languagecode="1033" />
+                                  <label description="Action" languagecode="1031" />
                                 </labels>
                                 <control id="pw_action" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pw_action" disabled="false" uniqueid="{494c5a10-c758-80de-c579-42e43240ac12}">
                                   <parameters>
@@ -3562,17 +3761,19 @@
                                   </parameters>
                                 </control>
                               </cell>
-                              <cell id="{e78a6c96-3ba6-c405-4ed4-57967e562d3c}" showlabel="true" locklevel="0">
+                              <cell id="{03220674-46ce-50a8-396b-6043dc555a32}" showlabel="true" locklevel="0" visible="false" colspan="1" rowspan="1">
                                 <labels>
-                                  <label description="End DateTime" languagecode="1033" />
+                                  <label description="Frequency Value" languagecode="1033" />
+                                  <label description="Frequenzwert" languagecode="1031" />
                                 </labels>
-                                <control id="pw_end_datetime" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="pw_end_datetime" disabled="false" />
+                                <control id="pw_frequency_value" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="pw_frequency_value" disabled="false" uniqueid="{e82519a4-699a-d372-c417-d295305608a9}" />
                               </cell>
                             </row>
                             <row>
                               <cell id="{29b2302d-da3b-e189-937b-ca57a20991b0}" showlabel="true" locklevel="0" visible="false">
                                 <labels>
                                   <label description="Global Action" languagecode="1033" />
+                                  <label description="Global Action" languagecode="1031" />
                                 </labels>
                                 <control id="pw_global_action" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pw_global_action" disabled="false" uniqueid="{3e925207-1d39-6c89-e344-de3a1950194e}">
                                   <parameters>
@@ -3586,16 +3787,12 @@
                                   </parameters>
                                 </control>
                               </cell>
-                              <cell id="{a6845cc2-1261-cca3-9a01-3b7da0ed3e1d}" showlabel="false">
-                                <labels>
-                                  <label description="" languagecode="1033" />
-                                </labels>
-                              </cell>
                             </row>
                             <row>
                               <cell id="{51aee6a8-9cdb-e253-d8aa-751c6d04c431}" showlabel="true" locklevel="0" visible="false">
                                 <labels>
                                   <label description="Workflow" languagecode="1033" />
+                                  <label description="Workflow" languagecode="1031" />
                                 </labels>
                                 <control id="pw_workflow" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pw_workflow" disabled="false" uniqueid="{35b1c906-de5a-85b1-e953-6e8e8e591810}">
                                   <parameters>
@@ -3619,6 +3816,7 @@
                               <cell id="{2cec71b2-5cb2-dd58-c90a-2bd04bb1e58d}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Service Plugin" languagecode="1033" />
+                                  <label description="Zeitplan Plugin" languagecode="1031" />
                                 </labels>
                                 <control id="pw_service_plugin" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pw_service_plugin" disabled="false" />
                               </cell>
@@ -3632,6 +3830,7 @@
                               <cell id="{a7310149-a93b-5284-6478-a317c71daa00}" showlabel="true" colspan="2" auto="false" rowspan="13">
                                 <labels>
                                   <label description="Penta Schedule Runs (Penta Schedule)" languagecode="1033" />
+                                  <label description="Penta Zeitplanläufe (Penta Zeitplan)" languagecode="1031" />
                                 </labels>
                                 <control id="ScheduleRuns" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{e254e314-db16-9ade-4568-9c5dd72c910a}">
                                   <parameters>
@@ -3674,6 +3873,7 @@
                 </tab>
                 <tab name="tab_config" id="{c8d51aec-b3b5-854e-c0b8-ddbcbc53eb5b}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true">
                   <labels>
+                    <label description="Konfig" languagecode="1031" />
                     <label description="Config" languagecode="1033" />
                   </labels>
                   <columns>
@@ -3681,6 +3881,7 @@
                       <sections>
                         <section name="tab_3_section_1" showlabel="false" showbar="false" locklevel="0" id="{47a4965d-543c-cada-b6c0-e05a2d3941e1}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
                           <labels>
+                            <label description="Sektion" languagecode="1031" />
                             <label description="Section" languagecode="1033" />
                           </labels>
                           <rows>
@@ -3688,6 +3889,7 @@
                               <cell id="{7aa80cb1-ad93-e166-8291-c21119cee6ca}" showlabel="true" locklevel="0" rowspan="10">
                                 <labels>
                                   <label description="Fetch XML" languagecode="1033" />
+                                  <label description="Fetch XML" languagecode="1031" />
                                 </labels>
                                 <control id="pw_fetch_xml" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="pw_fetch_xml" disabled="false" uniqueid="{07c17489-a2ac-0a57-b800-6d9b066ea57e}" />
                               </cell>
@@ -3705,6 +3907,7 @@
                               <cell id="{911488c1-e333-398b-3054-5c0193451e11}" showlabel="true" locklevel="0" rowspan="15" auto="false">
                                 <labels>
                                   <label description="Service Plugin Config" languagecode="1033" />
+                                  <label description="Zeitplan Plugin Konfig" languagecode="1031" />
                                 </labels>
                                 <control id="pw_service_plugin_config" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="pw_service_plugin_config" disabled="false" uniqueid="{724ba094-8667-8dcb-3a12-a77a42789753}" />
                               </cell>
@@ -3731,6 +3934,7 @@
                 </tab>
                 <tab name="tab_4" id="{cddaa1b2-90a2-42aa-c03c-45122435899b}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true">
                   <labels>
+                    <label description="Fehlerbehandlung" languagecode="1031" />
                     <label description="Error Handling" languagecode="1033" />
                   </labels>
                   <columns>
@@ -3738,6 +3942,7 @@
                       <sections>
                         <section name="tab_4_section_1" showlabel="false" showbar="false" locklevel="0" id="{0331d793-20e2-9c0c-d614-2b2417c70990}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
                           <labels>
+                            <label description="Sektion" languagecode="1031" />
                             <label description="Section" languagecode="1033" />
                           </labels>
                           <rows>
@@ -3745,6 +3950,7 @@
                               <cell id="{26d55304-cdc0-6ea9-3563-7c7e0edde494}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Retry on error" languagecode="1033" />
+                                  <label description="Wiederholung bei Fehler" languagecode="1031" />
                                 </labels>
                                 <control id="pw_retry_on_error" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="pw_retry_on_error" disabled="false" />
                               </cell>
@@ -3753,6 +3959,7 @@
                               <cell id="{9a998eac-9ee2-8ed6-1be7-7c0671406490}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Retry Immediately" languagecode="1033" />
+                                  <label description="Sofortige Wiederholung" languagecode="1031" />
                                 </labels>
                                 <control id="pw_retry_immediately" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="pw_retry_immediately" disabled="false" />
                               </cell>
@@ -3761,6 +3968,7 @@
                               <cell id="{5bdd9b7a-6162-0278-73c2-c299ec633490}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Error Threshold" languagecode="1033" />
+                                  <label description="Fehlerschwelle" languagecode="1031" />
                                 </labels>
                                 <control id="pw_error_threshold" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="pw_error_threshold" disabled="false" />
                               </cell>
@@ -3773,6 +3981,7 @@
                       <sections>
                         <section name="tab_4_section_2" showlabel="false" showbar="false" locklevel="0" id="{989ae669-54ec-191a-48c1-95637233aec3}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
                           <labels>
+                            <label description="Sektion" languagecode="1031" />
                             <label description="Section" languagecode="1033" />
                           </labels>
                           <rows>
@@ -3780,6 +3989,7 @@
                               <cell id="{619e1e6b-47be-1c86-6150-dca44b00da62}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Email on error" languagecode="1033" />
+                                  <label description="Email bei Fehler" languagecode="1031" />
                                 </labels>
                                 <control id="pw_email_on_error" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="pw_email_on_error" disabled="false" />
                               </cell>
@@ -3788,6 +3998,7 @@
                               <cell id="{4a711042-9ba4-b54c-c67d-c4353a671c72}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Error Email Address" languagecode="1033" />
+                                  <label description="Fehler Email Adresse" languagecode="1031" />
                                 </labels>
                                 <control id="pw_error_email_address" classid="{ADA2203E-B4CD-49be-9DDF-234642B43B52}" datafieldname="pw_error_email_address" disabled="false" />
                               </cell>
@@ -3800,6 +4011,7 @@
                 </tab>
                 <tab name="tab_hidden" id="{446b6c86-77c4-17c7-8bb5-104532b12673}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" visible="false">
                   <labels>
+                    <label description="Versteckt" languagecode="1031" />
                     <label description="Hidden" languagecode="1033" />
                   </labels>
                   <columns>
@@ -3807,6 +4019,7 @@
                       <sections>
                         <section name="tab_2_section_1" showlabel="false" showbar="false" locklevel="0" id="{715e75a1-059d-3341-c817-d55a6dc23c82}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
                           <labels>
+                            <label description="Sektion" languagecode="1031" />
                             <label description="Section" languagecode="1033" />
                           </labels>
                           <rows>
@@ -3814,6 +4027,7 @@
                               <cell id="{79b9afd7-cc08-4862-844a-28f40796f53b}">
                                 <labels>
                                   <label description="Owner" languagecode="1033" />
+                                  <label description="Besitzer" languagecode="1031" />
                                 </labels>
                                 <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                               </cell>
@@ -3831,18 +4045,21 @@
                     <cell id="{12964cd0-9638-e0ac-001e-298510c24d9b}" showlabel="true" locklevel="0">
                       <labels>
                         <label description="Last Run DateTime" languagecode="1033" />
+                        <label description="Zeitpunkt letzter Lauf" languagecode="1031" />
                       </labels>
                       <control id="footer_pw_last_run_datetime" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="pw_last_run_datetime" disabled="true" />
                     </cell>
                     <cell id="{da32cc44-d258-d8cc-aa41-1296625b8c29}" showlabel="true" locklevel="0">
                       <labels>
                         <label description="Successive Errors" languagecode="1033" />
+                        <label description="Aufeinanderfolgende Fehler" languagecode="1031" />
                       </labels>
                       <control id="footer_pw_successive_errors" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="pw_successive_errors" disabled="true" />
                     </cell>
                     <cell id="{78ddb756-2b29-d85c-eb3e-17029ec0165b}" showlabel="true" locklevel="0">
                       <labels>
                         <label description="Owner" languagecode="1033" />
+                        <label description="Besitzer" languagecode="1031" />
                       </labels>
                       <control id="footer_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="true" />
                     </cell>
@@ -3891,13 +4108,39 @@
                 </NavBarAreas>
               </Navigation>
               <controlDescriptions />
+              <header id="{72852d00-2ded-48fc-8589-1043a57d6a3e}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+                <rows>
+                  <row>
+                    <cell id="{980c7ffc-410f-46cb-9f8d-ef5f189632fb}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1033" />
+                      </labels>
+                    </cell>
+                    <cell id="{7df7ab94-4403-40a3-881c-d6cb579c7d87}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1033" />
+                      </labels>
+                    </cell>
+                    <cell id="{d063cf5f-eea2-46cd-9eed-f86f9a3eca3c}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1033" />
+                      </labels>
+                    </cell>
+                  </row>
+                </rows>
+              </header>
+              <DisplayConditions Order="0" FallbackForm="true">
+                <Everyone />
+              </DisplayConditions>
             </form>
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
             <LocalizedNames>
+              <LocalizedName description="Information" languagecode="1031" />
               <LocalizedName description="Information" languagecode="1033" />
             </LocalizedNames>
             <Descriptions>
+              <Description description="Ein Formular für diese Entität." languagecode="1031" />
               <Description description="A form for this entity." languagecode="1033" />
             </Descriptions>
           </systemform>
@@ -3919,6 +4162,7 @@
                       <sections>
                         <section showlabel="false" showbar="false" IsUserDefined="0" id="{23f36dc9-0206-4e8f-a9e2-8656c9a16d61}">
                           <labels>
+                            <label description="ALLGEMEIN" languagecode="1031" />
                             <label description="GENERAL" languagecode="1033" />
                           </labels>
                           <rows>
@@ -3926,6 +4170,7 @@
                               <cell id="{89417ae5-e1c1-4b2a-a8a0-9f7fda9ed4b5}">
                                 <labels>
                                   <label description="Name" languagecode="1033" />
+                                  <label description="Name" languagecode="1031" />
                                 </labels>
                                 <control id="pw_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pw_name" />
                               </cell>
@@ -3934,6 +4179,7 @@
                               <cell id="{e732abc8-2f8f-48e8-8d8a-f3208c6cee6a}">
                                 <labels>
                                   <label description="Owner" languagecode="1033" />
+                                  <label description="Besitzer" languagecode="1031" />
                                 </labels>
                                 <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                               </cell>
@@ -3949,6 +4195,7 @@
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
             <LocalizedNames>
+              <LocalizedName description="Information" languagecode="1031" />
               <LocalizedName description="Information" languagecode="1033" />
             </LocalizedNames>
           </systemform>
@@ -4006,6 +4253,7 @@
             </fetchxml>
             <IntroducedVersion>0.5</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Aktive Penta Zeitpläne" languagecode="1031" />
               <LocalizedName description="Active Penta Schedules" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -4050,6 +4298,7 @@
             </fetchxml>
             <IntroducedVersion>0.5</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Inaktive Penta Zeitpläne" languagecode="1031" />
               <LocalizedName description="Inactive Penta Schedules" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -4074,9 +4323,11 @@
             </fetchxml>
             <IntroducedVersion>0.5</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Meine Penta Zeitpläne" languagecode="1031" />
               <LocalizedName description="My Penta Schedules" languagecode="1033" />
             </LocalizedNames>
             <Descriptions>
+              <Description description="Aktive Penta Zeitpläne in meinem Besitz" languagecode="1031" />
               <Description description="Active Penta Schedules owned by me" languagecode="1033" />
             </Descriptions>
           </savedquery>
@@ -4126,6 +4377,7 @@
             </fetchxml>
             <IntroducedVersion>0.5</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Penta Zeitplan Erweiterte Suchansicht" languagecode="1031" />
               <LocalizedName description="Penta Schedule Advanced Find View" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -4160,6 +4412,7 @@
             </fetchxml>
             <IntroducedVersion>0.5</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Penta Zeitplan Assoziierte Ansicht" languagecode="1031" />
               <LocalizedName description="Penta Schedule Associated View" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -4193,6 +4446,7 @@
             </fetchxml>
             <IntroducedVersion>0.5</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Penta Zeitplan Lookup Ansicht" languagecode="1031" />
               <LocalizedName description="Penta Schedule Lookup View" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -4230,6 +4484,7 @@
             </fetchxml>
             <IntroducedVersion>0.5</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Schnellsuche für aktive Penta Zeitpläne" languagecode="1031" />
               <LocalizedName description="Quick Find Active Penta Schedules" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -4255,9 +4510,11 @@
         <entity Name="pw_scheduler_plugin_virt">
           <LocalizedNames>
             <LocalizedName description="Penta Scheduler Plugin" languagecode="1033" />
+            <LocalizedName description="Penta Zeitplan Plugin" languagecode="1031" />
           </LocalizedNames>
           <LocalizedCollectionNames>
             <LocalizedCollectionName description="Penta Scheduler Plugins" languagecode="1033" />
+            <LocalizedCollectionName description="Penta Zeitplan Plugins" languagecode="1031" />
           </LocalizedCollectionNames>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -4299,9 +4556,11 @@
               <Length>200</Length>
               <displaynames>
                 <displayname description="Name" languagecode="1033" />
+                <displayname description="Name" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="The name of the custom entity." languagecode="1033" />
+                <Description description="Der Name der benutzerdefinierten Entität." languagecode="1031" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="pw_scheduler_plugin_virtId">
@@ -4337,9 +4596,11 @@
               <IsLocalizable>0</IsLocalizable>
               <displaynames>
                 <displayname description="Penta Scheduler Plugin" languagecode="1033" />
+                <displayname description="Penta Zeitplan Plugin" languagecode="1031" />
               </displaynames>
               <Descriptions>
                 <Description description="Unique identifier for entity instances" languagecode="1033" />
+                <Description description="Eindeutiger Bezeichner für Entitätsinstanzen" languagecode="1031" />
               </Descriptions>
             </attribute>
           </attributes>
@@ -4412,6 +4673,7 @@
           <IsEnabledForExternalChannels>0</IsEnabledForExternalChannels>
           <ExternalName>SchedulePlugins</ExternalName>
           <ExternalCollectionName>SchedulePlugins</ExternalCollectionName>
+          <IsMSTeamsIntegrationEnabled>0</IsMSTeamsIntegrationEnabled>
           <IsSolutionAware>0</IsSolutionAware>
         </entity>
       </EntityInfo>
@@ -4433,6 +4695,7 @@
                       <sections>
                         <section name="ColorStrip" showlabel="false" showbar="false" columns="1" IsUserDefined="0" id="{40dfb6b2-6fd2-4bac-bad9-9451b19d8eb8}">
                           <labels>
+                            <label description="Farbstreifen" languagecode="1031" />
                             <label description="ColorStrip" languagecode="1033" />
                           </labels>
                         </section>
@@ -4442,6 +4705,7 @@
                       <sections>
                         <section name="CardHeader" showlabel="false" showbar="false" columns="111" id="{d87a5d5d-3900-446e-a721-e684087a1d4a}" IsUserDefined="0">
                           <labels>
+                            <label description="Kopfzeile" languagecode="1031" />
                             <label description="Header" languagecode="1033" />
                           </labels>
                           <rows>
@@ -4467,6 +4731,7 @@
                         </section>
                         <section name="CardDetails" showlabel="false" showbar="false" columns="1" id="{74ba6f64-bb7a-49a9-8b3f-6ebabaed9ebe}" IsUserDefined="0">
                           <labels>
+                            <label description="Details" languagecode="1031" />
                             <label description="Details" languagecode="1033" />
                           </labels>
                           <rows>
@@ -4474,6 +4739,7 @@
                               <cell id="{cfb15bb7-1fbb-4e41-86b0-38951c655b5c}" showlabel="true" locklevel="0">
                                 <labels>
                                   <label description="Name" languagecode="1033" />
+                                  <label description="Name" languagecode="1031" />
                                 </labels>
                                 <control id="pw_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pw_name" disabled="false" />
                               </cell>
@@ -4482,6 +4748,7 @@
                         </section>
                         <section name="CardFooter" showlabel="false" columns="1111" showbar="false" id="{41ea08ae-068e-4c05-bb39-fee36610530b}" IsUserDefined="0">
                           <labels>
+                            <label description="Fußzeile" languagecode="1031" />
                             <label description="Footer" languagecode="1033" />
                           </labels>
                           <rows>
@@ -4514,9 +4781,11 @@
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
             <LocalizedNames>
+              <LocalizedName description="Information" languagecode="1031" />
               <LocalizedName description="Information" languagecode="1033" />
             </LocalizedNames>
             <Descriptions>
+              <Description description="Ein Kartenformular für diese Entität." languagecode="1031" />
               <Description description="A card form for this entity." languagecode="1033" />
             </Descriptions>
           </systemform>
@@ -4531,6 +4800,7 @@
               <tabs>
                 <tab verticallayout="true" id="{f4a6c619-94af-444f-a776-3b563f05d40e}" IsUserDefined="1">
                   <labels>
+                    <label description="Allgemein" languagecode="1031" />
                     <label description="General" languagecode="1033" />
                   </labels>
                   <columns>
@@ -4538,6 +4808,7 @@
                       <sections>
                         <section showlabel="false" showbar="false" IsUserDefined="0" id="{583577db-9f1c-4e1d-b6e5-f38c529e8c96}">
                           <labels>
+                            <label description="Allgemein" languagecode="1031" />
                             <label description="General" languagecode="1033" />
                           </labels>
                           <rows>
@@ -4545,6 +4816,7 @@
                               <cell id="{24c978f5-40ae-4a0f-a6a1-a7de93253ecb}">
                                 <labels>
                                   <label description="Name" languagecode="1033" />
+                                  <label description="Name" languagecode="1031" />
                                 </labels>
                                 <control id="pw_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pw_name" />
                               </cell>
@@ -4560,9 +4832,11 @@
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
             <LocalizedNames>
+              <LocalizedName description="Information" languagecode="1031" />
               <LocalizedName description="Information" languagecode="1033" />
             </LocalizedNames>
             <Descriptions>
+              <Description description="Ein Formular für diese Entität." languagecode="1031" />
               <Description description="A form for this entity." languagecode="1033" />
             </Descriptions>
           </systemform>
@@ -4584,6 +4858,7 @@
                       <sections>
                         <section showlabel="false" showbar="false" IsUserDefined="0" id="{8aba62c2-ea70-4cc4-8523-5734c8053184}">
                           <labels>
+                            <label description="ALLGEMEIN" languagecode="1031" />
                             <label description="GENERAL" languagecode="1033" />
                           </labels>
                           <rows>
@@ -4591,6 +4866,7 @@
                               <cell id="{85e016ac-a5de-4cc2-9b3f-a8c0d0e0dd85}">
                                 <labels>
                                   <label description="Name" languagecode="1033" />
+                                  <label description="Name" languagecode="1031" />
                                 </labels>
                                 <control id="pw_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pw_name" />
                               </cell>
@@ -4606,6 +4882,7 @@
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
             <LocalizedNames>
+              <LocalizedName description="Information" languagecode="1031" />
               <LocalizedName description="Information" languagecode="1033" />
             </LocalizedNames>
           </systemform>
@@ -4638,6 +4915,7 @@
             </fetchxml>
             <IntroducedVersion>0.5.3</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Alle Penta Zeitplan Plugins" languagecode="1031" />
               <LocalizedName description="All Penta Scheduler Plugins" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -4666,6 +4944,7 @@
             </fetchxml>
             <IntroducedVersion>0.5.3</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Penta Zeitplan Plugin Erweiterte Suchansicht" languagecode="1031" />
               <LocalizedName description="Penta Scheduler Plugin Advanced Find View" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -4694,6 +4973,7 @@
             </fetchxml>
             <IntroducedVersion>0.5.3</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Penta Zeitplan Plugin Zugehörige Ansicht" languagecode="1031" />
               <LocalizedName description="Penta Scheduler Plugin Associated View" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -4722,6 +5002,7 @@
             </fetchxml>
             <IntroducedVersion>0.5.3</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Penta Zeitplan Plugin Lookup Ansicht" languagecode="1031" />
               <LocalizedName description="Penta Scheduler Plugin Lookup View" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -4742,9 +5023,11 @@
             </fetchxml>
             <IntroducedVersion>0.5.3</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Penta Zeitplan Plugins" languagecode="1031" />
               <LocalizedName description="Penta Scheduler Plugins" languagecode="1033" />
             </LocalizedNames>
             <Descriptions>
+              <Description description="Alle aktiven Penta Zeitplan Plugins" languagecode="1031" />
               <Description description="All active Penta Scheduler Plugins" languagecode="1033" />
             </Descriptions>
           </savedquery>
@@ -4773,6 +5056,7 @@
             </fetchxml>
             <IntroducedVersion>0.5.3</IntroducedVersion>
             <LocalizedNames>
+              <LocalizedName description="Schnellsuche für aktive Penta Zeitplan Plugins" languagecode="1031" />
               <LocalizedName description="Quick Find Active Penta Scheduler Plugins" languagecode="1033" />
             </LocalizedNames>
           </savedquery>
@@ -5185,7 +5469,8 @@
       <ReferencingEntityName>pw_penta_schedule_run</ReferencingEntityName>
       <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
-      <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeDelete>Restrict</CascadeDelete>
+      <CascadeArchive>Restrict</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5193,6 +5478,7 @@
       <RelationshipDescription>
         <Descriptions>
           <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
+          <Description description="Eindeutiger Bezeichner für die Geschäftseinheit, der der Datensatz gehört" languagecode="1031" />
         </Descriptions>
       </RelationshipDescription>
     </EntityRelationship>
@@ -5204,7 +5490,8 @@
       <ReferencingEntityName>pw_schedule</ReferencingEntityName>
       <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
-      <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeDelete>Restrict</CascadeDelete>
+      <CascadeArchive>Restrict</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5212,6 +5499,7 @@
       <RelationshipDescription>
         <Descriptions>
           <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
+          <Description description="Eindeutiger Bezeichner für die Geschäftseinheit, der der Datensatz gehört" languagecode="1031" />
         </Descriptions>
       </RelationshipDescription>
     </EntityRelationship>
@@ -5224,6 +5512,7 @@
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5231,6 +5520,7 @@
       <RelationshipDescription>
         <Descriptions>
           <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+          <Description description="Eindeutige Kennung des Benutzers, der den Datensatz erstellt hat." languagecode="1031" />
         </Descriptions>
       </RelationshipDescription>
     </EntityRelationship>
@@ -5243,6 +5533,7 @@
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5250,6 +5541,7 @@
       <RelationshipDescription>
         <Descriptions>
           <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+          <Description description="Eindeutige Kennung des Benutzers, der den Datensatz geändert hat." languagecode="1031" />
         </Descriptions>
       </RelationshipDescription>
     </EntityRelationship>
@@ -5262,6 +5554,7 @@
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5269,6 +5562,7 @@
       <RelationshipDescription>
         <Descriptions>
           <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+          <Description description="Eindeutige Kennung des Benutzers, der den Datensatz erstellt hat." languagecode="1031" />
         </Descriptions>
       </RelationshipDescription>
     </EntityRelationship>
@@ -5281,6 +5575,7 @@
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5288,6 +5583,7 @@
       <RelationshipDescription>
         <Descriptions>
           <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+          <Description description="Eindeutige Kennung des Benutzers, der den Datensatz geändert hat." languagecode="1031" />
         </Descriptions>
       </RelationshipDescription>
     </EntityRelationship>
@@ -5300,6 +5596,7 @@
       <ReferencedEntityName>Owner</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5307,6 +5604,7 @@
       <RelationshipDescription>
         <Descriptions>
           <Description description="Owner Id" languagecode="1033" />
+          <Description description="Besitzer ID" languagecode="1031" />
         </Descriptions>
       </RelationshipDescription>
     </EntityRelationship>
@@ -5319,6 +5617,7 @@
       <ReferencedEntityName>Owner</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5326,6 +5625,7 @@
       <RelationshipDescription>
         <Descriptions>
           <Description description="Owner Id" languagecode="1033" />
+          <Description description="Besitzer ID" languagecode="1031" />
         </Descriptions>
       </RelationshipDescription>
     </EntityRelationship>
@@ -5338,6 +5638,7 @@
       <ReferencedEntityName>pw_penta_schedule_run</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>RemoveLink</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5372,6 +5673,7 @@
       <ReferencedEntityName>pw_schedule</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>RemoveLink</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5406,6 +5708,7 @@
       <ReferencedEntityName>pw_scheduler_plugin_virt</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>RemoveLink</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5440,6 +5743,7 @@
       <ReferencedEntityName>Workflow</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>RemoveLink</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5474,6 +5778,7 @@
       <ReferencedEntityName>Workflow</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>RemoveLink</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5508,6 +5813,7 @@
       <ReferencedEntityName>Workflow</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>RemoveLink</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5542,6 +5848,7 @@
       <ReferencedEntityName>Team</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5549,6 +5856,7 @@
       <RelationshipDescription>
         <Descriptions>
           <Description description="Unique identifier for the team that owns the record." languagecode="1033" />
+          <Description description="Eindeutige Kennung für das Team, dem der Datensatz gehört." languagecode="1031" />
         </Descriptions>
       </RelationshipDescription>
     </EntityRelationship>
@@ -5561,6 +5869,7 @@
       <ReferencedEntityName>Team</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5568,6 +5877,7 @@
       <RelationshipDescription>
         <Descriptions>
           <Description description="Unique identifier for the team that owns the record." languagecode="1033" />
+          <Description description="Eindeutige Kennung für das Team, dem der Datensatz gehört." languagecode="1031" />
         </Descriptions>
       </RelationshipDescription>
     </EntityRelationship>
@@ -5580,6 +5890,7 @@
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5587,6 +5898,7 @@
       <RelationshipDescription>
         <Descriptions>
           <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+          <Description description="Eindeutiger Bezeichner für den Benutzer, dem der Datensatz gehört." languagecode="1031" />
         </Descriptions>
       </RelationshipDescription>
     </EntityRelationship>
@@ -5599,6 +5911,7 @@
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
@@ -5606,6 +5919,7 @@
       <RelationshipDescription>
         <Descriptions>
           <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+          <Description description="Eindeutiger Bezeichner für den Benutzer, dem der Datensatz gehört." languagecode="1031" />
         </Descriptions>
       </RelationshipDescription>
     </EntityRelationship>
@@ -5620,6 +5934,7 @@
       <ExternalTypeName></ExternalTypeName>
       <displaynames>
         <displayname description="Frequency" languagecode="1033" />
+        <displayname description="Frequenz" languagecode="1031" />
       </displaynames>
       <Descriptions>
         <Description description="" languagecode="1033" />
@@ -5628,6 +5943,7 @@
         <option value="266890000" ExternalValue="" Color="#0000ff">
           <labels>
             <label description="Once" languagecode="1033" />
+            <label description="Einmalig" languagecode="1031" />
           </labels>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -5636,6 +5952,7 @@
         <option value="266890001" ExternalValue="" Color="#0000ff">
           <labels>
             <label description="Hourly" languagecode="1033" />
+            <label description="Stündlich" languagecode="1031" />
           </labels>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -5644,6 +5961,7 @@
         <option value="266890002" ExternalValue="" Color="#0000ff">
           <labels>
             <label description="Daily" languagecode="1033" />
+            <label description="Täglich" languagecode="1031" />
           </labels>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -5652,6 +5970,7 @@
         <option value="266890003" ExternalValue="" Color="#0000ff">
           <labels>
             <label description="Weekly" languagecode="1033" />
+            <label description="Wöchentlich" languagecode="1031" />
           </labels>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -5660,6 +5979,7 @@
         <option value="266890011" ExternalValue="" Color="#0000ff">
           <labels>
             <label description="Monthly" languagecode="1033" />
+            <label description="Monatlich" languagecode="1031" />
           </labels>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -5668,6 +5988,7 @@
         <option value="266890004" ExternalValue="" Color="#0000ff">
           <labels>
             <label description="Quarterly" languagecode="1033" />
+            <label description="Vierteljährlich" languagecode="1031" />
           </labels>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -5676,6 +5997,7 @@
         <option value="266890005" ExternalValue="" Color="#0000ff">
           <labels>
             <label description="Yearly" languagecode="1033" />
+            <label description="Jährlich" languagecode="1031" />
           </labels>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -5684,6 +6006,7 @@
         <option value="266890006" ExternalValue="" Color="#0000ff">
           <labels>
             <label description="Every X Minutes" languagecode="1033" />
+            <label description="Jede X Minuten" languagecode="1031" />
           </labels>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -5692,6 +6015,7 @@
         <option value="266890007" ExternalValue="" Color="#0000ff">
           <labels>
             <label description="Every X Hours" languagecode="1033" />
+            <label description="Jede X Stunden" languagecode="1031" />
           </labels>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -5700,6 +6024,7 @@
         <option value="266890008" ExternalValue="" Color="#0000ff">
           <labels>
             <label description="Every X Days" languagecode="1033" />
+            <label description="Jede X Tage" languagecode="1031" />
           </labels>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -5708,6 +6033,7 @@
         <option value="266890009" ExternalValue="" Color="#0000ff">
           <labels>
             <label description="Every X Weeks" languagecode="1033" />
+            <label description="Jede X Wochen" languagecode="1031" />
           </labels>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -5716,6 +6042,7 @@
         <option value="266890010" ExternalValue="" Color="#0000ff">
           <labels>
             <label description="Every X Months" languagecode="1033" />
+            <label description="Jede X Monate" languagecode="1031" />
           </labels>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -5731,6 +6058,7 @@
       <ExternalTypeName></ExternalTypeName>
       <displaynames>
         <displayname description="Schedule Type" languagecode="1033" />
+        <displayname description="Zeitplantyp" languagecode="1031" />
       </displaynames>
       <Descriptions>
         <Description description="" languagecode="1033" />
@@ -5763,6 +6091,7 @@
         <option value="266890004" ExternalValue="" Color="#0000ff">
           <labels>
             <label description="Schedule Plugin" languagecode="1033" />
+            <label description="Zeitplan Plugin" languagecode="1031" />
           </labels>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -6010,7 +6339,7 @@
       <AuthType>4</AuthType>
       <MessageFormat>2</MessageFormat>
       <NamespaceFormat>1</NamespaceFormat>
-      <Url>http://pentadevvm:8081/SchedulePlugins/ExecuteSchedule</Url>
+      <Url>http://pentadevvm/SchedulePlugins/ExecuteSchedule</Url>
     </ServiceEndpoint>
     <ServiceEndpoint ServiceEndpointId="{7bccad37-e7d1-ec11-a84d-0022485b751f}" Name="PentaWork.Xrm.SchedulerService.Plugins">
       <ConnectionMode>1</ConnectionMode>
@@ -6022,7 +6351,7 @@
       <AuthType>4</AuthType>
       <MessageFormat>2</MessageFormat>
       <NamespaceFormat>1</NamespaceFormat>
-      <Url>http://pentadevvm:8081/ServicePlugins/ExecutePlugin</Url>
+      <Url>http://pentadevvm/ServicePlugins/ExecutePlugin</Url>
     </ServiceEndpoint>
   </ServiceEndpoints>
   <EntityDataProviders />
@@ -6036,5 +6365,6 @@
   </EntityDataSources>
   <Languages>
     <Language>1033</Language>
+    <Language>1031</Language>
   </Languages>
 </ImportExportXml>
