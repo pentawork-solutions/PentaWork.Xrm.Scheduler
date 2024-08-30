@@ -13,14 +13,13 @@ namespace PentaWork.Xrm.Scheduler.Tests
 {
     internal static class FakeContext
     {
-        public static XrmFakedContext ExecutePlugin<T, U>(MessageName message, Stage stage, PluginMode mode,
+        public static XrmFakedContext ExecutePlugin<T>(Type pluginType, MessageName message, Stage stage, PluginMode mode,
             Entity target, Entity preTarget = null, List<Entity> knownEntities = null, List<Tuple<string, XrmFakedRelationship>> knownRelationships = null, Guid? initiatingUserId = null
         )
             where T : IPlugin, new()
-            where U : new()
         {
             var fakedContext = InitContext(target.GetType(), knownEntities, knownRelationships);
-            var plugCtx = InitPluginContext<U>(target, preTarget, message, stage, mode, fakedContext);
+            var plugCtx = InitPluginContext(pluginType, target, preTarget, message, stage, mode, fakedContext);
             plugCtx.InitiatingUserId = initiatingUserId ?? plugCtx.InitiatingUserId;
 
             fakedContext.ExecutePluginWith<T>(plugCtx);
@@ -73,20 +72,22 @@ namespace PentaWork.Xrm.Scheduler.Tests
             return fakedContext;
         }
 
-        private static XrmFakedPluginExecutionContext InitPluginContext<T>(
-            Entity target, Entity preTarget, MessageName message, Stage stage,
-            PluginMode mode, XrmFakedContext fakedContext) where T : new()
+        private static XrmFakedPluginExecutionContext InitPluginContext(
+            Type pluginType, Entity target, Entity preTarget, MessageName message, Stage stage,
+            PluginMode mode, XrmFakedContext fakedContext)
         {
-            var inputParameters = new ParameterCollection();
-            inputParameters.Add("Target", target);
-            inputParameters.Add("TestPlugin", typeof(T));
+            var inputParameters = new ParameterCollection
+            {
+                { "Target", target },
+                { "TestPlugin", pluginType }
+            };
 
             var plugCtx = fakedContext.GetDefaultPluginContext();
             plugCtx.MessageName = message.GetEnumDescription();
             plugCtx.Stage = (int)stage;
             plugCtx.Mode = (int)mode;
             plugCtx.InputParameters = inputParameters;
-            if (preTarget != null) plugCtx.PreEntityImages.Add("PreImage", preTarget);
+            if (preTarget != null) plugCtx.PreEntityImages.Add("Image", preTarget);
 
             return plugCtx;
         }

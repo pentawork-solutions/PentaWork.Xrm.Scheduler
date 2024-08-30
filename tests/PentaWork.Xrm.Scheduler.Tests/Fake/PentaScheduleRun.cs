@@ -22,61 +22,6 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
 				};
 
-			/// <summary>1:N pw_penta_schedule_run_BulkDeleteFailures</summary>
-			public static readonly XrmFakedRelationship PwPentaScheduleRunBulkDeleteFailures = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "pw_penta_schedule_runid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "pw_penta_schedule_run",
-					Entity2LogicalName = "bulkdeletefailure",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N pw_penta_schedule_run_MailboxTrackingFolders</summary>
-			public static readonly XrmFakedRelationship PwPentaScheduleRunMailboxTrackingFolders = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "pw_penta_schedule_runid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "pw_penta_schedule_run",
-					Entity2LogicalName = "mailboxtrackingfolder",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N pw_penta_schedule_run_PrincipalObjectAttributeAccesses</summary>
-			public static readonly XrmFakedRelationship PwPentaScheduleRunPrincipalObjectAttributeAccesses = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "pw_penta_schedule_runid",
-					Entity2Attribute = "objectid",
-					Entity1LogicalName = "pw_penta_schedule_run",
-					Entity2LogicalName = "principalobjectattributeaccess",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N pw_penta_schedule_run_ProcessSession</summary>
-			public static readonly XrmFakedRelationship PwPentaScheduleRunProcessSession = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "pw_penta_schedule_runid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "pw_penta_schedule_run",
-					Entity2LogicalName = "processsession",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N pw_penta_schedule_run_SyncErrors</summary>
-			public static readonly XrmFakedRelationship PwPentaScheduleRunSyncErrors = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "pw_penta_schedule_runid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "pw_penta_schedule_run",
-					Entity2LogicalName = "syncerror",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
 			/// <summary>1:N pw_pw_penta_schedule_run_pw_schedule_next_run</summary>
 			public static readonly XrmFakedRelationship PwPwPentaScheduleRunPwScheduleNextRun = 
 				new XrmFakedRelationship
@@ -110,6 +55,7 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 			.RuleFor(e => e.Owneridname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Owneridtype, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Owneridyominame, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Owningbusinessunitname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.CurrentPage, fake => fake.Random.Int())
 			.RuleFor(e => e.Log, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Name, fake => fake.Lorem.Word())

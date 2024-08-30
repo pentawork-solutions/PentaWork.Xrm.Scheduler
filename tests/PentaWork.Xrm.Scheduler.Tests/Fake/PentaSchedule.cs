@@ -33,80 +33,14 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
 				};
 
-			/// <summary>1:N pw_schedule_BulkDeleteFailures</summary>
-			public static readonly XrmFakedRelationship PwScheduleBulkDeleteFailures = 
+			/// <summary>1:N pw_schedule_Emails</summary>
+			public static readonly XrmFakedRelationship PwScheduleEmails = 
 				new XrmFakedRelationship
 				{
 					Entity1Attribute = "pw_scheduleid",
 					Entity2Attribute = "regardingobjectid",
 					Entity1LogicalName = "pw_schedule",
-					Entity2LogicalName = "bulkdeletefailure",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N pw_schedule_DuplicateBaseRecord</summary>
-			public static readonly XrmFakedRelationship PwScheduleDuplicateBaseRecord = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "pw_scheduleid",
-					Entity2Attribute = "baserecordid",
-					Entity1LogicalName = "pw_schedule",
-					Entity2LogicalName = "duplicaterecord",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N pw_schedule_DuplicateMatchingRecord</summary>
-			public static readonly XrmFakedRelationship PwScheduleDuplicateMatchingRecord = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "pw_scheduleid",
-					Entity2Attribute = "duplicaterecordid",
-					Entity1LogicalName = "pw_schedule",
-					Entity2LogicalName = "duplicaterecord",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N pw_schedule_MailboxTrackingFolders</summary>
-			public static readonly XrmFakedRelationship PwScheduleMailboxTrackingFolders = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "pw_scheduleid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "pw_schedule",
-					Entity2LogicalName = "mailboxtrackingfolder",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N pw_schedule_PrincipalObjectAttributeAccesses</summary>
-			public static readonly XrmFakedRelationship PwSchedulePrincipalObjectAttributeAccesses = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "pw_scheduleid",
-					Entity2Attribute = "objectid",
-					Entity1LogicalName = "pw_schedule",
-					Entity2LogicalName = "principalobjectattributeaccess",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N pw_schedule_ProcessSession</summary>
-			public static readonly XrmFakedRelationship PwScheduleProcessSession = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "pw_scheduleid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "pw_schedule",
-					Entity2LogicalName = "processsession",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N pw_schedule_SyncErrors</summary>
-			public static readonly XrmFakedRelationship PwScheduleSyncErrors = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "pw_scheduleid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "pw_schedule",
-					Entity2LogicalName = "syncerror",
+					Entity2LogicalName = "email",
 					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
 				};
 
@@ -132,7 +66,9 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 			.RuleFor(e => e.Owneridname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Owneridtype, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Owneridyominame, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Owningbusinessunitname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.PwActionname, fake => fake.Lorem.Word())
+			.RuleFor(e => e.PwCustomApiIdname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.EmailOnError, fake => fake.Random.Bool())
 			.RuleFor(e => e.EndDateTime, fake => fake.Date.Soon())
 			.RuleFor(e => e.ErrorEmailAddress, fake => fake.Lorem.Word())
@@ -141,6 +77,7 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 			.RuleFor(e => e.Frequency, fake => fake.PickRandom<PentaSchedule.egFrequency>())
 			.RuleFor(e => e.FrequencyValue, fake => fake.Random.Int())
 			.RuleFor(e => e.PwGlobalActionname, fake => fake.Lorem.Word())
+			.RuleFor(e => e.PwGlobalCustomApiIdname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.LastRunDateTime, fake => fake.Date.Soon())
 			.RuleFor(e => e.Name, fake => fake.Lorem.Word())
 			.RuleFor(e => e.PwNextRunname, fake => fake.Lorem.Word())

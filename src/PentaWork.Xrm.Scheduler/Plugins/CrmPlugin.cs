@@ -9,23 +9,16 @@ namespace PentaWork.Xrm.Scheduler.Plugins
 
         ITracingService Tracer { get; set; }
         IPluginExecutionContext PluginContext { get; set; }
-        OrganizationServiceContext Context { get; set; }
-    }
-
-    public abstract class CrmPlugin : ICrmPlugin
-    {
-        public Entity ToEntity(Entity entity)
-        {
-            return entity;
-        }
-
-        public ITracingService Tracer { get; set; }
-        public IPluginExecutionContext PluginContext { get; set; }
-        public OrganizationServiceContext Context { get; set; }
     }
 
     public abstract class CrmPlugin<T> : ICrmPlugin where T : Entity, new()
     {
+        public CrmPlugin(CrmServices services)
+        {
+            Tracer = services.Tracer;
+            PluginContext = services.PluginContext;
+        }
+
         public Entity ToEntity(Entity entity)
         {
             return entity?.ToEntity<T>();
@@ -33,6 +26,23 @@ namespace PentaWork.Xrm.Scheduler.Plugins
 
         public ITracingService Tracer { get; set; }
         public IPluginExecutionContext PluginContext { get; set; }
+    }
+
+    public class CrmServices
+    {
+        public CrmServices(ITracingService tracer, IPluginExecutionContext pluginContext, OrganizationServiceContext context, IOrganizationService service, IOrganizationServiceFactory organizationServiceFactory)
+        {
+            Tracer = tracer;
+            PluginContext = pluginContext;
+            Context = context;
+            Service = service;
+            OrganizationServiceFactory = organizationServiceFactory;
+        }
+
+        public ITracingService Tracer { get; set; }
+        public IPluginExecutionContext PluginContext { get; set; }
         public OrganizationServiceContext Context { get; set; }
+        public IOrganizationService Service { get; set; }
+        public IOrganizationServiceFactory OrganizationServiceFactory { get; set; }
     }
 }

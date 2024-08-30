@@ -11,17 +11,6 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 		#region FakeRelationships
 		public static class Relationships 
 		{
-			/// <summary>1:N catalogassignment_customapi</summary>
-			public static readonly XrmFakedRelationship CatalogassignmentCustomapi = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "customapiid",
-					Entity2Attribute = "object",
-					Entity1LogicalName = "customapi",
-					Entity2LogicalName = "catalogassignment",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
 			/// <summary>1:N customapi_AsyncOperations</summary>
 			public static readonly XrmFakedRelationship CustomapiAsyncOperations = 
 				new XrmFakedRelationship
@@ -33,80 +22,25 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
 				};
 
-			/// <summary>1:N customapi_BulkDeleteFailures</summary>
-			public static readonly XrmFakedRelationship CustomapiBulkDeleteFailures = 
+			/// <summary>1:N pw_schedule_custom_api_id_customapi</summary>
+			public static readonly XrmFakedRelationship PwScheduleCustomApiIdCustomapi = 
 				new XrmFakedRelationship
 				{
 					Entity1Attribute = "customapiid",
-					Entity2Attribute = "regardingobjectid",
+					Entity2Attribute = "pw_custom_api_id",
 					Entity1LogicalName = "customapi",
-					Entity2LogicalName = "bulkdeletefailure",
+					Entity2LogicalName = "pw_schedule",
 					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
 				};
 
-			/// <summary>1:N customapi_customapirequestparameter</summary>
-			public static readonly XrmFakedRelationship CustomapiCustomapirequestparameter = 
+			/// <summary>1:N pw_schedule_global_custom_api_id_customapi</summary>
+			public static readonly XrmFakedRelationship PwScheduleGlobalCustomApiIdCustomapi = 
 				new XrmFakedRelationship
 				{
 					Entity1Attribute = "customapiid",
-					Entity2Attribute = "customapiid",
+					Entity2Attribute = "pw_global_custom_api_id",
 					Entity1LogicalName = "customapi",
-					Entity2LogicalName = "customapirequestparameter",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N customapi_customapiresponseproperty</summary>
-			public static readonly XrmFakedRelationship CustomapiCustomapiresponseproperty = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "customapiid",
-					Entity2Attribute = "customapiid",
-					Entity1LogicalName = "customapi",
-					Entity2LogicalName = "customapiresponseproperty",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N customapi_MailboxTrackingFolders</summary>
-			public static readonly XrmFakedRelationship CustomapiMailboxTrackingFolders = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "customapiid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "customapi",
-					Entity2LogicalName = "mailboxtrackingfolder",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N customapi_PrincipalObjectAttributeAccesses</summary>
-			public static readonly XrmFakedRelationship CustomapiPrincipalObjectAttributeAccesses = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "customapiid",
-					Entity2Attribute = "objectid",
-					Entity1LogicalName = "customapi",
-					Entity2LogicalName = "principalobjectattributeaccess",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N customapi_ProcessSession</summary>
-			public static readonly XrmFakedRelationship CustomapiProcessSession = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "customapiid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "customapi",
-					Entity2LogicalName = "processsession",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N customapi_SyncErrors</summary>
-			public static readonly XrmFakedRelationship CustomapiSyncErrors = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "customapiid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "customapi",
-					Entity2LogicalName = "syncerror",
+					Entity2LogicalName = "pw_schedule",
 					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
 				};
 
@@ -131,6 +65,7 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 			.RuleFor(e => e.Description, fake => fake.Lorem.Word())
 			.RuleFor(e => e.DisplayName, fake => fake.Lorem.Word())
 			.RuleFor(e => e.ExecutePrivilegeName, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Fxexpressionidname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.ImportSequenceNumber, fake => fake.Random.Int())
 			.RuleFor(e => e.IsFunction, fake => fake.Random.Bool())
 			.RuleFor(e => e.IsManaged, fake => fake.Random.Bool())
@@ -146,7 +81,9 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 			.RuleFor(e => e.Owneridname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Owneridtype, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Owneridyominame, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Owningbusinessunitname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Plugintypeidname, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Powerfxruleidname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Sdkmessageidname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.SolutionId, fake => Guid.NewGuid())
 			.RuleFor(e => e.Status, fake => fake.PickRandom<CustomAPI.eStatus>())
@@ -155,7 +92,8 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 			.RuleFor(e => e.TimeZoneRuleVersionNumber, fake => fake.Random.Int())
 			.RuleFor(e => e.UniqueName, fake => fake.Lorem.Word())
 			.RuleFor(e => e.UTCConversionTimeZoneCode, fake => fake.Random.Int())
-			.RuleFor(e => e.VersionNumber, fake => fake.Random.Int());
+			.RuleFor(e => e.VersionNumber, fake => fake.Random.Int())
+			.RuleFor(e => e.EnabledForWorkflow, fake => fake.Random.Bool());
 			return faker.Generate();
 		}
 		#endregion

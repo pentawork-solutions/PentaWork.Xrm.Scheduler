@@ -12,7 +12,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 	[EntityLogicalName("pw_scheduler_plugin_virt")]
 	public sealed class PentaSchedulerPlugin : Entity
 	{	
-		public static readonly int? EntityTypeCode = 10125;
+		public static readonly int? EntityTypeCode = 10398;
 		public new const string LogicalName = "pw_scheduler_plugin_virt";
 		public const string PrimaryIdAttribute = "pw_scheduler_plugin_virtid";
 		public const string PrimaryNameAttribute = "pw_name";
@@ -30,7 +30,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("pw_name"); }
 			set
 			{ 
-				if(value == Name) return;
+				if(Attributes.ContainsKey("pw_name") && value == Name) return;
 				SetAttributeValue("pw_name", value);
 			}
 		}	

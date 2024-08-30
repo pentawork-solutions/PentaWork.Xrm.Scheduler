@@ -62,7 +62,8 @@ namespace PentaWork.Xrm.Scheduler.Plugins.PentaScheduleRuns
             _knownEntities.Add(action);
 
             // Act
-            var fakeContext = FakeContext.ExecutePlugin<PluginController, HandleRunEnd>(
+            var fakeContext = FakeContext.ExecutePlugin<PluginController>(
+                typeof(HandleRunEnd),
                 MessageName.Update,
                 Stage.PostOperation,
                 PluginMode.Synchronous,
@@ -93,7 +94,8 @@ namespace PentaWork.Xrm.Scheduler.Plugins.PentaScheduleRuns
             _knownEntities.Add(action);
 
             // Act
-            var fakeContext = FakeContext.ExecutePlugin<PluginController, HandleRunEnd>(
+            var fakeContext = FakeContext.ExecutePlugin<PluginController>(
+                typeof(HandleRunEnd),
                 MessageName.Update,
                 Stage.PostOperation,
                 PluginMode.Synchronous,

@@ -45,6 +45,7 @@ function Update-ProjectFiles {
     $xml.Save($ProjectPath)
 }
 
-Get-CrmConnection -InteractiveMode | Get-XrmProxies -ProxyNamespace ($namespace + $proxySuffix) -FakeNamespace ($namespace + $fakeSuffix) -OutputPath ($PSScriptRoot + "\output") -Clear
+$connection = Get-CrmConnection -InteractiveMode | Set-XrmTimeout -Timeout 15
+Get-XrmProxies -Connection $connection -ProxyNamespace ($namespace + $proxySuffix) -FakeNamespace ($namespace + $fakeSuffix) -OutputPath ($PSScriptRoot + "\output") -Clear -Solution PentaWorkScheduler -IncludeEntities sdkmessage,activityparty,email,asyncoperation,account
 Update-ProjectFiles -ProjectPath $projectPath -SourcePath ($PSScriptRoot + "\output\CSharp") -TargetPath ($sourceFolder + $proxyFolder) -RootProjectPath $sourceFolder -TargetFolderName $proxyFolder
 Update-ProjectFiles -ProjectPath $testProjectPath -SourcePath ($PSScriptRoot + "\output\Fake") -TargetPath ($testFolder + $fakeFolder) -RootProjectPath $testFolder -TargetFolderName $fakeFolder

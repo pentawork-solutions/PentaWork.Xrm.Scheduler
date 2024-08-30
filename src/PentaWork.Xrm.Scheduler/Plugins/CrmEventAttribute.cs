@@ -10,29 +10,49 @@ namespace PentaWork.Xrm.Scheduler.Plugins
         public PluginMode PluginMode { get; protected set; }
         public int ExecutionDepth { get; protected set; }
         public string MethodName { get; protected set; }
+        public int Order { get; protected set; }
     }
 
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public class EventAttribute : CrmEventAttribute
     {
         public EventAttribute(
-            Stage stage, MessageName messageName, PluginMode pluginMode,
-            int executionDepth, string methodName, params string[] eventFieldNames)
+            Stage stage, MessageName messageName, PluginMode pluginMode, string methodName,
+            bool preImage = false, bool postImage = false, int order = 1, int executionDepth = -1, params string[] eventFieldNames)
         {
             Stage = stage;
             MessageName = messageName;
             PluginMode = pluginMode;
-            ExecutionDepth = executionDepth;
             MethodName = methodName;
+            PreImage = preImage;
+            PostImage = postImage;
+            Order = order;
+            ExecutionDepth = executionDepth;
             EventFieldNames = eventFieldNames;
         }
 
+        public bool PreImage { get; protected set; }
+        public bool PostImage { get; protected set; }
         public string[] EventFieldNames { get; private set; }
     }
 
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public class RelateEventAttribute : CrmEventAttribute
     {
+        public RelateEventAttribute(
+            string schemaName,
+            Stage stage, MessageName messageName, PluginMode pluginMode,
+            int executionDepth, string methodName, int order)
+        {
+            Stage = stage;
+            MessageName = messageName;
+            PluginMode = pluginMode;
+            ExecutionDepth = executionDepth;
+            MethodName = methodName;
+            SchemaName = schemaName;
+            Order = order;
+        }
+
         public RelateEventAttribute(
             string schemaName,
             Stage stage, MessageName messageName, PluginMode pluginMode,
@@ -44,6 +64,7 @@ namespace PentaWork.Xrm.Scheduler.Plugins
             ExecutionDepth = executionDepth;
             MethodName = methodName;
             SchemaName = schemaName;
+            Order = 1;
         }
 
         public string SchemaName { get; private set; }
@@ -95,6 +116,8 @@ namespace PentaWork.Xrm.Scheduler.Plugins
         [Description("SetStateDynamicEntity")]
         SetStateDynamicEntity,
         [Description("Win")]
-        Win
+        Win,
+        [Description("Lose")]
+        Lose
     }
 }

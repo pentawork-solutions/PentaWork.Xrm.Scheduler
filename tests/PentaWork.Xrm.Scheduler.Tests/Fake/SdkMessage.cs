@@ -22,28 +22,6 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
 				};
 
-			/// <summary>1:N sdkmessageid_sdkmessagefilter</summary>
-			public static readonly XrmFakedRelationship SdkmessageidSdkmessagefilter = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "sdkmessageid",
-					Entity2Attribute = "sdkmessageid",
-					Entity1LogicalName = "sdkmessage",
-					Entity2LogicalName = "sdkmessagefilter",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N sdkmessageid_sdkmessageprocessingstep</summary>
-			public static readonly XrmFakedRelationship SdkmessageidSdkmessageprocessingstep = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "sdkmessageid",
-					Entity2Attribute = "sdkmessageid",
-					Entity1LogicalName = "sdkmessage",
-					Entity2LogicalName = "sdkmessageprocessingstep",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
 		}
 		#endregion
 

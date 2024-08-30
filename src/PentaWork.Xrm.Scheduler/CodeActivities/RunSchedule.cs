@@ -54,11 +54,22 @@ namespace PentaWork.Xrm.Scheduler.CodeActivities
                     _scheduleRun.StatusReason = PentaScheduleRun.eStatusReason.Ended_Inactive;
                     UpdateAndSave(_scheduleRun);
                 }
+                else if (_schedule.ScheduleType == PentaSchedule.egScheduleType.GlobalCustomAPI)
+                {
+                    ExecuteGlobalCustomAPISchedule();
+
+                    _scheduleRun.Status = PentaScheduleRun.eStatus.Inactive;
+                    _scheduleRun.StatusReason = PentaScheduleRun.eStatusReason.Ended_Inactive;
+                    UpdateAndSave(_scheduleRun);
+                }
                 else
                 {
                     var (moreRecords, relevantEntities) = GetAndHandleEntityPage();
                     switch (_schedule.ScheduleType)
                     {
+                        case PentaSchedule.egScheduleType.CustomAPI:
+                            ExecuteCustomAPISchedule(relevantEntities);
+                            break;
                         case PentaSchedule.egScheduleType.Action:
                             ExecuteActionSchedule(relevantEntities);
                             break;
@@ -111,8 +122,20 @@ namespace PentaWork.Xrm.Scheduler.CodeActivities
 
                 // The executed workflow should be in error state. By catching everything it will be in
                 // success state and it will be hard to see, that there was actually a problem during the execution.
-                throw ex;
+                throw;
             }
+        }
+
+        private void ExecuteGlobalCustomAPISchedule()
+        {
+            var customApi = _serviceContext.CreateQuery<CustomAPI>().Single(p => p.Id == _schedule.GlobalCustomAPI.Id);
+            var sdkMessage = _serviceContext.CreateQuery<SdkMessage>().Single(m => m.Id == customApi.SdkMessage.Id);
+            _logger.Trace($"Executing global Custom API '{sdkMessage.Name}' ...");
+
+            var orgRequest = new OrganizationRequest(sdkMessage.Name);
+            _serviceContext.Execute(orgRequest);
+
+            _logger.Trace($"Triggered global Custom API!");
         }
 
         private void ExecuteGlobalActionSchedule()
@@ -127,14 +150,30 @@ namespace PentaWork.Xrm.Scheduler.CodeActivities
             _logger.Trace($"Triggered global action!");
         }
 
-        private bool ExecuteActionSchedule(List<Entity> relevantEntities)
+        private void ExecuteCustomAPISchedule(List<Entity> relevantEntities)
+        {
+            var customApi = _serviceContext.CreateQuery<CustomAPI>().Single(p => p.Id == _schedule.CustomAPI.Id);
+            var sdkMessage = _serviceContext.CreateQuery<SdkMessage>().Single(m => m.Id == customApi.SdkMessage.Id);
+            _logger.Trace($"Executing Custom API '{sdkMessage.Name}' with {relevantEntities.Count} entities ...");
+
+            var resultList = TriggerActions(sdkMessage.Name, relevantEntities);
+            _logger.Trace($"Triggered {resultList.Count} Custom API calls!");
+        }
+
+        private void ExecuteActionSchedule(List<Entity> relevantEntities)
         {
             var action = _serviceContext.CreateQuery<Process>().Single(p => p.Id == _schedule.Action.Id);
             var sdkMessage = _serviceContext.CreateQuery<SdkMessage>().Single(m => m.Id == action.SDKMessage.Id);
             _logger.Trace($"Executing action '{sdkMessage.Name}' with {relevantEntities.Count} entities ...");
 
+            var resultList = TriggerActions(sdkMessage.Name, relevantEntities);
+            _logger.Trace($"Triggered {resultList.Count} actions!");
+        }
+
+        private List<OrganizationResponse> TriggerActions(string sdkMessageName, List<Entity> relevantEntities)
+        {
             var resultList = new List<OrganizationResponse>();
-            var orgRequest = new OrganizationRequest(sdkMessage.Name);
+            var orgRequest = new OrganizationRequest(sdkMessageName);
             foreach (var entity in relevantEntities)
             {
                 try
@@ -147,9 +186,7 @@ namespace PentaWork.Xrm.Scheduler.CodeActivities
                     _logger.Trace($"ERROR during triggering action for '{entity.Id}'! {ex}");
                 }
             }
-
-            _logger.Trace($"Triggered {resultList.Count} actions!");
-            return true;
+            return resultList;
         }
 
         private void ExecuteWorkflowSchedule(List<Entity> relevantEntities)

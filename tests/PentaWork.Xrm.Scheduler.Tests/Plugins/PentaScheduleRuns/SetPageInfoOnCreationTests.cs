@@ -25,7 +25,8 @@ namespace PentaWork.Xrm.Scheduler.Tests.Plugins.PentaScheduleRuns
             scheduleRun.PentaSchedule = schedule.ToEntityReference();
 
             // Act
-            FakeContext.ExecutePlugin<PluginController, SetPageInfoOnCreation>(
+            FakeContext.ExecutePlugin<PluginController>(
+                typeof(SetPageInfoOnCreation),
                 MessageName.Create,
                 Stage.PreOperation,
                 PluginMode.Synchronous,
@@ -53,7 +54,8 @@ namespace PentaWork.Xrm.Scheduler.Tests.Plugins.PentaScheduleRuns
             scheduleRun.PentaSchedule = schedule.ToEntityReference();
 
             // Act
-            FakeContext.ExecutePlugin<PluginController, SetPageInfoOnCreation>(
+            FakeContext.ExecutePlugin<PluginController>(
+                typeof(SetPageInfoOnCreation),
                 MessageName.Create,
                 Stage.PreOperation,
                 PluginMode.Synchronous,
@@ -76,7 +78,8 @@ namespace PentaWork.Xrm.Scheduler.Tests.Plugins.PentaScheduleRuns
             scheduleRun.PentaSchedule = schedule.ToEntityReference();
 
             // Act
-            FakeContext.ExecutePlugin<PluginController, SetPageInfoOnCreation>(
+            FakeContext.ExecutePlugin<PluginController>(
+                typeof(SetPageInfoOnCreation),
                 MessageName.Create,
                 Stage.PreOperation,
                 PluginMode.Synchronous,

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Client;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Query;
 using PentaWork.Xrm.Scheduler.Proxies.Entities;
@@ -8,14 +9,23 @@ using System.Linq;
 
 namespace PentaWork.Xrm.Scheduler.Plugins.PentaScheduleRuns
 {
-    [Event(Stage.PreOperation, MessageName.Create, PluginMode.Synchronous, -1, nameof(OnCreate))]
+    [Event(Stage.PreOperation, MessageName.Create, PluginMode.Synchronous, nameof(OnCreate))]
     public class SetPageInfoOnCreation : CrmPlugin<PentaScheduleRun>
     {
-        public void OnCreate(PentaScheduleRun target, PentaScheduleRun preTarget)
-        {
-            var schedule = Context.CreateQuery<PentaSchedule>().Single(p => p.Id == target.PentaSchedule.Id);
+        private readonly OrganizationServiceContext _context;
 
-            if(schedule.ScheduleType == PentaSchedule.egScheduleType.GlobalAction || schedule.ScheduleType == PentaSchedule.egScheduleType.SchedulePlugin)
+        public SetPageInfoOnCreation(CrmServices services) : base(services)
+        {
+            _context = services.Context;
+        }
+
+        public void OnCreate(PentaScheduleRun target)
+        {
+            var schedule = _context.CreateQuery<PentaSchedule>().Single(p => p.Id == target.PentaSchedule.Id);
+
+            if(schedule.ScheduleType == PentaSchedule.egScheduleType.GlobalAction 
+                || schedule.ScheduleType == PentaSchedule.egScheduleType.GlobalCustomAPI
+                || schedule.ScheduleType == PentaSchedule.egScheduleType.SchedulePlugin)
             {
                 target.CurrentPage = 0;
                 target.TotalPages = 0;
@@ -30,7 +40,7 @@ namespace PentaWork.Xrm.Scheduler.Plugins.PentaScheduleRuns
                     // to get the actual page count
 
                     var conversionRequest = new FetchXmlToQueryExpressionRequest { FetchXml = schedule.FetchXML };
-                    var conversionResponse = Context.Execute(conversionRequest) as FetchXmlToQueryExpressionResponse;
+                    var conversionResponse = _context.Execute(conversionRequest) as FetchXmlToQueryExpressionResponse;
 
                     conversionResponse.Query.ColumnSet = new ColumnSet();
                     conversionResponse.Query.PageInfo.PageNumber = 0;
@@ -45,7 +55,7 @@ namespace PentaWork.Xrm.Scheduler.Plugins.PentaScheduleRuns
                         query.PageInfo.PageNumber++;
                         pageCount++;
 
-                        var response = Context.Execute(retrieveMultipleRequest) as RetrieveMultipleResponse;
+                        var response = _context.Execute(retrieveMultipleRequest) as RetrieveMultipleResponse;
                         moreRecords = response.EntityCollection.MoreRecords;
                     }
 
