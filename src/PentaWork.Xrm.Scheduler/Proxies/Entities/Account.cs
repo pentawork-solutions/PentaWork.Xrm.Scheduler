@@ -35,7 +35,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == Category) return;
+				if(Attributes.ContainsKey("accountcategorycode") && value == Category) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -58,7 +58,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == Classification) return;
+				if(Attributes.ContainsKey("accountclassificationcode") && value == Classification) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -87,7 +87,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("accountnumber"); }
 			set
 			{ 
-				if(value == AccountNumber) return;
+				if(Attributes.ContainsKey("accountnumber") && value == AccountNumber) return;
 				SetAttributeValue("accountnumber", value);
 			}
 		}	
@@ -107,7 +107,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == AccountRating) return;
+				if(Attributes.ContainsKey("accountratingcode") && value == AccountRating) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -125,7 +125,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<Guid>("address1_addressid"); }
 			set
 			{ 
-				if(value == Address1Id) return;
+				if(Attributes.ContainsKey("address1_addressid") && value == Address1Id) return;
 				SetAttributeValue("address1_addressid", value);
 			}
 		}	
@@ -145,7 +145,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == Address1AddressType) return;
+				if(Attributes.ContainsKey("address1_addresstypecode") && value == Address1AddressType) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -163,7 +163,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_city"); }
 			set
 			{ 
-				if(value == Address1City) return;
+				if(Attributes.ContainsKey("address1_city") && value == Address1City) return;
 				SetAttributeValue("address1_city", value);
 			}
 		}	
@@ -178,7 +178,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_composite"); }
 			set
 			{ 
-				if(value == Address1) return;
+				if(Attributes.ContainsKey("address1_composite") && value == Address1) return;
 				SetAttributeValue("address1_composite", value);
 			}
 		}	
@@ -193,7 +193,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_country"); }
 			set
 			{ 
-				if(value == Address1CountryRegion) return;
+				if(Attributes.ContainsKey("address1_country") && value == Address1CountryRegion) return;
 				SetAttributeValue("address1_country", value);
 			}
 		}	
@@ -208,7 +208,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_county"); }
 			set
 			{ 
-				if(value == Address1County) return;
+				if(Attributes.ContainsKey("address1_county") && value == Address1County) return;
 				SetAttributeValue("address1_county", value);
 			}
 		}	
@@ -223,7 +223,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_fax"); }
 			set
 			{ 
-				if(value == Address1Fax) return;
+				if(Attributes.ContainsKey("address1_fax") && value == Address1Fax) return;
 				SetAttributeValue("address1_fax", value);
 			}
 		}	
@@ -243,7 +243,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == Address1FreightTerms) return;
+				if(Attributes.ContainsKey("address1_freighttermscode") && value == Address1FreightTerms) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -267,7 +267,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			{
 				double? doubleValue = null;
 				if(value != null) doubleValue = Math.Round(value.Value, 5);
-				if(doubleValue == Address1Latitude) return;
+				if(Attributes.ContainsKey("address1_latitude") && doubleValue == Address1Latitude) return;
 				SetAttributeValue("address1_latitude", doubleValue);  
 			}
 		}
@@ -282,7 +282,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_line1"); }
 			set
 			{ 
-				if(value == Address1Street1) return;
+				if(Attributes.ContainsKey("address1_line1") && value == Address1Street1) return;
 				SetAttributeValue("address1_line1", value);
 			}
 		}	
@@ -297,7 +297,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_line2"); }
 			set
 			{ 
-				if(value == Address1Street2) return;
+				if(Attributes.ContainsKey("address1_line2") && value == Address1Street2) return;
 				SetAttributeValue("address1_line2", value);
 			}
 		}	
@@ -312,7 +312,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_line3"); }
 			set
 			{ 
-				if(value == Address1Street3) return;
+				if(Attributes.ContainsKey("address1_line3") && value == Address1Street3) return;
 				SetAttributeValue("address1_line3", value);
 			}
 		}	
@@ -333,7 +333,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			{
 				double? doubleValue = null;
 				if(value != null) doubleValue = Math.Round(value.Value, 5);
-				if(doubleValue == Address1Longitude) return;
+				if(Attributes.ContainsKey("address1_longitude") && doubleValue == Address1Longitude) return;
 				SetAttributeValue("address1_longitude", doubleValue);  
 			}
 		}
@@ -348,7 +348,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_name"); }
 			set
 			{ 
-				if(value == Address1Name) return;
+				if(Attributes.ContainsKey("address1_name") && value == Address1Name) return;
 				SetAttributeValue("address1_name", value);
 			}
 		}	
@@ -363,7 +363,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_postalcode"); }
 			set
 			{ 
-				if(value == Address1ZIPPostalCode) return;
+				if(Attributes.ContainsKey("address1_postalcode") && value == Address1ZIPPostalCode) return;
 				SetAttributeValue("address1_postalcode", value);
 			}
 		}	
@@ -378,7 +378,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_postofficebox"); }
 			set
 			{ 
-				if(value == Address1PostOfficeBox) return;
+				if(Attributes.ContainsKey("address1_postofficebox") && value == Address1PostOfficeBox) return;
 				SetAttributeValue("address1_postofficebox", value);
 			}
 		}	
@@ -393,7 +393,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_primarycontactname"); }
 			set
 			{ 
-				if(value == Address1PrimaryContactName) return;
+				if(Attributes.ContainsKey("address1_primarycontactname") && value == Address1PrimaryContactName) return;
 				SetAttributeValue("address1_primarycontactname", value);
 			}
 		}	
@@ -413,7 +413,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == Address1ShippingMethod) return;
+				if(Attributes.ContainsKey("address1_shippingmethodcode") && value == Address1ShippingMethod) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -431,7 +431,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_stateorprovince"); }
 			set
 			{ 
-				if(value == Address1StateProvince) return;
+				if(Attributes.ContainsKey("address1_stateorprovince") && value == Address1StateProvince) return;
 				SetAttributeValue("address1_stateorprovince", value);
 			}
 		}	
@@ -446,7 +446,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_telephone1"); }
 			set
 			{ 
-				if(value == AddressPhone) return;
+				if(Attributes.ContainsKey("address1_telephone1") && value == AddressPhone) return;
 				SetAttributeValue("address1_telephone1", value);
 			}
 		}	
@@ -461,7 +461,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_telephone2"); }
 			set
 			{ 
-				if(value == Address1Telephone2) return;
+				if(Attributes.ContainsKey("address1_telephone2") && value == Address1Telephone2) return;
 				SetAttributeValue("address1_telephone2", value);
 			}
 		}	
@@ -476,7 +476,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_telephone3"); }
 			set
 			{ 
-				if(value == Address1Telephone3) return;
+				if(Attributes.ContainsKey("address1_telephone3") && value == Address1Telephone3) return;
 				SetAttributeValue("address1_telephone3", value);
 			}
 		}	
@@ -491,7 +491,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address1_upszone"); }
 			set
 			{ 
-				if(value == Address1UPSZone) return;
+				if(Attributes.ContainsKey("address1_upszone") && value == Address1UPSZone) return;
 				SetAttributeValue("address1_upszone", value);
 			}
 		}	
@@ -506,7 +506,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("address1_utcoffset"); }
 			set
 			{ 
-				if(value == Address1UTCOffset) return;
+				if(Attributes.ContainsKey("address1_utcoffset") && value == Address1UTCOffset) return;
 				SetAttributeValue("address1_utcoffset", value);
 			}
 		}	
@@ -521,7 +521,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<Guid>("address2_addressid"); }
 			set
 			{ 
-				if(value == Address2Id) return;
+				if(Attributes.ContainsKey("address2_addressid") && value == Address2Id) return;
 				SetAttributeValue("address2_addressid", value);
 			}
 		}	
@@ -541,7 +541,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == Address2AddressType) return;
+				if(Attributes.ContainsKey("address2_addresstypecode") && value == Address2AddressType) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -559,7 +559,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_city"); }
 			set
 			{ 
-				if(value == Address2City) return;
+				if(Attributes.ContainsKey("address2_city") && value == Address2City) return;
 				SetAttributeValue("address2_city", value);
 			}
 		}	
@@ -574,7 +574,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_composite"); }
 			set
 			{ 
-				if(value == Address2) return;
+				if(Attributes.ContainsKey("address2_composite") && value == Address2) return;
 				SetAttributeValue("address2_composite", value);
 			}
 		}	
@@ -589,7 +589,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_country"); }
 			set
 			{ 
-				if(value == Address2CountryRegion) return;
+				if(Attributes.ContainsKey("address2_country") && value == Address2CountryRegion) return;
 				SetAttributeValue("address2_country", value);
 			}
 		}	
@@ -604,7 +604,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_county"); }
 			set
 			{ 
-				if(value == Address2County) return;
+				if(Attributes.ContainsKey("address2_county") && value == Address2County) return;
 				SetAttributeValue("address2_county", value);
 			}
 		}	
@@ -619,7 +619,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_fax"); }
 			set
 			{ 
-				if(value == Address2Fax) return;
+				if(Attributes.ContainsKey("address2_fax") && value == Address2Fax) return;
 				SetAttributeValue("address2_fax", value);
 			}
 		}	
@@ -639,7 +639,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == Address2FreightTerms) return;
+				if(Attributes.ContainsKey("address2_freighttermscode") && value == Address2FreightTerms) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -663,7 +663,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			{
 				double? doubleValue = null;
 				if(value != null) doubleValue = Math.Round(value.Value, 5);
-				if(doubleValue == Address2Latitude) return;
+				if(Attributes.ContainsKey("address2_latitude") && doubleValue == Address2Latitude) return;
 				SetAttributeValue("address2_latitude", doubleValue);  
 			}
 		}
@@ -678,7 +678,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_line1"); }
 			set
 			{ 
-				if(value == Address2Street1) return;
+				if(Attributes.ContainsKey("address2_line1") && value == Address2Street1) return;
 				SetAttributeValue("address2_line1", value);
 			}
 		}	
@@ -693,7 +693,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_line2"); }
 			set
 			{ 
-				if(value == Address2Street2) return;
+				if(Attributes.ContainsKey("address2_line2") && value == Address2Street2) return;
 				SetAttributeValue("address2_line2", value);
 			}
 		}	
@@ -708,7 +708,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_line3"); }
 			set
 			{ 
-				if(value == Address2Street3) return;
+				if(Attributes.ContainsKey("address2_line3") && value == Address2Street3) return;
 				SetAttributeValue("address2_line3", value);
 			}
 		}	
@@ -729,7 +729,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			{
 				double? doubleValue = null;
 				if(value != null) doubleValue = Math.Round(value.Value, 5);
-				if(doubleValue == Address2Longitude) return;
+				if(Attributes.ContainsKey("address2_longitude") && doubleValue == Address2Longitude) return;
 				SetAttributeValue("address2_longitude", doubleValue);  
 			}
 		}
@@ -744,7 +744,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_name"); }
 			set
 			{ 
-				if(value == Address2Name) return;
+				if(Attributes.ContainsKey("address2_name") && value == Address2Name) return;
 				SetAttributeValue("address2_name", value);
 			}
 		}	
@@ -759,7 +759,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_postalcode"); }
 			set
 			{ 
-				if(value == Address2ZIPPostalCode) return;
+				if(Attributes.ContainsKey("address2_postalcode") && value == Address2ZIPPostalCode) return;
 				SetAttributeValue("address2_postalcode", value);
 			}
 		}	
@@ -774,7 +774,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_postofficebox"); }
 			set
 			{ 
-				if(value == Address2PostOfficeBox) return;
+				if(Attributes.ContainsKey("address2_postofficebox") && value == Address2PostOfficeBox) return;
 				SetAttributeValue("address2_postofficebox", value);
 			}
 		}	
@@ -789,7 +789,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_primarycontactname"); }
 			set
 			{ 
-				if(value == Address2PrimaryContactName) return;
+				if(Attributes.ContainsKey("address2_primarycontactname") && value == Address2PrimaryContactName) return;
 				SetAttributeValue("address2_primarycontactname", value);
 			}
 		}	
@@ -809,7 +809,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == Address2ShippingMethod) return;
+				if(Attributes.ContainsKey("address2_shippingmethodcode") && value == Address2ShippingMethod) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -827,7 +827,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_stateorprovince"); }
 			set
 			{ 
-				if(value == Address2StateProvince) return;
+				if(Attributes.ContainsKey("address2_stateorprovince") && value == Address2StateProvince) return;
 				SetAttributeValue("address2_stateorprovince", value);
 			}
 		}	
@@ -842,7 +842,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_telephone1"); }
 			set
 			{ 
-				if(value == Address2Telephone1) return;
+				if(Attributes.ContainsKey("address2_telephone1") && value == Address2Telephone1) return;
 				SetAttributeValue("address2_telephone1", value);
 			}
 		}	
@@ -857,7 +857,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_telephone2"); }
 			set
 			{ 
-				if(value == Address2Telephone2) return;
+				if(Attributes.ContainsKey("address2_telephone2") && value == Address2Telephone2) return;
 				SetAttributeValue("address2_telephone2", value);
 			}
 		}	
@@ -872,7 +872,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_telephone3"); }
 			set
 			{ 
-				if(value == Address2Telephone3) return;
+				if(Attributes.ContainsKey("address2_telephone3") && value == Address2Telephone3) return;
 				SetAttributeValue("address2_telephone3", value);
 			}
 		}	
@@ -887,7 +887,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("address2_upszone"); }
 			set
 			{ 
-				if(value == Address2UPSZone) return;
+				if(Attributes.ContainsKey("address2_upszone") && value == Address2UPSZone) return;
 				SetAttributeValue("address2_upszone", value);
 			}
 		}	
@@ -902,8 +902,68 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("address2_utcoffset"); }
 			set
 			{ 
-				if(value == Address2UTCOffset) return;
+				if(Attributes.ContainsKey("address2_utcoffset") && value == Address2UTCOffset) return;
 				SetAttributeValue("address2_utcoffset", value);
+			}
+		}	
+			
+		/// <summary>
+        /// adx_createdbyipaddress
+        /// </summary>
+		[DisplayName("Created By (IP Address)")]
+		[AttributeLogicalName("adx_createdbyipaddress")]
+		public string CreatedByIPAddress
+		{	
+			get { return GetAttributeValue<string>("adx_createdbyipaddress"); }
+			set
+			{ 
+				if(Attributes.ContainsKey("adx_createdbyipaddress") && value == CreatedByIPAddress) return;
+				SetAttributeValue("adx_createdbyipaddress", value);
+			}
+		}	
+			
+		/// <summary>
+        /// adx_createdbyusername
+        /// </summary>
+		[DisplayName("Created By (User Name)")]
+		[AttributeLogicalName("adx_createdbyusername")]
+		public string CreatedByUserName
+		{	
+			get { return GetAttributeValue<string>("adx_createdbyusername"); }
+			set
+			{ 
+				if(Attributes.ContainsKey("adx_createdbyusername") && value == CreatedByUserName) return;
+				SetAttributeValue("adx_createdbyusername", value);
+			}
+		}	
+			
+		/// <summary>
+        /// adx_modifiedbyipaddress
+        /// </summary>
+		[DisplayName("Modified By (IP Address)")]
+		[AttributeLogicalName("adx_modifiedbyipaddress")]
+		public string ModifiedByIPAddress
+		{	
+			get { return GetAttributeValue<string>("adx_modifiedbyipaddress"); }
+			set
+			{ 
+				if(Attributes.ContainsKey("adx_modifiedbyipaddress") && value == ModifiedByIPAddress) return;
+				SetAttributeValue("adx_modifiedbyipaddress", value);
+			}
+		}	
+			
+		/// <summary>
+        /// adx_modifiedbyusername
+        /// </summary>
+		[DisplayName("Modified By (User Name)")]
+		[AttributeLogicalName("adx_modifiedbyusername")]
+		public string ModifiedByUserName
+		{	
+			get { return GetAttributeValue<string>("adx_modifiedbyusername"); }
+			set
+			{ 
+				if(Attributes.ContainsKey("adx_modifiedbyusername") && value == ModifiedByUserName) return;
+				SetAttributeValue("adx_modifiedbyusername", value);
 			}
 		}	
 			
@@ -928,7 +988,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 					moneyValue = new Money(roundedValue);
 				}
 
-				if(moneyValue.Value == Aging30) return;
+				if(Attributes.ContainsKey("aging30") && moneyValue?.Value == Aging30) return;
 				SetAttributeValue("aging30", moneyValue);  
 			}
 		}
@@ -954,7 +1014,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 					moneyValue = new Money(roundedValue);
 				}
 
-				if(moneyValue.Value == Aging60) return;
+				if(Attributes.ContainsKey("aging60") && moneyValue?.Value == Aging60) return;
 				SetAttributeValue("aging60", moneyValue);  
 			}
 		}
@@ -980,7 +1040,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 					moneyValue = new Money(roundedValue);
 				}
 
-				if(moneyValue.Value == Aging90) return;
+				if(Attributes.ContainsKey("aging90") && moneyValue?.Value == Aging90) return;
 				SetAttributeValue("aging90", moneyValue);  
 			}
 		}
@@ -1000,7 +1060,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == BusinessType) return;
+				if(Attributes.ContainsKey("businesstypecode") && value == BusinessType) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -1018,7 +1078,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("createdby"); }
 			set
 			{ 
-				if(value == CreatedBy) return;
+				if(Attributes.ContainsKey("createdby") && value == CreatedBy) return;
 				SetAttributeValue("createdby", value);
 			}
 		}	
@@ -1033,7 +1093,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("createdbyexternalparty"); }
 			set
 			{ 
-				if(value == CreatedByExternalParty) return;
+				if(Attributes.ContainsKey("createdbyexternalparty") && value == CreatedByExternalParty) return;
 				SetAttributeValue("createdbyexternalparty", value);
 			}
 		}	
@@ -1048,7 +1108,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("createdbyexternalpartyname"); }
 			set
 			{ 
-				if(value == Createdbyexternalpartyname) return;
+				if(Attributes.ContainsKey("createdbyexternalpartyname") && value == Createdbyexternalpartyname) return;
 				SetAttributeValue("createdbyexternalpartyname", value);
 			}
 		}	
@@ -1063,7 +1123,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("createdbyexternalpartyyominame"); }
 			set
 			{ 
-				if(value == Createdbyexternalpartyyominame) return;
+				if(Attributes.ContainsKey("createdbyexternalpartyyominame") && value == Createdbyexternalpartyyominame) return;
 				SetAttributeValue("createdbyexternalpartyyominame", value);
 			}
 		}	
@@ -1078,7 +1138,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("createdbyname"); }
 			set
 			{ 
-				if(value == Createdbyname) return;
+				if(Attributes.ContainsKey("createdbyname") && value == Createdbyname) return;
 				SetAttributeValue("createdbyname", value);
 			}
 		}	
@@ -1093,7 +1153,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("createdbyyominame"); }
 			set
 			{ 
-				if(value == Createdbyyominame) return;
+				if(Attributes.ContainsKey("createdbyyominame") && value == Createdbyyominame) return;
 				SetAttributeValue("createdbyyominame", value);
 			}
 		}	
@@ -1108,7 +1168,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<DateTime?>("createdon"); }
 			set
 			{ 
-				if(value == CreatedOn) return;
+				if(Attributes.ContainsKey("createdon") && value == CreatedOn) return;
 				SetAttributeValue("createdon", value);
 			}
 		}	
@@ -1123,7 +1183,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("createdonbehalfby"); }
 			set
 			{ 
-				if(value == CreatedByDelegate) return;
+				if(Attributes.ContainsKey("createdonbehalfby") && value == CreatedByDelegate) return;
 				SetAttributeValue("createdonbehalfby", value);
 			}
 		}	
@@ -1138,7 +1198,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("createdonbehalfbyname"); }
 			set
 			{ 
-				if(value == Createdonbehalfbyname) return;
+				if(Attributes.ContainsKey("createdonbehalfbyname") && value == Createdonbehalfbyname) return;
 				SetAttributeValue("createdonbehalfbyname", value);
 			}
 		}	
@@ -1153,7 +1213,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("createdonbehalfbyyominame"); }
 			set
 			{ 
-				if(value == Createdonbehalfbyyominame) return;
+				if(Attributes.ContainsKey("createdonbehalfbyyominame") && value == Createdonbehalfbyyominame) return;
 				SetAttributeValue("createdonbehalfbyyominame", value);
 			}
 		}	
@@ -1179,7 +1239,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 					moneyValue = new Money(roundedValue);
 				}
 
-				if(moneyValue.Value == CreditLimit) return;
+				if(Attributes.ContainsKey("creditlimit") && moneyValue?.Value == CreditLimit) return;
 				SetAttributeValue("creditlimit", moneyValue);  
 			}
 		}
@@ -1194,7 +1254,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("creditonhold"); }
 			set
 			{ 
-				if(value == CreditHold) return;
+				if(Attributes.ContainsKey("creditonhold") && value == CreditHold) return;
 				SetAttributeValue("creditonhold", value);
 			}
 		}	
@@ -1214,7 +1274,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == CustomerSize) return;
+				if(Attributes.ContainsKey("customersizecode") && value == CustomerSize) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -1237,7 +1297,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == RelationshipType) return;
+				if(Attributes.ContainsKey("customertypecode") && value == RelationshipType) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -1245,36 +1305,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 		}
 
-		/// <summary>
-        /// defaultpricelevelid
-        /// </summary>
-		[DisplayName("Price List")]
-		[AttributeLogicalName("defaultpricelevelid")]
-		public EntityReference PriceList
-		{	
-			get { return GetAttributeValue<EntityReference>("defaultpricelevelid"); }
-			set
-			{ 
-				if(value == PriceList) return;
-				SetAttributeValue("defaultpricelevelid", value);
-			}
-		}	
-			
-		/// <summary>
-        /// defaultpricelevelidname
-        /// </summary>
-		[DisplayName("defaultpricelevelidname")]
-		[AttributeLogicalName("defaultpricelevelidname")]
-		public string Defaultpricelevelidname
-		{	
-			get { return GetAttributeValue<string>("defaultpricelevelidname"); }
-			set
-			{ 
-				if(value == Defaultpricelevelidname) return;
-				SetAttributeValue("defaultpricelevelidname", value);
-			}
-		}	
-			
 		/// <summary>
         /// description
         /// </summary>
@@ -1285,7 +1315,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("description"); }
 			set
 			{ 
-				if(value == Description) return;
+				if(Attributes.ContainsKey("description") && value == Description) return;
 				SetAttributeValue("description", value);
 			}
 		}	
@@ -1300,7 +1330,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("donotbulkemail"); }
 			set
 			{ 
-				if(value == DoNotAllowBulkEmails) return;
+				if(Attributes.ContainsKey("donotbulkemail") && value == DoNotAllowBulkEmails) return;
 				SetAttributeValue("donotbulkemail", value);
 			}
 		}	
@@ -1315,7 +1345,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("donotbulkpostalmail"); }
 			set
 			{ 
-				if(value == DoNotAllowBulkMails) return;
+				if(Attributes.ContainsKey("donotbulkpostalmail") && value == DoNotAllowBulkMails) return;
 				SetAttributeValue("donotbulkpostalmail", value);
 			}
 		}	
@@ -1330,7 +1360,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("donotemail"); }
 			set
 			{ 
-				if(value == DoNotAllowEmails) return;
+				if(Attributes.ContainsKey("donotemail") && value == DoNotAllowEmails) return;
 				SetAttributeValue("donotemail", value);
 			}
 		}	
@@ -1345,7 +1375,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("donotfax"); }
 			set
 			{ 
-				if(value == DoNotAllowFaxes) return;
+				if(Attributes.ContainsKey("donotfax") && value == DoNotAllowFaxes) return;
 				SetAttributeValue("donotfax", value);
 			}
 		}	
@@ -1360,7 +1390,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("donotphone"); }
 			set
 			{ 
-				if(value == DoNotAllowPhoneCalls) return;
+				if(Attributes.ContainsKey("donotphone") && value == DoNotAllowPhoneCalls) return;
 				SetAttributeValue("donotphone", value);
 			}
 		}	
@@ -1375,7 +1405,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("donotpostalmail"); }
 			set
 			{ 
-				if(value == DoNotAllowMails) return;
+				if(Attributes.ContainsKey("donotpostalmail") && value == DoNotAllowMails) return;
 				SetAttributeValue("donotpostalmail", value);
 			}
 		}	
@@ -1390,7 +1420,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("donotsendmm"); }
 			set
 			{ 
-				if(value == SendMarketingMaterials) return;
+				if(Attributes.ContainsKey("donotsendmm") && value == SendMarketingMaterials) return;
 				SetAttributeValue("donotsendmm", value);
 			}
 		}	
@@ -1405,7 +1435,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("emailaddress1"); }
 			set
 			{ 
-				if(value == Email) return;
+				if(Attributes.ContainsKey("emailaddress1") && value == Email) return;
 				SetAttributeValue("emailaddress1", value);
 			}
 		}	
@@ -1420,7 +1450,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("emailaddress2"); }
 			set
 			{ 
-				if(value == EmailAddress2) return;
+				if(Attributes.ContainsKey("emailaddress2") && value == EmailAddress2) return;
 				SetAttributeValue("emailaddress2", value);
 			}
 		}	
@@ -1435,7 +1465,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("emailaddress3"); }
 			set
 			{ 
-				if(value == EmailAddress3) return;
+				if(Attributes.ContainsKey("emailaddress3") && value == EmailAddress3) return;
 				SetAttributeValue("emailaddress3", value);
 			}
 		}	
@@ -1450,7 +1480,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("entityimage_timestamp"); }
 			set
 			{ 
-				if(value == EntityimageTimestamp) return;
+				if(Attributes.ContainsKey("entityimage_timestamp") && value == EntityimageTimestamp) return;
 				SetAttributeValue("entityimage_timestamp", value);
 			}
 		}	
@@ -1465,7 +1495,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("entityimage_url"); }
 			set
 			{ 
-				if(value == EntityimageUrl) return;
+				if(Attributes.ContainsKey("entityimage_url") && value == EntityimageUrl) return;
 				SetAttributeValue("entityimage_url", value);
 			}
 		}	
@@ -1480,7 +1510,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<Guid>("entityimageid"); }
 			set
 			{ 
-				if(value == EntityImageId) return;
+				if(Attributes.ContainsKey("entityimageid") && value == EntityImageId) return;
 				SetAttributeValue("entityimageid", value);
 			}
 		}	
@@ -1488,9 +1518,9 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		/// <summary>
         /// exchangerate
 		///
-		/// Precision: 10
+		/// Precision: 12
 		/// MaxValue: 100000000000
-		/// MinValue: 0.0000000001
+		/// MinValue: 0.000000000001
         /// </summary>
 		[DisplayName("Exchange Rate")]
 		[AttributeLogicalName("exchangerate")]
@@ -1500,8 +1530,8 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			set 
 			{
 				decimal? decimalValue = null;
-				if(value != null) decimalValue = Decimal.Round(value.Value, 10);
-				if(decimalValue == ExchangeRate) return;
+				if(value != null) decimalValue = Decimal.Round(value.Value, 12);
+				if(Attributes.ContainsKey("exchangerate") && decimalValue == ExchangeRate) return;
 				SetAttributeValue("exchangerate", decimalValue);  
 			}
 		}
@@ -1516,7 +1546,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("fax"); }
 			set
 			{ 
-				if(value == Fax) return;
+				if(Attributes.ContainsKey("fax") && value == Fax) return;
 				SetAttributeValue("fax", value);
 			}
 		}	
@@ -1531,7 +1561,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("followemail"); }
 			set
 			{ 
-				if(value == FollowEmailActivity) return;
+				if(Attributes.ContainsKey("followemail") && value == FollowEmailActivity) return;
 				SetAttributeValue("followemail", value);
 			}
 		}	
@@ -1546,7 +1576,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("ftpsiteurl"); }
 			set
 			{ 
-				if(value == FTPSite) return;
+				if(Attributes.ContainsKey("ftpsiteurl") && value == FTPSite) return;
 				SetAttributeValue("ftpsiteurl", value);
 			}
 		}	
@@ -1561,7 +1591,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("importsequencenumber"); }
 			set
 			{ 
-				if(value == ImportSequenceNumber) return;
+				if(Attributes.ContainsKey("importsequencenumber") && value == ImportSequenceNumber) return;
 				SetAttributeValue("importsequencenumber", value);
 			}
 		}	
@@ -1581,7 +1611,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == Industry) return;
+				if(Attributes.ContainsKey("industrycode") && value == Industry) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -1599,7 +1629,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("isprivate"); }
 			set
 			{ 
-				if(value == Isprivate) return;
+				if(Attributes.ContainsKey("isprivate") && value == Isprivate) return;
 				SetAttributeValue("isprivate", value);
 			}
 		}	
@@ -1614,7 +1644,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<DateTime?>("lastonholdtime"); }
 			set
 			{ 
-				if(value == LastOnHoldTime) return;
+				if(Attributes.ContainsKey("lastonholdtime") && value == LastOnHoldTime) return;
 				SetAttributeValue("lastonholdtime", value);
 			}
 		}	
@@ -1629,7 +1659,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<DateTime?>("lastusedincampaign"); }
 			set
 			{ 
-				if(value == LastDateIncludedInCampaign) return;
+				if(Attributes.ContainsKey("lastusedincampaign") && value == LastDateIncludedInCampaign) return;
 				SetAttributeValue("lastusedincampaign", value);
 			}
 		}	
@@ -1655,7 +1685,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 					moneyValue = new Money(roundedValue);
 				}
 
-				if(moneyValue.Value == MarketCapitalization) return;
+				if(Attributes.ContainsKey("marketcap") && moneyValue?.Value == MarketCapitalization) return;
 				SetAttributeValue("marketcap", moneyValue);  
 			}
 		}
@@ -1670,7 +1700,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("marketingonly"); }
 			set
 			{ 
-				if(value == MarketingOnly) return;
+				if(Attributes.ContainsKey("marketingonly") && value == MarketingOnly) return;
 				SetAttributeValue("marketingonly", value);
 			}
 		}	
@@ -1685,7 +1715,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("masteraccountidname"); }
 			set
 			{ 
-				if(value == Masteraccountidname) return;
+				if(Attributes.ContainsKey("masteraccountidname") && value == Masteraccountidname) return;
 				SetAttributeValue("masteraccountidname", value);
 			}
 		}	
@@ -1700,7 +1730,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("masteraccountidyominame"); }
 			set
 			{ 
-				if(value == Masteraccountidyominame) return;
+				if(Attributes.ContainsKey("masteraccountidyominame") && value == Masteraccountidyominame) return;
 				SetAttributeValue("masteraccountidyominame", value);
 			}
 		}	
@@ -1715,7 +1745,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("masterid"); }
 			set
 			{ 
-				if(value == MasterID) return;
+				if(Attributes.ContainsKey("masterid") && value == MasterID) return;
 				SetAttributeValue("masterid", value);
 			}
 		}	
@@ -1730,7 +1760,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("merged"); }
 			set
 			{ 
-				if(value == Merged) return;
+				if(Attributes.ContainsKey("merged") && value == Merged) return;
 				SetAttributeValue("merged", value);
 			}
 		}	
@@ -1745,7 +1775,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("modifiedby"); }
 			set
 			{ 
-				if(value == ModifiedBy) return;
+				if(Attributes.ContainsKey("modifiedby") && value == ModifiedBy) return;
 				SetAttributeValue("modifiedby", value);
 			}
 		}	
@@ -1760,7 +1790,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("modifiedbyexternalparty"); }
 			set
 			{ 
-				if(value == ModifiedByExternalParty) return;
+				if(Attributes.ContainsKey("modifiedbyexternalparty") && value == ModifiedByExternalParty) return;
 				SetAttributeValue("modifiedbyexternalparty", value);
 			}
 		}	
@@ -1775,7 +1805,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("modifiedbyexternalpartyname"); }
 			set
 			{ 
-				if(value == Modifiedbyexternalpartyname) return;
+				if(Attributes.ContainsKey("modifiedbyexternalpartyname") && value == Modifiedbyexternalpartyname) return;
 				SetAttributeValue("modifiedbyexternalpartyname", value);
 			}
 		}	
@@ -1790,7 +1820,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("modifiedbyexternalpartyyominame"); }
 			set
 			{ 
-				if(value == Modifiedbyexternalpartyyominame) return;
+				if(Attributes.ContainsKey("modifiedbyexternalpartyyominame") && value == Modifiedbyexternalpartyyominame) return;
 				SetAttributeValue("modifiedbyexternalpartyyominame", value);
 			}
 		}	
@@ -1805,7 +1835,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("modifiedbyname"); }
 			set
 			{ 
-				if(value == Modifiedbyname) return;
+				if(Attributes.ContainsKey("modifiedbyname") && value == Modifiedbyname) return;
 				SetAttributeValue("modifiedbyname", value);
 			}
 		}	
@@ -1820,7 +1850,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("modifiedbyyominame"); }
 			set
 			{ 
-				if(value == Modifiedbyyominame) return;
+				if(Attributes.ContainsKey("modifiedbyyominame") && value == Modifiedbyyominame) return;
 				SetAttributeValue("modifiedbyyominame", value);
 			}
 		}	
@@ -1835,7 +1865,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<DateTime?>("modifiedon"); }
 			set
 			{ 
-				if(value == ModifiedOn) return;
+				if(Attributes.ContainsKey("modifiedon") && value == ModifiedOn) return;
 				SetAttributeValue("modifiedon", value);
 			}
 		}	
@@ -1850,7 +1880,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("modifiedonbehalfby"); }
 			set
 			{ 
-				if(value == ModifiedByDelegate) return;
+				if(Attributes.ContainsKey("modifiedonbehalfby") && value == ModifiedByDelegate) return;
 				SetAttributeValue("modifiedonbehalfby", value);
 			}
 		}	
@@ -1865,7 +1895,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("modifiedonbehalfbyname"); }
 			set
 			{ 
-				if(value == Modifiedonbehalfbyname) return;
+				if(Attributes.ContainsKey("modifiedonbehalfbyname") && value == Modifiedonbehalfbyname) return;
 				SetAttributeValue("modifiedonbehalfbyname", value);
 			}
 		}	
@@ -1880,8 +1910,53 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("modifiedonbehalfbyyominame"); }
 			set
 			{ 
-				if(value == Modifiedonbehalfbyyominame) return;
+				if(Attributes.ContainsKey("modifiedonbehalfbyyominame") && value == Modifiedonbehalfbyyominame) return;
 				SetAttributeValue("modifiedonbehalfbyyominame", value);
+			}
+		}	
+			
+		/// <summary>
+        /// msa_managingpartnerid
+        /// </summary>
+		[DisplayName("Managing Partner")]
+		[AttributeLogicalName("msa_managingpartnerid")]
+		public EntityReference ManagingPartner
+		{	
+			get { return GetAttributeValue<EntityReference>("msa_managingpartnerid"); }
+			set
+			{ 
+				if(Attributes.ContainsKey("msa_managingpartnerid") && value == ManagingPartner) return;
+				SetAttributeValue("msa_managingpartnerid", value);
+			}
+		}	
+			
+		/// <summary>
+        /// msa_managingpartneridname
+        /// </summary>
+		[DisplayName("msa_managingpartneridname")]
+		[AttributeLogicalName("msa_managingpartneridname")]
+		public string MsaManagingpartneridname
+		{	
+			get { return GetAttributeValue<string>("msa_managingpartneridname"); }
+			set
+			{ 
+				if(Attributes.ContainsKey("msa_managingpartneridname") && value == MsaManagingpartneridname) return;
+				SetAttributeValue("msa_managingpartneridname", value);
+			}
+		}	
+			
+		/// <summary>
+        /// msa_managingpartneridyominame
+        /// </summary>
+		[DisplayName("msa_managingpartneridyominame")]
+		[AttributeLogicalName("msa_managingpartneridyominame")]
+		public string MsaManagingpartneridyominame
+		{	
+			get { return GetAttributeValue<string>("msa_managingpartneridyominame"); }
+			set
+			{ 
+				if(Attributes.ContainsKey("msa_managingpartneridyominame") && value == MsaManagingpartneridyominame) return;
+				SetAttributeValue("msa_managingpartneridyominame", value);
 			}
 		}	
 			
@@ -1895,7 +1970,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("name"); }
 			set
 			{ 
-				if(value == AccountName) return;
+				if(Attributes.ContainsKey("name") && value == AccountName) return;
 				SetAttributeValue("name", value);
 			}
 		}	
@@ -1910,7 +1985,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("numberofemployees"); }
 			set
 			{ 
-				if(value == NumberOfEmployees) return;
+				if(Attributes.ContainsKey("numberofemployees") && value == NumberOfEmployees) return;
 				SetAttributeValue("numberofemployees", value);
 			}
 		}	
@@ -1925,154 +2000,8 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("onholdtime"); }
 			set
 			{ 
-				if(value == OnHoldTimeMinutes) return;
+				if(Attributes.ContainsKey("onholdtime") && value == OnHoldTimeMinutes) return;
 				SetAttributeValue("onholdtime", value);
-			}
-		}	
-			
-		/// <summary>
-        /// opendeals
-        /// </summary>
-		[DisplayName("Open Deals")]
-		[AttributeLogicalName("opendeals")]
-		public int? OpenDeals
-		{	
-			get { return GetAttributeValue<int?>("opendeals"); }
-			set
-			{ 
-				if(value == OpenDeals) return;
-				SetAttributeValue("opendeals", value);
-			}
-		}	
-			
-		/// <summary>
-        /// opendeals_date
-        /// </summary>
-		[DisplayName("Open Deals (Last Updated On)")]
-		[AttributeLogicalName("opendeals_date")]
-		public DateTime? OpenDealsLastUpdatedOn
-		{	
-			get { return GetAttributeValue<DateTime?>("opendeals_date"); }
-			set
-			{ 
-				if(value == OpenDealsLastUpdatedOn) return;
-				SetAttributeValue("opendeals_date", value);
-			}
-		}	
-			
-		/// <summary>
-        /// opendeals_state
-        /// </summary>
-		[DisplayName("Open Deals (State)")]
-		[AttributeLogicalName("opendeals_state")]
-		public int? OpenDealsState
-		{	
-			get { return GetAttributeValue<int?>("opendeals_state"); }
-			set
-			{ 
-				if(value == OpenDealsState) return;
-				SetAttributeValue("opendeals_state", value);
-			}
-		}	
-			
-		/// <summary>
-        /// openrevenue
-		///
-		/// Precision: 2
-		/// MaxValue: 922337203685477
-		/// MinValue: -922337203685477
-        /// </summary>
-		[DisplayName("Open Revenue")]
-		[AttributeLogicalName("openrevenue")]
-		public decimal? OpenRevenue
-		{	
-			get { return GetAttributeValue<Money>("openrevenue")?.Value; }
-			set 
-			{
-				Money moneyValue = null;
-				if(value != null) 
-				{
-					var roundedValue = Decimal.Round(value.Value, 2);
-					moneyValue = new Money(roundedValue);
-				}
-
-				if(moneyValue.Value == OpenRevenue) return;
-				SetAttributeValue("openrevenue", moneyValue);  
-			}
-		}
-
-		/// <summary>
-        /// openrevenue_date
-        /// </summary>
-		[DisplayName("Open Revenue (Last Updated On)")]
-		[AttributeLogicalName("openrevenue_date")]
-		public DateTime? OpenRevenueLastUpdatedOn
-		{	
-			get { return GetAttributeValue<DateTime?>("openrevenue_date"); }
-			set
-			{ 
-				if(value == OpenRevenueLastUpdatedOn) return;
-				SetAttributeValue("openrevenue_date", value);
-			}
-		}	
-			
-		/// <summary>
-        /// openrevenue_state
-        /// </summary>
-		[DisplayName("Open Revenue (State)")]
-		[AttributeLogicalName("openrevenue_state")]
-		public int? OpenRevenueState
-		{	
-			get { return GetAttributeValue<int?>("openrevenue_state"); }
-			set
-			{ 
-				if(value == OpenRevenueState) return;
-				SetAttributeValue("openrevenue_state", value);
-			}
-		}	
-			
-		/// <summary>
-        /// originatingleadid
-        /// </summary>
-		[DisplayName("Originating Lead")]
-		[AttributeLogicalName("originatingleadid")]
-		public EntityReference OriginatingLead
-		{	
-			get { return GetAttributeValue<EntityReference>("originatingleadid"); }
-			set
-			{ 
-				if(value == OriginatingLead) return;
-				SetAttributeValue("originatingleadid", value);
-			}
-		}	
-			
-		/// <summary>
-        /// originatingleadidname
-        /// </summary>
-		[DisplayName("originatingleadidname")]
-		[AttributeLogicalName("originatingleadidname")]
-		public string Originatingleadidname
-		{	
-			get { return GetAttributeValue<string>("originatingleadidname"); }
-			set
-			{ 
-				if(value == Originatingleadidname) return;
-				SetAttributeValue("originatingleadidname", value);
-			}
-		}	
-			
-		/// <summary>
-        /// originatingleadidyominame
-        /// </summary>
-		[DisplayName("originatingleadidyominame")]
-		[AttributeLogicalName("originatingleadidyominame")]
-		public string Originatingleadidyominame
-		{	
-			get { return GetAttributeValue<string>("originatingleadidyominame"); }
-			set
-			{ 
-				if(value == Originatingleadidyominame) return;
-				SetAttributeValue("originatingleadidyominame", value);
 			}
 		}	
 			
@@ -2086,7 +2015,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<DateTime?>("overriddencreatedon"); }
 			set
 			{ 
-				if(value == RecordCreatedOn) return;
+				if(Attributes.ContainsKey("overriddencreatedon") && value == RecordCreatedOn) return;
 				SetAttributeValue("overriddencreatedon", value);
 			}
 		}	
@@ -2101,7 +2030,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("ownerid"); }
 			set
 			{ 
-				if(value == Owner) return;
+				if(Attributes.ContainsKey("ownerid") && value == Owner) return;
 				SetAttributeValue("ownerid", value);
 			}
 		}	
@@ -2116,7 +2045,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("owneridname"); }
 			set
 			{ 
-				if(value == Owneridname) return;
+				if(Attributes.ContainsKey("owneridname") && value == Owneridname) return;
 				SetAttributeValue("owneridname", value);
 			}
 		}	
@@ -2131,7 +2060,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("owneridtype"); }
 			set
 			{ 
-				if(value == Owneridtype) return;
+				if(Attributes.ContainsKey("owneridtype") && value == Owneridtype) return;
 				SetAttributeValue("owneridtype", value);
 			}
 		}	
@@ -2146,7 +2075,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("owneridyominame"); }
 			set
 			{ 
-				if(value == Owneridyominame) return;
+				if(Attributes.ContainsKey("owneridyominame") && value == Owneridyominame) return;
 				SetAttributeValue("owneridyominame", value);
 			}
 		}	
@@ -2166,7 +2095,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == Ownership) return;
+				if(Attributes.ContainsKey("ownershipcode") && value == Ownership) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -2184,8 +2113,23 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("owningbusinessunit"); }
 			set
 			{ 
-				if(value == OwningBusinessUnit) return;
+				if(Attributes.ContainsKey("owningbusinessunit") && value == OwningBusinessUnit) return;
 				SetAttributeValue("owningbusinessunit", value);
+			}
+		}	
+			
+		/// <summary>
+        /// owningbusinessunitname
+        /// </summary>
+		[DisplayName("owningbusinessunitname")]
+		[AttributeLogicalName("owningbusinessunitname")]
+		public string Owningbusinessunitname
+		{	
+			get { return GetAttributeValue<string>("owningbusinessunitname"); }
+			set
+			{ 
+				if(Attributes.ContainsKey("owningbusinessunitname") && value == Owningbusinessunitname) return;
+				SetAttributeValue("owningbusinessunitname", value);
 			}
 		}	
 			
@@ -2199,7 +2143,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("owningteam"); }
 			set
 			{ 
-				if(value == OwningTeam) return;
+				if(Attributes.ContainsKey("owningteam") && value == OwningTeam) return;
 				SetAttributeValue("owningteam", value);
 			}
 		}	
@@ -2214,7 +2158,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("owninguser"); }
 			set
 			{ 
-				if(value == OwningUser) return;
+				if(Attributes.ContainsKey("owninguser") && value == OwningUser) return;
 				SetAttributeValue("owninguser", value);
 			}
 		}	
@@ -2229,7 +2173,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("parentaccountid"); }
 			set
 			{ 
-				if(value == ParentAccount) return;
+				if(Attributes.ContainsKey("parentaccountid") && value == ParentAccount) return;
 				SetAttributeValue("parentaccountid", value);
 			}
 		}	
@@ -2244,7 +2188,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("parentaccountidname"); }
 			set
 			{ 
-				if(value == Parentaccountidname) return;
+				if(Attributes.ContainsKey("parentaccountidname") && value == Parentaccountidname) return;
 				SetAttributeValue("parentaccountidname", value);
 			}
 		}	
@@ -2259,7 +2203,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("parentaccountidyominame"); }
 			set
 			{ 
-				if(value == Parentaccountidyominame) return;
+				if(Attributes.ContainsKey("parentaccountidyominame") && value == Parentaccountidyominame) return;
 				SetAttributeValue("parentaccountidyominame", value);
 			}
 		}	
@@ -2274,7 +2218,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("participatesinworkflow"); }
 			set
 			{ 
-				if(value == ParticipatesInWorkflow) return;
+				if(Attributes.ContainsKey("participatesinworkflow") && value == ParticipatesInWorkflow) return;
 				SetAttributeValue("participatesinworkflow", value);
 			}
 		}	
@@ -2294,7 +2238,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == PaymentTerms) return;
+				if(Attributes.ContainsKey("paymenttermscode") && value == PaymentTerms) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -2317,7 +2261,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == PreferredDay) return;
+				if(Attributes.ContainsKey("preferredappointmentdaycode") && value == PreferredDay) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -2340,7 +2284,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == PreferredTime) return;
+				if(Attributes.ContainsKey("preferredappointmenttimecode") && value == PreferredTime) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -2363,7 +2307,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == PreferredMethodOfContact) return;
+				if(Attributes.ContainsKey("preferredcontactmethodcode") && value == PreferredMethodOfContact) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -2371,66 +2315,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 		}
 
-		/// <summary>
-        /// preferredequipmentid
-        /// </summary>
-		[DisplayName("Preferred Facility/Equipment")]
-		[AttributeLogicalName("preferredequipmentid")]
-		public EntityReference PreferredFacilityEquipment
-		{	
-			get { return GetAttributeValue<EntityReference>("preferredequipmentid"); }
-			set
-			{ 
-				if(value == PreferredFacilityEquipment) return;
-				SetAttributeValue("preferredequipmentid", value);
-			}
-		}	
-			
-		/// <summary>
-        /// preferredequipmentidname
-        /// </summary>
-		[DisplayName("preferredequipmentidname")]
-		[AttributeLogicalName("preferredequipmentidname")]
-		public string Preferredequipmentidname
-		{	
-			get { return GetAttributeValue<string>("preferredequipmentidname"); }
-			set
-			{ 
-				if(value == Preferredequipmentidname) return;
-				SetAttributeValue("preferredequipmentidname", value);
-			}
-		}	
-			
-		/// <summary>
-        /// preferredserviceid
-        /// </summary>
-		[DisplayName("Preferred Service")]
-		[AttributeLogicalName("preferredserviceid")]
-		public EntityReference PreferredService
-		{	
-			get { return GetAttributeValue<EntityReference>("preferredserviceid"); }
-			set
-			{ 
-				if(value == PreferredService) return;
-				SetAttributeValue("preferredserviceid", value);
-			}
-		}	
-			
-		/// <summary>
-        /// preferredserviceidname
-        /// </summary>
-		[DisplayName("preferredserviceidname")]
-		[AttributeLogicalName("preferredserviceidname")]
-		public string Preferredserviceidname
-		{	
-			get { return GetAttributeValue<string>("preferredserviceidname"); }
-			set
-			{ 
-				if(value == Preferredserviceidname) return;
-				SetAttributeValue("preferredserviceidname", value);
-			}
-		}	
-			
 		/// <summary>
         /// preferredsystemuserid
         /// </summary>
@@ -2441,7 +2325,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("preferredsystemuserid"); }
 			set
 			{ 
-				if(value == PreferredUser) return;
+				if(Attributes.ContainsKey("preferredsystemuserid") && value == PreferredUser) return;
 				SetAttributeValue("preferredsystemuserid", value);
 			}
 		}	
@@ -2456,7 +2340,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("preferredsystemuseridname"); }
 			set
 			{ 
-				if(value == Preferredsystemuseridname) return;
+				if(Attributes.ContainsKey("preferredsystemuseridname") && value == Preferredsystemuseridname) return;
 				SetAttributeValue("preferredsystemuseridname", value);
 			}
 		}	
@@ -2471,7 +2355,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("preferredsystemuseridyominame"); }
 			set
 			{ 
-				if(value == Preferredsystemuseridyominame) return;
+				if(Attributes.ContainsKey("preferredsystemuseridyominame") && value == Preferredsystemuseridyominame) return;
 				SetAttributeValue("preferredsystemuseridyominame", value);
 			}
 		}	
@@ -2486,7 +2370,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("primarycontactid"); }
 			set
 			{ 
-				if(value == PrimaryContact) return;
+				if(Attributes.ContainsKey("primarycontactid") && value == PrimaryContact) return;
 				SetAttributeValue("primarycontactid", value);
 			}
 		}	
@@ -2501,7 +2385,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("primarycontactidname"); }
 			set
 			{ 
-				if(value == Primarycontactidname) return;
+				if(Attributes.ContainsKey("primarycontactidname") && value == Primarycontactidname) return;
 				SetAttributeValue("primarycontactidname", value);
 			}
 		}	
@@ -2516,7 +2400,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("primarycontactidyominame"); }
 			set
 			{ 
-				if(value == Primarycontactidyominame) return;
+				if(Attributes.ContainsKey("primarycontactidyominame") && value == Primarycontactidyominame) return;
 				SetAttributeValue("primarycontactidyominame", value);
 			}
 		}	
@@ -2531,7 +2415,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("primarysatoriid"); }
 			set
 			{ 
-				if(value == PrimarySatoriID) return;
+				if(Attributes.ContainsKey("primarysatoriid") && value == PrimarySatoriID) return;
 				SetAttributeValue("primarysatoriid", value);
 			}
 		}	
@@ -2546,7 +2430,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("primarytwitterid"); }
 			set
 			{ 
-				if(value == PrimaryTwitterID) return;
+				if(Attributes.ContainsKey("primarytwitterid") && value == PrimaryTwitterID) return;
 				SetAttributeValue("primarytwitterid", value);
 			}
 		}	
@@ -2561,7 +2445,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<Guid>("processid"); }
 			set
 			{ 
-				if(value == ProcessId) return;
+				if(Attributes.ContainsKey("processid") && value == ProcessId) return;
 				SetAttributeValue("processid", value);
 			}
 		}	
@@ -2587,7 +2471,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 					moneyValue = new Money(roundedValue);
 				}
 
-				if(moneyValue.Value == AnnualRevenue) return;
+				if(Attributes.ContainsKey("revenue") && moneyValue?.Value == AnnualRevenue) return;
 				SetAttributeValue("revenue", moneyValue);  
 			}
 		}
@@ -2602,7 +2486,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("sharesoutstanding"); }
 			set
 			{ 
-				if(value == SharesOutstanding) return;
+				if(Attributes.ContainsKey("sharesoutstanding") && value == SharesOutstanding) return;
 				SetAttributeValue("sharesoutstanding", value);
 			}
 		}	
@@ -2622,7 +2506,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == ShippingMethod) return;
+				if(Attributes.ContainsKey("shippingmethodcode") && value == ShippingMethod) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -2640,7 +2524,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("sic"); }
 			set
 			{ 
-				if(value == SICCode) return;
+				if(Attributes.ContainsKey("sic") && value == SICCode) return;
 				SetAttributeValue("sic", value);
 			}
 		}	
@@ -2655,7 +2539,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("slaid"); }
 			set
 			{ 
-				if(value == SLA) return;
+				if(Attributes.ContainsKey("slaid") && value == SLA) return;
 				SetAttributeValue("slaid", value);
 			}
 		}	
@@ -2670,7 +2554,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("slainvokedid"); }
 			set
 			{ 
-				if(value == LastSLAApplied) return;
+				if(Attributes.ContainsKey("slainvokedid") && value == LastSLAApplied) return;
 				SetAttributeValue("slainvokedid", value);
 			}
 		}	
@@ -2685,7 +2569,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("slainvokedidname"); }
 			set
 			{ 
-				if(value == Slainvokedidname) return;
+				if(Attributes.ContainsKey("slainvokedidname") && value == Slainvokedidname) return;
 				SetAttributeValue("slainvokedidname", value);
 			}
 		}	
@@ -2700,7 +2584,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("slaname"); }
 			set
 			{ 
-				if(value == Slaname) return;
+				if(Attributes.ContainsKey("slaname") && value == Slaname) return;
 				SetAttributeValue("slaname", value);
 			}
 		}	
@@ -2715,7 +2599,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<Guid>("stageid"); }
 			set
 			{ 
-				if(value == DeprecatedProcessStageId) return;
+				if(Attributes.ContainsKey("stageid") && value == DeprecatedProcessStageId) return;
 				SetAttributeValue("stageid", value);
 			}
 		}	
@@ -2735,7 +2619,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == Status) return;
+				if(Attributes.ContainsKey("statecode") && value == Status) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -2758,7 +2642,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == StatusReason) return;
+				if(Attributes.ContainsKey("statuscode") && value == StatusReason) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -2776,23 +2660,8 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("stockexchange"); }
 			set
 			{ 
-				if(value == StockExchange) return;
+				if(Attributes.ContainsKey("stockexchange") && value == StockExchange) return;
 				SetAttributeValue("stockexchange", value);
-			}
-		}	
-			
-		/// <summary>
-        /// teamsfollowed
-        /// </summary>
-		[DisplayName("TeamsFollowed")]
-		[AttributeLogicalName("teamsfollowed")]
-		public int? TeamsFollowed
-		{	
-			get { return GetAttributeValue<int?>("teamsfollowed"); }
-			set
-			{ 
-				if(value == TeamsFollowed) return;
-				SetAttributeValue("teamsfollowed", value);
 			}
 		}	
 			
@@ -2806,7 +2675,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("telephone1"); }
 			set
 			{ 
-				if(value == MainPhone) return;
+				if(Attributes.ContainsKey("telephone1") && value == MainPhone) return;
 				SetAttributeValue("telephone1", value);
 			}
 		}	
@@ -2821,7 +2690,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("telephone2"); }
 			set
 			{ 
-				if(value == OtherPhone) return;
+				if(Attributes.ContainsKey("telephone2") && value == OtherPhone) return;
 				SetAttributeValue("telephone2", value);
 			}
 		}	
@@ -2836,7 +2705,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("telephone3"); }
 			set
 			{ 
-				if(value == Telephone3) return;
+				if(Attributes.ContainsKey("telephone3") && value == Telephone3) return;
 				SetAttributeValue("telephone3", value);
 			}
 		}	
@@ -2856,7 +2725,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == TerritoryCode) return;
+				if(Attributes.ContainsKey("territorycode") && value == TerritoryCode) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -2864,36 +2733,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 		}
 
-		/// <summary>
-        /// territoryid
-        /// </summary>
-		[DisplayName("Territory")]
-		[AttributeLogicalName("territoryid")]
-		public EntityReference Territory
-		{	
-			get { return GetAttributeValue<EntityReference>("territoryid"); }
-			set
-			{ 
-				if(value == Territory) return;
-				SetAttributeValue("territoryid", value);
-			}
-		}	
-			
-		/// <summary>
-        /// territoryidname
-        /// </summary>
-		[DisplayName("territoryidname")]
-		[AttributeLogicalName("territoryidname")]
-		public string Territoryidname
-		{	
-			get { return GetAttributeValue<string>("territoryidname"); }
-			set
-			{ 
-				if(value == Territoryidname) return;
-				SetAttributeValue("territoryidname", value);
-			}
-		}	
-			
 		/// <summary>
         /// tickersymbol
         /// </summary>
@@ -2904,7 +2743,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("tickersymbol"); }
 			set
 			{ 
-				if(value == TickerSymbol) return;
+				if(Attributes.ContainsKey("tickersymbol") && value == TickerSymbol) return;
 				SetAttributeValue("tickersymbol", value);
 			}
 		}	
@@ -2919,7 +2758,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("timespentbymeonemailandmeetings"); }
 			set
 			{ 
-				if(value == TimeSpentByMe) return;
+				if(Attributes.ContainsKey("timespentbymeonemailandmeetings") && value == TimeSpentByMe) return;
 				SetAttributeValue("timespentbymeonemailandmeetings", value);
 			}
 		}	
@@ -2934,7 +2773,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("timezoneruleversionnumber"); }
 			set
 			{ 
-				if(value == TimeZoneRuleVersionNumber) return;
+				if(Attributes.ContainsKey("timezoneruleversionnumber") && value == TimeZoneRuleVersionNumber) return;
 				SetAttributeValue("timezoneruleversionnumber", value);
 			}
 		}	
@@ -2949,7 +2788,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("transactioncurrencyid"); }
 			set
 			{ 
-				if(value == Currency) return;
+				if(Attributes.ContainsKey("transactioncurrencyid") && value == Currency) return;
 				SetAttributeValue("transactioncurrencyid", value);
 			}
 		}	
@@ -2964,7 +2803,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("transactioncurrencyidname"); }
 			set
 			{ 
-				if(value == Transactioncurrencyidname) return;
+				if(Attributes.ContainsKey("transactioncurrencyidname") && value == Transactioncurrencyidname) return;
 				SetAttributeValue("transactioncurrencyidname", value);
 			}
 		}	
@@ -2979,7 +2818,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("traversedpath"); }
 			set
 			{ 
-				if(value == DeprecatedTraversedPath) return;
+				if(Attributes.ContainsKey("traversedpath") && value == DeprecatedTraversedPath) return;
 				SetAttributeValue("traversedpath", value);
 			}
 		}	
@@ -2994,7 +2833,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("utcconversiontimezonecode"); }
 			set
 			{ 
-				if(value == UTCConversionTimeZoneCode) return;
+				if(Attributes.ContainsKey("utcconversiontimezonecode") && value == UTCConversionTimeZoneCode) return;
 				SetAttributeValue("utcconversiontimezonecode", value);
 			}
 		}	
@@ -3009,7 +2848,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("versionnumber"); }
 			set
 			{ 
-				if(value == VersionNumber) return;
+				if(Attributes.ContainsKey("versionnumber") && value == VersionNumber) return;
 				SetAttributeValue("versionnumber", value);
 			}
 		}	
@@ -3024,7 +2863,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("websiteurl"); }
 			set
 			{ 
-				if(value == Website) return;
+				if(Attributes.ContainsKey("websiteurl") && value == Website) return;
 				SetAttributeValue("websiteurl", value);
 			}
 		}	
@@ -3039,7 +2878,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("yominame"); }
 			set
 			{ 
-				if(value == YomiAccountName) return;
+				if(Attributes.ContainsKey("yominame") && value == YomiAccountName) return;
 				SetAttributeValue("yominame", value);
 			}
 		}	
@@ -3048,15 +2887,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 		#region Relations
 			/// <summary>
-        /// 1:N Get entities for 'account_actioncard'
-        /// </summary>
-		[RelationshipSchemaName("account_actioncard")]
-		public IEnumerable<ActionCard> AccountActioncard
-		{
-			get { return GetRelatedEntities<ActionCard>("account_actioncard", null); }
-			set { SetRelatedEntities("account_actioncard", null, value); }
-		}
-		/// <summary>
         /// 1:N Get entities for 'account_activity_parties'
         /// </summary>
 		[RelationshipSchemaName("account_activity_parties")]
@@ -3066,33 +2896,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			set { SetRelatedEntities("account_activity_parties", null, value); }
 		}
 		/// <summary>
-        /// 1:N Get entities for 'Account_ActivityPointers'
-        /// </summary>
-		[RelationshipSchemaName("Account_ActivityPointers")]
-		public IEnumerable<Activity> AccountActivityPointers
-		{
-			get { return GetRelatedEntities<Activity>("Account_ActivityPointers", null); }
-			set { SetRelatedEntities("Account_ActivityPointers", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Account_Annotation'
-        /// </summary>
-		[RelationshipSchemaName("Account_Annotation")]
-		public IEnumerable<Note> AccountAnnotation
-		{
-			get { return GetRelatedEntities<Note>("Account_Annotation", null); }
-			set { SetRelatedEntities("Account_Annotation", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Account_Appointments'
-        /// </summary>
-		[RelationshipSchemaName("Account_Appointments")]
-		public IEnumerable<Appointment> AccountAppointments
-		{
-			get { return GetRelatedEntities<Appointment>("Account_Appointments", null); }
-			set { SetRelatedEntities("Account_Appointments", null, value); }
-		}
-		/// <summary>
         /// 1:N Get entities for 'Account_AsyncOperations'
         /// </summary>
 		[RelationshipSchemaName("Account_AsyncOperations")]
@@ -3100,87 +2903,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{
 			get { return GetRelatedEntities<SystemJob>("Account_AsyncOperations", null); }
 			set { SetRelatedEntities("Account_AsyncOperations", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'account_bookableresource_AccountId'
-        /// </summary>
-		[RelationshipSchemaName("account_bookableresource_AccountId")]
-		public IEnumerable<BookableResource> AccountBookableresourceAccountId
-		{
-			get { return GetRelatedEntities<BookableResource>("account_bookableresource_AccountId", null); }
-			set { SetRelatedEntities("account_bookableresource_AccountId", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Account_BulkDeleteFailures'
-        /// </summary>
-		[RelationshipSchemaName("Account_BulkDeleteFailures")]
-		public IEnumerable<BulkDeleteFailure> AccountBulkDeleteFailures
-		{
-			get { return GetRelatedEntities<BulkDeleteFailure>("Account_BulkDeleteFailures", null); }
-			set { SetRelatedEntities("Account_BulkDeleteFailures", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'account_BulkOperations'
-        /// </summary>
-		[RelationshipSchemaName("account_BulkOperations")]
-		public IEnumerable<QuickCampaign> AccountBulkOperations
-		{
-			get { return GetRelatedEntities<QuickCampaign>("account_BulkOperations", null); }
-			set { SetRelatedEntities("account_BulkOperations", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'account_CampaignResponses'
-        /// </summary>
-		[RelationshipSchemaName("account_CampaignResponses")]
-		public IEnumerable<CampaignResponse> AccountCampaignResponses
-		{
-			get { return GetRelatedEntities<CampaignResponse>("account_CampaignResponses", null); }
-			set { SetRelatedEntities("account_CampaignResponses", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'account_connections1'
-        /// </summary>
-		[RelationshipSchemaName("account_connections1")]
-		public IEnumerable<Connection> AccountConnections1
-		{
-			get { return GetRelatedEntities<Connection>("account_connections1", null); }
-			set { SetRelatedEntities("account_connections1", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'account_connections2'
-        /// </summary>
-		[RelationshipSchemaName("account_connections2")]
-		public IEnumerable<Connection> AccountConnections2
-		{
-			get { return GetRelatedEntities<Connection>("account_connections2", null); }
-			set { SetRelatedEntities("account_connections2", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Account_CustomerAddress'
-        /// </summary>
-		[RelationshipSchemaName("Account_CustomerAddress")]
-		public IEnumerable<Address> AccountCustomerAddress
-		{
-			get { return GetRelatedEntities<Address>("Account_CustomerAddress", null); }
-			set { SetRelatedEntities("Account_CustomerAddress", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Account_DuplicateBaseRecord'
-        /// </summary>
-		[RelationshipSchemaName("Account_DuplicateBaseRecord")]
-		public IEnumerable<DuplicateRecord> AccountDuplicateBaseRecord
-		{
-			get { return GetRelatedEntities<DuplicateRecord>("Account_DuplicateBaseRecord", null); }
-			set { SetRelatedEntities("Account_DuplicateBaseRecord", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Account_DuplicateMatchingRecord'
-        /// </summary>
-		[RelationshipSchemaName("Account_DuplicateMatchingRecord")]
-		public IEnumerable<DuplicateRecord> AccountDuplicateMatchingRecord
-		{
-			get { return GetRelatedEntities<DuplicateRecord>("Account_DuplicateMatchingRecord", null); }
-			set { SetRelatedEntities("Account_DuplicateMatchingRecord", null, value); }
 		}
 		/// <summary>
         /// 1:N Get entities for 'Account_Email_EmailSender'
@@ -3210,60 +2932,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			set { SetRelatedEntities("Account_Emails", null, value); }
 		}
 		/// <summary>
-        /// 1:N Get entities for 'account_entitlement_Account'
-        /// </summary>
-		[RelationshipSchemaName("account_entitlement_Account")]
-		public IEnumerable<Entitlement> AccountEntitlementAccount
-		{
-			get { return GetRelatedEntities<Entitlement>("account_entitlement_Account", null); }
-			set { SetRelatedEntities("account_entitlement_Account", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'account_entitlement_Customer'
-        /// </summary>
-		[RelationshipSchemaName("account_entitlement_Customer")]
-		public IEnumerable<Entitlement> AccountEntitlementCustomer
-		{
-			get { return GetRelatedEntities<Entitlement>("account_entitlement_Customer", null); }
-			set { SetRelatedEntities("account_entitlement_Customer", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Account_Faxes'
-        /// </summary>
-		[RelationshipSchemaName("Account_Faxes")]
-		public IEnumerable<Fax> AccountFaxes
-		{
-			get { return GetRelatedEntities<Fax>("Account_Faxes", null); }
-			set { SetRelatedEntities("Account_Faxes", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'account_IncidentResolutions'
-        /// </summary>
-		[RelationshipSchemaName("account_IncidentResolutions")]
-		public IEnumerable<CaseResolution> AccountIncidentResolutions
-		{
-			get { return GetRelatedEntities<CaseResolution>("account_IncidentResolutions", null); }
-			set { SetRelatedEntities("account_IncidentResolutions", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Account_Letters'
-        /// </summary>
-		[RelationshipSchemaName("Account_Letters")]
-		public IEnumerable<Letter> AccountLetters
-		{
-			get { return GetRelatedEntities<Letter>("Account_Letters", null); }
-			set { SetRelatedEntities("Account_Letters", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Account_MailboxTrackingFolder'
-        /// </summary>
-		[RelationshipSchemaName("Account_MailboxTrackingFolder")]
-		public IEnumerable<MailboxAutoTrackingFolder> AccountMailboxTrackingFolder
-		{
-			get { return GetRelatedEntities<MailboxAutoTrackingFolder>("Account_MailboxTrackingFolder", null); }
-			set { SetRelatedEntities("Account_MailboxTrackingFolder", null, value); }
-		}
-		/// <summary>
         /// 1:N Get entities for 'account_master_account'
         /// </summary>
 		[RelationshipSchemaName("account_master_account")]
@@ -3271,24 +2939,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{
 			get { return GetRelatedEntities<Account>("account_master_account", null); }
 			set { SetRelatedEntities("account_master_account", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'account_OpportunityCloses'
-        /// </summary>
-		[RelationshipSchemaName("account_OpportunityCloses")]
-		public IEnumerable<OpportunityClose> AccountOpportunityCloses
-		{
-			get { return GetRelatedEntities<OpportunityClose>("account_OpportunityCloses", null); }
-			set { SetRelatedEntities("account_OpportunityCloses", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'account_OrderCloses'
-        /// </summary>
-		[RelationshipSchemaName("account_OrderCloses")]
-		public IEnumerable<OrderClose> AccountOrderCloses
-		{
-			get { return GetRelatedEntities<OrderClose>("account_OrderCloses", null); }
-			set { SetRelatedEntities("account_OrderCloses", null, value); }
 		}
 		/// <summary>
         /// 1:N Get entities for 'account_parent_account'
@@ -3300,302 +2950,17 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			set { SetRelatedEntities("account_parent_account", null, value); }
 		}
 		/// <summary>
-        /// 1:N Get entities for 'Account_Phonecalls'
+        /// 1:N Get entities for 'msa_account_managingpartner'
         /// </summary>
-		[RelationshipSchemaName("Account_Phonecalls")]
-		public IEnumerable<PhoneCall> AccountPhonecalls
+		[RelationshipSchemaName("msa_account_managingpartner")]
+		public IEnumerable<Account> MsaAccountManagingpartner
 		{
-			get { return GetRelatedEntities<PhoneCall>("Account_Phonecalls", null); }
-			set { SetRelatedEntities("Account_Phonecalls", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'account_PostFollows'
-        /// </summary>
-		[RelationshipSchemaName("account_PostFollows")]
-		public IEnumerable<Follow> AccountPostFollows
-		{
-			get { return GetRelatedEntities<Follow>("account_PostFollows", null); }
-			set { SetRelatedEntities("account_PostFollows", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'account_principalobjectattributeaccess'
-        /// </summary>
-		[RelationshipSchemaName("account_principalobjectattributeaccess")]
-		public IEnumerable<FieldSharing> AccountPrincipalobjectattributeaccess
-		{
-			get { return GetRelatedEntities<FieldSharing>("account_principalobjectattributeaccess", null); }
-			set { SetRelatedEntities("account_principalobjectattributeaccess", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Account_ProcessSessions'
-        /// </summary>
-		[RelationshipSchemaName("Account_ProcessSessions")]
-		public IEnumerable<ProcessSession> AccountProcessSessions
-		{
-			get { return GetRelatedEntities<ProcessSession>("Account_ProcessSessions", null); }
-			set { SetRelatedEntities("Account_ProcessSessions", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'account_QuoteCloses'
-        /// </summary>
-		[RelationshipSchemaName("account_QuoteCloses")]
-		public IEnumerable<QuoteClose> AccountQuoteCloses
-		{
-			get { return GetRelatedEntities<QuoteClose>("account_QuoteCloses", null); }
-			set { SetRelatedEntities("account_QuoteCloses", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Account_RecurringAppointmentMasters'
-        /// </summary>
-		[RelationshipSchemaName("Account_RecurringAppointmentMasters")]
-		public IEnumerable<RecurringAppointment> AccountRecurringAppointmentMasters
-		{
-			get { return GetRelatedEntities<RecurringAppointment>("Account_RecurringAppointmentMasters", null); }
-			set { SetRelatedEntities("Account_RecurringAppointmentMasters", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Account_ServiceAppointments'
-        /// </summary>
-		[RelationshipSchemaName("Account_ServiceAppointments")]
-		public IEnumerable<ServiceActivity> AccountServiceAppointments
-		{
-			get { return GetRelatedEntities<ServiceActivity>("Account_ServiceAppointments", null); }
-			set { SetRelatedEntities("Account_ServiceAppointments", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Account_SharepointDocumentLocation'
-        /// </summary>
-		[RelationshipSchemaName("Account_SharepointDocumentLocation")]
-		public IEnumerable<DocumentLocation> AccountSharepointDocumentLocation
-		{
-			get { return GetRelatedEntities<DocumentLocation>("Account_SharepointDocumentLocation", null); }
-			set { SetRelatedEntities("Account_SharepointDocumentLocation", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Account_SocialActivities'
-        /// </summary>
-		[RelationshipSchemaName("Account_SocialActivities")]
-		public IEnumerable<SocialActivity> AccountSocialActivities
-		{
-			get { return GetRelatedEntities<SocialActivity>("Account_SocialActivities", null); }
-			set { SetRelatedEntities("Account_SocialActivities", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Account_SyncErrors'
-        /// </summary>
-		[RelationshipSchemaName("Account_SyncErrors")]
-		public IEnumerable<SyncError> AccountSyncErrors
-		{
-			get { return GetRelatedEntities<SyncError>("Account_SyncErrors", null); }
-			set { SetRelatedEntities("Account_SyncErrors", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Account_Tasks'
-        /// </summary>
-		[RelationshipSchemaName("Account_Tasks")]
-		public IEnumerable<Task> AccountTasks
-		{
-			get { return GetRelatedEntities<Task>("Account_Tasks", null); }
-			set { SetRelatedEntities("Account_Tasks", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'contact_customer_accounts'
-        /// </summary>
-		[RelationshipSchemaName("contact_customer_accounts")]
-		public IEnumerable<Contact> ContactCustomerAccounts
-		{
-			get { return GetRelatedEntities<Contact>("contact_customer_accounts", null); }
-			set { SetRelatedEntities("contact_customer_accounts", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'contract_billingcustomer_accounts'
-        /// </summary>
-		[RelationshipSchemaName("contract_billingcustomer_accounts")]
-		public IEnumerable<Contract> ContractBillingcustomerAccounts
-		{
-			get { return GetRelatedEntities<Contract>("contract_billingcustomer_accounts", null); }
-			set { SetRelatedEntities("contract_billingcustomer_accounts", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'contract_customer_accounts'
-        /// </summary>
-		[RelationshipSchemaName("contract_customer_accounts")]
-		public IEnumerable<Contract> ContractCustomerAccounts
-		{
-			get { return GetRelatedEntities<Contract>("contract_customer_accounts", null); }
-			set { SetRelatedEntities("contract_customer_accounts", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'contractlineitem_customer_accounts'
-        /// </summary>
-		[RelationshipSchemaName("contractlineitem_customer_accounts")]
-		public IEnumerable<ContractLine> ContractlineitemCustomerAccounts
-		{
-			get { return GetRelatedEntities<ContractLine>("contractlineitem_customer_accounts", null); }
-			set { SetRelatedEntities("contractlineitem_customer_accounts", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'incident_customer_accounts'
-        /// </summary>
-		[RelationshipSchemaName("incident_customer_accounts")]
-		public IEnumerable<Case> IncidentCustomerAccounts
-		{
-			get { return GetRelatedEntities<Case>("incident_customer_accounts", null); }
-			set { SetRelatedEntities("incident_customer_accounts", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'invoice_customer_accounts'
-        /// </summary>
-		[RelationshipSchemaName("invoice_customer_accounts")]
-		public IEnumerable<Invoice> InvoiceCustomerAccounts
-		{
-			get { return GetRelatedEntities<Invoice>("invoice_customer_accounts", null); }
-			set { SetRelatedEntities("invoice_customer_accounts", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'lead_customer_accounts'
-        /// </summary>
-		[RelationshipSchemaName("lead_customer_accounts")]
-		public IEnumerable<Lead> LeadCustomerAccounts
-		{
-			get { return GetRelatedEntities<Lead>("lead_customer_accounts", null); }
-			set { SetRelatedEntities("lead_customer_accounts", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'lead_parent_account'
-        /// </summary>
-		[RelationshipSchemaName("lead_parent_account")]
-		public IEnumerable<Lead> LeadParentAccount
-		{
-			get { return GetRelatedEntities<Lead>("lead_parent_account", null); }
-			set { SetRelatedEntities("lead_parent_account", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'msdyn_playbookinstance_account'
-        /// </summary>
-		[RelationshipSchemaName("msdyn_playbookinstance_account")]
-		public IEnumerable<Playbook> MsdynPlaybookinstanceAccount
-		{
-			get { return GetRelatedEntities<Playbook>("msdyn_playbookinstance_account", null); }
-			set { SetRelatedEntities("msdyn_playbookinstance_account", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'opportunity_customer_accounts'
-        /// </summary>
-		[RelationshipSchemaName("opportunity_customer_accounts")]
-		public IEnumerable<Opportunity> OpportunityCustomerAccounts
-		{
-			get { return GetRelatedEntities<Opportunity>("opportunity_customer_accounts", null); }
-			set { SetRelatedEntities("opportunity_customer_accounts", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'opportunity_parent_account'
-        /// </summary>
-		[RelationshipSchemaName("opportunity_parent_account")]
-		public IEnumerable<Opportunity> OpportunityParentAccount
-		{
-			get { return GetRelatedEntities<Opportunity>("opportunity_parent_account", null); }
-			set { SetRelatedEntities("opportunity_parent_account", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'order_customer_accounts'
-        /// </summary>
-		[RelationshipSchemaName("order_customer_accounts")]
-		public IEnumerable<Order> OrderCustomerAccounts
-		{
-			get { return GetRelatedEntities<Order>("order_customer_accounts", null); }
-			set { SetRelatedEntities("order_customer_accounts", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'quote_customer_accounts'
-        /// </summary>
-		[RelationshipSchemaName("quote_customer_accounts")]
-		public IEnumerable<Quote> QuoteCustomerAccounts
-		{
-			get { return GetRelatedEntities<Quote>("quote_customer_accounts", null); }
-			set { SetRelatedEntities("quote_customer_accounts", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'slakpiinstance_account'
-        /// </summary>
-		[RelationshipSchemaName("slakpiinstance_account")]
-		public IEnumerable<SLAKPIInstance> SlakpiinstanceAccount
-		{
-			get { return GetRelatedEntities<SLAKPIInstance>("slakpiinstance_account", null); }
-			set { SetRelatedEntities("slakpiinstance_account", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'SocialActivity_PostAuthor_accounts'
-        /// </summary>
-		[RelationshipSchemaName("SocialActivity_PostAuthor_accounts")]
-		public IEnumerable<SocialActivity> SocialActivityPostAuthorAccounts
-		{
-			get { return GetRelatedEntities<SocialActivity>("SocialActivity_PostAuthor_accounts", null); }
-			set { SetRelatedEntities("SocialActivity_PostAuthor_accounts", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'SocialActivity_PostAuthorAccount_accounts'
-        /// </summary>
-		[RelationshipSchemaName("SocialActivity_PostAuthorAccount_accounts")]
-		public IEnumerable<SocialActivity> SocialActivityPostAuthorAccountAccounts
-		{
-			get { return GetRelatedEntities<SocialActivity>("SocialActivity_PostAuthorAccount_accounts", null); }
-			set { SetRelatedEntities("SocialActivity_PostAuthorAccount_accounts", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'Socialprofile_customer_accounts'
-        /// </summary>
-		[RelationshipSchemaName("Socialprofile_customer_accounts")]
-		public IEnumerable<SocialProfile> SocialprofileCustomerAccounts
-		{
-			get { return GetRelatedEntities<SocialProfile>("Socialprofile_customer_accounts", null); }
-			set { SetRelatedEntities("Socialprofile_customer_accounts", null, value); }
-		}
-		/// <summary>
-        /// N:N Get entities for 'Lead'
-        /// </summary>
-		[RelationshipSchemaName("accountleads_association")]
-		public IEnumerable<Lead> AccountleadsAssociation
-		{
-			get { return GetRelatedEntities<Lead>("accountleads_association", null); }
-			set { SetRelatedEntities("accountleads_association", null, value); }
-		}
-		/// <summary>
-        /// N:N Get entities for 'QuickCampaign'
-        /// </summary>
-		[RelationshipSchemaName("BulkOperation_Accounts")]
-		public IEnumerable<QuickCampaign> BulkOperationAccounts
-		{
-			get { return GetRelatedEntities<QuickCampaign>("BulkOperation_Accounts", null); }
-			set { SetRelatedEntities("BulkOperation_Accounts", null, value); }
-		}
-		/// <summary>
-        /// N:N Get entities for 'CampaignActivity'
-        /// </summary>
-		[RelationshipSchemaName("CampaignActivity_Accounts")]
-		public IEnumerable<CampaignActivity> CampaignActivityAccounts
-		{
-			get { return GetRelatedEntities<CampaignActivity>("CampaignActivity_Accounts", null); }
-			set { SetRelatedEntities("CampaignActivity_Accounts", null, value); }
-		}
-		/// <summary>
-        /// N:N Get entities for 'MarketingList'
-        /// </summary>
-		[RelationshipSchemaName("listaccount_association")]
-		public IEnumerable<MarketingList> ListaccountAssociation
-		{
-			get { return GetRelatedEntities<MarketingList>("listaccount_association", null); }
-			set { SetRelatedEntities("listaccount_association", null, value); }
+			get { return GetRelatedEntities<Account>("msa_account_managingpartner", null); }
+			set { SetRelatedEntities("msa_account_managingpartner", null, value); }
 		}
 		#endregion
 
 		#region Actions
-		public OrganizationResponse ExecuteScheduleTestAction(OrganizationServiceContext serviceContext)
-		{
-			var orgRequest = new OrganizationRequest("pw_SchedulerTestAction");
-			orgRequest["Target"] = ToEntityReference();
-            return serviceContext.Execute(orgRequest);
-		}
 		#endregion
 
 		#region OptionSetEnums
@@ -4235,6 +3600,18 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			/// <summary>address2_utcoffset</summary>
 			public const string Address2UTCOffset = "address2_utcoffset";
 
+			/// <summary>adx_createdbyipaddress</summary>
+			public const string CreatedByIPAddress = "adx_createdbyipaddress";
+
+			/// <summary>adx_createdbyusername</summary>
+			public const string CreatedByUserName = "adx_createdbyusername";
+
+			/// <summary>adx_modifiedbyipaddress</summary>
+			public const string ModifiedByIPAddress = "adx_modifiedbyipaddress";
+
+			/// <summary>adx_modifiedbyusername</summary>
+			public const string ModifiedByUserName = "adx_modifiedbyusername";
+
 			/// <summary>aging30</summary>
 			public const string Aging30 = "aging30";
 
@@ -4288,12 +3665,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 			/// <summary>customertypecode</summary>
 			public const string RelationshipType = "customertypecode";
-
-			/// <summary>defaultpricelevelid</summary>
-			public const string PriceList = "defaultpricelevelid";
-
-			/// <summary>defaultpricelevelidname</summary>
-			public const string Defaultpricelevelidname = "defaultpricelevelidname";
 
 			/// <summary>description</summary>
 			public const string Description = "description";
@@ -4412,6 +3783,15 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			/// <summary>modifiedonbehalfbyyominame</summary>
 			public const string Modifiedonbehalfbyyominame = "modifiedonbehalfbyyominame";
 
+			/// <summary>msa_managingpartnerid</summary>
+			public const string ManagingPartner = "msa_managingpartnerid";
+
+			/// <summary>msa_managingpartneridname</summary>
+			public const string MsaManagingpartneridname = "msa_managingpartneridname";
+
+			/// <summary>msa_managingpartneridyominame</summary>
+			public const string MsaManagingpartneridyominame = "msa_managingpartneridyominame";
+
 			/// <summary>name</summary>
 			public const string AccountName = "name";
 
@@ -4420,33 +3800,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 			/// <summary>onholdtime</summary>
 			public const string OnHoldTimeMinutes = "onholdtime";
-
-			/// <summary>opendeals</summary>
-			public const string OpenDeals = "opendeals";
-
-			/// <summary>opendeals_date</summary>
-			public const string OpenDealsLastUpdatedOn = "opendeals_date";
-
-			/// <summary>opendeals_state</summary>
-			public const string OpenDealsState = "opendeals_state";
-
-			/// <summary>openrevenue</summary>
-			public const string OpenRevenue = "openrevenue";
-
-			/// <summary>openrevenue_date</summary>
-			public const string OpenRevenueLastUpdatedOn = "openrevenue_date";
-
-			/// <summary>openrevenue_state</summary>
-			public const string OpenRevenueState = "openrevenue_state";
-
-			/// <summary>originatingleadid</summary>
-			public const string OriginatingLead = "originatingleadid";
-
-			/// <summary>originatingleadidname</summary>
-			public const string Originatingleadidname = "originatingleadidname";
-
-			/// <summary>originatingleadidyominame</summary>
-			public const string Originatingleadidyominame = "originatingleadidyominame";
 
 			/// <summary>overriddencreatedon</summary>
 			public const string RecordCreatedOn = "overriddencreatedon";
@@ -4468,6 +3821,9 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 			/// <summary>owningbusinessunit</summary>
 			public const string OwningBusinessUnit = "owningbusinessunit";
+
+			/// <summary>owningbusinessunitname</summary>
+			public const string Owningbusinessunitname = "owningbusinessunitname";
 
 			/// <summary>owningteam</summary>
 			public const string OwningTeam = "owningteam";
@@ -4498,18 +3854,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 			/// <summary>preferredcontactmethodcode</summary>
 			public const string PreferredMethodOfContact = "preferredcontactmethodcode";
-
-			/// <summary>preferredequipmentid</summary>
-			public const string PreferredFacilityEquipment = "preferredequipmentid";
-
-			/// <summary>preferredequipmentidname</summary>
-			public const string Preferredequipmentidname = "preferredequipmentidname";
-
-			/// <summary>preferredserviceid</summary>
-			public const string PreferredService = "preferredserviceid";
-
-			/// <summary>preferredserviceidname</summary>
-			public const string Preferredserviceidname = "preferredserviceidname";
 
 			/// <summary>preferredsystemuserid</summary>
 			public const string PreferredUser = "preferredsystemuserid";
@@ -4574,9 +3918,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			/// <summary>stockexchange</summary>
 			public const string StockExchange = "stockexchange";
 
-			/// <summary>teamsfollowed</summary>
-			public const string TeamsFollowed = "teamsfollowed";
-
 			/// <summary>telephone1</summary>
 			public const string MainPhone = "telephone1";
 
@@ -4588,12 +3929,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 			/// <summary>territorycode</summary>
 			public const string TerritoryCode = "territorycode";
-
-			/// <summary>territoryid</summary>
-			public const string Territory = "territoryid";
-
-			/// <summary>territoryidname</summary>
-			public const string Territoryidname = "territoryidname";
 
 			/// <summary>tickersymbol</summary>
 			public const string TickerSymbol = "tickersymbol";
@@ -4631,50 +3966,11 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		#region Schemas
 		public static class Schemas 
 		{
-			/// <summary>1:N account_actioncard</summary>
-			public const string AccountActioncard = "account_actioncard";
-
 			/// <summary>1:N account_activity_parties</summary>
 			public const string AccountActivityParties = "account_activity_parties";
 
-			/// <summary>1:N Account_ActivityPointers</summary>
-			public const string AccountActivityPointers = "Account_ActivityPointers";
-
-			/// <summary>1:N Account_Annotation</summary>
-			public const string AccountAnnotation = "Account_Annotation";
-
-			/// <summary>1:N Account_Appointments</summary>
-			public const string AccountAppointments = "Account_Appointments";
-
 			/// <summary>1:N Account_AsyncOperations</summary>
 			public const string AccountAsyncOperations = "Account_AsyncOperations";
-
-			/// <summary>1:N account_bookableresource_AccountId</summary>
-			public const string AccountBookableresourceAccountId = "account_bookableresource_AccountId";
-
-			/// <summary>1:N Account_BulkDeleteFailures</summary>
-			public const string AccountBulkDeleteFailures = "Account_BulkDeleteFailures";
-
-			/// <summary>1:N account_BulkOperations</summary>
-			public const string AccountBulkOperations = "account_BulkOperations";
-
-			/// <summary>1:N account_CampaignResponses</summary>
-			public const string AccountCampaignResponses = "account_CampaignResponses";
-
-			/// <summary>1:N account_connections1</summary>
-			public const string AccountConnections1 = "account_connections1";
-
-			/// <summary>1:N account_connections2</summary>
-			public const string AccountConnections2 = "account_connections2";
-
-			/// <summary>1:N Account_CustomerAddress</summary>
-			public const string AccountCustomerAddress = "Account_CustomerAddress";
-
-			/// <summary>1:N Account_DuplicateBaseRecord</summary>
-			public const string AccountDuplicateBaseRecord = "Account_DuplicateBaseRecord";
-
-			/// <summary>1:N Account_DuplicateMatchingRecord</summary>
-			public const string AccountDuplicateMatchingRecord = "Account_DuplicateMatchingRecord";
 
 			/// <summary>1:N Account_Email_EmailSender</summary>
 			public const string AccountEmailEmailSender = "Account_Email_EmailSender";
@@ -4685,131 +3981,14 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			/// <summary>1:N Account_Emails</summary>
 			public const string AccountEmails = "Account_Emails";
 
-			/// <summary>1:N account_entitlement_Account</summary>
-			public const string AccountEntitlementAccount = "account_entitlement_Account";
-
-			/// <summary>1:N account_entitlement_Customer</summary>
-			public const string AccountEntitlementCustomer = "account_entitlement_Customer";
-
-			/// <summary>1:N Account_Faxes</summary>
-			public const string AccountFaxes = "Account_Faxes";
-
-			/// <summary>1:N account_IncidentResolutions</summary>
-			public const string AccountIncidentResolutions = "account_IncidentResolutions";
-
-			/// <summary>1:N Account_Letters</summary>
-			public const string AccountLetters = "Account_Letters";
-
-			/// <summary>1:N Account_MailboxTrackingFolder</summary>
-			public const string AccountMailboxTrackingFolder = "Account_MailboxTrackingFolder";
-
 			/// <summary>1:N account_master_account</summary>
 			public const string AccountMasterAccount = "account_master_account";
-
-			/// <summary>1:N account_OpportunityCloses</summary>
-			public const string AccountOpportunityCloses = "account_OpportunityCloses";
-
-			/// <summary>1:N account_OrderCloses</summary>
-			public const string AccountOrderCloses = "account_OrderCloses";
 
 			/// <summary>1:N account_parent_account</summary>
 			public const string AccountParentAccount = "account_parent_account";
 
-			/// <summary>1:N Account_Phonecalls</summary>
-			public const string AccountPhonecalls = "Account_Phonecalls";
-
-			/// <summary>1:N account_PostFollows</summary>
-			public const string AccountPostFollows = "account_PostFollows";
-
-			/// <summary>1:N account_principalobjectattributeaccess</summary>
-			public const string AccountPrincipalobjectattributeaccess = "account_principalobjectattributeaccess";
-
-			/// <summary>1:N Account_ProcessSessions</summary>
-			public const string AccountProcessSessions = "Account_ProcessSessions";
-
-			/// <summary>1:N account_QuoteCloses</summary>
-			public const string AccountQuoteCloses = "account_QuoteCloses";
-
-			/// <summary>1:N Account_RecurringAppointmentMasters</summary>
-			public const string AccountRecurringAppointmentMasters = "Account_RecurringAppointmentMasters";
-
-			/// <summary>1:N Account_ServiceAppointments</summary>
-			public const string AccountServiceAppointments = "Account_ServiceAppointments";
-
-			/// <summary>1:N Account_SharepointDocumentLocation</summary>
-			public const string AccountSharepointDocumentLocation = "Account_SharepointDocumentLocation";
-
-			/// <summary>1:N Account_SocialActivities</summary>
-			public const string AccountSocialActivities = "Account_SocialActivities";
-
-			/// <summary>1:N Account_SyncErrors</summary>
-			public const string AccountSyncErrors = "Account_SyncErrors";
-
-			/// <summary>1:N Account_Tasks</summary>
-			public const string AccountTasks = "Account_Tasks";
-
-			/// <summary>1:N contact_customer_accounts</summary>
-			public const string ContactCustomerAccounts = "contact_customer_accounts";
-
-			/// <summary>1:N contract_billingcustomer_accounts</summary>
-			public const string ContractBillingcustomerAccounts = "contract_billingcustomer_accounts";
-
-			/// <summary>1:N contract_customer_accounts</summary>
-			public const string ContractCustomerAccounts = "contract_customer_accounts";
-
-			/// <summary>1:N contractlineitem_customer_accounts</summary>
-			public const string ContractlineitemCustomerAccounts = "contractlineitem_customer_accounts";
-
-			/// <summary>1:N incident_customer_accounts</summary>
-			public const string IncidentCustomerAccounts = "incident_customer_accounts";
-
-			/// <summary>1:N invoice_customer_accounts</summary>
-			public const string InvoiceCustomerAccounts = "invoice_customer_accounts";
-
-			/// <summary>1:N lead_customer_accounts</summary>
-			public const string LeadCustomerAccounts = "lead_customer_accounts";
-
-			/// <summary>1:N lead_parent_account</summary>
-			public const string LeadParentAccount = "lead_parent_account";
-
-			/// <summary>1:N msdyn_playbookinstance_account</summary>
-			public const string MsdynPlaybookinstanceAccount = "msdyn_playbookinstance_account";
-
-			/// <summary>1:N opportunity_customer_accounts</summary>
-			public const string OpportunityCustomerAccounts = "opportunity_customer_accounts";
-
-			/// <summary>1:N opportunity_parent_account</summary>
-			public const string OpportunityParentAccount = "opportunity_parent_account";
-
-			/// <summary>1:N order_customer_accounts</summary>
-			public const string OrderCustomerAccounts = "order_customer_accounts";
-
-			/// <summary>1:N quote_customer_accounts</summary>
-			public const string QuoteCustomerAccounts = "quote_customer_accounts";
-
-			/// <summary>1:N slakpiinstance_account</summary>
-			public const string SlakpiinstanceAccount = "slakpiinstance_account";
-
-			/// <summary>1:N SocialActivity_PostAuthor_accounts</summary>
-			public const string SocialActivityPostAuthorAccounts = "SocialActivity_PostAuthor_accounts";
-
-			/// <summary>1:N SocialActivity_PostAuthorAccount_accounts</summary>
-			public const string SocialActivityPostAuthorAccountAccounts = "SocialActivity_PostAuthorAccount_accounts";
-
-			/// <summary>1:N Socialprofile_customer_accounts</summary>
-			public const string SocialprofileCustomerAccounts = "Socialprofile_customer_accounts";
-
-			/// <summary>N:N accountleads_association</summary>
-			public const string AccountleadsAssociation = "accountleads_association";
-
-			/// <summary>N:N BulkOperation_Accounts</summary>
-			public const string BulkOperationAccounts = "BulkOperation_Accounts";
-
-			/// <summary>N:N CampaignActivity_Accounts</summary>
-			public const string CampaignActivityAccounts = "CampaignActivity_Accounts";
-
-			/// <summary>N:N listaccount_association</summary>
-			public const string ListaccountAssociation = "listaccount_association";
+			/// <summary>1:N msa_account_managingpartner</summary>
+			public const string MsaAccountManagingpartner = "msa_account_managingpartner";
 
 		}
 		#endregion

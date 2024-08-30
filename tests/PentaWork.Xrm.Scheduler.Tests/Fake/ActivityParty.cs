@@ -11,17 +11,6 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 		#region FakeRelationships
 		public static class Relationships 
 		{
-			/// <summary>1:N ActivityParty_SyncErrors</summary>
-			public static readonly XrmFakedRelationship ActivityPartySyncErrors = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "activitypartyid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "activityparty",
-					Entity2LogicalName = "syncerror",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
 		}
 		#endregion
 
@@ -46,9 +35,9 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 			.RuleFor(e => e.ParticipationType, fake => fake.PickRandom<ActivityParty.eParticipationType>())
 			.RuleFor(e => e.Partyidname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Partyobjecttypecode, fake => fake.Lorem.Word())
-			.RuleFor(e => e.Resourcespecidname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.ScheduledEnd, fake => fake.Date.Soon())
 			.RuleFor(e => e.ScheduledStart, fake => fake.Date.Soon())
+			.RuleFor(e => e.UnresolvedPartyName, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Versionnumber, fake => fake.Random.Int());
 			return faker.Generate();
 		}

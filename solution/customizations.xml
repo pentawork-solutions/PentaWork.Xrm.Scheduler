@@ -1,6 +1,12 @@
 <ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Entities>
     <Entity>
+      <Name LocalizedName="Custom API" OriginalName="Custom API">CustomAPI</Name>
+      <RibbonDiffXml>
+        <RibbonNotSupported />
+      </RibbonDiffXml>
+    </Entity>
+    <Entity>
       <Name LocalizedName="Penta Schedule Run" OriginalName="Penta Schedule Run">pw_penta_schedule_run</Name>
       <EntityInfo>
         <entity Name="pw_penta_schedule_run">
@@ -2324,6 +2330,44 @@
                 <Description description="" languagecode="1033" />
               </Descriptions>
             </attribute>
+            <attribute PhysicalName="pw_custom_api_id">
+              <Type>lookup</Type>
+              <Name>pw_custom_api_id</Name>
+              <LogicalName>pw_custom_api_id</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>0.11.3</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>0</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <LookupStyle>single</LookupStyle>
+              <LookupTypes />
+              <displaynames>
+                <displayname description="Custom API" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1033" />
+              </Descriptions>
+            </attribute>
             <attribute PhysicalName="pw_email_on_error">
               <Type>bit</Type>
               <Name>pw_email_on_error</Name>
@@ -2668,6 +2712,44 @@
               <displaynames>
                 <displayname description="Global Action" languagecode="1033" />
                 <displayname description="Global Action" languagecode="1031" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="pw_global_custom_api_id">
+              <Type>lookup</Type>
+              <Name>pw_global_custom_api_id</Name>
+              <LogicalName>pw_global_custom_api_id</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>0.11.3</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>0</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <LookupStyle>single</LookupStyle>
+              <LookupTypes />
+              <displaynames>
+                <displayname description="Global Custom API" languagecode="1033" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -3770,26 +3852,20 @@
                               </cell>
                             </row>
                             <row>
-                              <cell id="{29b2302d-da3b-e189-937b-ca57a20991b0}" showlabel="true" locklevel="0" visible="false">
+                              <cell id="{5f4bf77c-26e9-4184-8d83-5fe5442c1d9c}" locklevel="0" colspan="1" rowspan="1" visible="false">
                                 <labels>
-                                  <label description="Global Action" languagecode="1033" />
-                                  <label description="Global Action" languagecode="1031" />
+                                  <label description="Custom API" languagecode="1033" />
                                 </labels>
-                                <control id="pw_global_action" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pw_global_action" disabled="false" uniqueid="{3e925207-1d39-6c89-e344-de3a1950194e}">
-                                  <parameters>
-                                    <AutoResolve>true</AutoResolve>
-                                    <DisableMru>false</DisableMru>
-                                    <DisableQuickFind>false</DisableQuickFind>
-                                    <DisableViewPicker>true</DisableViewPicker>
-                                    <DefaultViewId>{7427E287-8B38-EC11-A82A-0022485B751F}</DefaultViewId>
-                                    <AllowFilterOff>false</AllowFilterOff>
-                                    <AvailableViewIds>{7427E287-8B38-EC11-A82A-0022485B751F},{FB42862E-2A90-42A4-ABAC-592D848D4ECF}</AvailableViewIds>
-                                  </parameters>
-                                </control>
+                                <control id="pw_custom_api_id" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pw_custom_api_id" disabled="false" />
+                              </cell>
+                              <cell locklevel="0" id="{829ba6e9-d820-4270-a1d7-3abe91f83fcb}">
+                                <labels>
+                                  <label description="" languagecode="1033" />
+                                </labels>
                               </cell>
                             </row>
                             <row>
-                              <cell id="{51aee6a8-9cdb-e253-d8aa-751c6d04c431}" showlabel="true" locklevel="0" visible="false">
+                              <cell id="{51aee6a8-9cdb-e253-d8aa-751c6d04c431}" showlabel="true" locklevel="0" visible="false" colspan="1" rowspan="1">
                                 <labels>
                                   <label description="Workflow" languagecode="1033" />
                                   <label description="Workflow" languagecode="1031" />
@@ -3813,14 +3889,51 @@
                               </cell>
                             </row>
                             <row>
-                              <cell id="{2cec71b2-5cb2-dd58-c90a-2bd04bb1e58d}" showlabel="true" locklevel="0">
+                              <cell id="{29b2302d-da3b-e189-937b-ca57a20991b0}" showlabel="true" locklevel="0" visible="false">
+                                <labels>
+                                  <label description="Global Action" languagecode="1033" />
+                                  <label description="Global Action" languagecode="1031" />
+                                </labels>
+                                <control id="pw_global_action" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pw_global_action" disabled="false" uniqueid="{3e925207-1d39-6c89-e344-de3a1950194e}">
+                                  <parameters>
+                                    <AutoResolve>true</AutoResolve>
+                                    <DisableMru>false</DisableMru>
+                                    <DisableQuickFind>false</DisableQuickFind>
+                                    <DisableViewPicker>true</DisableViewPicker>
+                                    <DefaultViewId>{7427E287-8B38-EC11-A82A-0022485B751F}</DefaultViewId>
+                                    <AllowFilterOff>false</AllowFilterOff>
+                                    <AvailableViewIds>{7427E287-8B38-EC11-A82A-0022485B751F},{FB42862E-2A90-42A4-ABAC-592D848D4ECF}</AvailableViewIds>
+                                  </parameters>
+                                </control>
+                              </cell>
+                              <cell id="{e463c583-7620-9ab1-9ae4-b3a1b7460196}" showlabel="false">
+                                <labels>
+                                  <label description="" languagecode="1033" />
+                                </labels>
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{bbbcb3fd-ae2d-4c22-9639-979929162b3e}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                                <labels>
+                                  <label description="Global Custom API" languagecode="1033" />
+                                </labels>
+                                <control id="pw_global_custom_api_id" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pw_global_custom_api_id" disabled="false" />
+                              </cell>
+                              <cell locklevel="0" id="{88c43d14-f910-4429-a7e4-0a673ef9ccf4}">
+                                <labels>
+                                  <label description="" languagecode="1033" />
+                                </labels>
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{2cec71b2-5cb2-dd58-c90a-2bd04bb1e58d}" showlabel="true" locklevel="0" visible="false">
                                 <labels>
                                   <label description="Service Plugin" languagecode="1033" />
                                   <label description="Zeitplan Plugin" languagecode="1031" />
                                 </labels>
                                 <control id="pw_service_plugin" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pw_service_plugin" disabled="false" />
                               </cell>
-                              <cell id="{e463c583-7620-9ab1-9ae4-b3a1b7460196}" showlabel="false">
+                              <cell locklevel="0" id="{717e1e2c-bc2a-4a7a-a10d-ae39479ece94}">
                                 <labels>
                                   <label description="" languagecode="1033" />
                                 </labels>
@@ -5176,6 +5289,64 @@
   </Entities>
   <Roles></Roles>
   <Workflows>
+    <Workflow WorkflowId="{f74e6311-a966-ef11-bfe3-000d3a24ae6e}" Name="Show/Hide Custom API Field" Description="Shows/Hides the Custom API Field base on the schedule type">
+      <XamlFileName>/Workflows/ShowHideCustomAPIField-F74E6311-A966-EF11-BFE3-000D3A24AE6E.xaml</XamlFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>2</Category>
+      <Mode>1</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>0.11.3</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ProcessTriggerScope>1</ProcessTriggerScope>
+      <PrimaryEntity>pw_schedule</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1033" description="Show/Hide Custom API Field" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description languagecode="1033" description="Shows/Hides the Custom API Field base on the schedule type" />
+      </Descriptions>
+    </Workflow>
+    <Workflow WorkflowId="{08e3052b-aa66-ef11-bfe3-000d3a24ae6e}" Name="Show/Hide Global Custom API Field" Description="Shows/Hides the Global Custom API Field base on the schedule type">
+      <XamlFileName>/Workflows/ShowHideGlobalCustomAPIField-08E3052B-AA66-EF11-BFE3-000D3A24AE6E.xaml</XamlFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>2</Category>
+      <Mode>1</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>0.11.3</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ProcessTriggerScope>1</ProcessTriggerScope>
+      <PrimaryEntity>pw_schedule</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1033" description="Show/Hide Global Custom API Field" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description languagecode="1033" description="Shows/Hides the Global Custom API Field base on the schedule type" />
+      </Descriptions>
+    </Workflow>
     <Workflow WorkflowId="{54ed1035-de37-ec11-a829-0022485b751f}" Name="Show/Hide Frequency Value" Description="Show/Hide Frequency Value depending of Frequency Selection">
       <XamlFileName>/Workflows/ShowHideFrequencyValue-54ED1035-DE37-EC11-A829-0022485B751F.xaml</XamlFileName>
       <Type>1</Type>
@@ -5734,6 +5905,76 @@
         </EntityRelationshipRole>
       </EntityRelationshipRoles>
     </EntityRelationship>
+    <EntityRelationship Name="pw_schedule_custom_api_id_customapi">
+      <EntityRelationshipType>OneToMany</EntityRelationshipType>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>0.11.3</IntroducedVersion>
+      <IsHierarchical>0</IsHierarchical>
+      <ReferencingEntityName>pw_schedule</ReferencingEntityName>
+      <ReferencedEntityName>CustomAPI</ReferencedEntityName>
+      <CascadeAssign>NoCascade</CascadeAssign>
+      <CascadeDelete>RemoveLink</CascadeDelete>
+      <CascadeArchive>RemoveLink</CascadeArchive>
+      <CascadeReparent>NoCascade</CascadeReparent>
+      <CascadeShare>NoCascade</CascadeShare>
+      <CascadeUnshare>NoCascade</CascadeUnshare>
+      <CascadeRollupView>NoCascade</CascadeRollupView>
+      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
+      <ReferencingAttributeName>pw_custom_api_id</ReferencingAttributeName>
+      <RelationshipDescription>
+        <Descriptions>
+          <Description description="" languagecode="1033" />
+        </Descriptions>
+      </RelationshipDescription>
+      <EntityRelationshipRoles>
+        <EntityRelationshipRole>
+          <NavPaneDisplayOption>UseCollectionName</NavPaneDisplayOption>
+          <NavPaneArea>Details</NavPaneArea>
+          <NavPaneOrder>10000</NavPaneOrder>
+          <NavigationPropertyName>pw_custom_api_id</NavigationPropertyName>
+          <RelationshipRoleType>1</RelationshipRoleType>
+        </EntityRelationshipRole>
+        <EntityRelationshipRole>
+          <NavigationPropertyName>pw_schedule_custom_api_id_customapi</NavigationPropertyName>
+          <RelationshipRoleType>0</RelationshipRoleType>
+        </EntityRelationshipRole>
+      </EntityRelationshipRoles>
+    </EntityRelationship>
+    <EntityRelationship Name="pw_schedule_global_custom_api_id_customapi">
+      <EntityRelationshipType>OneToMany</EntityRelationshipType>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>0.11.3</IntroducedVersion>
+      <IsHierarchical>0</IsHierarchical>
+      <ReferencingEntityName>pw_schedule</ReferencingEntityName>
+      <ReferencedEntityName>CustomAPI</ReferencedEntityName>
+      <CascadeAssign>NoCascade</CascadeAssign>
+      <CascadeDelete>RemoveLink</CascadeDelete>
+      <CascadeArchive>RemoveLink</CascadeArchive>
+      <CascadeReparent>NoCascade</CascadeReparent>
+      <CascadeShare>NoCascade</CascadeShare>
+      <CascadeUnshare>NoCascade</CascadeUnshare>
+      <CascadeRollupView>NoCascade</CascadeRollupView>
+      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
+      <ReferencingAttributeName>pw_global_custom_api_id</ReferencingAttributeName>
+      <RelationshipDescription>
+        <Descriptions>
+          <Description description="" languagecode="1033" />
+        </Descriptions>
+      </RelationshipDescription>
+      <EntityRelationshipRoles>
+        <EntityRelationshipRole>
+          <NavPaneDisplayOption>UseCollectionName</NavPaneDisplayOption>
+          <NavPaneArea>Details</NavPaneArea>
+          <NavPaneOrder>10000</NavPaneOrder>
+          <NavigationPropertyName>pw_global_custom_api_id</NavigationPropertyName>
+          <RelationshipRoleType>1</RelationshipRoleType>
+        </EntityRelationshipRole>
+        <EntityRelationshipRole>
+          <NavigationPropertyName>pw_schedule_global_custom_api_id_customapi</NavigationPropertyName>
+          <RelationshipRoleType>0</RelationshipRoleType>
+        </EntityRelationshipRole>
+      </EntityRelationshipRoles>
+    </EntityRelationship>
     <EntityRelationship Name="pw_workflow_pw_schedule_action">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
       <IsCustomizable>1</IsCustomizable>
@@ -6072,6 +6313,14 @@
             <Description description="" languagecode="1033" />
           </Descriptions>
         </option>
+        <option value="266890005" Color="#dedede">
+          <labels>
+            <label description="Custom API" languagecode="1033" />
+          </labels>
+          <Descriptions>
+            <Description description="" languagecode="1033" />
+          </Descriptions>
+        </option>
         <option value="266890002" ExternalValue="" Color="#0000ff">
           <labels>
             <label description="Workflow" languagecode="1033" />
@@ -6083,6 +6332,14 @@
         <option value="266890001" ExternalValue="" Color="#0000ff">
           <labels>
             <label description="Global Action" languagecode="1033" />
+          </labels>
+          <Descriptions>
+            <Description description="" languagecode="1033" />
+          </Descriptions>
+        </option>
+        <option value="266890006" Color="#bfbfbf">
+          <labels>
+            <label description="Global Custom API" languagecode="1033" />
           </labels>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -6245,10 +6502,10 @@
       <SupportedDeployment>0</SupportedDeployment>
       <IntroducedVersion>1.0</IntroducedVersion>
       <SdkMessageProcessingStepImages>
-        <SdkMessageProcessingStepImage Name="PreImage">
+        <SdkMessageProcessingStepImage Name="Image">
           <SdkMessageProcessingStepImageId>{b91ccf94-ae3b-ec11-a82c-0022485b751f}</SdkMessageProcessingStepImageId>
           <Attributes></Attributes>
-          <EntityAlias>PreImage</EntityAlias>
+          <EntityAlias>Image</EntityAlias>
           <ImageType>0</ImageType>
           <MessagePropertyName>Target</MessagePropertyName>
           <IsCustomizable>1</IsCustomizable>
@@ -6272,10 +6529,10 @@
       <SupportedDeployment>0</SupportedDeployment>
       <IntroducedVersion>1.0</IntroducedVersion>
       <SdkMessageProcessingStepImages>
-        <SdkMessageProcessingStepImage Name="PreImage">
+        <SdkMessageProcessingStepImage Name="Image">
           <SdkMessageProcessingStepImageId>{3f26e4c6-a63c-ec11-a82f-0022485b751f}</SdkMessageProcessingStepImageId>
           <Attributes></Attributes>
-          <EntityAlias>PreImage</EntityAlias>
+          <EntityAlias>Image</EntityAlias>
           <ImageType>0</ImageType>
           <MessagePropertyName>Target</MessagePropertyName>
           <IsCustomizable>1</IsCustomizable>
@@ -6317,10 +6574,10 @@
       <SupportedDeployment>0</SupportedDeployment>
       <IntroducedVersion>1.0</IntroducedVersion>
       <SdkMessageProcessingStepImages>
-        <SdkMessageProcessingStepImage Name="PreImage">
+        <SdkMessageProcessingStepImage Name="Image">
           <SdkMessageProcessingStepImageId>{d71b20bf-4593-ed11-a871-0022485b751f}</SdkMessageProcessingStepImageId>
           <Attributes></Attributes>
-          <EntityAlias>PreImage</EntityAlias>
+          <EntityAlias>Image</EntityAlias>
           <ImageType>0</ImageType>
           <MessagePropertyName>Target</MessagePropertyName>
           <IsCustomizable>1</IsCustomizable>

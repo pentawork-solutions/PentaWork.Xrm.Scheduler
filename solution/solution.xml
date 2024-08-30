@@ -1,9 +1,9 @@
-<ImportExportXml version="9.2.24015.190" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.2.24073.198" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>PentaWorkScheduler</UniqueName>
     <LocalizedNames />
     <Descriptions />
-    <Version>0.11.3</Version>
+    <Version>0.12.4</Version>
     <Managed>0</Managed>
     <Publisher>
       <UniqueName>pentaworksolutions</UniqueName>
@@ -75,6 +75,7 @@
       </Addresses>
     </Publisher>
     <RootComponents>
+      <RootComponent type="1" schemaName="customapi" behavior="1" />
       <RootComponent type="1" schemaName="pw_penta_schedule_run" behavior="0" />
       <RootComponent type="1" schemaName="pw_schedule" behavior="0" />
       <RootComponent type="1" schemaName="pw_scheduler_plugin_virt" behavior="0" />
@@ -82,6 +83,7 @@
       <RootComponent type="9" schemaName="pw_frequency" behavior="0" />
       <RootComponent type="9" schemaName="pw_schedule_type" behavior="0" />
       <RootComponent type="29" id="{0082cbb6-5f92-ed11-a870-0022485b751f}" behavior="0" />
+      <RootComponent type="29" id="{08e3052b-aa66-ef11-bfe3-000d3a24ae6e}" behavior="0" />
       <RootComponent type="29" id="{27f250d4-04b9-4554-83e4-cf94b7866b38}" behavior="0" />
       <RootComponent type="29" id="{3c08a262-9138-ec11-a82a-0022485b751f}" behavior="0" />
       <RootComponent type="29" id="{41fb3e44-8938-ec11-a82a-0022485b751f}" behavior="0" />
@@ -91,6 +93,7 @@
       <RootComponent type="29" id="{b5226daf-5f92-ed11-a870-0022485b751f}" behavior="0" />
       <RootComponent type="29" id="{f466a297-1c63-ec11-a838-0022485b751f}" behavior="0" />
       <RootComponent type="29" id="{f5c3a82c-9138-ec11-a82a-0022485b751f}" behavior="0" />
+      <RootComponent type="29" id="{f74e6311-a966-ef11-bfe3-000d3a24ae6e}" behavior="0" />
       <RootComponent type="61" schemaName="pw_icon_stopwatch_16x16" behavior="0" />
       <RootComponent type="61" schemaName="pw_icon_stopwatch_32x32" behavior="0" />
       <RootComponent type="61" schemaName="pw_icon_stopwatch_64x64" behavior="0" />
@@ -109,12 +112,24 @@
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>
-        <Required type="181" schemaName="OData v4 Data Provider" displayName="OData v4 Data Provider" solution="ODatav4DataProvider (9.0.0.1520)" id="{a17be158-e9dd-e611-80d3-00155da29216}" />
+        <Required type="1" schemaName="customapi" displayName="Custom API" solution="msft_CustomAPIFramework (1.0.0.24)" />
+        <Dependent type="1" schemaName="customapi" displayName="Custom API" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="181" schemaName="OData v4 Data Provider" displayName="OData v4 Data Provider" solution="ODatav4DataProvider (9.1.0.203)" id="{a17be158-e9dd-e611-80d3-00155da29216}" />
         <Dependent type="1" schemaName="pw_scheduler_plugin_virt" displayName="Penta Scheduler Plugin" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="181" schemaName="OData v4 Data Provider" displayName="OData v4 Data Provider" solution="ODatav4DataProvider (9.0.0.1520)" id="{a17be158-e9dd-e611-80d3-00155da29216}" />
+        <Required type="181" schemaName="OData v4 Data Provider" displayName="OData v4 Data Provider" solution="ODatav4DataProvider (9.1.0.203)" id="{a17be158-e9dd-e611-80d3-00155da29216}" />
         <Dependent type="183" schemaName="PentaSchedulerService Plugin Source" displayName="PentaSchedulerService Plugin Source" id="{654915e6-f262-ec11-a838-0022485b751f}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="name" displayName="Name" parentSchemaName="customapi" parentDisplayName="Custom API" solution="msft_CustomAPIFramework (1.0.0.24)" />
+        <Dependent type="10" schemaName="pw_schedule_custom_api_id_customapi" displayName="pw_schedule_custom_api_id_customapi" parentSchemaName="customapi" parentDisplayName="Custom API" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="name" displayName="Name" parentSchemaName="customapi" parentDisplayName="Custom API" solution="msft_CustomAPIFramework (1.0.0.24)" />
+        <Dependent type="10" schemaName="pw_schedule_global_custom_api_id_customapi" displayName="pw_schedule_global_custom_api_id_customapi" parentSchemaName="customapi" parentDisplayName="Custom API" />
       </MissingDependency>
     </MissingDependencies>
   </SolutionManifest>

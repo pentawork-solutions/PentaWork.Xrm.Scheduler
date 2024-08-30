@@ -11,28 +11,6 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 		#region FakeRelationships
 		public static class Relationships 
 		{
-			/// <summary>1:N email_actioncard</summary>
-			public static readonly XrmFakedRelationship EmailActioncard = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "activityid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "email",
-					Entity2LogicalName = "actioncard",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N email_activity_mime_attachment</summary>
-			public static readonly XrmFakedRelationship EmailActivityMimeAttachment = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "activityid",
-					Entity2Attribute = "objectid",
-					Entity1LogicalName = "email",
-					Entity2LogicalName = "activitymimeattachment",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
 			/// <summary>1:N email_activity_parties</summary>
 			public static readonly XrmFakedRelationship EmailActivityParties = 
 				new XrmFakedRelationship
@@ -44,28 +22,6 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
 				};
 
-			/// <summary>1:N email_activitymonitor</summary>
-			public static readonly XrmFakedRelationship EmailActivitymonitor = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "activityid",
-					Entity2Attribute = "monitoredactivityitemid",
-					Entity1LogicalName = "email",
-					Entity2LogicalName = "activitymonitor",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N Email_Annotation</summary>
-			public static readonly XrmFakedRelationship EmailAnnotation = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "activityid",
-					Entity2Attribute = "objectid",
-					Entity1LogicalName = "email",
-					Entity2LogicalName = "annotation",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
 			/// <summary>1:N Email_AsyncOperations</summary>
 			public static readonly XrmFakedRelationship EmailAsyncOperations = 
 				new XrmFakedRelationship
@@ -74,72 +30,6 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 					Entity2Attribute = "regardingobjectid",
 					Entity1LogicalName = "email",
 					Entity2LogicalName = "asyncoperation",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N Email_BulkDeleteFailures</summary>
-			public static readonly XrmFakedRelationship EmailBulkDeleteFailures = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "activityid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "email",
-					Entity2LogicalName = "bulkdeletefailure",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N email_campaignresponse</summary>
-			public static readonly XrmFakedRelationship EmailCampaignresponse = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "activityid",
-					Entity2Attribute = "originatingactivityid",
-					Entity1LogicalName = "email",
-					Entity2LogicalName = "campaignresponse",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N email_connections1</summary>
-			public static readonly XrmFakedRelationship EmailConnections1 = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "activityid",
-					Entity2Attribute = "record1id",
-					Entity1LogicalName = "email",
-					Entity2LogicalName = "connection",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N email_connections2</summary>
-			public static readonly XrmFakedRelationship EmailConnections2 = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "activityid",
-					Entity2Attribute = "record2id",
-					Entity1LogicalName = "email",
-					Entity2LogicalName = "connection",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N Email_DuplicateBaseRecord</summary>
-			public static readonly XrmFakedRelationship EmailDuplicateBaseRecord = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "activityid",
-					Entity2Attribute = "baserecordid",
-					Entity1LogicalName = "email",
-					Entity2LogicalName = "duplicaterecord",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N Email_DuplicateMatchingRecord</summary>
-			public static readonly XrmFakedRelationship EmailDuplicateMatchingRecord = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "activityid",
-					Entity2Attribute = "duplicaterecordid",
-					Entity1LogicalName = "email",
-					Entity2LogicalName = "duplicaterecord",
 					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
 				};
 
@@ -165,61 +55,6 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
 				};
 
-			/// <summary>1:N email_principalobjectattributeaccess</summary>
-			public static readonly XrmFakedRelationship EmailPrincipalobjectattributeaccess = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "activityid",
-					Entity2Attribute = "objectid",
-					Entity1LogicalName = "email",
-					Entity2LogicalName = "principalobjectattributeaccess",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N Email_ProcessSessions</summary>
-			public static readonly XrmFakedRelationship EmailProcessSessions = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "activityid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "email",
-					Entity2LogicalName = "processsession",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N Email_QueueItem</summary>
-			public static readonly XrmFakedRelationship EmailQueueItem = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "activityid",
-					Entity2Attribute = "objectid",
-					Entity1LogicalName = "email",
-					Entity2LogicalName = "queueitem",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N Email_SyncErrors</summary>
-			public static readonly XrmFakedRelationship EmailSyncErrors = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "activityid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "email",
-					Entity2LogicalName = "syncerror",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N slakpiinstance_email</summary>
-			public static readonly XrmFakedRelationship SlakpiinstanceEmail = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "activityid",
-					Entity2Attribute = "regarding",
-					Entity1LogicalName = "email",
-					Entity2LogicalName = "slakpiinstance",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
 		}
 		#endregion
 
@@ -227,6 +62,8 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 		public static Email Create()
 		{
 			var faker = new Faker<Email>()
+			.RuleFor(e => e.AcceptingEntityName, fake => fake.Lorem.Word())
+			.RuleFor(e => e.AcceptingUserOrQueueObjectType, fake => fake.Lorem.Word())
 			.RuleFor(e => e.AdditionalParameters, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Id, fake => Guid.NewGuid())
 			.RuleFor(e => e.ActivityType, fake => fake.Lorem.Word())
@@ -241,6 +78,7 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 			.RuleFor(e => e.ConversationIndex, fake => fake.Lorem.Word())
 			.RuleFor(e => e.ConversationTrackingId, fake => Guid.NewGuid())
 			.RuleFor(e => e.Correlatedactivityidname, fake => fake.Lorem.Word())
+			.RuleFor(e => e.CorrelatedSubjectChanged, fake => fake.Random.Bool())
 			.RuleFor(e => e.CorrelationMethod, fake => fake.PickRandom<Email.eCorrelationMethod>())
 			.RuleFor(e => e.Createdbyname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Createdbyyominame, fake => fake.Lorem.Word())
@@ -252,6 +90,7 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 			.RuleFor(e => e.DeliveryPriority, fake => fake.PickRandom<Email.egDeliveryPriority>())
 			.RuleFor(e => e.DeliveryReceiptRequested, fake => fake.Random.Bool())
 			.RuleFor(e => e.Description, fake => fake.Lorem.Word())
+			.RuleFor(e => e.DescriptionblobidName, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Direction, fake => fake.Random.Bool())
 			.RuleFor(e => e.EmailReminderExpiryTime, fake => fake.Date.Soon())
 			.RuleFor(e => e.EmailReminderStatus, fake => fake.PickRandom<Email.eEmailReminderStatus>())
@@ -265,10 +104,13 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 			.RuleFor(e => e.Following, fake => fake.Random.Bool())
 			.RuleFor(e => e.ImportSequenceNumber, fake => fake.Random.Int())
 			.RuleFor(e => e.InReplyToMessage, fake => fake.Lorem.Word())
+			.RuleFor(e => e.InternetMessageHeaders, fake => fake.Lorem.Word())
 			.RuleFor(e => e.IsBilled, fake => fake.Random.Bool())
+			.RuleFor(e => e.IsDuplicateSenderUnresolved, fake => fake.Random.Bool())
 			.RuleFor(e => e.Followed, fake => fake.Random.Bool())
 			.RuleFor(e => e.ReminderSet, fake => fake.Random.Bool())
 			.RuleFor(e => e.IsRegularActivity, fake => fake.Random.Bool())
+			.RuleFor(e => e.IsSafeDescriptionTruncated, fake => fake.Random.Int())
 			.RuleFor(e => e.IsUnsafe, fake => fake.Random.Int())
 			.RuleFor(e => e.IsWorkflowCreated, fake => fake.Random.Bool())
 			.RuleFor(e => e.LastOnHoldTime, fake => fake.Date.Soon())
@@ -289,11 +131,13 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 			.RuleFor(e => e.Owneridname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Owneridtype, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Owneridyominame, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Owningbusinessunitname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.ParentActivityName, fake => fake.Lorem.Word())
 			.RuleFor(e => e.DelayEmailProcessingUntil, fake => fake.Date.Soon())
 			.RuleFor(e => e.Priority, fake => fake.PickRandom<Email.ePriority>())
 			.RuleFor(e => e.ProcessId, fake => Guid.NewGuid())
 			.RuleFor(e => e.ReadReceiptRequested, fake => fake.Random.Bool())
+			.RuleFor(e => e.Receivingmailboxidname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Regardingobjectidname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Regardingobjectidyominame, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Regardingobjecttypecode, fake => fake.Lorem.Word())
@@ -310,7 +154,6 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 			.RuleFor(e => e.SendersAccountType, fake => fake.Lorem.Word())
 			.RuleFor(e => e.EmailSenderAccountYomiName, fake => fake.Lorem.Word())
 			.RuleFor(e => e.DateSent, fake => fake.Date.Soon())
-			.RuleFor(e => e.Serviceidname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Slainvokedidname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Slaname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.SortDate, fake => fake.Date.Soon())

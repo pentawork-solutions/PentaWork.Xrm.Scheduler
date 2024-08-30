@@ -18,80 +18,62 @@ namespace PentaWork.Xrm.Scheduler
 
             var pluginExecutionContext = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
             var organizationServiceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
+            var proxyProvider = organizationServiceFactory as IProxyTypesAssemblyProvider;
+            if (proxyProvider != null) proxyProvider.ProxyTypesAssembly = typeof(CustomAPI).Assembly;
+
             var organizationService = organizationServiceFactory.CreateOrganizationService(pluginExecutionContext.UserId);
             var serviceContext = new OrganizationServiceContext(organizationService);
             var tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
-            var targetAndPreEntity = GetTargetAndPreTarget(pluginExecutionContext, organizationService);
+            var target = GetTarget(pluginExecutionContext, organizationService);
 
             var relevantPlugins = GetPlugins(pluginExecutionContext.InputParameters, pluginExecutionContext.PrimaryEntityName);
             var tuplesToExecute = relevantPlugins.SelectMany(r =>
             {
-                var plugin = (ICrmPlugin)Activator.CreateInstance(r);
-                return GetTuplesToExecute(plugin, pluginExecutionContext, targetAndPreEntity.Item1.Attributes.Select(a => a.Key).ToList());
+                var plugin = (ICrmPlugin)Activator.CreateInstance(r, new CrmServices(tracingService, pluginExecutionContext, serviceContext, organizationService, organizationServiceFactory));
+                return GetTuplesToExecute(plugin, pluginExecutionContext, target.Attributes.Select(a => a.Key).ToList());
             });
 
-            foreach (var tuple in tuplesToExecute)
+            foreach (var tuple in tuplesToExecute.OrderBy(t => t.Item3.Order))
             {
-                tracingService.Trace($"Executing: {tuple.Item1.GetType().Name}");
-                tuple.Item1.Tracer = tracingService;
-                tuple.Item1.PluginContext = pluginExecutionContext;
-                tuple.Item1.Context = serviceContext;
+                tracingService.Trace($"Executing: {tuple.Item1.GetType().Name} (Order: {tuple.Item3.Order})");
 
-                var parameters = new object[] { tuple.Item1.ToEntity(targetAndPreEntity.Item1), null };
-
+                var parameters = new List<object> { tuple.Item1.ToEntity(target) };
                 var message = (MessageName)Enum.Parse(typeof(MessageName), pluginExecutionContext.MessageName);
+
                 if (message == MessageName.Associate || message == MessageName.Disassociate)
                 {
-                    parameters[1] = pluginExecutionContext.InputParameters["RelatedEntities"] as EntityReferenceCollection;
+                    parameters.Add(pluginExecutionContext.InputParameters["RelatedEntities"] as EntityReferenceCollection);
                 }
-                else
+                else if (tuple.Item3 is EventAttribute eventAttr && (eventAttr.PreImage || eventAttr.PostImage))
                 {
-                    parameters[1] = tuple.Item1.ToEntity(targetAndPreEntity.Item2);
+                    if (eventAttr.PreImage && pluginExecutionContext.PreEntityImages.ContainsKey("Image"))
+                    {
+                        parameters.Add(tuple.Item1.ToEntity(pluginExecutionContext.PreEntityImages["Image"]));
+                    }
+                    else if (eventAttr.PreImage) throw new InvalidPluginExecutionException($"Plugin '{tuple.Item1.GetType().Name}' erwartet ein Image (pre), aber es wurde keins registriert!");
+
+                    if (eventAttr.PostImage && pluginExecutionContext.PostEntityImages.ContainsKey("Image"))
+                    {
+                        parameters.Add(tuple.Item1.ToEntity(pluginExecutionContext.PostEntityImages["Image"]));
+                    }
+                    else if (eventAttr.PostImage) throw new InvalidPluginExecutionException($"Plugin '{tuple.Item1.GetType().Name}' erwartet ein Image (post), aber es wurde keins registriert!");
                 }
 
-                tuple.Item2.Invoke(tuple.Item1, parameters);
+                try
+                {
+                    tuple.Item2.Invoke(tuple.Item1, parameters.ToArray());
+                }
+                catch (Exception ex)
+                {
+                    tracingService.Trace(ex.ToString());
+
+                    // We want to throw the inner InvalidPluginException raised by the plugins
+                    // NOT the TargetInvocationException raised by invoking the plugin functions
+                    if (ex.InnerException != null) throw ex.InnerException;
+                    else throw ex;
+                }
                 tracingService.Trace($"Finished: {tuple.Item1.GetType().Name}");
             }
-        }
-
-        public (Entity, Entity) GetTargetAndPreTarget(IPluginExecutionContext pluginExecutionContext, IOrganizationService organizationService)
-        {
-            Entity target = null;
-            Entity preTarget = null;
-
-            // On Win Message, the target is not set, but the OpportunityClose containing the regarding opportunityid
-            if (pluginExecutionContext.InputParameters.ContainsKey("OpportunityClose"))
-            {
-                var oppClose = pluginExecutionContext.InputParameters["OpportunityClose"];
-                target = organizationService.Retrieve(Opportunity.LogicalName, ((EntityReference)((Entity)oppClose).Attributes["opportunityid"]).Id, new ColumnSet(true));
-            }
-            else if (pluginExecutionContext.InputParameters.ContainsKey("EntityMoniker"))
-            {
-                var entity = pluginExecutionContext.InputParameters["EntityMoniker"] as EntityReference;
-                target = organizationService.Retrieve(entity.LogicalName, entity.Id, new ColumnSet(true));
-            }
-            else if (pluginExecutionContext.InputParameters.ContainsKey("Target"))
-            {
-                if (pluginExecutionContext.InputParameters["Target"] is EntityReference entityRef)
-                {
-                    target = organizationService.Retrieve(entityRef.LogicalName, entityRef.Id, new ColumnSet(true));
-                }
-                else
-                {
-                    target = pluginExecutionContext.InputParameters["Target"] as Entity;
-                }
-            }
-            else
-            {
-                throw new InvalidPluginExecutionException("General-Error: CRM-Event not handled");
-            }
-
-            if (pluginExecutionContext.PreEntityImages.ContainsKey("PreImage"))
-            {
-                preTarget = pluginExecutionContext.PreEntityImages["PreImage"];
-            }
-
-            return (target, preTarget);
         }
 
         public List<Type> GetPlugins(ParameterCollection inputParamters, string logicalName)
@@ -112,7 +94,7 @@ namespace PentaWork.Xrm.Scheduler
             return pluginList;
         }
 
-        public List<Tuple<ICrmPlugin, MethodInfo>> GetTuplesToExecute(ICrmPlugin plugin, IPluginExecutionContext pluginExecutionContext, IList<string> changedFields)
+        public List<Tuple<ICrmPlugin, MethodInfo, CrmEventAttribute>> GetTuplesToExecute(ICrmPlugin plugin, IPluginExecutionContext pluginExecutionContext, IList<string> changedFields)
         {
             var relevantEvents = new List<CrmEventAttribute>();
             var depth = pluginExecutionContext.Depth;
@@ -143,8 +125,42 @@ namespace PentaWork.Xrm.Scheduler
             }
 
             return relevantEvents
-                .Select(e => new Tuple<ICrmPlugin, MethodInfo>(plugin, pluginType.GetMethod(e.MethodName)))
+                .Select(e => new Tuple<ICrmPlugin, MethodInfo, CrmEventAttribute>(plugin, pluginType.GetMethod(e.MethodName), e))
                 .ToList();
+        }
+
+        public Entity GetTarget(IPluginExecutionContext pluginExecutionContext, IOrganizationService organizationService)
+        {
+            Entity target;
+
+            // On Win Message, the target is not set, but the OpportunityClose containing the regarding opportunityid
+            if (pluginExecutionContext.InputParameters.ContainsKey("OpportunityClose"))
+            {
+                var projectClose = pluginExecutionContext.InputParameters["OpportunityClose"];
+                target = organizationService.Retrieve("opportunity", ((EntityReference)((Entity)projectClose).Attributes["opportunityid"]).Id, new ColumnSet(true));
+            }
+            else if (pluginExecutionContext.InputParameters.ContainsKey("EntityMoniker"))
+            {
+                var entity = pluginExecutionContext.InputParameters["EntityMoniker"] as EntityReference;
+                target = organizationService.Retrieve(entity.LogicalName, entity.Id, new ColumnSet(true));
+            }
+            else if (pluginExecutionContext.InputParameters.ContainsKey("Target"))
+            {
+                if (pluginExecutionContext.InputParameters["Target"] is EntityReference entityDeleteRef)
+                {
+                    target = new Entity(entityDeleteRef.LogicalName, entityDeleteRef.Id);
+                }
+                else
+                {
+                    target = pluginExecutionContext.InputParameters["Target"] as Entity;
+                }
+            }
+            else
+            {
+                throw new InvalidPluginExecutionException("General Error: CRM-Event not handled");
+            }
+
+            return target;
         }
     }
 }

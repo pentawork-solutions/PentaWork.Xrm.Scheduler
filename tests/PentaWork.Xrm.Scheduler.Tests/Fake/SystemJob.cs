@@ -11,28 +11,6 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 		#region FakeRelationships
 		public static class Relationships 
 		{
-			/// <summary>1:N AsyncOperation_BulkDeleteOperation</summary>
-			public static readonly XrmFakedRelationship AsyncOperationBulkDeleteOperation = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "asyncoperationid",
-					Entity2Attribute = "asyncoperationid",
-					Entity1LogicalName = "asyncoperation",
-					Entity2LogicalName = "bulkdeleteoperation",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N AsyncOperation_DuplicateBaseRecord</summary>
-			public static readonly XrmFakedRelationship AsyncOperationDuplicateBaseRecord = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "asyncoperationid",
-					Entity2Attribute = "asyncoperationid",
-					Entity1LogicalName = "asyncoperation",
-					Entity2LogicalName = "duplicaterecord",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
 			/// <summary>1:N AsyncOperation_Emails</summary>
 			public static readonly XrmFakedRelationship AsyncOperationEmails = 
 				new XrmFakedRelationship
@@ -41,61 +19,6 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 					Entity2Attribute = "regardingobjectid",
 					Entity1LogicalName = "asyncoperation",
 					Entity2LogicalName = "email",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N asyncoperation_FileAttachments</summary>
-			public static readonly XrmFakedRelationship AsyncoperationFileAttachments = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "asyncoperationid",
-					Entity2Attribute = "objectid",
-					Entity1LogicalName = "asyncoperation",
-					Entity2LogicalName = "fileattachment",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N AsyncOperation_MailboxTrackingFolder</summary>
-			public static readonly XrmFakedRelationship AsyncOperationMailboxTrackingFolder = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "asyncoperationid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "asyncoperation",
-					Entity2LogicalName = "mailboxtrackingfolder",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N AsyncOperation_SocialActivities</summary>
-			public static readonly XrmFakedRelationship AsyncOperationSocialActivities = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "asyncoperationid",
-					Entity2Attribute = "regardingobjectid",
-					Entity1LogicalName = "asyncoperation",
-					Entity2LogicalName = "socialactivity",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N lk_workflowlog_asyncoperation_childworkflow</summary>
-			public static readonly XrmFakedRelationship LkWorkflowlogAsyncoperationChildworkflow = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "asyncoperationid",
-					Entity2Attribute = "childworkflowinstanceid",
-					Entity1LogicalName = "asyncoperation",
-					Entity2LogicalName = "workflowlog",
-					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
-				};
-
-			/// <summary>1:N lk_workflowlog_asyncoperations</summary>
-			public static readonly XrmFakedRelationship LkWorkflowlogAsyncoperations = 
-				new XrmFakedRelationship
-				{
-					Entity1Attribute = "asyncoperationid",
-					Entity2Attribute = "asyncoperationid",
-					Entity1LogicalName = "asyncoperation",
-					Entity2LogicalName = "workflowlog",
 					RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany
 				};
 
@@ -139,6 +62,7 @@ namespace PentaWork.Xrm.Scheduler.Tests.Fake
 			.RuleFor(e => e.Owneridname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Owneridtype, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Owneridyominame, fake => fake.Lorem.Word())
+			.RuleFor(e => e.Owningbusinessunitname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Owningextensionidname, fake => fake.Lorem.Word())
 			.RuleFor(e => e.Owningextensiontypecode, fake => fake.Lorem.Word())
 			.RuleFor(e => e.ParentpluginexecutionId, fake => Guid.NewGuid())

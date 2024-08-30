@@ -30,7 +30,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("activityid"); }
 			set
 			{ 
-				if(value == Activity) return;
+				if(Attributes.ContainsKey("activityid") && value == Activity) return;
 				SetAttributeValue("activityid", value);
 			}
 		}	
@@ -56,7 +56,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("addressused"); }
 			set
 			{ 
-				if(value == Address) return;
+				if(Attributes.ContainsKey("addressused") && value == Address) return;
 				SetAttributeValue("addressused", value);
 			}
 		}	
@@ -71,7 +71,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("addressusedemailcolumnnumber"); }
 			set
 			{ 
-				if(value == EmailColumnNumberOfParty) return;
+				if(Attributes.ContainsKey("addressusedemailcolumnnumber") && value == EmailColumnNumberOfParty) return;
 				SetAttributeValue("addressusedemailcolumnnumber", value);
 			}
 		}	
@@ -86,7 +86,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("donotemail"); }
 			set
 			{ 
-				if(value == DoNotAllowEmails) return;
+				if(Attributes.ContainsKey("donotemail") && value == DoNotAllowEmails) return;
 				SetAttributeValue("donotemail", value);
 			}
 		}	
@@ -101,7 +101,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("donotfax"); }
 			set
 			{ 
-				if(value == DoNotAllowFaxes) return;
+				if(Attributes.ContainsKey("donotfax") && value == DoNotAllowFaxes) return;
 				SetAttributeValue("donotfax", value);
 			}
 		}	
@@ -116,7 +116,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("donotphone"); }
 			set
 			{ 
-				if(value == DoNotAllowPhoneCalls) return;
+				if(Attributes.ContainsKey("donotphone") && value == DoNotAllowPhoneCalls) return;
 				SetAttributeValue("donotphone", value);
 			}
 		}	
@@ -131,7 +131,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("donotpostalmail"); }
 			set
 			{ 
-				if(value == DoNotAllowPostalMails) return;
+				if(Attributes.ContainsKey("donotpostalmail") && value == DoNotAllowPostalMails) return;
 				SetAttributeValue("donotpostalmail", value);
 			}
 		}	
@@ -152,7 +152,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			{
 				double? doubleValue = null;
 				if(value != null) doubleValue = Math.Round(value.Value, 2);
-				if(doubleValue == Effort) return;
+				if(Attributes.ContainsKey("effort") && doubleValue == Effort) return;
 				SetAttributeValue("effort", doubleValue);  
 			}
 		}
@@ -167,7 +167,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("exchangeentryid"); }
 			set
 			{ 
-				if(value == ExchangeEntry) return;
+				if(Attributes.ContainsKey("exchangeentryid") && value == ExchangeEntry) return;
 				SetAttributeValue("exchangeentryid", value);
 			}
 		}	
@@ -187,7 +187,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == AppointmentType) return;
+				if(Attributes.ContainsKey("instancetypecode") && value == AppointmentType) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -205,7 +205,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("ispartydeleted"); }
 			set
 			{ 
-				if(value == IsPartyDeleted) return;
+				if(Attributes.ContainsKey("ispartydeleted") && value == IsPartyDeleted) return;
 				SetAttributeValue("ispartydeleted", value);
 			}
 		}	
@@ -220,7 +220,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("ownerid"); }
 			set
 			{ 
-				if(value == Owner) return;
+				if(Attributes.ContainsKey("ownerid") && value == Owner) return;
 				SetAttributeValue("ownerid", value);
 			}
 		}	
@@ -235,7 +235,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("owneridtype"); }
 			set
 			{ 
-				if(value == Owneridtype) return;
+				if(Attributes.ContainsKey("owneridtype") && value == Owneridtype) return;
 				SetAttributeValue("owneridtype", value);
 			}
 		}	
@@ -250,7 +250,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<Guid>("owningbusinessunit"); }
 			set
 			{ 
-				if(value == OwningbusinessunitId) return;
+				if(Attributes.ContainsKey("owningbusinessunit") && value == OwningbusinessunitId) return;
 				SetAttributeValue("owningbusinessunit", value);
 			}
 		}	
@@ -265,7 +265,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<Guid>("owninguser"); }
 			set
 			{ 
-				if(value == OwninguserId) return;
+				if(Attributes.ContainsKey("owninguser") && value == OwninguserId) return;
 				SetAttributeValue("owninguser", value);
 			}
 		}	
@@ -285,7 +285,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == ParticipationType) return;
+				if(Attributes.ContainsKey("participationtypemask") && value == ParticipationType) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -303,7 +303,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("partyid"); }
 			set
 			{ 
-				if(value == Party) return;
+				if(Attributes.ContainsKey("partyid") && value == Party) return;
 				SetAttributeValue("partyid", value);
 			}
 		}	
@@ -318,7 +318,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("partyidname"); }
 			set
 			{ 
-				if(value == Partyidname) return;
+				if(Attributes.ContainsKey("partyidname") && value == Partyidname) return;
 				SetAttributeValue("partyidname", value);
 			}
 		}	
@@ -333,38 +333,8 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("partyobjecttypecode"); }
 			set
 			{ 
-				if(value == Partyobjecttypecode) return;
+				if(Attributes.ContainsKey("partyobjecttypecode") && value == Partyobjecttypecode) return;
 				SetAttributeValue("partyobjecttypecode", value);
-			}
-		}	
-			
-		/// <summary>
-        /// resourcespecid
-        /// </summary>
-		[DisplayName("Resource Specification")]
-		[AttributeLogicalName("resourcespecid")]
-		public EntityReference ResourceSpecification
-		{	
-			get { return GetAttributeValue<EntityReference>("resourcespecid"); }
-			set
-			{ 
-				if(value == ResourceSpecification) return;
-				SetAttributeValue("resourcespecid", value);
-			}
-		}	
-			
-		/// <summary>
-        /// resourcespecidname
-        /// </summary>
-		[DisplayName("resourcespecidname")]
-		[AttributeLogicalName("resourcespecidname")]
-		public string Resourcespecidname
-		{	
-			get { return GetAttributeValue<string>("resourcespecidname"); }
-			set
-			{ 
-				if(value == Resourcespecidname) return;
-				SetAttributeValue("resourcespecidname", value);
 			}
 		}	
 			
@@ -378,7 +348,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<DateTime?>("scheduledend"); }
 			set
 			{ 
-				if(value == ScheduledEnd) return;
+				if(Attributes.ContainsKey("scheduledend") && value == ScheduledEnd) return;
 				SetAttributeValue("scheduledend", value);
 			}
 		}	
@@ -393,8 +363,23 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<DateTime?>("scheduledstart"); }
 			set
 			{ 
-				if(value == ScheduledStart) return;
+				if(Attributes.ContainsKey("scheduledstart") && value == ScheduledStart) return;
 				SetAttributeValue("scheduledstart", value);
+			}
+		}	
+			
+		/// <summary>
+        /// unresolvedpartyname
+        /// </summary>
+		[DisplayName("Unresolved Party Name")]
+		[AttributeLogicalName("unresolvedpartyname")]
+		public string UnresolvedPartyName
+		{	
+			get { return GetAttributeValue<string>("unresolvedpartyname"); }
+			set
+			{ 
+				if(Attributes.ContainsKey("unresolvedpartyname") && value == UnresolvedPartyName) return;
+				SetAttributeValue("unresolvedpartyname", value);
 			}
 		}	
 			
@@ -408,7 +393,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("versionnumber"); }
 			set
 			{ 
-				if(value == Versionnumber) return;
+				if(Attributes.ContainsKey("versionnumber") && value == Versionnumber) return;
 				SetAttributeValue("versionnumber", value);
 			}
 		}	
@@ -416,16 +401,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		#endregion	
 
 		#region Relations
-			/// <summary>
-        /// 1:N Get entities for 'ActivityParty_SyncErrors'
-        /// </summary>
-		[RelationshipSchemaName("ActivityParty_SyncErrors")]
-		public IEnumerable<SyncError> ActivityPartySyncErrors
-		{
-			get { return GetRelatedEntities<SyncError>("ActivityParty_SyncErrors", null); }
-			set { SetRelatedEntities("ActivityParty_SyncErrors", null, value); }
-		}
-		#endregion
+			#endregion
 
 		#region Actions
 		#endregion
@@ -501,6 +477,14 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			[Label("Customer")]
 			[Description(@"")]
 			Customer = 11, 
+		
+			[Label("Chat Participant")]
+			[Description(@"")]
+			ChatParticipant = 12, 
+		
+			[Label("Related")]
+			[Description(@"")]
+			Related = 13, 
 		}
 		
 		#endregion	
@@ -568,17 +552,14 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			/// <summary>partyobjecttypecode</summary>
 			public const string Partyobjecttypecode = "partyobjecttypecode";
 
-			/// <summary>resourcespecid</summary>
-			public const string ResourceSpecification = "resourcespecid";
-
-			/// <summary>resourcespecidname</summary>
-			public const string Resourcespecidname = "resourcespecidname";
-
 			/// <summary>scheduledend</summary>
 			public const string ScheduledEnd = "scheduledend";
 
 			/// <summary>scheduledstart</summary>
 			public const string ScheduledStart = "scheduledstart";
+
+			/// <summary>unresolvedpartyname</summary>
+			public const string UnresolvedPartyName = "unresolvedpartyname";
 
 			/// <summary>versionnumber</summary>
 			public const string Versionnumber = "versionnumber";
@@ -589,9 +570,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		#region Schemas
 		public static class Schemas 
 		{
-			/// <summary>1:N ActivityParty_SyncErrors</summary>
-			public const string ActivityPartySyncErrors = "ActivityParty_SyncErrors";
-
 		}
 		#endregion
 	}

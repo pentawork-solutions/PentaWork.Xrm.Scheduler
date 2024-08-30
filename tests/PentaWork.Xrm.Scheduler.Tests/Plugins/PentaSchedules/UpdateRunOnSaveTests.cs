@@ -22,7 +22,8 @@ namespace PentaWork.Xrm.Scheduler.Tests.Plugins.PentaSchedules
             schedule.StartDateTime = DateTime.Now.AddDays(1);
 
             // Act
-            var fakeContext = FakeContext.ExecutePlugin<PluginController, UpdateRunOnSave>(
+            var fakeContext = FakeContext.ExecutePlugin<PluginController>(
+                typeof(UpdateRunOnSave),
                 MessageName.Create,
                 Stage.PostOperation,
                 PluginMode.Synchronous,
@@ -46,14 +47,18 @@ namespace PentaWork.Xrm.Scheduler.Tests.Plugins.PentaSchedules
             schedule.StartDateTime = DateTime.Now.AddDays(1);
             schedule.NextRun = scheduleRun.ToEntityReference();
 
+            var preSchedule = FakePentaSchedule.Create();
+            preSchedule.Status = PentaSchedule.eStatus.Inactive;
+
             scheduleRun.PentaSchedule = schedule.ToEntityReference();
 
             // Act
-            var fakeContext = FakeContext.ExecutePlugin<PluginController, UpdateRunOnSave>(
+            var fakeContext = FakeContext.ExecutePlugin<PluginController>(
+                typeof(UpdateRunOnSave),
                 MessageName.Update,
                 Stage.PostOperation,
                 PluginMode.Synchronous,
-                schedule, null, new List<Entity> { schedule, scheduleRun });
+                schedule, preSchedule, new List<Entity> { schedule, scheduleRun });
             schedule = fakeContext.CreateQuery<PentaSchedule>().Single(p => p.Id == schedule.Id);
 
             // Assert
@@ -73,14 +78,18 @@ namespace PentaWork.Xrm.Scheduler.Tests.Plugins.PentaSchedules
             schedule.StartDateTime = DateTime.Now.AddDays(1);
             schedule.NextRun = scheduleRun.ToEntityReference();
 
+            var preSchedule = FakePentaSchedule.Create();
+            preSchedule.Status = PentaSchedule.eStatus.Inactive;
+
             scheduleRun.PentaSchedule = schedule.ToEntityReference();
 
             // Act
-            var fakeContext = FakeContext.ExecutePlugin<PluginController, UpdateRunOnSave>(
+            var fakeContext = FakeContext.ExecutePlugin<PluginController>(
+                typeof(UpdateRunOnSave),
                 MessageName.Update,
                 Stage.PostOperation,
                 PluginMode.Synchronous,
-                schedule, null, new List<Entity> { schedule, scheduleRun });
+                schedule, preSchedule, new List<Entity> { schedule, scheduleRun });
             schedule = fakeContext.CreateQuery<PentaSchedule>().Single(p => p.Id == schedule.Id);
 
             // Assert

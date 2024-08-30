@@ -12,7 +12,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 	[EntityLogicalName("pw_schedule")]
 	public sealed class PentaSchedule : Entity
 	{	
-		public static readonly int? EntityTypeCode = 10110;
+		public static readonly int? EntityTypeCode = 10397;
 		public new const string LogicalName = "pw_schedule";
 		public const string PrimaryIdAttribute = "pw_scheduleid";
 		public const string PrimaryNameAttribute = "pw_name";
@@ -30,7 +30,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("createdby"); }
 			set
 			{ 
-				if(value == CreatedBy) return;
+				if(Attributes.ContainsKey("createdby") && value == CreatedBy) return;
 				SetAttributeValue("createdby", value);
 			}
 		}	
@@ -45,7 +45,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("createdbyname"); }
 			set
 			{ 
-				if(value == Createdbyname) return;
+				if(Attributes.ContainsKey("createdbyname") && value == Createdbyname) return;
 				SetAttributeValue("createdbyname", value);
 			}
 		}	
@@ -60,7 +60,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("createdbyyominame"); }
 			set
 			{ 
-				if(value == Createdbyyominame) return;
+				if(Attributes.ContainsKey("createdbyyominame") && value == Createdbyyominame) return;
 				SetAttributeValue("createdbyyominame", value);
 			}
 		}	
@@ -75,7 +75,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<DateTime?>("createdon"); }
 			set
 			{ 
-				if(value == CreatedOn) return;
+				if(Attributes.ContainsKey("createdon") && value == CreatedOn) return;
 				SetAttributeValue("createdon", value);
 			}
 		}	
@@ -90,7 +90,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("createdonbehalfby"); }
 			set
 			{ 
-				if(value == CreatedByDelegate) return;
+				if(Attributes.ContainsKey("createdonbehalfby") && value == CreatedByDelegate) return;
 				SetAttributeValue("createdonbehalfby", value);
 			}
 		}	
@@ -105,7 +105,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("createdonbehalfbyname"); }
 			set
 			{ 
-				if(value == Createdonbehalfbyname) return;
+				if(Attributes.ContainsKey("createdonbehalfbyname") && value == Createdonbehalfbyname) return;
 				SetAttributeValue("createdonbehalfbyname", value);
 			}
 		}	
@@ -120,7 +120,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("createdonbehalfbyyominame"); }
 			set
 			{ 
-				if(value == Createdonbehalfbyyominame) return;
+				if(Attributes.ContainsKey("createdonbehalfbyyominame") && value == Createdonbehalfbyyominame) return;
 				SetAttributeValue("createdonbehalfbyyominame", value);
 			}
 		}	
@@ -135,7 +135,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("importsequencenumber"); }
 			set
 			{ 
-				if(value == ImportSequenceNumber) return;
+				if(Attributes.ContainsKey("importsequencenumber") && value == ImportSequenceNumber) return;
 				SetAttributeValue("importsequencenumber", value);
 			}
 		}	
@@ -150,7 +150,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("modifiedby"); }
 			set
 			{ 
-				if(value == ModifiedBy) return;
+				if(Attributes.ContainsKey("modifiedby") && value == ModifiedBy) return;
 				SetAttributeValue("modifiedby", value);
 			}
 		}	
@@ -165,7 +165,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("modifiedbyname"); }
 			set
 			{ 
-				if(value == Modifiedbyname) return;
+				if(Attributes.ContainsKey("modifiedbyname") && value == Modifiedbyname) return;
 				SetAttributeValue("modifiedbyname", value);
 			}
 		}	
@@ -180,7 +180,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("modifiedbyyominame"); }
 			set
 			{ 
-				if(value == Modifiedbyyominame) return;
+				if(Attributes.ContainsKey("modifiedbyyominame") && value == Modifiedbyyominame) return;
 				SetAttributeValue("modifiedbyyominame", value);
 			}
 		}	
@@ -195,7 +195,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<DateTime?>("modifiedon"); }
 			set
 			{ 
-				if(value == ModifiedOn) return;
+				if(Attributes.ContainsKey("modifiedon") && value == ModifiedOn) return;
 				SetAttributeValue("modifiedon", value);
 			}
 		}	
@@ -210,7 +210,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("modifiedonbehalfby"); }
 			set
 			{ 
-				if(value == ModifiedByDelegate) return;
+				if(Attributes.ContainsKey("modifiedonbehalfby") && value == ModifiedByDelegate) return;
 				SetAttributeValue("modifiedonbehalfby", value);
 			}
 		}	
@@ -225,7 +225,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("modifiedonbehalfbyname"); }
 			set
 			{ 
-				if(value == Modifiedonbehalfbyname) return;
+				if(Attributes.ContainsKey("modifiedonbehalfbyname") && value == Modifiedonbehalfbyname) return;
 				SetAttributeValue("modifiedonbehalfbyname", value);
 			}
 		}	
@@ -240,7 +240,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("modifiedonbehalfbyyominame"); }
 			set
 			{ 
-				if(value == Modifiedonbehalfbyyominame) return;
+				if(Attributes.ContainsKey("modifiedonbehalfbyyominame") && value == Modifiedonbehalfbyyominame) return;
 				SetAttributeValue("modifiedonbehalfbyyominame", value);
 			}
 		}	
@@ -255,7 +255,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<DateTime?>("overriddencreatedon"); }
 			set
 			{ 
-				if(value == RecordCreatedOn) return;
+				if(Attributes.ContainsKey("overriddencreatedon") && value == RecordCreatedOn) return;
 				SetAttributeValue("overriddencreatedon", value);
 			}
 		}	
@@ -270,7 +270,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("ownerid"); }
 			set
 			{ 
-				if(value == Owner) return;
+				if(Attributes.ContainsKey("ownerid") && value == Owner) return;
 				SetAttributeValue("ownerid", value);
 			}
 		}	
@@ -285,7 +285,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("owneridname"); }
 			set
 			{ 
-				if(value == Owneridname) return;
+				if(Attributes.ContainsKey("owneridname") && value == Owneridname) return;
 				SetAttributeValue("owneridname", value);
 			}
 		}	
@@ -300,7 +300,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("owneridtype"); }
 			set
 			{ 
-				if(value == Owneridtype) return;
+				if(Attributes.ContainsKey("owneridtype") && value == Owneridtype) return;
 				SetAttributeValue("owneridtype", value);
 			}
 		}	
@@ -315,7 +315,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("owneridyominame"); }
 			set
 			{ 
-				if(value == Owneridyominame) return;
+				if(Attributes.ContainsKey("owneridyominame") && value == Owneridyominame) return;
 				SetAttributeValue("owneridyominame", value);
 			}
 		}	
@@ -330,8 +330,23 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("owningbusinessunit"); }
 			set
 			{ 
-				if(value == OwningBusinessUnit) return;
+				if(Attributes.ContainsKey("owningbusinessunit") && value == OwningBusinessUnit) return;
 				SetAttributeValue("owningbusinessunit", value);
+			}
+		}	
+			
+		/// <summary>
+        /// owningbusinessunitname
+        /// </summary>
+		[DisplayName("owningbusinessunitname")]
+		[AttributeLogicalName("owningbusinessunitname")]
+		public string Owningbusinessunitname
+		{	
+			get { return GetAttributeValue<string>("owningbusinessunitname"); }
+			set
+			{ 
+				if(Attributes.ContainsKey("owningbusinessunitname") && value == Owningbusinessunitname) return;
+				SetAttributeValue("owningbusinessunitname", value);
 			}
 		}	
 			
@@ -345,7 +360,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("owningteam"); }
 			set
 			{ 
-				if(value == OwningTeam) return;
+				if(Attributes.ContainsKey("owningteam") && value == OwningTeam) return;
 				SetAttributeValue("owningteam", value);
 			}
 		}	
@@ -360,7 +375,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("owninguser"); }
 			set
 			{ 
-				if(value == OwningUser) return;
+				if(Attributes.ContainsKey("owninguser") && value == OwningUser) return;
 				SetAttributeValue("owninguser", value);
 			}
 		}	
@@ -375,7 +390,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("pw_action"); }
 			set
 			{ 
-				if(value == Action) return;
+				if(Attributes.ContainsKey("pw_action") && value == Action) return;
 				SetAttributeValue("pw_action", value);
 			}
 		}	
@@ -390,8 +405,38 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("pw_actionname"); }
 			set
 			{ 
-				if(value == PwActionname) return;
+				if(Attributes.ContainsKey("pw_actionname") && value == PwActionname) return;
 				SetAttributeValue("pw_actionname", value);
+			}
+		}	
+			
+		/// <summary>
+        /// pw_custom_api_id
+        /// </summary>
+		[DisplayName("Custom API")]
+		[AttributeLogicalName("pw_custom_api_id")]
+		public EntityReference CustomAPI
+		{	
+			get { return GetAttributeValue<EntityReference>("pw_custom_api_id"); }
+			set
+			{ 
+				if(Attributes.ContainsKey("pw_custom_api_id") && value == CustomAPI) return;
+				SetAttributeValue("pw_custom_api_id", value);
+			}
+		}	
+			
+		/// <summary>
+        /// pw_custom_api_idname
+        /// </summary>
+		[DisplayName("pw_custom_api_idname")]
+		[AttributeLogicalName("pw_custom_api_idname")]
+		public string PwCustomApiIdname
+		{	
+			get { return GetAttributeValue<string>("pw_custom_api_idname"); }
+			set
+			{ 
+				if(Attributes.ContainsKey("pw_custom_api_idname") && value == PwCustomApiIdname) return;
+				SetAttributeValue("pw_custom_api_idname", value);
 			}
 		}	
 			
@@ -405,7 +450,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("pw_email_on_error"); }
 			set
 			{ 
-				if(value == EmailOnError) return;
+				if(Attributes.ContainsKey("pw_email_on_error") && value == EmailOnError) return;
 				SetAttributeValue("pw_email_on_error", value);
 			}
 		}	
@@ -420,7 +465,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<DateTime?>("pw_end_datetime"); }
 			set
 			{ 
-				if(value == EndDateTime) return;
+				if(Attributes.ContainsKey("pw_end_datetime") && value == EndDateTime) return;
 				SetAttributeValue("pw_end_datetime", value);
 			}
 		}	
@@ -435,7 +480,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("pw_error_email_address"); }
 			set
 			{ 
-				if(value == ErrorEmailAddress) return;
+				if(Attributes.ContainsKey("pw_error_email_address") && value == ErrorEmailAddress) return;
 				SetAttributeValue("pw_error_email_address", value);
 			}
 		}	
@@ -450,7 +495,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("pw_error_threshold"); }
 			set
 			{ 
-				if(value == ErrorThreshold) return;
+				if(Attributes.ContainsKey("pw_error_threshold") && value == ErrorThreshold) return;
 				SetAttributeValue("pw_error_threshold", value);
 			}
 		}	
@@ -465,7 +510,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("pw_fetch_xml"); }
 			set
 			{ 
-				if(value == FetchXML) return;
+				if(Attributes.ContainsKey("pw_fetch_xml") && value == FetchXML) return;
 				SetAttributeValue("pw_fetch_xml", value);
 			}
 		}	
@@ -485,7 +530,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == Frequency) return;
+				if(Attributes.ContainsKey("pw_frequency") && value == Frequency) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -503,7 +548,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("pw_frequency_value"); }
 			set
 			{ 
-				if(value == FrequencyValue) return;
+				if(Attributes.ContainsKey("pw_frequency_value") && value == FrequencyValue) return;
 				SetAttributeValue("pw_frequency_value", value);
 			}
 		}	
@@ -518,7 +563,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("pw_global_action"); }
 			set
 			{ 
-				if(value == GlobalAction) return;
+				if(Attributes.ContainsKey("pw_global_action") && value == GlobalAction) return;
 				SetAttributeValue("pw_global_action", value);
 			}
 		}	
@@ -533,8 +578,38 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("pw_global_actionname"); }
 			set
 			{ 
-				if(value == PwGlobalActionname) return;
+				if(Attributes.ContainsKey("pw_global_actionname") && value == PwGlobalActionname) return;
 				SetAttributeValue("pw_global_actionname", value);
+			}
+		}	
+			
+		/// <summary>
+        /// pw_global_custom_api_id
+        /// </summary>
+		[DisplayName("Global Custom API")]
+		[AttributeLogicalName("pw_global_custom_api_id")]
+		public EntityReference GlobalCustomAPI
+		{	
+			get { return GetAttributeValue<EntityReference>("pw_global_custom_api_id"); }
+			set
+			{ 
+				if(Attributes.ContainsKey("pw_global_custom_api_id") && value == GlobalCustomAPI) return;
+				SetAttributeValue("pw_global_custom_api_id", value);
+			}
+		}	
+			
+		/// <summary>
+        /// pw_global_custom_api_idname
+        /// </summary>
+		[DisplayName("pw_global_custom_api_idname")]
+		[AttributeLogicalName("pw_global_custom_api_idname")]
+		public string PwGlobalCustomApiIdname
+		{	
+			get { return GetAttributeValue<string>("pw_global_custom_api_idname"); }
+			set
+			{ 
+				if(Attributes.ContainsKey("pw_global_custom_api_idname") && value == PwGlobalCustomApiIdname) return;
+				SetAttributeValue("pw_global_custom_api_idname", value);
 			}
 		}	
 			
@@ -548,7 +623,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<DateTime?>("pw_last_run_datetime"); }
 			set
 			{ 
-				if(value == LastRunDateTime) return;
+				if(Attributes.ContainsKey("pw_last_run_datetime") && value == LastRunDateTime) return;
 				SetAttributeValue("pw_last_run_datetime", value);
 			}
 		}	
@@ -563,7 +638,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("pw_name"); }
 			set
 			{ 
-				if(value == Name) return;
+				if(Attributes.ContainsKey("pw_name") && value == Name) return;
 				SetAttributeValue("pw_name", value);
 			}
 		}	
@@ -578,7 +653,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("pw_next_run"); }
 			set
 			{ 
-				if(value == NextRun) return;
+				if(Attributes.ContainsKey("pw_next_run") && value == NextRun) return;
 				SetAttributeValue("pw_next_run", value);
 			}
 		}	
@@ -593,7 +668,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("pw_next_runname"); }
 			set
 			{ 
-				if(value == PwNextRunname) return;
+				if(Attributes.ContainsKey("pw_next_runname") && value == PwNextRunname) return;
 				SetAttributeValue("pw_next_runname", value);
 			}
 		}	
@@ -608,7 +683,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("pw_page_size"); }
 			set
 			{ 
-				if(value == PageSize) return;
+				if(Attributes.ContainsKey("pw_page_size") && value == PageSize) return;
 				SetAttributeValue("pw_page_size", value);
 			}
 		}	
@@ -623,7 +698,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("pw_retry_immediately"); }
 			set
 			{ 
-				if(value == RetryImmediately) return;
+				if(Attributes.ContainsKey("pw_retry_immediately") && value == RetryImmediately) return;
 				SetAttributeValue("pw_retry_immediately", value);
 			}
 		}	
@@ -638,7 +713,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("pw_retry_on_error"); }
 			set
 			{ 
-				if(value == RetryOnError) return;
+				if(Attributes.ContainsKey("pw_retry_on_error") && value == RetryOnError) return;
 				SetAttributeValue("pw_retry_on_error", value);
 			}
 		}	
@@ -658,7 +733,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == ScheduleType) return;
+				if(Attributes.ContainsKey("pw_schedule_type") && value == ScheduleType) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -687,7 +762,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("pw_service_plugin"); }
 			set
 			{ 
-				if(value == SchedulePlugin) return;
+				if(Attributes.ContainsKey("pw_service_plugin") && value == SchedulePlugin) return;
 				SetAttributeValue("pw_service_plugin", value);
 			}
 		}	
@@ -702,7 +777,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("pw_service_plugin_config"); }
 			set
 			{ 
-				if(value == SchedulePluginConfig) return;
+				if(Attributes.ContainsKey("pw_service_plugin_config") && value == SchedulePluginConfig) return;
 				SetAttributeValue("pw_service_plugin_config", value);
 			}
 		}	
@@ -717,7 +792,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("pw_service_pluginname"); }
 			set
 			{ 
-				if(value == PwServicePluginname) return;
+				if(Attributes.ContainsKey("pw_service_pluginname") && value == PwServicePluginname) return;
 				SetAttributeValue("pw_service_pluginname", value);
 			}
 		}	
@@ -732,7 +807,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<DateTime?>("pw_start_datetime"); }
 			set
 			{ 
-				if(value == StartDateTime) return;
+				if(Attributes.ContainsKey("pw_start_datetime") && value == StartDateTime) return;
 				SetAttributeValue("pw_start_datetime", value);
 			}
 		}	
@@ -747,7 +822,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("pw_successive_errors"); }
 			set
 			{ 
-				if(value == SuccessiveErrors) return;
+				if(Attributes.ContainsKey("pw_successive_errors") && value == SuccessiveErrors) return;
 				SetAttributeValue("pw_successive_errors", value);
 			}
 		}	
@@ -762,7 +837,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("pw_workflow"); }
 			set
 			{ 
-				if(value == Workflow) return;
+				if(Attributes.ContainsKey("pw_workflow") && value == Workflow) return;
 				SetAttributeValue("pw_workflow", value);
 			}
 		}	
@@ -777,7 +852,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("pw_workflowname"); }
 			set
 			{ 
-				if(value == PwWorkflowname) return;
+				if(Attributes.ContainsKey("pw_workflowname") && value == PwWorkflowname) return;
 				SetAttributeValue("pw_workflowname", value);
 			}
 		}	
@@ -797,7 +872,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == Status) return;
+				if(Attributes.ContainsKey("statecode") && value == Status) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -820,7 +895,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == StatusReason) return;
+				if(Attributes.ContainsKey("statuscode") && value == StatusReason) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -838,7 +913,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("timezoneruleversionnumber"); }
 			set
 			{ 
-				if(value == TimeZoneRuleVersionNumber) return;
+				if(Attributes.ContainsKey("timezoneruleversionnumber") && value == TimeZoneRuleVersionNumber) return;
 				SetAttributeValue("timezoneruleversionnumber", value);
 			}
 		}	
@@ -853,7 +928,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("utcconversiontimezonecode"); }
 			set
 			{ 
-				if(value == UTCConversionTimeZoneCode) return;
+				if(Attributes.ContainsKey("utcconversiontimezonecode") && value == UTCConversionTimeZoneCode) return;
 				SetAttributeValue("utcconversiontimezonecode", value);
 			}
 		}	
@@ -868,7 +943,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("versionnumber"); }
 			set
 			{ 
-				if(value == VersionNumber) return;
+				if(Attributes.ContainsKey("versionnumber") && value == VersionNumber) return;
 				SetAttributeValue("versionnumber", value);
 			}
 		}	
@@ -895,67 +970,13 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			set { SetRelatedEntities("pw_schedule_AsyncOperations", null, value); }
 		}
 		/// <summary>
-        /// 1:N Get entities for 'pw_schedule_BulkDeleteFailures'
+        /// 1:N Get entities for 'pw_schedule_Emails'
         /// </summary>
-		[RelationshipSchemaName("pw_schedule_BulkDeleteFailures")]
-		public IEnumerable<BulkDeleteFailure> PwScheduleBulkDeleteFailures
+		[RelationshipSchemaName("pw_schedule_Emails")]
+		public IEnumerable<Email> PwScheduleEmails
 		{
-			get { return GetRelatedEntities<BulkDeleteFailure>("pw_schedule_BulkDeleteFailures", null); }
-			set { SetRelatedEntities("pw_schedule_BulkDeleteFailures", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'pw_schedule_DuplicateBaseRecord'
-        /// </summary>
-		[RelationshipSchemaName("pw_schedule_DuplicateBaseRecord")]
-		public IEnumerable<DuplicateRecord> PwScheduleDuplicateBaseRecord
-		{
-			get { return GetRelatedEntities<DuplicateRecord>("pw_schedule_DuplicateBaseRecord", null); }
-			set { SetRelatedEntities("pw_schedule_DuplicateBaseRecord", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'pw_schedule_DuplicateMatchingRecord'
-        /// </summary>
-		[RelationshipSchemaName("pw_schedule_DuplicateMatchingRecord")]
-		public IEnumerable<DuplicateRecord> PwScheduleDuplicateMatchingRecord
-		{
-			get { return GetRelatedEntities<DuplicateRecord>("pw_schedule_DuplicateMatchingRecord", null); }
-			set { SetRelatedEntities("pw_schedule_DuplicateMatchingRecord", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'pw_schedule_MailboxTrackingFolders'
-        /// </summary>
-		[RelationshipSchemaName("pw_schedule_MailboxTrackingFolders")]
-		public IEnumerable<MailboxAutoTrackingFolder> PwScheduleMailboxTrackingFolders
-		{
-			get { return GetRelatedEntities<MailboxAutoTrackingFolder>("pw_schedule_MailboxTrackingFolders", null); }
-			set { SetRelatedEntities("pw_schedule_MailboxTrackingFolders", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'pw_schedule_PrincipalObjectAttributeAccesses'
-        /// </summary>
-		[RelationshipSchemaName("pw_schedule_PrincipalObjectAttributeAccesses")]
-		public IEnumerable<FieldSharing> PwSchedulePrincipalObjectAttributeAccesses
-		{
-			get { return GetRelatedEntities<FieldSharing>("pw_schedule_PrincipalObjectAttributeAccesses", null); }
-			set { SetRelatedEntities("pw_schedule_PrincipalObjectAttributeAccesses", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'pw_schedule_ProcessSession'
-        /// </summary>
-		[RelationshipSchemaName("pw_schedule_ProcessSession")]
-		public IEnumerable<ProcessSession> PwScheduleProcessSession
-		{
-			get { return GetRelatedEntities<ProcessSession>("pw_schedule_ProcessSession", null); }
-			set { SetRelatedEntities("pw_schedule_ProcessSession", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'pw_schedule_SyncErrors'
-        /// </summary>
-		[RelationshipSchemaName("pw_schedule_SyncErrors")]
-		public IEnumerable<SyncError> PwScheduleSyncErrors
-		{
-			get { return GetRelatedEntities<SyncError>("pw_schedule_SyncErrors", null); }
-			set { SetRelatedEntities("pw_schedule_SyncErrors", null, value); }
+			get { return GetRelatedEntities<Email>("pw_schedule_Emails", null); }
+			set { SetRelatedEntities("pw_schedule_Emails", null, value); }
 		}
 		#endregion
 
@@ -1038,10 +1059,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			[Description(@"")]
 			Active_Active = 1, 
 		
-			[Label("Retry")]
-			[Description(@"")]
-			Retry_Active = 266890003, 
-		
 			[Label("Ended")]
 			[Description(@"")]
 			Ended_Active = 266890001, 
@@ -1062,6 +1079,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			[Description(@"")]
 			Action = 266890003, 
 		
+			[Label("Custom API")]
+			[Description(@"")]
+			CustomAPI = 266890005, 
+		
 			[Label("Workflow")]
 			[Description(@"")]
 			Workflow = 266890002, 
@@ -1069,6 +1090,10 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			[Label("Global Action")]
 			[Description(@"")]
 			GlobalAction = 266890001, 
+		
+			[Label("Global Custom API")]
+			[Description(@"")]
+			GlobalCustomAPI = 266890006, 
 		
 			[Label("Schedule Plugin")]
 			[Description(@"")]
@@ -1143,6 +1168,9 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			/// <summary>owningbusinessunit</summary>
 			public const string OwningBusinessUnit = "owningbusinessunit";
 
+			/// <summary>owningbusinessunitname</summary>
+			public const string Owningbusinessunitname = "owningbusinessunitname";
+
 			/// <summary>owningteam</summary>
 			public const string OwningTeam = "owningteam";
 
@@ -1154,6 +1182,12 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 			/// <summary>pw_actionname</summary>
 			public const string PwActionname = "pw_actionname";
+
+			/// <summary>pw_custom_api_id</summary>
+			public const string CustomAPI = "pw_custom_api_id";
+
+			/// <summary>pw_custom_api_idname</summary>
+			public const string PwCustomApiIdname = "pw_custom_api_idname";
 
 			/// <summary>pw_email_on_error</summary>
 			public const string EmailOnError = "pw_email_on_error";
@@ -1181,6 +1215,12 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 
 			/// <summary>pw_global_actionname</summary>
 			public const string PwGlobalActionname = "pw_global_actionname";
+
+			/// <summary>pw_global_custom_api_id</summary>
+			public const string GlobalCustomAPI = "pw_global_custom_api_id";
+
+			/// <summary>pw_global_custom_api_idname</summary>
+			public const string PwGlobalCustomApiIdname = "pw_global_custom_api_idname";
 
 			/// <summary>pw_last_run_datetime</summary>
 			public const string LastRunDateTime = "pw_last_run_datetime";
@@ -1257,26 +1297,8 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			/// <summary>1:N pw_schedule_AsyncOperations</summary>
 			public const string PwScheduleAsyncOperations = "pw_schedule_AsyncOperations";
 
-			/// <summary>1:N pw_schedule_BulkDeleteFailures</summary>
-			public const string PwScheduleBulkDeleteFailures = "pw_schedule_BulkDeleteFailures";
-
-			/// <summary>1:N pw_schedule_DuplicateBaseRecord</summary>
-			public const string PwScheduleDuplicateBaseRecord = "pw_schedule_DuplicateBaseRecord";
-
-			/// <summary>1:N pw_schedule_DuplicateMatchingRecord</summary>
-			public const string PwScheduleDuplicateMatchingRecord = "pw_schedule_DuplicateMatchingRecord";
-
-			/// <summary>1:N pw_schedule_MailboxTrackingFolders</summary>
-			public const string PwScheduleMailboxTrackingFolders = "pw_schedule_MailboxTrackingFolders";
-
-			/// <summary>1:N pw_schedule_PrincipalObjectAttributeAccesses</summary>
-			public const string PwSchedulePrincipalObjectAttributeAccesses = "pw_schedule_PrincipalObjectAttributeAccesses";
-
-			/// <summary>1:N pw_schedule_ProcessSession</summary>
-			public const string PwScheduleProcessSession = "pw_schedule_ProcessSession";
-
-			/// <summary>1:N pw_schedule_SyncErrors</summary>
-			public const string PwScheduleSyncErrors = "pw_schedule_SyncErrors";
+			/// <summary>1:N pw_schedule_Emails</summary>
+			public const string PwScheduleEmails = "pw_schedule_Emails";
 
 		}
 		#endregion

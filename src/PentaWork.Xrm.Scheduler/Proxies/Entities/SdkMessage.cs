@@ -30,7 +30,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("autotransact"); }
 			set
 			{ 
-				if(value == AutoTransact) return;
+				if(Attributes.ContainsKey("autotransact") && value == AutoTransact) return;
 				SetAttributeValue("autotransact", value);
 			}
 		}	
@@ -45,7 +45,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("availability"); }
 			set
 			{ 
-				if(value == Availability) return;
+				if(Attributes.ContainsKey("availability") && value == Availability) return;
 				SetAttributeValue("availability", value);
 			}
 		}	
@@ -60,7 +60,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("categoryname"); }
 			set
 			{ 
-				if(value == CategoryName) return;
+				if(Attributes.ContainsKey("categoryname") && value == CategoryName) return;
 				SetAttributeValue("categoryname", value);
 			}
 		}	
@@ -80,7 +80,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			}
 			set 
 			{ 
-				if(value == ComponentState) return;
+				if(Attributes.ContainsKey("componentstate") && value == ComponentState) return;
 
 				OptionSetValue optionSetValue = null;
 				if(value != null) optionSetValue = new OptionSetValue((int)value);
@@ -98,7 +98,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("createdby"); }
 			set
 			{ 
-				if(value == CreatedBy) return;
+				if(Attributes.ContainsKey("createdby") && value == CreatedBy) return;
 				SetAttributeValue("createdby", value);
 			}
 		}	
@@ -113,7 +113,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("createdbyname"); }
 			set
 			{ 
-				if(value == Createdbyname) return;
+				if(Attributes.ContainsKey("createdbyname") && value == Createdbyname) return;
 				SetAttributeValue("createdbyname", value);
 			}
 		}	
@@ -128,7 +128,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<DateTime?>("createdon"); }
 			set
 			{ 
-				if(value == CreatedOn) return;
+				if(Attributes.ContainsKey("createdon") && value == CreatedOn) return;
 				SetAttributeValue("createdon", value);
 			}
 		}	
@@ -143,7 +143,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("createdonbehalfby"); }
 			set
 			{ 
-				if(value == CreatedByDelegate) return;
+				if(Attributes.ContainsKey("createdonbehalfby") && value == CreatedByDelegate) return;
 				SetAttributeValue("createdonbehalfby", value);
 			}
 		}	
@@ -158,7 +158,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("createdonbehalfbyname"); }
 			set
 			{ 
-				if(value == Createdonbehalfbyname) return;
+				if(Attributes.ContainsKey("createdonbehalfbyname") && value == Createdonbehalfbyname) return;
 				SetAttributeValue("createdonbehalfbyname", value);
 			}
 		}	
@@ -173,7 +173,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("createdonbehalfbyyominame"); }
 			set
 			{ 
-				if(value == Createdonbehalfbyyominame) return;
+				if(Attributes.ContainsKey("createdonbehalfbyyominame") && value == Createdonbehalfbyyominame) return;
 				SetAttributeValue("createdonbehalfbyyominame", value);
 			}
 		}	
@@ -188,7 +188,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("customizationlevel"); }
 			set
 			{ 
-				if(value == Customizationlevel) return;
+				if(Attributes.ContainsKey("customizationlevel") && value == Customizationlevel) return;
 				SetAttributeValue("customizationlevel", value);
 			}
 		}	
@@ -203,7 +203,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("executeprivilegename"); }
 			set
 			{ 
-				if(value == ExecutePrivilegeName) return;
+				if(Attributes.ContainsKey("executeprivilegename") && value == ExecutePrivilegeName) return;
 				SetAttributeValue("executeprivilegename", value);
 			}
 		}	
@@ -218,7 +218,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("expand"); }
 			set
 			{ 
-				if(value == Expand) return;
+				if(Attributes.ContainsKey("expand") && value == Expand) return;
 				SetAttributeValue("expand", value);
 			}
 		}	
@@ -233,7 +233,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("introducedversion"); }
 			set
 			{ 
-				if(value == IntroducedVersion) return;
+				if(Attributes.ContainsKey("introducedversion") && value == IntroducedVersion) return;
 				SetAttributeValue("introducedversion", value);
 			}
 		}	
@@ -248,7 +248,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("isactive"); }
 			set
 			{ 
-				if(value == IsActive) return;
+				if(Attributes.ContainsKey("isactive") && value == IsActive) return;
 				SetAttributeValue("isactive", value);
 			}
 		}	
@@ -263,7 +263,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("ismanaged"); }
 			set
 			{ 
-				if(value == State) return;
+				if(Attributes.ContainsKey("ismanaged") && value == State) return;
 				SetAttributeValue("ismanaged", value);
 			}
 		}	
@@ -278,7 +278,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("isprivate"); }
 			set
 			{ 
-				if(value == IsPrivate) return;
+				if(Attributes.ContainsKey("isprivate") && value == IsPrivate) return;
 				SetAttributeValue("isprivate", value);
 			}
 		}	
@@ -293,7 +293,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("isreadonly"); }
 			set
 			{ 
-				if(value == Intent) return;
+				if(Attributes.ContainsKey("isreadonly") && value == Intent) return;
 				SetAttributeValue("isreadonly", value);
 			}
 		}	
@@ -308,7 +308,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("isvalidforexecuteasync"); }
 			set
 			{ 
-				if(value == IsValidForExecuteAsync) return;
+				if(Attributes.ContainsKey("isvalidforexecuteasync") && value == IsValidForExecuteAsync) return;
 				SetAttributeValue("isvalidforexecuteasync", value);
 			}
 		}	
@@ -323,7 +323,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("modifiedby"); }
 			set
 			{ 
-				if(value == ModifiedBy) return;
+				if(Attributes.ContainsKey("modifiedby") && value == ModifiedBy) return;
 				SetAttributeValue("modifiedby", value);
 			}
 		}	
@@ -338,7 +338,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("modifiedbyname"); }
 			set
 			{ 
-				if(value == Modifiedbyname) return;
+				if(Attributes.ContainsKey("modifiedbyname") && value == Modifiedbyname) return;
 				SetAttributeValue("modifiedbyname", value);
 			}
 		}	
@@ -353,7 +353,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<DateTime?>("modifiedon"); }
 			set
 			{ 
-				if(value == ModifiedOn) return;
+				if(Attributes.ContainsKey("modifiedon") && value == ModifiedOn) return;
 				SetAttributeValue("modifiedon", value);
 			}
 		}	
@@ -368,7 +368,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("modifiedonbehalfby"); }
 			set
 			{ 
-				if(value == ModifiedByDelegate) return;
+				if(Attributes.ContainsKey("modifiedonbehalfby") && value == ModifiedByDelegate) return;
 				SetAttributeValue("modifiedonbehalfby", value);
 			}
 		}	
@@ -383,7 +383,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("modifiedonbehalfbyname"); }
 			set
 			{ 
-				if(value == Modifiedonbehalfbyname) return;
+				if(Attributes.ContainsKey("modifiedonbehalfbyname") && value == Modifiedonbehalfbyname) return;
 				SetAttributeValue("modifiedonbehalfbyname", value);
 			}
 		}	
@@ -398,7 +398,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("modifiedonbehalfbyyominame"); }
 			set
 			{ 
-				if(value == Modifiedonbehalfbyyominame) return;
+				if(Attributes.ContainsKey("modifiedonbehalfbyyominame") && value == Modifiedonbehalfbyyominame) return;
 				SetAttributeValue("modifiedonbehalfbyyominame", value);
 			}
 		}	
@@ -413,7 +413,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("name"); }
 			set
 			{ 
-				if(value == Name) return;
+				if(Attributes.ContainsKey("name") && value == Name) return;
 				SetAttributeValue("name", value);
 			}
 		}	
@@ -428,7 +428,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<EntityReference>("organizationid"); }
 			set
 			{ 
-				if(value == Organizationid) return;
+				if(Attributes.ContainsKey("organizationid") && value == Organizationid) return;
 				SetAttributeValue("organizationid", value);
 			}
 		}	
@@ -443,7 +443,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<DateTime?>("overwritetime"); }
 			set
 			{ 
-				if(value == RecordOverwriteTime) return;
+				if(Attributes.ContainsKey("overwritetime") && value == RecordOverwriteTime) return;
 				SetAttributeValue("overwritetime", value);
 			}
 		}	
@@ -469,7 +469,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<Guid>("sdkmessageidunique"); }
 			set
 			{ 
-				if(value == SdkmessageiduniqueId) return;
+				if(Attributes.ContainsKey("sdkmessageidunique") && value == SdkmessageiduniqueId) return;
 				SetAttributeValue("sdkmessageidunique", value);
 			}
 		}	
@@ -484,7 +484,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<Guid>("solutionid"); }
 			set
 			{ 
-				if(value == SolutionId) return;
+				if(Attributes.ContainsKey("solutionid") && value == SolutionId) return;
 				SetAttributeValue("solutionid", value);
 			}
 		}	
@@ -499,7 +499,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<Guid>("supportingsolutionid"); }
 			set
 			{ 
-				if(value == SolutionId2) return;
+				if(Attributes.ContainsKey("supportingsolutionid") && value == SolutionId2) return;
 				SetAttributeValue("supportingsolutionid", value);
 			}
 		}	
@@ -514,7 +514,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("template"); }
 			set
 			{ 
-				if(value == Template) return;
+				if(Attributes.ContainsKey("template") && value == Template) return;
 				SetAttributeValue("template", value);
 			}
 		}	
@@ -529,7 +529,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<string>("throttlesettings"); }
 			set
 			{ 
-				if(value == ThrottleSettings) return;
+				if(Attributes.ContainsKey("throttlesettings") && value == ThrottleSettings) return;
 				SetAttributeValue("throttlesettings", value);
 			}
 		}	
@@ -544,7 +544,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<int?>("versionnumber"); }
 			set
 			{ 
-				if(value == Versionnumber) return;
+				if(Attributes.ContainsKey("versionnumber") && value == Versionnumber) return;
 				SetAttributeValue("versionnumber", value);
 			}
 		}	
@@ -559,7 +559,7 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 			get { return GetAttributeValue<bool?>("workflowsdkstepenabled"); }
 			set
 			{ 
-				if(value == WorkflowSdkStepEnabled) return;
+				if(Attributes.ContainsKey("workflowsdkstepenabled") && value == WorkflowSdkStepEnabled) return;
 				SetAttributeValue("workflowsdkstepenabled", value);
 			}
 		}	
@@ -575,24 +575,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{
 			get { return GetRelatedEntities<CustomAPI>("sdkmessage_customapi", null); }
 			set { SetRelatedEntities("sdkmessage_customapi", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'sdkmessageid_sdkmessagefilter'
-        /// </summary>
-		[RelationshipSchemaName("sdkmessageid_sdkmessagefilter")]
-		public IEnumerable<SdkMessageFilter> SdkmessageidSdkmessagefilter
-		{
-			get { return GetRelatedEntities<SdkMessageFilter>("sdkmessageid_sdkmessagefilter", null); }
-			set { SetRelatedEntities("sdkmessageid_sdkmessagefilter", null, value); }
-		}
-		/// <summary>
-        /// 1:N Get entities for 'sdkmessageid_sdkmessageprocessingstep'
-        /// </summary>
-		[RelationshipSchemaName("sdkmessageid_sdkmessageprocessingstep")]
-		public IEnumerable<SdkMessageProcessingStep> SdkmessageidSdkmessageprocessingstep
-		{
-			get { return GetRelatedEntities<SdkMessageProcessingStep>("sdkmessageid_sdkmessageprocessingstep", null); }
-			set { SetRelatedEntities("sdkmessageid_sdkmessageprocessingstep", null, value); }
 		}
 		#endregion
 
@@ -741,12 +723,6 @@ namespace PentaWork.Xrm.Scheduler.Proxies.Entities
 		{
 			/// <summary>1:N sdkmessage_customapi</summary>
 			public const string SdkmessageCustomapi = "sdkmessage_customapi";
-
-			/// <summary>1:N sdkmessageid_sdkmessagefilter</summary>
-			public const string SdkmessageidSdkmessagefilter = "sdkmessageid_sdkmessagefilter";
-
-			/// <summary>1:N sdkmessageid_sdkmessageprocessingstep</summary>
-			public const string SdkmessageidSdkmessageprocessingstep = "sdkmessageid_sdkmessageprocessingstep";
 
 		}
 		#endregion
